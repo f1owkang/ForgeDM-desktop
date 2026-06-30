@@ -1,0 +1,142 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v1.0.0)'
+        required: true
+
+env:
+  NODE_VERSION: 24.15.0
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.get-tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: get-tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.get-tag.outputs.tag }}
+          name: ForgeDM Desktop ${{ steps.get-tag.outputs.tag }}
+          draft: true
+          prerelease: false
+          generate_release_notes: true
+
+  build:
+    name: Build ${{ matrix.name }}
+    needs: create-release
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: macOS-arm64
+            os: macos-14-xlarge
+            arch: arm64
+            asset_name: ForgeDM-Desktop-macOS-arm64.zip
+          - name: macOS-x64
+            os: macos-14-xlarge
+            arch: x64
+            asset_name: ForgeDM-Desktop-macOS-x64.zip
+          - name: Windows-x64
+            os: windows-2022
+            arch: x64
+            asset_name: ForgeDM-Desktop-Windows-x64.exe
+          - name: Windows-arm64
+            os: windows-2022
+            arch: arm64
+            asset_name: ForgeDM-Desktop-Windows-arm64.exe
+          - name: Linux-x64
+            os: ubuntu-latest
+            arch: x64
+            asset_name: ForgeDM-Desktop-Linux-x64.tar.gz
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build production app
+        run: yarn build:prod
+        env:
+          npm_config_arch: ${{ matrix.arch }}
+          TARGET_ARCH: ${{ matrix.arch }}
+          ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
+
+      - name: Package app
+        run: yarn package
+        env:
+          npm_config_arch: ${{ matrix.arch }}
+
+      # macOS: Create zip
+      - name: Create macOS archive
+        if: runner.os == 'macOS'
+        run: |
+          cd dist
+          ditto -ck --keepParent "desktop-darwin-${{ matrix.arch }}/ForgeDM Desktop.app" "${{ matrix.asset_name }}"
+
+      # Windows: Rename exe
+      - name: Prepare Windows artifact
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          cd dist
+          $exe = Get-ChildItem -Filter "*.exe" -Recurse | Select-Object -First 1
+          if ($exe) {
+            Copy-Item $exe.FullName "${{ matrix.asset_name }}"
+          }
+
+      # Linux: Create tar.gz
+      - name: Create Linux archive
+        if: runner.os == 'Linux'
+        run: |
+          cd dist
+          tar -czf "${{ matrix.asset_name }}" desktop-linux-${{ matrix.arch }}/
+
+      # Upload to Release
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.create-release.outputs.tag }}
+          files: dist/${{ matrix.asset_name }}
+          fail_on_unmatched_files: false
+
+  publish:
+    name: Publish Release
+    needs: [create-release, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Mark release as ready
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.create-release.outputs.tag }}
+          draft: false
