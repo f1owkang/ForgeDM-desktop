@@ -31,18 +31,26 @@ runs:
       shell: bash
       run: choco install ffmpeg --yes --no-progress
 
-    - name: Install and build dependencies
+    - name: Install and build dependencies (non-Windows)
+      if: runner.os != 'Windows'
+      shell: bash
+      run: yarn
+      env:
+        npm_config_arch: ${{ inputs.arch }}
+        TARGET_ARCH: ${{ inputs.arch }}
+
+    - name: Install dependencies (Windows, skip native build)
+      if: runner.os == 'Windows'
       shell: bash
       run: yarn install --ignore-scripts
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
 
-    - name: Build native modules (non-Windows)
-      if: runner.os != 'Windows'
+    - name: Run postinstall (Windows)
+      if: runner.os == 'Windows'
       shell: bash
-      run: |
-        cd node_modules/printenvz && npx node-gyp rebuild && cd ../..
+      run: ts-node -P script/tsconfig.json script/post-install.ts
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
