@@ -50,7 +50,7 @@ runs:
     - name: Run postinstall (Windows)
       if: runner.os == 'Windows'
       shell: bash
-      run: ts-node -P script/tsconfig.json script/post-install.ts
+      run: npx ts-node -P script/tsconfig.json script/post-install.ts
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
