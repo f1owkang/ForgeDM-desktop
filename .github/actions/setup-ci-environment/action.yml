@@ -38,10 +38,11 @@ runs:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
 
-    - name: Run postinstall script
+    - name: Build native modules (non-Windows)
       if: runner.os != 'Windows'
       shell: bash
-      run: yarn postinstall
+      run: |
+        cd node_modules/printenvz && npx node-gyp rebuild && cd ../..
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
