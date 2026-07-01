@@ -9,11 +9,9 @@
 
 import * as fs from 'fs'
 import * as path from 'path'
-import { fileURLToPath } from 'url'
 
-// ES module 兼容
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+// 使用 process.cwd() 获取项目根目录
+const projectRoot = process.cwd()
 
 // 翻译规则类型
 type TranslationRule = [string, string] | [string, string, string]
@@ -182,7 +180,7 @@ async function main() {
   console.log('================================\n')
 
   // 1. 读取 localization.json
-  const localizationPath = path.join(__dirname, '..', 'localization.json')
+  const localizationPath = path.join(projectRoot, 'localization.json')
 
   if (!fs.existsSync(localizationPath)) {
     console.error('❌ 未找到 localization.json，请先下载汉化映射文件')
@@ -199,7 +197,7 @@ async function main() {
   console.log(`   - 渲染进程规则：${localizationData.renderer.length} 条\n`)
 
   // 2. 扫描源文件
-  const srcDir = path.join(__dirname, '..', 'app', 'src')
+  const srcDir = path.join(projectRoot, 'app', 'src')
   const extensions = ['.ts', '.tsx']
   const files = scanDirectory(srcDir, extensions)
 
@@ -217,7 +215,7 @@ async function main() {
   console.log('🔄 开始汉化...\n')
 
   for (const file of files) {
-    const relativePath = path.relative(path.join(__dirname, '..'), file)
+    const relativePath = path.relative(projectRoot, file)
     const result = processFile(file, localizationData.main, localizationData.renderer)
 
     if (result.error) {
