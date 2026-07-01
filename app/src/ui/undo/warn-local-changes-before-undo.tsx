@@ -54,7 +54,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
       >
         {this.getWarningDialog()}
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Continue" />
+          <OkCancelButtonGroup destructive={true} okButtonText="继续" />
         </DialogFooter>
       </Dialog>
     )
@@ -72,7 +72,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
         </Row>
         <Row>
           <Checkbox
-            label="Do not show this message again"
+            label="不再显示此信息"
             value={
               this.state.confirmUndoCommit
                 ? CheckboxValue.Off

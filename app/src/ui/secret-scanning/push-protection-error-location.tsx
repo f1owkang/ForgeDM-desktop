@@ -44,7 +44,7 @@ export class PushProtectionErrorLocation extends React.Component<
             {location.commitSha.substring(0, 7)}
           </span>
           <CopyButton
-            ariaLabel="Copy the full SHA"
+            ariaLabel="复制完整的SHA"
             copyContent={location.commitSha}
           />
         </span>

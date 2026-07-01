@@ -66,7 +66,7 @@ export class DiscardChangesRetryDialog extends React.Component<
   private renderConfirmDiscardChanges() {
     return (
       <Checkbox
-        label="Do not show this message again"
+        label="不再显示此信息"
         value={
           this.state.confirmDiscardChanges
             ? CheckboxValue.Off
@@ -87,7 +87,7 @@ export class DiscardChangesRetryDialog extends React.Component<
               : 'Permanently discard changes'
           }
           okButtonTitle={`This will discard changes and they will be unrecoverable.`}
-          cancelButtonText="Cancel"
+          cancelButtonText="取消"
           destructive={true}
         />
       </DialogFooter>

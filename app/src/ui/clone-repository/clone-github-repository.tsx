@@ -121,7 +121,7 @@ export class CloneGithubRepository extends React.PureComponent<ICloneGithubRepos
           <TextBox
             value={this.props.path}
             label={__DARWIN__ ? 'Local Path' : 'Local path'}
-            placeholder="repository path"
+            placeholder="仓库路径"
             onValueChanged={this.props.onPathChanged}
           />
           <Button onClick={this.props.onChooseDirectory}>Choose…</Button>

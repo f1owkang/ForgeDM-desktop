@@ -34,7 +34,7 @@ export class UndoCommit extends React.Component<IUndoCommitProps, {}> {
 
     const authorDate = this.props.commit.author.date
     return (
-      <div id="undo-commit" role="group" aria-label="Undo commit">
+      <div id="undo-commit" role="group" aria-label="撤回提交">
         <div className="commit-info">
           <div className="ago">
             Committed <RelativeTime date={authorDate} />

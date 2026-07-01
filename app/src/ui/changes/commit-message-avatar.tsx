@@ -293,7 +293,7 @@ export class CommitMessageAvatar extends React.Component<
         {hasEmails && (
           <Row>
             <Select
-              label="Your Account Emails"
+              label="你的邮箱"
               value={this.state.accountEmail}
               onChange={this.onSelectedGitHubEmailChange}
             >

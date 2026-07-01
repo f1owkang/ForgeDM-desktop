@@ -444,7 +444,7 @@ export class CreateBranch extends React.Component<
         {
           title: defaultBranch.name,
           description:
-            "The default branch in your repository. Pick this to start on something new that's not dependent on your current branch.",
+            "你仓库中的默认分支。选择这个来开始新的工作，这与你当前的分支没有依赖关系。",
           key: StartPoint.DefaultBranch,
         },
         {
@@ -559,7 +559,7 @@ export class CreateBranch extends React.Component<
   ) => (
     <Row>
       <VerticalSegmentedControl
-        label="Create branch based on…"
+        label="基于…创建分支"
         items={items}
         selectedKey={selectedValue}
         onSelectionChanged={this.onBaseBranchChanged}

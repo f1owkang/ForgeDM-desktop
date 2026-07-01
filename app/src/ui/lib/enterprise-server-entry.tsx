@@ -28,7 +28,7 @@ interface IEnterpriseServerEntryProps {
    */
   readonly onSubmit: (url: string) => void
 
-  /** An array of additional buttons to render after the "Continue" button. */
+  /** An array of additional buttons to render after the "继续" button. */
   readonly additionalButtons?: ReadonlyArray<JSX.Element>
 }
 
@@ -54,7 +54,7 @@ export class EnterpriseServerEntry extends React.Component<
     return (
       <Form onSubmit={this.onSubmit}>
         <TextBox
-          label="Enterprise address"
+          label="企业地址"
           autoFocus={true}
           disabled={disableEntry}
           onValueChanged={this.onServerAddressChanged}

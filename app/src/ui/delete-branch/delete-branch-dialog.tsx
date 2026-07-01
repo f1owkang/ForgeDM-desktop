@@ -76,7 +76,7 @@ export class DeleteBranch extends React.Component<
             </strong>
           </p>
           <Checkbox
-            label="Yes, delete this branch on the remote"
+            label="是的，删除此分支的远程分支"
             value={
               this.state.includeRemoteBranch
                 ? CheckboxValue.On

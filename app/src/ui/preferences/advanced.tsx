@@ -89,7 +89,7 @@ export class Advanced extends React.Component<
         <div className="advanced-section">
           <h2>Background updates</h2>
           <Checkbox
-            label="Show status icons in the repository list"
+            label="在存储库列表中显示状态图标"
             value={
               this.props.repositoryIndicatorsEnabled
                 ? CheckboxValue.On

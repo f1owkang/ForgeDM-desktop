@@ -276,7 +276,7 @@ export class OpenPullRequestDialog extends React.Component<IOpenPullRequestDialo
         <OkCancelButtonGroup
           okButtonText={okButton}
           okButtonTitle={buttonTitle}
-          cancelButtonText="Cancel"
+          cancelButtonText="取消"
           okButtonDisabled={commitSHAs === null || commitSHAs.length === 0}
         />
       </DialogFooter>

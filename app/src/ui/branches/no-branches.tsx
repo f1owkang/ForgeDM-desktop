@@ -52,7 +52,7 @@ export class NoBranches extends React.Component<INoBranchesProps> {
 
     return (
       <div className="no-branches">
-        {this.props.noBranchesMessage ?? "Sorry, I can't find that branch"}
+        {this.props.noBranchesMessage ?? "对不起，我找不到那个分支"}
       </div>
     )
   }

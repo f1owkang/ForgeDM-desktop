@@ -82,7 +82,7 @@ export class TutorialDone extends React.Component<ITutorialDoneProps, {}> {
               image={TelescopeOcticon}
             />
             <SuggestedAction
-              title="Create a new repository"
+              title="创建一个新的存储库"
               description="Get started on a brand new project"
               buttonText={
                 __DARWIN__ ? 'Create Repository' : 'Create repository'

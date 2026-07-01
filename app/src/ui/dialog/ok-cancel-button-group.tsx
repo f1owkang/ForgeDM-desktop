@@ -37,7 +37,7 @@ interface IOkCancelButtonGroupProps {
   /** Whether the Ok button will be disabled or not, defaults to false */
   readonly okButtonDisabled?: boolean
 
-  /** An optional text/label for the Cancel button, defaults to "Cancel" */
+  /** An optional text/label for the Cancel button, defaults to "取消" */
   readonly cancelButtonText?: string | JSX.Element
 
   /** An optional title (i.e. tooltip) for the Cancel button, defaults to none */

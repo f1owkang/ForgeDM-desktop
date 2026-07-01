@@ -184,7 +184,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
             label="Name"
             value={this.state.name}
             onValueChanged={this.onNameChanged}
-            placeholder="My provider"
+            placeholder="我的提供程序"
             required={true}
             autoFocus={true}
           />

@@ -249,7 +249,7 @@ export class Appearance extends React.Component<
 
         <Checkbox
           className="prefer-absolute-dates"
-          label="Prefer absolute dates over relative"
+          label="优先使用绝对日期而非相对日期"
           value={
             this.props.preferAbsoluteDates
               ? CheckboxValue.On

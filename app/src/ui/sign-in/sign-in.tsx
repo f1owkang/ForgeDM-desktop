@@ -170,7 +170,7 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
       <DialogContent>
         <Row>
           <TextBox
-            label="Enterprise address"
+            label="企业地址"
             value={this.state.endpoint}
             onValueChanged={this.onEndpointChanged}
             placeholder="https://example.ghe.com"

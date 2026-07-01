@@ -73,7 +73,7 @@ export class CustomIntegrationForm extends React.Component<
             value={this.state.path}
             ref={this.pathInputRef}
             onValueChanged={this.onPathChanged}
-            placeholder="Path to executable"
+            placeholder="可执行文件路径"
             ariaDescribedBy={`${this.props.id}-custom-integration-path-error`}
           />
           <Button onClick={this.onChoosePath}>Choose…</Button>
@@ -83,7 +83,7 @@ export class CustomIntegrationForm extends React.Component<
           label="Arguments"
           value={this.state.arguments}
           onValueChanged={this.onParamsChanged}
-          placeholder="Command line arguments"
+          placeholder="命令行参数"
           ariaDescribedBy={`${this.props.id}-custom-integration-args-error`}
         />
         {this.renderArgsErrors()}

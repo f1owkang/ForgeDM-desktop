@@ -22,8 +22,8 @@ interface IChooseForkSettingsProps {
   readonly repository: RepositoryWithForkedGitHubRepository
   /**
    * Event triggered when the dialog is dismissed by the user.
-   * This happens both when the user clicks on "Continue" to
-   * save their changes or when they click on "Cancel".
+   * This happens both when the user clicks on "继续" to
+   * save their changes or when they click on "取消".
    */
   readonly onDismissed: () => void
 }
@@ -98,7 +98,7 @@ export class ChooseForkSettings extends React.Component<
         </DialogContent>
 
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText="Continue" />
+          <OkCancelButtonGroup okButtonText="继续" />
         </DialogFooter>
       </Dialog>
     )

@@ -215,7 +215,7 @@ export interface IDailyMeasures {
 
   /**
    * The number of times the user views the stash entry as a result
-   * of clicking the "Stashed changes" row directly
+   * of clicking the "暂存的更改" row directly
    */
   readonly stashViewCount: number
 

@@ -1820,7 +1820,7 @@ export class CommitMessage extends React.Component<
                 ? 'Commit description'
                 : undefined
             }
-            placeholder="Description"
+            placeholder="描述"
             value={this.state.commitMessage.description || ''}
             onValueChanged={this.onDescriptionChanged}
             autocompletionProviders={

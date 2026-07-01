@@ -105,23 +105,23 @@ export function buildDefaultMenuTemplate({
   }
 
   const fileMenu: Electron.MenuItemConstructorOptions = {
-    label: __DARWIN__ ? 'File' : '&File',
+    label: __DARWIN__ ? 'File' : '文件(&F)',
     submenu: [
       {
-        label: __DARWIN__ ? 'New Repository…' : 'New &repository…',
+        label: __DARWIN__ ? 'New Repository…' : '新建存储库(&R)',
         id: 'new-repository',
         click: emit('create-repository'),
         accelerator: 'CmdOrCtrl+N',
       },
       separator,
       {
-        label: __DARWIN__ ? 'Add Local Repository…' : 'Add &local repository…',
+        label: __DARWIN__ ? 'Add Local Repository…' : '添加本地存储库(&L)',
         id: 'add-local-repository',
         accelerator: 'CmdOrCtrl+O',
         click: emit('add-local-repository'),
       },
       {
-        label: __DARWIN__ ? 'Clone Repository…' : 'Clo&ne repository…',
+        label: __DARWIN__ ? 'Clone Repository…' : '克隆存储库(&N)',
         id: 'clone-repository',
         accelerator: 'CmdOrCtrl+Shift+O',
         click: emit('clone-repository'),
@@ -136,7 +136,7 @@ export function buildDefaultMenuTemplate({
     fileItems.push(
       separator,
       {
-        label: '&Options…',
+        label: '选项…(&O)',
         id: 'preferences',
         accelerator: 'CmdOrCtrl+,',
         click: emit('show-preferences'),
@@ -144,7 +144,7 @@ export function buildDefaultMenuTemplate({
       separator,
       {
         role: 'quit',
-        label: 'E&xit',
+        label: '退出(&X)',
         accelerator: exitAccelerator,
       }
     )
@@ -153,23 +153,23 @@ export function buildDefaultMenuTemplate({
   template.push(fileMenu)
 
   template.push({
-    label: __DARWIN__ ? 'Edit' : '&Edit',
+    label: __DARWIN__ ? 'Edit' : '编辑(&E)',
     submenu: [
-      { role: 'undo', label: __DARWIN__ ? 'Undo' : '&Undo' },
-      { role: 'redo', label: __DARWIN__ ? 'Redo' : '&Redo' },
+      { role: 'undo', label: __DARWIN__ ? 'Undo' : '撤销(&U)' },
+      { role: 'redo', label: __DARWIN__ ? 'Redo' : '恢复(&R)' },
       separator,
-      { role: 'cut', label: __DARWIN__ ? 'Cut' : 'Cu&t' },
-      { role: 'copy', label: __DARWIN__ ? 'Copy' : '&Copy' },
-      { role: 'paste', label: __DARWIN__ ? 'Paste' : '&Paste' },
+      { role: 'cut', label: __DARWIN__ ? 'Cut' : '剪切(&T)' },
+      { role: 'copy', label: __DARWIN__ ? 'Copy' : '复制(&C)' },
+      { role: 'paste', label: __DARWIN__ ? 'Paste' : '粘贴(&P)' },
       {
-        label: __DARWIN__ ? 'Select All' : 'Select &all',
+        label: __DARWIN__ ? 'Select All' : '全选(&A)',
         accelerator: 'CmdOrCtrl+A',
         click: emit('select-all'),
       },
       separator,
       {
         id: 'find',
-        label: __DARWIN__ ? 'Find' : '&Find',
+        label: __DARWIN__ ? 'Find' : '查找(&F)',
         accelerator: 'CmdOrCtrl+F',
         click: emit('find-text'),
       },
@@ -180,25 +180,25 @@ export function buildDefaultMenuTemplate({
     label: __DARWIN__ ? 'View' : '&View',
     submenu: [
       {
-        label: __DARWIN__ ? 'Show Changes' : '&Changes',
+        label: __DARWIN__ ? 'Show Changes' : '更改(&C)',
         id: 'show-changes',
         accelerator: 'CmdOrCtrl+1',
         click: emit('show-changes'),
       },
       {
-        label: __DARWIN__ ? 'Show History' : '&History',
+        label: __DARWIN__ ? 'Show History' : '历史(&H)',
         id: 'show-history',
         accelerator: 'CmdOrCtrl+2',
         click: emit('show-history'),
       },
       {
-        label: __DARWIN__ ? 'Show Repository List' : 'Repository &list',
+        label: __DARWIN__ ? 'Show Repository List' : '存储库列表(&L)',
         id: 'show-repository-list',
         accelerator: 'CmdOrCtrl+T',
         click: emit('choose-repository'),
       },
       {
-        label: __DARWIN__ ? 'Show Branches List' : '&Branches list',
+        label: __DARWIN__ ? 'Show Branches List' : '分支列表(&B)',
         id: 'show-branches-list',
         accelerator: 'CmdOrCtrl+B',
         click: emit('show-branches'),
@@ -212,7 +212,7 @@ export function buildDefaultMenuTemplate({
       },
       separator,
       {
-        label: __DARWIN__ ? 'Go to Summary' : 'Go to &Summary',
+        label: __DARWIN__ ? 'Go to Summary' : '转到摘要(&S)',
         id: 'go-to-commit-message',
         accelerator: 'CmdOrCtrl+G',
         click: emit('go-to-commit-message'),
@@ -236,22 +236,22 @@ export function buildDefaultMenuTemplate({
         click: emit('toggle-changes-filter'),
       },
       {
-        label: __DARWIN__ ? 'Toggle Full Screen' : 'Toggle &full screen',
+        label: __DARWIN__ ? 'Toggle Full Screen' : '切换全屏(&F)',
         role: 'togglefullscreen',
       },
       separator,
       {
-        label: __DARWIN__ ? 'Reset Zoom' : 'Reset zoom',
+        label: __DARWIN__ ? 'Reset Zoom' : '重置缩放',
         accelerator: 'CmdOrCtrl+0',
         click: zoom(ZoomDirection.Reset),
       },
       {
-        label: __DARWIN__ ? 'Zoom In' : 'Zoom in',
+        label: __DARWIN__ ? 'Zoom In' : '放大',
         accelerator: 'CmdOrCtrl+=',
         click: zoom(ZoomDirection.In),
       },
       {
-        label: __DARWIN__ ? 'Zoom Out' : 'Zoom out',
+        label: __DARWIN__ ? 'Zoom Out' : '缩小',
         accelerator: 'CmdOrCtrl+-',
         click: zoom(ZoomDirection.Out),
       },
@@ -273,7 +273,7 @@ export function buildDefaultMenuTemplate({
       },
       separator,
       {
-        label: '&Reload',
+        label: '重载(&R)',
         id: 'reload-window',
         // Ctrl+Alt is interpreted as AltGr on international keyboards and this
         // can clash with other shortcuts. We should always use Ctrl+Shift for
@@ -291,7 +291,7 @@ export function buildDefaultMenuTemplate({
         id: 'show-devtools',
         label: __DARWIN__
           ? 'Toggle Developer Tools'
-          : '&Toggle developer tools',
+          : '切换开发工具(&T)',
         accelerator: (() => {
           return __DARWIN__ ? 'Alt+Command+I' : 'Ctrl+Shift+I'
         })(),
@@ -312,7 +312,7 @@ export function buildDefaultMenuTemplate({
   const pushEventType = isForcePushForCurrentRepository ? 'force-push' : 'push'
 
   template.push({
-    label: __DARWIN__ ? 'Repository' : '&Repository',
+    label: __DARWIN__ ? 'Repository' : '存储库(&R)',
     id: 'repository',
     submenu: [
       {
@@ -323,13 +323,13 @@ export function buildDefaultMenuTemplate({
       },
       {
         id: 'pull',
-        label: __DARWIN__ ? 'Pull' : 'Pu&ll',
+        label: __DARWIN__ ? 'Pull' : '拉取(&L)',
         accelerator: 'CmdOrCtrl+Shift+P',
         click: emit('pull'),
       },
       {
         id: 'fetch',
-        label: __DARWIN__ ? 'Fetch' : '&Fetch',
+        label: __DARWIN__ ? 'Fetch' : '同步(&F)',
         accelerator: 'CmdOrCtrl+Shift+T',
         click: emit('fetch'),
       },
@@ -342,7 +342,7 @@ export function buildDefaultMenuTemplate({
       separator,
       {
         id: 'view-repository-on-github',
-        label: __DARWIN__ ? 'View on GitHub' : '&View on GitHub',
+        label: __DARWIN__ ? 'View on GitHub' : '在GitHub中显示(&V)',
         accelerator: 'CmdOrCtrl+Shift+G',
         click: emit('view-repository-on-github'),
       },
@@ -358,7 +358,7 @@ export function buildDefaultMenuTemplate({
         label: __DARWIN__
           ? 'Show in Finder'
           : __WIN32__
-          ? 'Show in E&xplorer'
+          ? '在文件管理器中显示(&X)'
           : 'Show in your File Manager',
         id: 'open-working-directory',
         accelerator: 'CmdOrCtrl+Shift+F',

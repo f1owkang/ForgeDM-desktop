@@ -53,7 +53,7 @@ export class WarningBeforeReset extends React.Component<
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Continue" />
+          <OkCancelButtonGroup destructive={true} okButtonText="继续" />
         </DialogFooter>
       </Dialog>
     )

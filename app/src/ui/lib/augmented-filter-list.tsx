@@ -169,7 +169,7 @@ interface IAugmentedSectionFilterListProps<T extends IFilterListItem> {
     filteredItems: ReadonlyArray<T>
   ) => void
 
-  /** Placeholder text for text box. Default is "Filter". */
+  /** Placeholder text for text box. Default is "过滤". */
   readonly placeholderText?: string
 
   /** If true, we do not render the filter. */

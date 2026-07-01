@@ -443,7 +443,7 @@ export class ExpandableCommitSummary extends React.Component<
       <div className="ecs-meta-item commit-ref">
         <Octicon symbol={octicons.gitCommit} />
         <div className="ref selectable">{isExpanded ? sha : shortSha}</div>
-        <CopyButton ariaLabel="Copy the full SHA" copyContent={sha} />
+        <CopyButton ariaLabel="复制完整的SHA" copyContent={sha} />
       </div>
     )
   }

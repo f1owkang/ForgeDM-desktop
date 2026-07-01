@@ -424,7 +424,7 @@ const MaxPullRequestLookups = 10
 
 const RecentRepositoriesKey = 'recently-selected-repositories'
 /**
- *  maximum number of repositories shown in the "Recent" repositories group
+ *  maximum number of repositories shown in the "最近" repositories group
  *  in the repository switcher dropdown
  */
 const RecentRepositoriesLength = 3

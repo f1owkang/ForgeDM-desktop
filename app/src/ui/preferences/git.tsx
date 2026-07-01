@@ -77,7 +77,7 @@ export class Git extends React.Component<IGitProps> {
     return (
       <>
         <Checkbox
-          label="Load Git hook environment variables from shell"
+          label="从Shell环境中加载Git钩子环境变量"
           ariaDescribedBy="git-hooks-env-description"
           value={
             this.props.enableGitHookEnv ? CheckboxValue.On : CheckboxValue.Off
@@ -114,7 +114,7 @@ export class Git extends React.Component<IGitProps> {
         {this.props.enableGitHookEnv && (
           <>
             <Checkbox
-              label="Cache Git hook environment variables"
+              label="缓存Git钩子环境变量"
               ariaDescribedBy="git-hooks-cache-description"
               onChange={this.onCacheGitHookEnvChanged}
               value={

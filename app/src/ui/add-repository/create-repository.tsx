@@ -449,7 +449,7 @@ export class CreateRepository extends React.Component<
     return (
       <Row>
         <Select
-          label="License"
+          label="开源协议"
           value={this.state.license}
           onChange={this.onLicenseChange}
         >
@@ -621,8 +621,8 @@ export class CreateRepository extends React.Component<
             onFullPathChanged={this.onFullPathChanged}
             onNameChanged={this.onNameChanged}
             onPathChanged={this.onPathChanged}
-            namePlaceholder="repository name"
-            pathPlaceholder="repository path"
+            namePlaceholder="仓库名字"
+            pathPlaceholder="仓库路径"
             nameAriaDescribedBy="existing-repository-path-error repo-sanitized-name-warning"
             pathAriaDescribedBy="existing-repository-path-error path-is-subfolder-of-repository"
           />
@@ -630,7 +630,7 @@ export class CreateRepository extends React.Component<
           <Row>
             <TextBox
               value={this.state.description}
-              label="Description"
+              label="描述"
               onValueChanged={this.onDescriptionChanged}
             />
           </Row>
@@ -640,7 +640,7 @@ export class CreateRepository extends React.Component<
 
           <Row>
             <Checkbox
-              label="Initialize this repository with a README"
+              label="用README初始化此仓库"
               value={
                 this.state.createWithReadme
                   ? CheckboxValue.On

@@ -941,7 +941,7 @@ export class Preferences extends React.Component<
     return (
       <DialogFooter>
         <OkCancelButtonGroup
-          okButtonText="Save"
+          okButtonText="保存"
           okButtonDisabled={hasDisabledError}
         />
       </DialogFooter>
@@ -971,9 +971,9 @@ export class Preferences extends React.Component<
       // If the entered default branch is empty, we don't store it and keep
       // the previous value.
       // We do this because the preferences dialog doesn't have error states,
-      // and since the preferences dialog have a global "Save" button (that will
+      // and since the preferences dialog have a global "保存" button (that will
       // save all the changes performed in every single tab), we cannot
-      // block the user from clicking "Save" because the entered branch is not valid
+      // block the user from clicking "保存" because the entered branch is not valid
       // (they will not be able to know the issue if they are in a different tab).
       if (
         this.state.defaultBranch.length > 0 &&

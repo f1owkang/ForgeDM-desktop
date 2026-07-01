@@ -34,7 +34,7 @@ export class CloneGenericRepository extends React.Component<
       <DialogContent className="clone-generic-repository-content">
         <Row>
           <TextBox
-            placeholder="URL or username/repository"
+            placeholder="链接或者 username/repository"
             value={this.props.url}
             onValueChanged={this.onUrlChanged}
             autoFocus={true}
@@ -53,7 +53,7 @@ export class CloneGenericRepository extends React.Component<
           <TextBox
             value={this.props.path}
             label={__DARWIN__ ? 'Local Path' : 'Local path'}
-            placeholder="repository path"
+            placeholder="仓库路径"
             onValueChanged={this.props.onPathChanged}
           />
           <Button onClick={this.props.onChooseDirectory}>Choose…</Button>

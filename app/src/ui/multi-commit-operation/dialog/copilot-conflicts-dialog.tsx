@@ -485,8 +485,8 @@ export class CopilotConflictsDialog extends React.Component<
               Switch to manual
             </Button>
             <OkCancelButtonGroup
-              okButtonText={`Continue ${operation}`}
-              cancelButtonText={`Abort ${operation}`}
+              okButtonText={`继续 ${operation}`}
+              cancelButtonText={`舍弃 ${operation}`}
               onCancelButtonClick={this.onAbort}
               cancelButtonDisabled={isContinuing}
             />

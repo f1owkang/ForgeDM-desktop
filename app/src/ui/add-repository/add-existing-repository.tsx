@@ -234,7 +234,7 @@ export class AddExistingRepository extends React.Component<
               ref={this.pathTextBoxRef}
               value={this.state.path}
               label={__DARWIN__ ? 'Local Path' : 'Local path'}
-              placeholder="repository path"
+              placeholder="仓库路径"
               onValueChanged={this.onPathChanged}
               ariaDescribedBy="add-existing-repository-path-error"
             />

@@ -252,7 +252,7 @@ function renderReference(
           <span className="copilot-conflicts-summary-reference-commit-ref">
             <span className="ref selectable">{ref.commit.shortSha}</span>
             <CopyButton
-              ariaLabel="Copy the full SHA"
+              ariaLabel="复制完整的SHA"
               copyContent={ref.commit.sha}
             />
           </span>

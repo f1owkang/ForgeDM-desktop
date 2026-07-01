@@ -57,7 +57,7 @@ export class DeleteWorktreeDialog extends React.Component<
             Are you sure you want to delete the worktree <Ref>{name}</Ref>?
           </p>
           <Checkbox
-            label="Do not show this message again"
+            label="不再显示此信息"
             value={
               this.state.confirmWorktreeRemoval
                 ? CheckboxValue.Off

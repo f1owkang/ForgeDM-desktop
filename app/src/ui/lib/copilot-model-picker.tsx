@@ -460,7 +460,7 @@ export class CopilotModelPicker extends React.Component<
     return (
       <PopoverDropdown
         className="copilot-model-picker"
-        contentTitle="Choose a model"
+        contentTitle="选择模型"
         buttonContent={this.renderButtonContent(buttonItem)}
         buttonAriaLabel={buttonAriaLabel}
         decoration={PopoverDecoration.Bordered}
@@ -482,7 +482,7 @@ export class CopilotModelPicker extends React.Component<
           onSelectionChanged={this.onSelectionChanged}
           getItemAriaLabel={this.getItemAriaLabel}
           getGroupAriaLabel={this.getGroupAriaLabel}
-          placeholderText="Filter models"
+          placeholderText="筛选模型"
           renderNoItems={this.renderNoItems}
         />
       </PopoverDropdown>

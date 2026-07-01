@@ -435,11 +435,11 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="view-stash-action"
-        title="View your stashed changes"
+        title="查看你的已暂存更改"
         menuItemId={itemId}
         description={description}
         discoverabilityContent={discoverabilityContent}
-        buttonText="View stash"
+        buttonText="查看暂存"
         type="primary"
         disabled={menuItem !== null && !menuItem.enabled}
         onClick={this.onViewStashClicked}
@@ -473,10 +473,10 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="publish-repository-action"
-        title="Publish your repository to GitHub"
-        description="This repository is currently only available on your local machine. By publishing it on GitHub you can share it, and collaborate with others."
+        title="将你的仓库发布到GitHub"
+        description="当前仓库仅在本地可用，发布到GitHub后可共享与协作。"
         discoverabilityContent={discoverabilityContent}
-        buttonText="Publish repository"
+        buttonText="公开存储库"
         menuItemId={itemId}
         type="primary"
         disabled={!menuItem.enabled}
@@ -522,11 +522,11 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="publish-branch-action"
-        title="Publish your branch"
+        title="发布你的分支"
         menuItemId={itemId}
         description={description}
         discoverabilityContent={discoverabilityContent}
-        buttonText="Publish branch"
+        buttonText="发布分支"
         type="primary"
         disabled={!menuItem.enabled}
         onClick={this.onPublishBranchClicked}

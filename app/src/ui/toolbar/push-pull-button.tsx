@@ -528,8 +528,8 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarButton
         {...this.defaultButtonProps()}
-        title="Publish repository"
-        description="Publish this repository to GitHub"
+        title="公开存储库"
+        description="将这个仓库发布到 GitHub"
         className="push-pull-button"
         icon={octicons.upload}
         style={ToolbarButtonStyle.Subtitle}
@@ -546,7 +546,7 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarButton
         {...this.defaultButtonProps()}
-        title="Publish branch"
+        title="发布分支"
         description={description}
         icon={octicons.upload}
         disabled={true}
@@ -574,7 +574,7 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarDropdown
         {...this.defaultDropdownProps()}
-        title="Publish branch"
+        title="发布分支"
         description={description}
         icon={octicons.upload}
         onClick={onClick}

@@ -239,7 +239,7 @@ export class Prompts extends React.Component<
           </h2>
           <div role="group" aria-labelledby="show-confirm-dialog-heading">
             <Checkbox
-              label="Removing repositories"
+              label="删除存储库..."
               value={
                 this.state.confirmRepositoryRemoval
                   ? CheckboxValue.On
@@ -248,7 +248,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmRepositoryRemovalChanged}
             />
             <Checkbox
-              label="Discarding changes"
+              label="放弃更改"
               value={
                 this.state.confirmDiscardChanges
                   ? CheckboxValue.On
@@ -257,7 +257,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmDiscardChangesChanged}
             />
             <Checkbox
-              label="Discarding changes permanently"
+              label="永久放弃更改"
               value={
                 this.state.confirmDiscardChangesPermanently
                   ? CheckboxValue.On
@@ -266,7 +266,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmDiscardChangesPermanentlyChanged}
             />
             <Checkbox
-              label="Discarding stash"
+              label="放弃暂存"
               value={
                 this.state.confirmDiscardStash
                   ? CheckboxValue.On
@@ -275,7 +275,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmDiscardStashChanged}
             />
             <Checkbox
-              label="Checking out a commit"
+              label="检查提交"
               value={
                 this.state.confirmCheckoutCommit
                   ? CheckboxValue.On
@@ -284,7 +284,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmCheckoutCommitChanged}
             />
             <Checkbox
-              label="Force pushing"
+              label="强制推送"
               value={
                 this.state.confirmForcePush
                   ? CheckboxValue.On
@@ -293,7 +293,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmForcePushChanged}
             />
             <Checkbox
-              label="Undo commit"
+              label="撤回提交"
               value={
                 this.state.confirmUndoCommit
                   ? CheckboxValue.On
@@ -302,7 +302,7 @@ export class Prompts extends React.Component<
               onChange={this.onConfirmUndoCommitChanged}
             />
             <Checkbox
-              label="Overriding commit message with generated message"
+              label="以生成的消息覆盖提交消息"
               value={
                 this.state.confirmCommitMessageOverride
                   ? CheckboxValue.On
@@ -326,7 +326,7 @@ export class Prompts extends React.Component<
         <div className="advanced-section">
           <h2>Commit Length</h2>
           <Checkbox
-            label="Show commit length warning"
+            label="显示提交的更改量警告"
             value={
               this.props.showCommitLengthWarning
                 ? CheckboxValue.On

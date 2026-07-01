@@ -53,7 +53,7 @@ interface IRepositoryPathProps {
   /** Optional placeholder for the name field. */
   readonly namePlaceholder?: string
 
-  /** Optional label for the path field. Defaults to "Local Path" / "Local path". */
+  /** Optional label for the path field. Defaults to "Local Path" / "本地路径". */
   readonly pathLabel?: string
 
   /** Optional placeholder for the path field. */

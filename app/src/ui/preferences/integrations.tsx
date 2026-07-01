@@ -208,7 +208,7 @@ export class Integrations extends React.Component<
     return (
       <Select
         label={enableCustomIntegration() ? undefined : label}
-        aria-label="External editor"
+        aria-label="外部编辑器"
         value={
           useCustomEditor
             ? CustomIntegrationValue

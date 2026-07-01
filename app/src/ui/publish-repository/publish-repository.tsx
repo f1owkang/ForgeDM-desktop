@@ -171,7 +171,7 @@ export class PublishRepository extends React.Component<
 
         <Row>
           <TextBox
-            label="Description"
+            label="描述"
             value={this.props.settings.description}
             onValueChanged={this.onDescriptionChange}
           />

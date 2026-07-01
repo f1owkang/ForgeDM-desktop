@@ -105,7 +105,7 @@ export class OpenWithExternalEditor extends React.Component<
 
     return (
       <Select
-        label="Select an editor"
+        label="选择一个编辑器"
         value={
           this.state.useCustomEditor
             ? CustomIntegrationValue

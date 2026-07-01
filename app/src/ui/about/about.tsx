@@ -159,9 +159,9 @@ export class About extends React.Component<IAboutProps> {
 
     switch (status) {
       case UpdateStatus.CheckingForUpdates:
-        return <UpdateInfo message="Checking for updates…" loading={true} />
+        return <UpdateInfo message="正在检查更新…" loading={true} />
       case UpdateStatus.UpdateAvailable:
-        return <UpdateInfo message="Downloading update…" loading={true} />
+        return <UpdateInfo message="下载更新中…" loading={true} />
       case UpdateStatus.UpdateNotAvailable:
         if (!lastSuccessfulCheck) {
           return null
@@ -187,7 +187,7 @@ export class About extends React.Component<IAboutProps> {
         )
       case UpdateStatus.UpdateReady:
         return (
-          <UpdateInfo message="An update has been downloaded and is ready to be installed." />
+          <UpdateInfo message="已下载更新并准备安装." />
         )
       case UpdateStatus.UpdateNotChecked:
         return null

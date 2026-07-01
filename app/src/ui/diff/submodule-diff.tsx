@@ -196,8 +196,8 @@ export class SubmoduleDiff extends React.Component<ISubmoduleDiffProps> {
     return (
       <span>
         <SuggestedAction
-          title="Open this submodule on GitHub Desktop"
-          description="You can open this submodule on GitHub Desktop as a normal repository to manage and commit any changes in it."
+          title="在 GitHub Desktop 中打开这个子模块"
+          description="您可以在 GitHub Desktop 中像普通仓库一样打开这个子模块，以管理和提交其中的任何更改。"
           buttonText={__DARWIN__ ? 'Open Repository' : 'Open repository'}
           type="primary"
           onClick={this.onOpenSubmoduleClick}

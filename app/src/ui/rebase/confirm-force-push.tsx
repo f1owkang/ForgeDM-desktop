@@ -51,7 +51,7 @@ export class ConfirmForcePush extends React.Component<
           </p>
           <div>
             <Checkbox
-              label="Do not show this message again"
+              label="不再显示此信息"
               value={
                 this.state.askForConfirmationOnForcePush
                   ? CheckboxValue.Off
