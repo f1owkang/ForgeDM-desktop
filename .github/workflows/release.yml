@@ -80,6 +80,8 @@ jobs:
           arch: ${{ matrix.arch }}
 
       - uses: ./.github/actions/setup-ci-environment
+        env:
+          GYP_MSVS_VERSION: 2022
         with:
           node-version: ${{ env.NODE_VERSION }}
           arch: ${{ matrix.arch }}
