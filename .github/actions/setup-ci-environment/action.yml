@@ -57,6 +57,8 @@ runs:
         LOCAL_NODE_GYP=node_modules/node-gyp
         rm -rf "$LOCAL_NODE_GYP"
         cp -r "$GLOBAL_NODE_GYP" "$LOCAL_NODE_GYP"
+        # Build native modules
+        cd node_modules/printenvz && npx node-gyp rebuild && cd ../..
         # Run postinstall
         npx ts-node -P script/tsconfig.json script/post-install.ts
       env:
