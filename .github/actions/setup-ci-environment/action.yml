@@ -55,6 +55,17 @@ runs:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
 
+    - name: Build printenvz (Windows)
+      if: runner.os == 'Windows'
+      shell: bash
+      run: |
+        cd node_modules/printenvz
+        npx node-gyp rebuild --msvs_version=2022
+        cd ../..
+      env:
+        npm_config_arch: ${{ inputs.arch }}
+        TARGET_ARCH: ${{ inputs.arch }}
+
     - name: Install cross-compilation copilot package
       shell: bash
       run: |

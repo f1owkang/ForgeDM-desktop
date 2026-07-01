@@ -104,7 +104,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           cd dist
-          ditto -ck --keepParent "desktop-darwin-${{ matrix.arch }}/GitHub Desktop.app" "${{ matrix.asset_name }}"
+          ditto -ck --keepParent "GitHub Desktop-darwin-${{ matrix.arch }}/GitHub Desktop.app" "${{ matrix.asset_name }}"
 
       # Windows: Find exe
       - name: Prepare Windows artifact
