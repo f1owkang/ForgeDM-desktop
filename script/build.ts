@@ -507,6 +507,12 @@ function copyCopilotDependency() {
     `app/node_modules/@github/copilot-${currentPlatform}-${currentArch}`
   )
 
+  // Skip if the platform-specific copilot package doesn't exist
+  if (!existsSync(copilotPkgDir)) {
+    console.log(`  Skipping copilot: @github/copilot-${currentPlatform}-${currentArch} not found`)
+    return
+  }
+
   const copilotDestination = path.resolve(outRoot, 'copilot')
   removeAndCopy(copilotPkgDir, copilotDestination)
 

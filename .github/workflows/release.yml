@@ -107,8 +107,18 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
 
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Install dependencies
         run: yarn install
+        env:
+          npm_config_arch: ${{ matrix.arch }}
 
       - name: Build production app
         run: yarn build:prod
@@ -143,7 +153,7 @@ jobs:
   build-macos:
     name: Build macOS ${{ matrix.arch }}
     needs: create-release
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
     permissions:
       contents: write
     strategy:
@@ -151,8 +161,10 @@ jobs:
       matrix:
         include:
           - arch: x64
+            os: macos-13
             asset_name: ForgeDM-Desktop-macOS-x64.zip
           - arch: arm64
+            os: macos-latest
             asset_name: ForgeDM-Desktop-macOS-arm64.zip
     timeout-minutes: 120
     steps:
