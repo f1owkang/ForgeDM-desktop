@@ -98,6 +98,9 @@ jobs:
           - arch: arm64
             asset_name: ForgeDM-Desktop-Windows-arm64.exe
     timeout-minutes: 120
+    env:
+      GYP_MSVS_VERSION: 2022
+      npm_config_msvs_version: 2022
     steps:
       - uses: actions/checkout@v7
         with:
@@ -108,21 +111,20 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
 
-      - name: Setup MSVC
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: ${{ matrix.arch }}
-
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
       - name: Install dependencies
         run: yarn install
         env:
           npm_config_arch: ${{ matrix.arch }}
-          GYP_MSVS_VERSION: 2022
 
       - name: Build production app
         run: yarn build:prod
