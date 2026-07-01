@@ -60,7 +60,7 @@ jobs:
           - name: Windows-x64
             os: windows-latest
             arch: x64
-            asset_name: ForgeDM-Desktop-Windows-x64.exe
+            asset_name: ForgeDM-Desktop-Windows-x64.zip
           - name: Linux-x64
             os: ubuntu-latest
             arch: x64
@@ -94,8 +94,22 @@ jobs:
           TARGET_ARCH: ${{ matrix.arch }}
           ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
 
-      - name: Package app
+      - name: Package app (non-Windows)
+        if: runner.os != 'Windows'
         run: yarn package
+        env:
+          npm_config_arch: ${{ matrix.arch }}
+
+      - name: Package app (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          # Skip Squirrel packaging, just create a zip of the built app
+          cd dist
+          $distDir = Get-ChildItem -Directory -Filter "desktop-win32-*" | Select-Object -First 1
+          if ($distDir) {
+            Compress-Archive -Path $distDir.FullName -DestinationPath "ForgeDM-Desktop-Windows-x64.zip"
+          }
         env:
           npm_config_arch: ${{ matrix.arch }}
 
@@ -105,20 +119,6 @@ jobs:
         run: |
           cd dist
           ditto -ck --keepParent "GitHub Desktop-darwin-${{ matrix.arch }}/GitHub Desktop.app" "${{ matrix.asset_name }}"
-
-      # Windows: Find exe
-      - name: Prepare Windows artifact
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          cd dist
-          $exe = Get-ChildItem -Filter "*.exe" -Recurse | Select-Object -First 1
-          if ($exe) {
-            Copy-Item $exe.FullName "${{ matrix.asset_name }}"
-          } else {
-            Write-Error "No .exe file found in dist directory"
-            exit 1
-          }
 
       # Linux: Create tar.gz
       - name: Create Linux archive
