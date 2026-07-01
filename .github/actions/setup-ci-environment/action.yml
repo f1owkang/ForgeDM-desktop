@@ -44,7 +44,13 @@ runs:
       shell: bash
       run: |
         npm install -g node-gyp@latest
-        echo "NODE_GYP_PATH=$(npm root -g)/node-gyp/bin/node-gyp.js" >> $GITHUB_ENV
+        # Replace local node-gyp with global one
+        GLOBAL_NODE_GYP=$(npm root -g)/node-gyp
+        LOCAL_NODE_GYP=node_modules/node-gyp
+        if [ -d "$LOCAL_NODE_GYP" ]; then
+          rm -rf "$LOCAL_NODE_GYP"
+          cp -r "$GLOBAL_NODE_GYP" "$LOCAL_NODE_GYP"
+        fi
 
     - name: Install and build dependencies (Windows)
       if: runner.os == 'Windows'
@@ -53,7 +59,6 @@ runs:
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
-        npm_config_node_gyp: ${{ env.NODE_GYP_PATH }}
 
     - name: Install cross-compilation copilot package
       shell: bash
