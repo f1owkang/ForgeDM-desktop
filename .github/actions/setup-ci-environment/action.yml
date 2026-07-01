@@ -37,6 +37,7 @@ runs:
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
+        GYP_MSVS_VERSION: 2022
 
     - name: Install cross-compilation copilot package
       shell: bash
