@@ -31,7 +31,7 @@ jobs:
             echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
           fi
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.get-tag.outputs.tag }}
           name: ForgeDM Desktop ${{ steps.get-tag.outputs.tag }}
@@ -50,26 +50,26 @@ jobs:
       matrix:
         include:
           - name: macOS-arm64
-            os: macos-14-xlarge
+            os: macos-latest
             arch: arm64
             asset_name: ForgeDM-Desktop-macOS-arm64.zip
           - name: macOS-x64
-            os: macos-14-xlarge
+            os: macos-latest
             arch: x64
             asset_name: ForgeDM-Desktop-macOS-x64.zip
           - name: Windows-x64
-            os: windows-2022
+            os: windows-latest
             arch: x64
             asset_name: ForgeDM-Desktop-Windows-x64.exe
           - name: Windows-arm64
-            os: windows-2022
+            os: windows-latest
             arch: arm64
             asset_name: ForgeDM-Desktop-Windows-arm64.exe
           - name: Linux-x64
             os: ubuntu-latest
             arch: x64
             asset_name: ForgeDM-Desktop-Linux-x64.tar.gz
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v7
         with:
@@ -122,7 +122,7 @@ jobs:
 
       # Upload to Release
       - name: Upload Release Asset
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.create-release.outputs.tag }}
           files: dist/${{ matrix.asset_name }}
@@ -132,11 +132,30 @@ jobs:
     name: Publish Release
     needs: [create-release, build]
     runs-on: ubuntu-latest
+    if: always() && needs.create-release.result == 'success'
     permissions:
       contents: write
     steps:
+      - name: Check build results
+        id: check-builds
+        run: |
+          if [ "${{ needs.build.result }}" = "success" ]; then
+            echo "publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "publish=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Mark release as ready
-        uses: softprops/action-gh-release@v1
+        if: steps.check-builds.outputs.publish == 'true'
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.create-release.outputs.tag }}
           draft: false
+
+      - name: Keep release as draft on failure
+        if: steps.check-builds.outputs.publish == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.create-release.outputs.tag }}
+          draft: true
+          body: "⚠️ Some builds failed. Check the workflow run for details."
