@@ -106,7 +106,7 @@ jobs:
         run: |
           # Skip Squirrel packaging, just create a zip of the built app
           cd dist
-          $distDir = Get-ChildItem -Directory -Filter "GitHub Desktop-win32-*" | Select-Object -First 1
+          $distDir = Get-ChildItem -Directory -Filter "GitHubDesktop-win32-*" | Select-Object -First 1
           if ($distDir) {
             Compress-Archive -Path $distDir.FullName -DestinationPath "ForgeDM-Desktop-Windows-x64.zip"
           } else {
