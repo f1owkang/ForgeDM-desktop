@@ -39,29 +39,15 @@ runs:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
 
-    - name: Install dependencies (Windows, skip native build)
+    - name: Upgrade node-gyp (Windows)
       if: runner.os == 'Windows'
       shell: bash
-      run: yarn install --ignore-scripts
-      env:
-        npm_config_arch: ${{ inputs.arch }}
-        TARGET_ARCH: ${{ inputs.arch }}
+      run: npm install -g node-gyp@latest
 
-    - name: Run postinstall (Windows)
+    - name: Install and build dependencies (Windows)
       if: runner.os == 'Windows'
       shell: bash
-      run: npx ts-node -P script/tsconfig.json script/post-install.ts
-      env:
-        npm_config_arch: ${{ inputs.arch }}
-        TARGET_ARCH: ${{ inputs.arch }}
-
-    - name: Build printenvz (Windows)
-      if: runner.os == 'Windows'
-      shell: bash
-      run: |
-        cd node_modules/printenvz
-        npx node-gyp rebuild --msvs_version=2022
-        cd ../..
+      run: yarn
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
