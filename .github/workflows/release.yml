@@ -68,6 +68,7 @@ jobs:
     timeout-minutes: 120
     env:
       RELEASE_CHANNEL: development
+      GYP_MSVS_VERSION: 2022
     steps:
       - uses: actions/checkout@v7
         with:
