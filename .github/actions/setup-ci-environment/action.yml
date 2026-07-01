@@ -39,7 +39,15 @@ runs:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
 
-    - name: Upgrade node-gyp (Windows)
+    - name: Install dependencies (Windows)
+      if: runner.os == 'Windows'
+      shell: bash
+      run: yarn install --ignore-scripts
+      env:
+        npm_config_arch: ${{ inputs.arch }}
+        TARGET_ARCH: ${{ inputs.arch }}
+
+    - name: Upgrade node-gyp and rebuild (Windows)
       if: runner.os == 'Windows'
       shell: bash
       run: |
@@ -47,15 +55,10 @@ runs:
         # Replace local node-gyp with global one
         GLOBAL_NODE_GYP=$(npm root -g)/node-gyp
         LOCAL_NODE_GYP=node_modules/node-gyp
-        if [ -d "$LOCAL_NODE_GYP" ]; then
-          rm -rf "$LOCAL_NODE_GYP"
-          cp -r "$GLOBAL_NODE_GYP" "$LOCAL_NODE_GYP"
-        fi
-
-    - name: Install and build dependencies (Windows)
-      if: runner.os == 'Windows'
-      shell: bash
-      run: yarn
+        rm -rf "$LOCAL_NODE_GYP"
+        cp -r "$GLOBAL_NODE_GYP" "$LOCAL_NODE_GYP"
+        # Run postinstall
+        npx ts-node -P script/tsconfig.json script/post-install.ts
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
