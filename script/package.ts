@@ -39,6 +39,8 @@ if (process.platform === 'darwin') {
   packageOSX()
 } else if (process.platform === 'win32') {
   packageWindows()
+} else if (process.platform === 'linux') {
+  packageLinux()
 } else {
   console.error(`I don't know how to package for ${process.platform} :(`)
   process.exit(1)
@@ -149,4 +151,15 @@ function packageWindows() {
       console.error(`Error packaging: ${e}`)
       process.exit(1)
     })
+}
+
+function packageLinux() {
+  const arch = getDistArchitecture()
+  const tarName = `ForgeDM-Desktop-linux-${arch}.tar.gz`
+
+  console.log('Packaging for Linux…')
+  cp.execSync(
+    `tar -czf "${outputDir}/${tarName}" -C "${path.dirname(distPath)}" "${path.basename(distPath)}"`
+  )
+  console.log(`Created ${tarName}`)
 }

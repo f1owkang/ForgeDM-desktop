@@ -39,36 +39,63 @@ jobs:
           prerelease: false
           generate_release_notes: true
 
-  build:
-    name: Build ${{ matrix.name }}
+  build-linux:
+    name: Build Linux
     needs: create-release
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build production app
+        run: yarn build:prod
+        env:
+          npm_config_arch: x64
+          TARGET_ARCH: x64
+          ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
+
+      - name: Package app
+        run: yarn package
+        env:
+          npm_config_arch: x64
+
+      - name: Create archive
+        run: |
+          cd dist
+          tar -czf ForgeDM-Desktop-Linux-x64.tar.gz desktop-linux-x64/
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.create-release.outputs.tag }}
+          files: dist/ForgeDM-Desktop-Linux-x64.tar.gz
+
+  build-windows:
+    name: Build Windows ${{ matrix.arch }}
+    needs: create-release
+    runs-on: windows-latest
     permissions:
       contents: write
     strategy:
       fail-fast: false
       matrix:
         include:
-          - name: macOS-arm64
-            os: macos-latest
-            arch: arm64
-            asset_name: ForgeDM-Desktop-macOS-arm64.zip
-          - name: macOS-x64
-            os: macos-latest
-            arch: x64
-            asset_name: ForgeDM-Desktop-macOS-x64.zip
-          - name: Windows-x64
-            os: windows-latest
-            arch: x64
+          - arch: x64
             asset_name: ForgeDM-Desktop-Windows-x64.exe
-          - name: Windows-arm64
-            os: windows-latest
-            arch: arm64
+          - arch: arm64
             asset_name: ForgeDM-Desktop-Windows-arm64.exe
-          - name: Linux-x64
-            os: ubuntu-latest
-            arch: x64
-            asset_name: ForgeDM-Desktop-Linux-x64.tar.gz
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v7
@@ -95,42 +122,78 @@ jobs:
         env:
           npm_config_arch: ${{ matrix.arch }}
 
-      # macOS: Create zip
-      - name: Create macOS archive
-        if: runner.os == 'macOS'
-        run: |
-          cd dist
-          ditto -ck --keepParent "desktop-darwin-${{ matrix.arch }}/ForgeDM Desktop.app" "${{ matrix.asset_name }}"
-
-      # Windows: Rename exe
-      - name: Prepare Windows artifact
-        if: runner.os == 'Windows'
+      - name: Find and rename installer
         shell: pwsh
         run: |
           cd dist
           $exe = Get-ChildItem -Filter "*.exe" -Recurse | Select-Object -First 1
           if ($exe) {
             Copy-Item $exe.FullName "${{ matrix.asset_name }}"
+          } else {
+            Write-Error "No .exe file found in dist directory"
+            exit 1
           }
 
-      # Linux: Create tar.gz
-      - name: Create Linux archive
-        if: runner.os == 'Linux'
-        run: |
-          cd dist
-          tar -czf "${{ matrix.asset_name }}" desktop-linux-${{ matrix.arch }}/
-
-      # Upload to Release
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.create-release.outputs.tag }}
           files: dist/${{ matrix.asset_name }}
-          fail_on_unmatched_files: false
+
+  build-macos:
+    name: Build macOS ${{ matrix.arch }}
+    needs: create-release
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            asset_name: ForgeDM-Desktop-macOS-x64.zip
+          - arch: arm64
+            asset_name: ForgeDM-Desktop-macOS-arm64.zip
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build production app
+        run: yarn build:prod
+        env:
+          npm_config_arch: ${{ matrix.arch }}
+          TARGET_ARCH: ${{ matrix.arch }}
+          ELECTRON_MIRROR: https://npmmirror.com/mirrors/electron/
+
+      - name: Package app
+        run: yarn package
+        env:
+          npm_config_arch: ${{ matrix.arch }}
+
+      - name: Create archive
+        run: |
+          cd dist
+          ditto -ck --keepParent "desktop-darwin-${{ matrix.arch }}/ForgeDM Desktop.app" "${{ matrix.asset_name }}"
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.create-release.outputs.tag }}
+          files: dist/${{ matrix.asset_name }}
 
   publish:
     name: Publish Release
-    needs: [create-release, build]
+    needs: [create-release, build-linux, build-windows, build-macos]
     runs-on: ubuntu-latest
     if: always() && needs.create-release.result == 'success'
     permissions:
@@ -139,23 +202,33 @@ jobs:
       - name: Check build results
         id: check-builds
         run: |
-          if [ "${{ needs.build.result }}" = "success" ]; then
-            echo "publish=true" >> $GITHUB_OUTPUT
+          echo "linux=${{ needs.build-linux.result }}" >> $GITHUB_OUTPUT
+          echo "windows=${{ needs.build-windows.result }}" >> $GITHUB_OUTPUT
+          echo "macos=${{ needs.build-macos.result }}" >> $GITHUB_OUTPUT
+
+          if [ "${{ needs.build-linux.result }}" = "success" ] || \
+             [ "${{ needs.build-windows.result }}" = "success" ] || \
+             [ "${{ needs.build-macos.result }}" = "success" ]; then
+            echo "has_success=true" >> $GITHUB_OUTPUT
           else
-            echo "publish=false" >> $GITHUB_OUTPUT
+            echo "has_success=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Mark release as ready
-        if: steps.check-builds.outputs.publish == 'true'
+      - name: Publish release
+        if: steps.check-builds.outputs.has_success == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.create-release.outputs.tag }}
           draft: false
 
-      - name: Keep release as draft on failure
-        if: steps.check-builds.outputs.publish == 'false'
+      - name: Keep as draft on failure
+        if: steps.check-builds.outputs.has_success == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.create-release.outputs.tag }}
           draft: true
-          body: "⚠️ Some builds failed. Check the workflow run for details."
+          body: |
+            ⚠️ Some builds failed. Check the workflow run for details.
+            - Linux: ${{ needs.build-linux.result }}
+            - Windows: ${{ needs.build-windows.result }}
+            - macOS: ${{ needs.build-macos.result }}
