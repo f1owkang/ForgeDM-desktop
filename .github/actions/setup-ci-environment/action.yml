@@ -42,7 +42,9 @@ runs:
     - name: Upgrade node-gyp (Windows)
       if: runner.os == 'Windows'
       shell: bash
-      run: npm install -g node-gyp@latest
+      run: |
+        npm install -g node-gyp@latest
+        echo "NODE_GYP_PATH=$(npm root -g)/node-gyp/bin/node-gyp.js" >> $GITHUB_ENV
 
     - name: Install and build dependencies (Windows)
       if: runner.os == 'Windows'
@@ -51,6 +53,7 @@ runs:
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
+        npm_config_node_gyp: ${{ env.NODE_GYP_PATH }}
 
     - name: Install cross-compilation copilot package
       shell: bash
