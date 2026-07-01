@@ -33,11 +33,18 @@ runs:
 
     - name: Install and build dependencies
       shell: bash
-      run: yarn
+      run: yarn install --ignore-scripts
       env:
         npm_config_arch: ${{ inputs.arch }}
         TARGET_ARCH: ${{ inputs.arch }}
-        GYP_MSVS_VERSION: 2022
+
+    - name: Run postinstall script
+      if: runner.os != 'Windows'
+      shell: bash
+      run: yarn postinstall
+      env:
+        npm_config_arch: ${{ inputs.arch }}
+        TARGET_ARCH: ${{ inputs.arch }}
 
     - name: Install cross-compilation copilot package
       shell: bash
