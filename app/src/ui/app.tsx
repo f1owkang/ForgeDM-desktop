@@ -1686,6 +1686,7 @@ export class App extends React.Component<IAppProps, IAppState> {
             selectedShell={this.state.selectedShell}
             selectedTheme={this.state.selectedTheme}
             selectedTabSize={this.state.selectedTabSize}
+            selectedLanguagePreference={this.state.selectedLanguagePreference}
             useCustomEditor={this.state.useCustomEditor}
             customEditor={this.state.customEditor}
             useCustomShell={this.state.useCustomShell}

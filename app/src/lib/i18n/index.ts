@@ -9,7 +9,8 @@ export * from './language'
 export function initializeI18n(language: SupportedLanguage = DefaultLanguage) {
   if (i18n.isInitialized) {
     if (i18n.language !== language) {
-      i18n.changeLanguage(language).catch(err => {
+      const result = i18n.changeLanguage(language)
+      result.catch(err => {
         log.error(`[i18n] failed changing language to ${language}`, err)
       })
     }

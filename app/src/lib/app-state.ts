@@ -65,6 +65,7 @@ import { ICustomIntegration } from './custom-integration'
 import { Emoji } from './emoji'
 import { IUpdateState } from '../ui/lib/update-store'
 import type { Model } from '@github/copilot-sdk/dist/generated/rpc'
+import type { ApplicationLanguagePreference } from './i18n'
 
 export enum SelectionType {
   Repository,
@@ -318,6 +319,9 @@ export interface IAppState {
 
   /** The selected tab size preference */
   readonly selectedTabSize: number
+
+  /** The selected application language preference */
+  readonly selectedLanguagePreference: ApplicationLanguagePreference
 
   /**
    * A map keyed on a user account (GitHub.com or GitHub Enterprise)
