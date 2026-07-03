@@ -85,6 +85,21 @@
       },
       "viewOnGitHub": "在 GitHub 上查看",
       "viewOnGitHubEnterprise": "在 GitHub Enterprise 上查看"
+    },
+    "expandableCommitSummary": {
+      "emptyMessage": "空提交信息",
+      "collapse": "折叠",
+      "expand": "展开",
+      "collapseDetails": "折叠提交详情",
+      "expandDetails": "展开提交详情",
+      "unreachableCommits": "{{count}} 个不可达{{commits}}",
+      "notIncluded": "未包含。",
+      "unknownUser": "未知用户",
+      "copySha": "复制完整 SHA",
+      "showingChangesFrom": "显示以下提交的更改",
+      "commitCount": "{{count}} 个{{commits}}",
+      "addedLines": "{{count}} 行新增",
+      "removedLines": "{{count}} 行删除"
     }
   },
   "enterpriseServerEntry": {
