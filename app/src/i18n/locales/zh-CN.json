@@ -7,6 +7,31 @@
     "name": "名称",
     "otherEmail": "其他"
   },
+  "copilotModelPicker": {
+    "buttonAriaLabel": "{{label}}：{{selection}}",
+    "chooseModel": "选择模型",
+    "defaultTitle": "{{name}}（默认）",
+    "filterModels": "筛选模型",
+    "noModelsFound": "未找到模型。",
+    "none": "无",
+    "reasoningLevels": {
+      "one": "1 个级别",
+      "other": "{{count}} 个级别"
+    },
+    "summaryWithCategory": "{{category}}模型。{{useOfCredits}}",
+    "useOfCredits": "点数用量：{{category}}"
+  },
+  "copilotModelSelectionInfo": {
+    "aiCreditsPerTokens": "每 {{tokenCount}} 个 token 的 AI 点数",
+    "cachedInput": "缓存输入",
+    "context": "上下文",
+    "input": "输入",
+    "output": "输出",
+    "reasoning": "推理",
+    "showCostsAria": "显示 Copilot 模型点数费用",
+    "showCostsTooltip": "显示点数费用",
+    "unavailable": "不可用"
+  },
   "menu": {
     "app": {
       "about": "关于 GitHub Desktop",
@@ -385,6 +410,58 @@
         "light": "浅色",
         "loadingSystem": "正在加载系统主题",
         "system": "跟随系统"
+      }
+    },
+    "copilot": {
+      "access": {
+        "checking": "正在检查 Copilot 访问权限…",
+        "desktopDisabled": {
+          "action": "打开 Copilot 功能设置",
+          "message": "你的账户已有 Copilot 许可证，但 Copilot 功能设置中已禁用“GitHub Desktop 中的 Copilot”。"
+        },
+        "noLicense": {
+          "action": "查看 Copilot 方案",
+          "message": "GitHub Desktop 中的 Copilot 功能需要 GitHub Copilot 许可证。"
+        },
+        "signedOut": {
+          "action": "登录",
+          "message": "登录拥有 Copilot 许可证的账户以配置 Copilot 设置。"
+        }
+      },
+      "models": {
+        "alwaysUseForConflicts": {
+          "darwin": "检测到冲突时始终使用 Copilot",
+          "default": "检测到冲突时始终使用 Copilot"
+        },
+        "commitMessageGeneration": {
+          "darwin": "提交消息生成",
+          "default": "提交消息生成"
+        },
+        "conflictModelDescription": "模型更改会应用到之后的冲突解决。",
+        "conflictResolution": {
+          "darwin": "冲突解决",
+          "default": "冲突解决"
+        },
+        "customInstructions": "通过使用<instructions>自定义指令</instructions>来调整 Copilot 的行为。",
+        "empty": "没有可用的 Copilot 模型。",
+        "learnCommitMessages": "了解有关生成提交消息的更多信息。",
+        "loading": "正在加载可用模型…"
+      },
+      "providers": {
+        "add": {
+          "darwin": "添加 Provider…",
+          "default": "添加 provider…"
+        },
+        "editAria": "编辑 {{name}}",
+        "empty": "添加自定义 provider，即可通过 OpenAI 兼容端点、Azure、Anthropic 或 Ollama 等本地 provider 使用你自己的 API key。",
+        "local": "本地",
+        "modelCountOne": "1 个模型",
+        "modelCountOther": "{{count}} 个模型",
+        "removeAria": "移除 {{name}}"
+      },
+      "tabs": {
+        "models": "模型",
+        "providers": "Providers"
       }
     },
     "integrations": {
