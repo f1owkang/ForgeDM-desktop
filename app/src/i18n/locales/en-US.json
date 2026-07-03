@@ -56,6 +56,20 @@
     "notMatched": "This email address does not match {{accountType}}. Your commits will be wrongly attributed.",
     "singleAccount": "your {{accountType}} account"
   },
+  "history": {
+    "compareAheadUpToDate": "The compared branch (<1>{{branch}}</1>) is up to date with your branch",
+    "compareBehindUpToDate": "Your branch is up to date with the compared branch (<1>{{branch}}</1>)",
+    "noHistory": "No history",
+    "unreachable": "Unreachable",
+    "reachable": "Reachable",
+    "unreachableMessage": "You will not see changes from the following {{commits}} because {{pronoun}} not in the ancestry path of the most recent commit in your selection.",
+    "reachableMessage": "You will see changes from the following {{commits}} because {{pronoun}} in the ancestry path of the most recent commit in your selection.",
+    "learnMoreUnreachable": "Learn more about unreachable commits.",
+    "commitReachability": {
+      "darwin": "Commit Reachability",
+      "default": "Commit reachability"
+    }
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise address",
     "continue": "Continue"

@@ -56,6 +56,20 @@
     "notMatched": "此电子邮件地址与{{accountType}}不匹配。你的提交将被错误归属。",
     "singleAccount": "你的 {{accountType}} 账户"
   },
+  "history": {
+    "compareAheadUpToDate": "被比较的分支（<1>{{branch}}</1>）已是最新",
+    "compareBehindUpToDate": "你的分支与被比较的分支（<1>{{branch}}</1>）已是最新",
+    "noHistory": "无历史记录",
+    "unreachable": "不可达",
+    "reachable": "可达",
+    "unreachableMessage": "你将不会看到以下 {{commits}} 的更改，因为{{pronoun}}不在你所选最新提交的祖先路径中。",
+    "reachableMessage": "你将看到以下 {{commits}} 的更改，因为{{pronoun}}在你所选最新提交的祖先路径中。",
+    "learnMoreUnreachable": "了解有关不可达提交的更多信息。",
+    "commitReachability": {
+      "darwin": "提交可达性",
+      "default": "提交可达性"
+    }
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise 地址",
     "continue": "继续"
