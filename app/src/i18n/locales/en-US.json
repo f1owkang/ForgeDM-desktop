@@ -2,10 +2,33 @@
   "common": {
     "cancel": "Cancel"
   },
+  "configureGitUser": {
+    "configureManually": "Configure manually",
+    "email": "Email",
+    "exampleCommit": {
+      "message": "Fix all the things",
+      "title": "Example commit"
+    },
+    "name": "Name",
+    "namePlaceholder": "Your Name",
+    "save": "Save",
+    "useGitHubAccount": "Use my GitHub{{accountType}} account name and email address"
+  },
   "gitConfigUser": {
     "email": "Email",
     "name": "Name",
     "otherEmail": "Other"
+  },
+  "enterpriseServerEntry": {
+    "address": "Enterprise address",
+    "continue": "Continue"
+  },
+  "passwordTextBox": {
+    "toggleVisibility": "Toggle password visibility"
+  },
+  "textBox": {
+    "clear": "Clear",
+    "inputCleared": "Input cleared"
   },
   "copilotModelPicker": {
     "buttonAriaLabel": "{{label}}: {{selection}}",

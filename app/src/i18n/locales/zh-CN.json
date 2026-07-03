@@ -2,10 +2,33 @@
   "common": {
     "cancel": "取消"
   },
+  "configureGitUser": {
+    "configureManually": "手动配置",
+    "email": "电子邮件",
+    "exampleCommit": {
+      "message": "修复所有问题",
+      "title": "示例提交"
+    },
+    "name": "名称",
+    "namePlaceholder": "你的名称",
+    "save": "保存",
+    "useGitHubAccount": "使用我的 GitHub{{accountType}} 账户名称和电子邮件地址"
+  },
   "gitConfigUser": {
     "email": "电子邮件",
     "name": "名称",
     "otherEmail": "其他"
+  },
+  "enterpriseServerEntry": {
+    "address": "Enterprise 地址",
+    "continue": "继续"
+  },
+  "passwordTextBox": {
+    "toggleVisibility": "切换密码可见性"
+  },
+  "textBox": {
+    "clear": "清除",
+    "inputCleared": "输入已清除"
   },
   "copilotModelPicker": {
     "buttonAriaLabel": "{{label}}：{{selection}}",
