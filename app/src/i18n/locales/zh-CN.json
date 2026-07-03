@@ -19,6 +19,14 @@
     "name": "名称",
     "otherEmail": "其他"
   },
+  "gitEmailNotFoundWarning": {
+    "learnMore": "了解更多。",
+    "learnMoreAria": "了解有关提交归属的更多信息",
+    "matched": "此电子邮件地址与{{accountType}}匹配。",
+    "multipleAccounts": "你的 GitHub.com 或 GitHub Enterprise 账户",
+    "notMatched": "此电子邮件地址与{{accountType}}不匹配。你的提交将被错误归属。",
+    "singleAccount": "你的 {{accountType}} 账户"
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise 地址",
     "continue": "继续"
@@ -29,6 +37,9 @@
   "textBox": {
     "clear": "清除",
     "inputCleared": "输入已清除"
+  },
+  "tooltippedCommitSha": {
+    "copy": "复制"
   },
   "copilotModelPicker": {
     "buttonAriaLabel": "{{label}}：{{selection}}",
