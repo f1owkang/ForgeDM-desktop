@@ -32,6 +32,7 @@ import {
 } from '../../models/pull-request'
 import { KeyboardShortcut } from '../keyboard-shortcut/keyboard-shortcut'
 import { formatNumber } from '../../lib/format-number'
+import { t } from '../../lib/i18n'
 
 function formatMenuItemLabel(text: string) {
   if (__WIN32__ || __LINUX__) {
@@ -268,7 +269,7 @@ export class NoChanges extends React.Component<
 
     return this.renderMenuBackedAction(
       'open-working-directory',
-      `View the files of your repository in ${fileManager}`,
+      t('changes.noChanges.showInFileManager', { fileManager }),
       undefined,
       this.onShowInFileManagerClicked
     )
@@ -286,7 +287,7 @@ export class NoChanges extends React.Component<
 
     return this.renderMenuBackedAction(
       'view-repository-on-github',
-      `Open the repository page on GitHub in your browser`,
+      t('changes.noChanges.viewOnGitHub'),
       undefined,
       this.onViewOnGitHubClicked
     )
@@ -322,11 +323,11 @@ export class NoChanges extends React.Component<
       return null
     }
 
-    const title = `Open the repository in your external editor`
+    const title = t('changes.noChanges.openEditorTitle')
 
     const description = (
       <>
-        Select your editor in{' '}
+        {t('changes.noChanges.selectEditor')}{' '}
         <LinkButton onClick={this.openIntegrationPreferences}>
           {__DARWIN__ ? 'Settings' : 'Options'}
         </LinkButton>
@@ -415,14 +416,12 @@ export class NoChanges extends React.Component<
     const numChanges = stashEntry.files.files.length
     const description = (
       <>
-        You have {numChanges} {numChanges === 1 ? 'change' : 'changes'} in
-        progress that you have not yet committed.
+        {t('changes.noChanges.viewStashDescription', { count: numChanges, changes: numChanges === 1 ? 'change' : 'changes' })}
       </>
     )
     const discoverabilityContent = (
       <>
-        When a stash exists, access it at the bottom of the Changes tab to the
-        left.
+        {t('changes.noChanges.viewStashDiscoverability')}
       </>
     )
     const itemId: MenuIDs = 'toggle-stashed-changes'
@@ -435,11 +434,11 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="view-stash-action"
-        title="View your stashed changes"
+        title={t('changes.noChanges.viewStashTitle')}
         menuItemId={itemId}
         description={description}
         discoverabilityContent={discoverabilityContent}
-        buttonText="View stash"
+        buttonText={t('changes.noChanges.viewStashButton')}
         type="primary"
         disabled={menuItem !== null && !menuItem.enabled}
         onClick={this.onViewStashClicked}
@@ -473,10 +472,10 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="publish-repository-action"
-        title="Publish your repository to GitHub"
-        description="This repository is currently only available on your local machine. By publishing it on GitHub you can share it, and collaborate with others."
+        title={t('changes.noChanges.publishRepoTitle')}
+        description={t('changes.noChanges.publishRepoDescription')}
         discoverabilityContent={discoverabilityContent}
-        buttonText="Publish repository"
+        buttonText={t('changes.noChanges.publishRepoButton')}
         menuItemId={itemId}
         type="primary"
         disabled={!menuItem.enabled}
@@ -522,11 +521,11 @@ export class NoChanges extends React.Component<
     return (
       <MenuBackedSuggestedAction
         key="publish-branch-action"
-        title="Publish your branch"
+        title={t('changes.noChanges.publishBranchTitle')}
         menuItemId={itemId}
         description={description}
         discoverabilityContent={discoverabilityContent}
-        buttonText="Publish branch"
+        buttonText={t('changes.noChanges.publishBranchButton')}
         type="primary"
         disabled={!menuItem.enabled}
         onClick={this.onPublishBranchClicked}
@@ -569,11 +568,9 @@ export class NoChanges extends React.Component<
       </>
     )
 
-    const title = `Pull ${formatNumber(aheadBehind.behind)} ${
-      aheadBehind.behind === 1 ? 'commit' : 'commits'
-    } from the ${remote.name} remote`
+    const title = t('changes.noChanges.pullTitle', { numCommits: formatNumber(aheadBehind.behind), commits: aheadBehind.behind === 1 ? 'commit' : 'commits', remote: remote.name })
 
-    const buttonText = `Pull ${remote.name}`
+    const buttonText = t('changes.noChanges.pullButton', { remote: remote.name })
 
     return (
       <MenuBackedSuggestedAction
@@ -637,11 +634,9 @@ export class NoChanges extends React.Component<
       </>
     )
 
-    const title = `Push ${itemsToPushTypes.join(' and ')} to the ${
-      remote.name
-    } remote`
+    const title = t('changes.noChanges.pushTitle', { items: itemsToPushTypes.join(' and '), remote: remote.name })
 
-    const buttonText = `Push ${remote.name}`
+    const buttonText = t('changes.noChanges.pushButton', { remote: remote.name })
 
     return (
       <MenuBackedSuggestedAction
@@ -678,8 +673,8 @@ export class NoChanges extends React.Component<
       </>
     )
 
-    const title = `Create a Pull Request from your current branch`
-    const buttonText = `Create Pull Request`
+    const title = t('changes.noChanges.createPRTitle')
+    const buttonText = t('changes.noChanges.createPRButton')
 
     const previewPullMenuItem = this.getMenuItemInfo('preview-pull-request')
 
@@ -701,8 +696,8 @@ export class NoChanges extends React.Component<
     }
 
     const previewPullRequestAction: IDropdownSuggestedActionOption = {
-      title: `Preview the Pull Request from your current branch`,
-      label: 'Preview Pull Request',
+      title: t('changes.noChanges.previewPRTitle'),
+      label: t('changes.noChanges.previewPRButton'),
       description: (
         <>
           The current branch (<Ref>{tip.branch.name}</Ref>) is already published
@@ -769,10 +764,9 @@ export class NoChanges extends React.Component<
         <div className="content">
           <div className="interstitial-header">
             <div className="text">
-              <h1>No local changes</h1>
+              <h1>{t('changes.noChanges.title')}</h1>
               <p>
-                There are no uncommitted changes in this repository. Here are
-                some friendly suggestions for what to do next.
+                {t('changes.noChanges.description')}
               </p>
             </div>
             <img src={PaperStackImage} className="blankslate-image" alt="" />
