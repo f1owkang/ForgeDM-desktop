@@ -1,9 +1,11 @@
 import * as React from 'react'
+import { Trans } from 'react-i18next'
 import { DialogContent } from '../dialog'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { LinkButton } from '../lib/link-button'
 import { SamplesURL } from '../../lib/stats'
 import { isWindowsOpenSSHAvailable } from '../../lib/ssh/ssh'
+import { t } from '../../lib/i18n'
 
 interface IAdvancedPreferencesProps {
   readonly useWindowsOpenSSH: boolean
@@ -76,10 +78,10 @@ export class Advanced extends React.Component<
 
   private reportDesktopUsageLabel() {
     return (
-      <span>
-        Help GitHub Desktop improve by submitting{' '}
-        <LinkButton uri={SamplesURL}>usage stats</LinkButton>
-      </span>
+      <Trans
+        i18nKey="preferences.advanced.usage.reportStats"
+        components={{ stats: <LinkButton uri={SamplesURL} /> }}
+      />
     )
   }
 
@@ -87,9 +89,11 @@ export class Advanced extends React.Component<
     return (
       <DialogContent>
         <div className="advanced-section">
-          <h2>Background updates</h2>
+          <h2>{t('preferences.advanced.backgroundUpdates.heading')}</h2>
           <Checkbox
-            label="Show status icons in the repository list"
+            label={t(
+              'preferences.advanced.backgroundUpdates.repositoryIndicators'
+            )}
             value={
               this.props.repositoryIndicatorsEnabled
                 ? CheckboxValue.On
@@ -100,19 +104,15 @@ export class Advanced extends React.Component<
           />
           <div id="periodic-fetch-description" className="settings-description">
             <p>
-              These icons indicate which repositories have local or remote
-              changes, and require the periodic fetching of repositories that
-              are not currently selected.
+              {t('preferences.advanced.backgroundUpdates.descriptionPrimary')}
             </p>
             <p>
-              Turning this off will not stop the periodic fetching of your
-              currently selected repository, but may improve overall app
-              performance for users with many repositories.
+              {t('preferences.advanced.backgroundUpdates.descriptionSecondary')}
             </p>
           </div>
         </div>
         <div className="advanced-section">
-          <h2>Usage</h2>
+          <h2>{t('preferences.advanced.usage.heading')}</h2>
           <Checkbox
             label={this.reportDesktopUsageLabel()}
             value={
@@ -123,11 +123,11 @@ export class Advanced extends React.Component<
             onChange={this.onReportingOptOutChanged}
           />
         </div>
-        <h2>Network and credentials</h2>
+        <h2>{t('preferences.advanced.network.heading')}</h2>
         {this.renderSSHSettings()}
         <div className="advanced-section">
           <Checkbox
-            label={'Use Git Credential Manager'}
+            label={t('preferences.advanced.network.useGitCredentialManager')}
             value={
               this.state.useExternalCredentialHelper
                 ? CheckboxValue.On
@@ -141,12 +141,12 @@ export class Advanced extends React.Component<
             className="settings-description"
           >
             <p>
-              Use{' '}
-              <LinkButton uri="https://gh.io/gcm">
-                Git Credential Manager{' '}
-              </LinkButton>{' '}
-              for private repositories outside of GitHub.com. This feature is
-              experimental and subject to change.
+              <Trans
+                i18nKey="preferences.advanced.network.gitCredentialManagerDescription"
+                components={{
+                  gcm: <LinkButton uri="https://gh.io/gcm" />,
+                }}
+              />
             </p>
           </div>
         </div>
@@ -162,7 +162,7 @@ export class Advanced extends React.Component<
     return (
       <div className="advanced-section">
         <Checkbox
-          label="Use system OpenSSH (recommended)"
+          label={t('preferences.advanced.network.useSystemOpenSSH')}
           value={
             this.props.useWindowsOpenSSH ? CheckboxValue.On : CheckboxValue.Off
           }

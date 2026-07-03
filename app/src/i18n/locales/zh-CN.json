@@ -338,6 +338,24 @@
       "signInEnterpriseDescription": "如果你在工作中使用 GitHub Enterprise，请登录以访问你的仓库。",
       "signOut": "退出登录"
     },
+    "advanced": {
+      "backgroundUpdates": {
+        "descriptionPrimary": "这些图标会标出哪些仓库存在本地或远程更改，因此需要定期拉取当前未选中的仓库。",
+        "descriptionSecondary": "关闭此项不会停止定期拉取你当前选中的仓库，但对于拥有大量仓库的用户，可能会提升应用整体性能。",
+        "heading": "后台更新",
+        "repositoryIndicators": "在仓库列表中显示状态图标"
+      },
+      "network": {
+        "gitCredentialManagerDescription": "对 GitHub.com 以外的私有仓库使用 <gcm>Git Credential Manager</gcm>。此功能仍处于实验阶段，可能会发生变化。",
+        "heading": "网络和凭据",
+        "useGitCredentialManager": "使用 Git Credential Manager",
+        "useSystemOpenSSH": "使用系统 OpenSSH（推荐）"
+      },
+      "usage": {
+        "heading": "使用情况",
+        "reportStats": "通过提交<stats>使用统计信息</stats>帮助 GitHub Desktop 改进"
+      }
+    },
     "appearance": {
       "diff": {
         "defaultTabSize": "{{size}}（默认）",
