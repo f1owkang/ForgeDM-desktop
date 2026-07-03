@@ -4,6 +4,7 @@ import { Form } from './form'
 import { TextBox } from './text-box'
 import { Button } from './button'
 import { Errors } from './errors'
+import { t } from '../../lib/i18n'
 
 interface IEnterpriseServerEntryProps {
   /**
@@ -54,7 +55,7 @@ export class EnterpriseServerEntry extends React.Component<
     return (
       <Form onSubmit={this.onSubmit}>
         <TextBox
-          label="Enterprise address"
+          label={t('enterpriseServerEntry.address')}
           autoFocus={true}
           disabled={disableEntry}
           onValueChanged={this.onServerAddressChanged}
@@ -65,7 +66,8 @@ export class EnterpriseServerEntry extends React.Component<
 
         <div className="actions">
           <Button type="submit" disabled={disableSubmission}>
-            {this.props.loading ? <Loading /> : null} Continue
+            {this.props.loading ? <Loading /> : null}{' '}
+            {t('enterpriseServerEntry.continue')}
           </Button>
           {this.props.additionalButtons}
         </div>
