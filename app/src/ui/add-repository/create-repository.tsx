@@ -35,6 +35,7 @@ import { InputWarning } from '../lib/input-description/input-warning'
 import { CreateRepositoryError } from '../../lib/error-with-metadata'
 import { RepositoryPath } from '../lib/repository-path'
 import { pathExists } from '../../lib/path-exists'
+import { t, platformT } from '../../lib/i18n'
 
 /** URL used to provide information about submodules to the user. */
 const submoduleDocsUrl = 'https://gh.io/git-submodules'
@@ -373,7 +374,11 @@ export class CreateRepository extends React.Component<
       const wd = status.workingDirectory
       const files = wd.files
       if (files.length > 0) {
-        await createCommit(repository, 'Initial commit', files)
+        await createCommit(
+          repository,
+          t('createRepository.initialCommit'),
+          files
+        )
       }
     } catch (e) {
       log.error(`createRepository: initial commit failed at ${fullPath}`, e)
@@ -424,7 +429,7 @@ export class CreateRepository extends React.Component<
     return (
       <Row>
         <Select
-          label={__DARWIN__ ? 'Git Ignore' : 'Git ignore'}
+          label={platformT('createRepository.gitIgnore')}
           value={this.state.gitIgnore}
           onChange={this.onGitIgnoreChange}
         >
@@ -449,7 +454,7 @@ export class CreateRepository extends React.Component<
     return (
       <Row>
         <Select
-          label="License"
+          label={t('createRepository.license')}
           value={this.state.license}
           onChange={this.onLicenseChange}
         >
@@ -477,12 +482,7 @@ export class CreateRepository extends React.Component<
       return null
     }
 
-    return (
-      <DialogError>
-        Directory could not be created at this path. You may not have
-        permissions to create a directory here.
-      </DialogError>
-    )
+    return <DialogError>{t('createRepository.invalidPathError')}</DialogError>
   }
 
   private renderGitRepositoryError() {
@@ -497,14 +497,17 @@ export class CreateRepository extends React.Component<
         <InputError
           id="existing-repository-path-error"
           trackedUserInput={fullPath}
-          ariaLiveMessage={`The directory ${fullPath} appears to be a Git repository. Would you like to add this repository instead?`}
+          ariaLiveMessage={t('createRepository.gitRepoErrorSrOnly', {
+            path: fullPath,
+          })}
         >
-          The directory <Ref>{fullPath}</Ref>appears to be a Git repository.
-          Would you like to{' '}
+          {t('createRepository.gitRepoErrorPrefix')}
+          <Ref>{fullPath}</Ref>
+          {t('createRepository.gitRepoErrorMiddle')}
           <LinkButton onClick={this.onAddRepositoryClicked}>
-            add this repository
-          </LinkButton>{' '}
-          instead?
+            {t('createRepository.addRepoLink')}
+          </LinkButton>
+          {t('createRepository.gitRepoErrorSuffix')}
         </InputError>
       </Row>
     )
@@ -522,12 +525,15 @@ export class CreateRepository extends React.Component<
         <InputWarning
           id="path-is-subfolder-of-repository"
           trackedUserInput={fullPath}
-          ariaLiveMessage={`The directory ${fullPath} appears to be a subfolder Git repository. Did you know about submodules?`}
+          ariaLiveMessage={t('createRepository.subfolderSrOnly', {
+            path: fullPath,
+          })}
         >
-          The directory <Ref>{fullPath}</Ref>appears to be a subfolder of Git
-          repository.
+          {t('createRepository.subfolderPrefix')}
+          <Ref>{fullPath}</Ref>
+          {t('createRepository.subfolderMiddle')}
           <LinkButton uri={submoduleDocsUrl}>
-            Learn about submodules.
+            {t('createRepository.learnSubmodules')}
           </LinkButton>
         </InputWarning>
       </Row>
@@ -551,11 +557,9 @@ export class CreateRepository extends React.Component<
         <InputWarning
           id="readme-overwrite-warning"
           trackedUserInput={this.state.createWithReadme}
-          ariaLiveMessage="This directory contains a README.md file already. Checking
-          this box will result in the existing file being overwritten."
+          ariaLiveMessage={t('createRepository.readmeOverwriteAria')}
         >
-          This directory contains a <Ref>README.md</Ref> file already. Checking
-          this box will result in the existing file being overwritten.
+          {t('createRepository.readmeOverwrite')}
         </InputWarning>
       </Row>
     )
@@ -570,7 +574,7 @@ export class CreateRepository extends React.Component<
 
     return (
       <div id="create-repo-path-msg">
-        The repository will be created at <Ref>{fullPath}</Ref>.
+        {t('createRepository.pathMessage', { path: fullPath })}
       </div>
     )
   }
@@ -597,9 +601,7 @@ export class CreateRepository extends React.Component<
     return (
       <Dialog
         id="create-repository"
-        title={
-          __DARWIN__ ? 'Create a New Repository' : 'Create a new repository'
-        }
+        title={platformT('createRepository.title')}
         loading={this.state.creating}
         onSubmit={this.createRepository}
         onDismissed={this.props.onDismissed}
@@ -621,8 +623,8 @@ export class CreateRepository extends React.Component<
             onFullPathChanged={this.onFullPathChanged}
             onNameChanged={this.onNameChanged}
             onPathChanged={this.onPathChanged}
-            namePlaceholder="repository name"
-            pathPlaceholder="repository path"
+            namePlaceholder={t('createRepository.namePlaceholder')}
+            pathPlaceholder={t('createRepository.pathPlaceholder')}
             nameAriaDescribedBy="existing-repository-path-error repo-sanitized-name-warning"
             pathAriaDescribedBy="existing-repository-path-error path-is-subfolder-of-repository"
           />
@@ -630,7 +632,7 @@ export class CreateRepository extends React.Component<
           <Row>
             <TextBox
               value={this.state.description}
-              label="Description"
+              label={t('createRepository.description')}
               onValueChanged={this.onDescriptionChanged}
             />
           </Row>
@@ -640,7 +642,7 @@ export class CreateRepository extends React.Component<
 
           <Row>
             <Checkbox
-              label="Initialize this repository with a README"
+              label={t('createRepository.initReadme')}
               value={
                 this.state.createWithReadme
                   ? CheckboxValue.On
@@ -659,9 +661,7 @@ export class CreateRepository extends React.Component<
         <DialogFooter>
           {this.renderPathMessage()}
           <OkCancelButtonGroup
-            okButtonText={
-              __DARWIN__ ? 'Create Repository' : 'Create repository'
-            }
+            okButtonText={platformT('createRepository.okButtonText')}
             okButtonDisabled={disabled}
             okButtonAriaDescribedBy="create-repo-path-msg"
           />

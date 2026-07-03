@@ -7,6 +7,7 @@ import { Row } from './row'
 import { getDefaultDir, setDefaultDir } from './default-dir'
 import { showOpenDialog } from '../main-process-proxy'
 import { InputWarning } from './input-description/input-warning'
+import { t, platformT } from '../../lib/i18n'
 
 // We use this instead of sanitizedRepositoryName because it deals with
 // valid repository names on GitHub.com but here we only care about whether
@@ -164,11 +165,13 @@ export class RepositoryPath extends React.Component<
       <InputWarning
         id="repo-sanitized-name-warning"
         trackedUserInput={this.state.name}
-        ariaLiveMessage={`Will be created as ${sanitizedName}. Invalid characters have been replaced by hyphens.`}
+        ariaLiveMessage={`${t('repositoryPath.willBeCreatedAs', {
+          name: sanitizedName,
+        })} ${t('repositoryPath.invalidCharsReplaced')}`}
       >
-        <p>Will be created as {sanitizedName}</p>
+        <p>{t('repositoryPath.willBeCreatedAs', { name: sanitizedName })}</p>
         <span className="sr-only">
-          Invalid characters have been replaced by hyphens.
+          {t('repositoryPath.invalidCharsReplaced')}
         </span>
       </InputWarning>
     )
@@ -182,8 +185,10 @@ export class RepositoryPath extends React.Component<
         <Row>
           <TextBox
             value={this.state.name}
-            label={this.props.nameLabel ?? 'Name'}
-            placeholder={this.props.namePlaceholder ?? 'name'}
+            label={this.props.nameLabel ?? t('repositoryPath.nameLabel')}
+            placeholder={
+              this.props.namePlaceholder ?? t('repositoryPath.namePlaceholder')
+            }
             onValueChanged={this.onNameChanged}
             ariaDescribedBy={this.props.nameAriaDescribedBy}
           />
@@ -194,16 +199,16 @@ export class RepositoryPath extends React.Component<
         <Row>
           <TextBox
             value={this.state.path ?? ''}
-            label={
-              this.props.pathLabel ?? (__DARWIN__ ? 'Local Path' : 'Local path')
+            label={this.props.pathLabel ?? platformT('common.localPath')}
+            placeholder={
+              this.props.pathPlaceholder ?? t('repositoryPath.pathPlaceholder')
             }
-            placeholder={this.props.pathPlaceholder ?? 'path'}
             onValueChanged={this.onPathChanged}
             disabled={loadingPath}
             ariaDescribedBy={this.props.pathAriaDescribedBy}
           />
           <Button onClick={this.showFilePicker} disabled={loadingPath}>
-            Choose…
+            {t('common.choose')}
           </Button>
         </Row>
       </>
