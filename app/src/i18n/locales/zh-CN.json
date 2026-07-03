@@ -2,6 +2,11 @@
   "common": {
     "cancel": "取消"
   },
+  "gitConfigUser": {
+    "email": "电子邮件",
+    "name": "名称",
+    "otherEmail": "其他"
+  },
   "menu": {
     "app": {
       "about": "关于 GitHub Desktop",
@@ -372,6 +377,31 @@
       "noEditorsFound": "未找到编辑器。",
       "noOtherEditorsFound": "未找到其它编辑器。",
       "shell": "Shell"
+    },
+    "git": {
+      "defaultBranch": {
+        "descriptionMiddle": "。你可能会因为不同的工作流而想更改它，或者因为你的集成仍然需要历史默认分支名 ",
+        "descriptionPrefix": "GitHub 的默认分支名是",
+        "descriptionSuffix": "。",
+        "heading": "新建仓库的默认分支名称"
+      },
+      "globalConfig": {
+        "link": "编辑你的全局 Git 配置文件",
+        "prefix": "这些偏好设置会",
+        "suffix": "。"
+      },
+      "hooks": {
+        "cacheEnvironment": "缓存 Git hook 环境变量",
+        "cacheEnvironmentDescription": "缓存 hook 环境变量以提升性能。如果你的 hook 依赖频繁变化的环境变量，请禁用此项。",
+        "loadEnvironment": "从 Shell 加载 Git hook 环境变量",
+        "loadEnvironmentDescription": "启用后，GitHub Desktop 会在执行 Git hook 时尝试从你的 Shell 加载环境变量。如果你的 Git hook 依赖 Shell 配置文件中设置的环境变量，这会很有用；这也是 nvm、rbenv、asdf 等版本管理器的常见做法。",
+        "shell": "加载环境时使用的 Shell"
+      },
+      "tabs": {
+        "author": "作者",
+        "defaultBranch": "默认分支",
+        "hooks": "Hooks"
+      }
     },
     "save": "保存",
     "tabs": {
