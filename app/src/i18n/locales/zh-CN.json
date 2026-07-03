@@ -192,7 +192,31 @@
     "undoCommitCommitted": "已提交",
     "undoCommitDisabled": "仓库正在更新时无法撤销",
     "undoCommitUndo": "撤销",
-    "untrackedExcluded": "未跟踪的文件将被排除"
+    "untrackedExcluded": "未跟踪的文件将被排除",
+    "confirmFiltered": {
+      "title": {
+        "darwin": "提交筛选的更改？",
+        "default": "提交筛选的更改？"
+      },
+      "messagePrefix": "你已应用筛选条件。有",
+      "hiddenChanges": "隐藏的更改",
+      "messageSuffix": "将被提交。你确定要提交这些更改吗？",
+      "doNotShow": "不再显示此消息",
+      "commitAnyway": {
+        "darwin": "仍然提交",
+        "default": "仍然提交"
+      }
+    },
+    "filterOptions": {
+      "title": "筛选选项",
+      "close": "关闭",
+      "included": "包含在提交中 ({{count}})",
+      "excluded": "从提交中排除 ({{count}})",
+      "newFiles": "新文件 ({{count}})",
+      "modifiedFiles": "已修改文件 ({{count}})",
+      "deletedFiles": "已删除文件 ({{count}})",
+      "clearAll": "清除所有筛选"
+    }
   },
   "diff": {
     "bidirectionalUnicode": "此差异包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在显示隐藏 Unicode 字符的编辑器中打开文件。",
