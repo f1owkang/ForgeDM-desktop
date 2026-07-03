@@ -6,6 +6,7 @@ import {
   PopoverDecoration,
 } from '../lib/popover'
 import { OkCancelButtonGroup } from '../dialog'
+import { t } from '../../lib/i18n'
 
 interface IWhitespaceHintPopoverProps {
   readonly anchor: HTMLElement | null
@@ -28,14 +29,14 @@ export class WhitespaceHintPopover extends React.Component<IWhitespaceHintPopove
         ariaLabelledby="whitespace-hint-header"
         ariaDescribedBy="whitespace-hint-message"
       >
-        <h3 id="whitespace-hint-header">Show whitespace changes?</h3>
+        <h3 id="whitespace-hint-header">{t('diff.showWhitespaceChanges')}</h3>
         <p id="whitespace-hint-message" className="byline">
-          Selecting lines is disabled when hiding whitespace changes.
+          {t('diff.selectingDisabled')}
         </p>
         <div className="popover-footer">
           <OkCancelButtonGroup
-            okButtonText="Yes"
-            cancelButtonText="No"
+            okButtonText={t('diff.yes')}
+            cancelButtonText={t('diff.no')}
             onCancelButtonClick={this.onDismissed}
             onOkButtonClick={this.onShowWhitespaceChanges}
           />

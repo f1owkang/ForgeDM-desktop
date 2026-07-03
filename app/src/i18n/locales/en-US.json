@@ -170,6 +170,46 @@
       "default": "Create a new repository"
     }
   },
+  "diff": {
+    "bidirectionalUnicode": "This diff contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.",
+    "binaryFileChanged": "This binary file has changed.",
+    "display": "Diff display",
+    "expandAll": "Expand All",
+    "expandDown": "Expand Down",
+    "expandUp": "Expand Up",
+    "fileEmpty": "The file is empty",
+    "hideWhitespace": {
+      "darwin": "Hide Whitespace Changes",
+      "default": "Hide whitespace changes"
+    },
+    "hideWhitespaceHint": "Interacting with individual lines or hunks will be disabled while hiding whitespace.",
+    "inConflict": "The file is in conflict and must be resolved via the command line.",
+    "learnMoreBidirectional": "Learn more about bidirectional Unicode characters",
+    "lineEndingChange": "This diff contains a change in line endings from '{{from}}' to '{{to}}'.",
+    "noContentChanges": "No content changes found",
+    "noNewline": "No newline at end of file",
+    "onlyWhitespace": "Only whitespace changes found",
+    "openFileExternal": "Open file in external program.",
+    "renamedNoChanges": "The file was renamed but not changed",
+    "renamedWithChanges": "The file was renamed and includes changes.",
+    "search": "Search\u2026",
+    "selectingDisabled": "Selecting lines is disabled when hiding whitespace changes.",
+    "settings": {
+      "darwin": "Diff Settings",
+      "default": "Diff Options"
+    },
+    "showDiff": {
+      "darwin": "Show Diff",
+      "default": "Show diff"
+    },
+    "showWhitespaceChanges": "Show whitespace changes?",
+    "split": "Split",
+    "tooLarge": "The diff is too large to be displayed.",
+    "tooLargeDefault": "The diff is too large to be displayed by default.",
+    "tooLargeShowAnyway": "You can try to show it anyway, but performance may be negatively impacted.",
+    "unified": "Unified",
+    "whitespace": "Whitespace"
+  },
   "menu": {
     "app": {
       "about": "About GitHub Desktop",
@@ -708,6 +748,30 @@
     "namePlaceholder": "name",
     "pathPlaceholder": "path",
     "willBeCreatedAs": "Will be created as {{name}}"
+  },
+  "submodule": {
+    "added": "This submodule {{verb}} added pointing at commit",
+    "basedOnRepo": "This is a submodule based on the repository",
+    "canBeCommitted": "This change can be committed to the parent repository.",
+    "changes": "Submodule changes",
+    "changedFrom": "This submodule changed its commit from",
+    "copySha": "Copy the full SHA",
+    "copyShaWithInfix": "Copy the full {{infix}} SHA",
+    "hasBeen": "has been",
+    "modified": "modified",
+    "modifiedAndUntracked": "modified and untracked",
+    "newLabel": "new",
+    "openButton": {
+      "darwin": "Open Repository",
+      "default": "Open repository"
+    },
+    "openDescription": "You can open this submodule on GitHub Desktop as a normal repository to manage and commit any changes in it.",
+    "openTitle": "Open this submodule on GitHub Desktop",
+    "previousLabel": "previous",
+    "removed": "This submodule {{verb}} removed while it was pointing at commit",
+    "submoduleHasChanges": "This submodule has {{changes}} changes. Those changes must be committed inside of the submodule before they can be part of the parent repository.",
+    "untracked": "untracked",
+    "was": "was"
   },
   "welcome": {
     "start": {

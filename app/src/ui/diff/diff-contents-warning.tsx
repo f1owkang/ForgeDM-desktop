@@ -3,6 +3,7 @@ import { Octicon } from '../octicons'
 import * as octicons from '../octicons/octicons.generated'
 import { LinkButton } from '../lib/link-button'
 import { ITextDiff, LineEndingsChange } from '../../models/diff'
+import { t } from '../../lib/i18n'
 
 enum DiffContentsWarningType {
   UnicodeBidiCharacters,
@@ -67,12 +68,9 @@ export class DiffContentsWarning extends React.Component<IDiffContentsWarningPro
       case DiffContentsWarningType.UnicodeBidiCharacters:
         return (
           <>
-            This diff contains bidirectional Unicode text that may be
-            interpreted or compiled differently than what appears below. To
-            review, open the file in an editor that reveals hidden Unicode
-            characters.{' '}
+            {t('diff.bidirectionalUnicode')}{' '}
             <LinkButton uri="https://github.co/hiddenchars">
-              Learn more about bidirectional Unicode characters
+              {t('diff.learnMoreBidirectional')}
             </LinkButton>
           </>
         )
@@ -81,8 +79,10 @@ export class DiffContentsWarning extends React.Component<IDiffContentsWarningPro
         const { lineEndingsChange } = item
         return (
           <>
-            This diff contains a change in line endings from '
-            {lineEndingsChange.from}' to '{lineEndingsChange.to}'.
+            {t('diff.lineEndingChange', {
+              from: lineEndingsChange.from,
+              to: lineEndingsChange.to,
+            })}
           </>
         )
     }

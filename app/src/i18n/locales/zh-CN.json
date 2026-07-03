@@ -170,6 +170,46 @@
       "default": "创建新仓库"
     }
   },
+  "diff": {
+    "bidirectionalUnicode": "此差异包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在显示隐藏 Unicode 字符的编辑器中打开文件。",
+    "binaryFileChanged": "此二进制文件已更改。",
+    "display": "差异显示",
+    "expandAll": "全部展开",
+    "expandDown": "向下展开",
+    "expandUp": "向上展开",
+    "fileEmpty": "文件为空",
+    "hideWhitespace": {
+      "darwin": "隐藏空白更改",
+      "default": "隐藏空白更改"
+    },
+    "hideWhitespaceHint": "隐藏空白时，将禁用对单行或代码块的交互。",
+    "inConflict": "文件处于冲突状态，必须通过命令行解决。",
+    "learnMoreBidirectional": "了解有关双向 Unicode 字符的更多信息",
+    "lineEndingChange": "此差异包含行尾变更，从 '{{from}}' 变为 '{{to}}'。",
+    "noContentChanges": "未找到内容更改",
+    "noNewline": "文件末尾无换行符",
+    "onlyWhitespace": "仅发现空白更改",
+    "openFileExternal": "在外部程序中打开文件。",
+    "renamedNoChanges": "文件已重命名但未更改",
+    "renamedWithChanges": "文件已重命名且包含更改。",
+    "search": "搜索…",
+    "selectingDisabled": "隐藏空白时，选择行功能将被禁用。",
+    "settings": {
+      "darwin": "差异设置",
+      "default": "差异选项"
+    },
+    "showDiff": {
+      "darwin": "显示差异",
+      "default": "显示差异"
+    },
+    "showWhitespaceChanges": "显示空白更改？",
+    "split": "并排",
+    "tooLarge": "差异过大，无法显示。",
+    "tooLargeDefault": "差异过大，默认不显示。",
+    "tooLargeShowAnyway": "你可以尝试强制显示，但可能会影响性能。",
+    "unified": "统一",
+    "whitespace": "空白"
+  },
   "menu": {
     "app": {
       "about": "关于 GitHub Desktop",
@@ -708,6 +748,30 @@
     "namePlaceholder": "名称",
     "pathPlaceholder": "路径",
     "willBeCreatedAs": "将创建为 {{name}}"
+  },
+  "submodule": {
+    "added": "此子模块{{verb}}添加，指向提交",
+    "basedOnRepo": "这是一个基于仓库的子模块",
+    "canBeCommitted": "此更改可以提交到父仓库。",
+    "changes": "子模块更改",
+    "changedFrom": "此子模块的提交已从以下位置变更",
+    "copySha": "复制完整 SHA",
+    "copyShaWithInfix": "复制完整{{infix}}SHA",
+    "hasBeen": "已",
+    "modified": "已修改",
+    "modifiedAndUntracked": "已修改且未跟踪",
+    "newLabel": "新",
+    "openButton": {
+      "darwin": "打开仓库",
+      "default": "打开仓库"
+    },
+    "openDescription": "你可以在 GitHub Desktop 中将此子模块作为普通仓库打开，以管理和提交其中的任何更改。",
+    "openTitle": "在 GitHub Desktop 中打开此子模块",
+    "previousLabel": "旧",
+    "removed": "此子模块{{verb}}移除，此前指向提交",
+    "submoduleHasChanges": "此子模块有 {{changes}} 个更改。这些更改必须在子模块内部提交后才能成为父仓库的一部分。",
+    "untracked": "未跟踪",
+    "was": "曾"
   },
   "welcome": {
     "start": {
