@@ -1,6 +1,35 @@
 {
   "common": {
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "choose": "Choose\u2026",
+    "localPath": {
+      "darwin": "Local Path",
+      "default": "Local path"
+    },
+    "repositoryPath": "repository path"
+  },
+  "addExistingRepository": {
+    "bareRepoError": "This directory appears to be a bare repository. Bare repositories are not currently supported.",
+    "notGitRepoCreateLink": "create a repository",
+    "notGitRepoCreatePrefix": "Would you like to ",
+    "notGitRepoCreateSuffix": " here instead?",
+    "notGitRepoMessage": "This directory does not appear to be a Git repository.",
+    "notGitRepoSrOnly": "This directory does not appear to be a Git repository. Would you like to create a repository here instead?",
+    "okButtonText": {
+      "darwin": "Add Repository",
+      "default": "Add repository"
+    },
+    "title": {
+      "darwin": "Add Local Repository",
+      "default": "Add local repository"
+    },
+    "unsafeRepoAddExceptionLink": "add an exception for this directory",
+    "unsafeRepoAt": "at",
+    "unsafeRepoPrefix": "The Git repository",
+    "unsafeRepoSrOnly": "The Git repository appears to be owned by another user on your machine. Adding untrusted repositories may automatically execute files in the repository. If you trust the owner of the directory you can add an exception for this directory in order to continue.",
+    "unsafeRepoSuffix": "appears to be owned by another user on your machine. Adding untrusted repositories may automatically execute files in the repository.",
+    "unsafeRepoTrustPrefix": "If you trust the owner of the directory you can",
+    "unsafeRepoTrustSuffix": "in order to continue."
   },
   "configureGitUser": {
     "configureManually": "Configure manually",
@@ -65,6 +94,81 @@
     "showCostsAria": "Show Copilot model credit costs",
     "showCostsTooltip": "Show credit costs",
     "unavailable": "Unavailable"
+  },
+  "cloneGenericRepository": {
+    "urlLabel": "Repository URL or GitHub username and repository",
+    "urlLabelExample": "(hubot/cool-repo)",
+    "urlPlaceholder": "URL or username/repository"
+  },
+  "cloneRepository": {
+    "clone": "Clone",
+    "cloneAs": "Clone As:",
+    "dirCreateError": "Directory could not be created at this path.",
+    "fileWithName": "There is already a file with this name. Git can only clone to a folder.",
+    "filesInFolder": "This folder contains files. Git can only clone to empty folders.",
+    "pathReadError": "Unable to read path on disk. Please check the path and try again.",
+    "repoNotFound": "We couldn't find that repository. Check that you are logged in, the network is accessible, and the URL or repository alias are spelled correctly.",
+    "select": "Select",
+    "signInDotCom": "Sign in to your GitHub.com account to access your repositories.",
+    "signInEnterprise": "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.",
+    "signInTitle": {
+      "darwin": "Sign In",
+      "default": "Sign in"
+    },
+    "title": {
+      "darwin": "Clone a Repository",
+      "default": "Clone a repository"
+    }
+  },
+  "cloneableRepositoryFilterList": {
+    "archived": "Archived",
+    "emptyListEnd": " if you've created a repository recently.",
+    "emptyListMiddle": " on ",
+    "emptyListPrefix": "Looks like there are no repositories for ",
+    "emptyListSuffix": ". ",
+    "filterPlaceholder": "Filter your repositories",
+    "loading": "Loading repositories from {{endpoint}}\u2026",
+    "noResultsPrefix": "Sorry, I can't find any repository matching ",
+    "noResultsSuffix": "",
+    "refreshList": "Refresh this list",
+    "refreshTooltip": "Refresh the list of repositories",
+    "yourRepositories": {
+      "darwin": "Your Repositories",
+      "default": "Your repositories"
+    }
+  },
+  "createRepository": {
+    "addRepoLink": "add this repository",
+    "description": "Description",
+    "gitIgnore": {
+      "darwin": "Git Ignore",
+      "default": "Git ignore"
+    },
+    "gitRepoErrorMiddle": "appears to be a Git repository. Would you like to ",
+    "gitRepoErrorPrefix": "The directory ",
+    "gitRepoErrorSrOnly": "The directory {{path}} appears to be a Git repository. Would you like to add this repository instead?",
+    "gitRepoErrorSuffix": " instead?",
+    "initReadme": "Initialize this repository with a README",
+    "invalidPathError": "Directory could not be created at this path. You may not have permissions to create a directory here.",
+    "initialCommit": "Initial commit",
+    "learnSubmodules": "Learn about submodules.",
+    "license": "License",
+    "namePlaceholder": "repository name",
+    "okButtonText": {
+      "darwin": "Create Repository",
+      "default": "Create repository"
+    },
+    "pathMessage": "The repository will be created at {{path}}.",
+    "pathPlaceholder": "repository path",
+    "readmeOverwrite": "This directory contains a README.md file already. Checking this box will result in the existing file being overwritten.",
+    "readmeOverwriteAria": "This directory contains a README.md file already. Checking this box will result in the existing file being overwritten.",
+    "subfolderMiddle": "appears to be a subfolder of Git repository.",
+    "subfolderPrefix": "The directory ",
+    "subfolderSrOnly": "The directory {{path}} appears to be a subfolder Git repository. Did you know about submodules?",
+    "title": {
+      "darwin": "Create a New Repository",
+      "default": "Create a new repository"
+    }
   },
   "menu": {
     "app": {
@@ -597,6 +701,13 @@
     },
     "title": "Options",
     "titleDarwin": "Settings"
+  },
+  "repositoryPath": {
+    "invalidCharsReplaced": "Invalid characters have been replaced by hyphens.",
+    "nameLabel": "Name",
+    "namePlaceholder": "name",
+    "pathPlaceholder": "path",
+    "willBeCreatedAs": "Will be created as {{name}}"
   },
   "welcome": {
     "start": {

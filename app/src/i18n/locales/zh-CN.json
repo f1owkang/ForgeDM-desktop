@@ -1,6 +1,35 @@
 {
   "common": {
-    "cancel": "取消"
+    "cancel": "取消",
+    "choose": "选择…",
+    "localPath": {
+      "darwin": "本地路径",
+      "default": "本地路径"
+    },
+    "repositoryPath": "仓库路径"
+  },
+  "addExistingRepository": {
+    "bareRepoError": "此目录似乎是一个裸仓库。目前不支持裸仓库。",
+    "notGitRepoCreateLink": "创建仓库",
+    "notGitRepoCreatePrefix": "是否要在此处",
+    "notGitRepoCreateSuffix": "？",
+    "notGitRepoMessage": "此目录似乎不是一个 Git 仓库。",
+    "notGitRepoSrOnly": "此目录似乎不是一个 Git 仓库。是否要在此处创建仓库？",
+    "okButtonText": {
+      "darwin": "添加仓库",
+      "default": "添加仓库"
+    },
+    "title": {
+      "darwin": "添加本地仓库",
+      "default": "添加本地仓库"
+    },
+    "unsafeRepoAddExceptionLink": "为此目录添加例外",
+    "unsafeRepoAt": "位于",
+    "unsafeRepoPrefix": "Git 仓库",
+    "unsafeRepoSrOnly": "Git 仓库似乎属于你计算机上的另一个用户。添加不受信任的仓库可能会自动执行仓库中的文件。如果你信任该目录的所有者，可以为此目录添加例外以继续操作。",
+    "unsafeRepoSuffix": "似乎属于你计算机上的另一个用户。添加不受信任的仓库可能会自动执行仓库中的文件。",
+    "unsafeRepoTrustPrefix": "如果你信任该目录的所有者，可以",
+    "unsafeRepoTrustSuffix": "以继续操作。"
   },
   "configureGitUser": {
     "configureManually": "手动配置",
@@ -65,6 +94,81 @@
     "showCostsAria": "显示 Copilot 模型点数费用",
     "showCostsTooltip": "显示点数费用",
     "unavailable": "不可用"
+  },
+  "cloneGenericRepository": {
+    "urlLabel": "仓库 URL 或 GitHub 用户名和仓库",
+    "urlLabelExample": "(hubot/cool-repo)",
+    "urlPlaceholder": "URL 或 用户名/仓库"
+  },
+  "cloneRepository": {
+    "clone": "克隆",
+    "cloneAs": "克隆为：",
+    "dirCreateError": "无法在此路径创建目录。",
+    "fileWithName": "已存在同名文件。Git 只能克隆到文件夹。",
+    "filesInFolder": "此文件夹包含文件。Git 只能克隆到空文件夹。",
+    "pathReadError": "无法读取磁盘路径。请检查路径并重试。",
+    "repoNotFound": "找不到该仓库。请确认你已登录、网络可访问，且 URL 或仓库别名拼写正确。",
+    "select": "选择",
+    "signInDotCom": "登录你的 GitHub.com 账户以访问你的仓库。",
+    "signInEnterprise": "如果你在工作中使用 GitHub Enterprise，请登录以访问你的仓库。",
+    "signInTitle": {
+      "darwin": "登录",
+      "default": "登录"
+    },
+    "title": {
+      "darwin": "克隆仓库",
+      "default": "克隆仓库"
+    }
+  },
+  "cloneableRepositoryFilterList": {
+    "archived": "已归档",
+    "emptyListEnd": "。",
+    "emptyListMiddle": " 在 ",
+    "emptyListPrefix": "看起来 ",
+    "emptyListSuffix": " 上没有仓库。如果最近创建了仓库，请",
+    "filterPlaceholder": "筛选你的仓库",
+    "loading": "正在从 {{endpoint}} 加载仓库…",
+    "noResultsPrefix": "抱歉，找不到与 ",
+    "noResultsSuffix": " 匹配的仓库。",
+    "refreshList": "刷新此列表",
+    "refreshTooltip": "刷新仓库列表",
+    "yourRepositories": {
+      "darwin": "你的仓库",
+      "default": "你的仓库"
+    }
+  },
+  "createRepository": {
+    "addRepoLink": "添加此仓库",
+    "description": "描述",
+    "gitIgnore": {
+      "darwin": "Git 忽略规则",
+      "default": "Git 忽略规则"
+    },
+    "gitRepoErrorMiddle": "似乎是一个 Git 仓库。是否要",
+    "gitRepoErrorPrefix": "目录 ",
+    "gitRepoErrorSrOnly": "目录 {{path}} 似乎是一个 Git 仓库。是否要添加此仓库？",
+    "gitRepoErrorSuffix": "？",
+    "initReadme": "使用 README 初始化此仓库",
+    "invalidPathError": "无法在此路径创建目录。你可能没有在此处创建目录的权限。",
+    "initialCommit": "初始化提交",
+    "learnSubmodules": "了解子模块。",
+    "license": "许可证",
+    "namePlaceholder": "仓库名称",
+    "okButtonText": {
+      "darwin": "创建仓库",
+      "default": "创建仓库"
+    },
+    "pathMessage": "仓库将创建在 {{path}}。",
+    "pathPlaceholder": "仓库路径",
+    "readmeOverwrite": "此目录已包含 README.md 文件。勾选此复选框将导致现有文件被覆盖。",
+    "readmeOverwriteAria": "此目录已包含 README.md 文件。勾选此复选框将导致现有文件被覆盖。",
+    "subfolderMiddle": "似乎是 Git 仓库的子文件夹。",
+    "subfolderPrefix": "目录 ",
+    "subfolderSrOnly": "目录 {{path}} 似乎是 Git 仓库的子文件夹。你知道子模块吗？",
+    "title": {
+      "darwin": "创建新仓库",
+      "default": "创建新仓库"
+    }
   },
   "menu": {
     "app": {
@@ -597,6 +701,13 @@
     },
     "title": "选项",
     "titleDarwin": "设置"
+  },
+  "repositoryPath": {
+    "invalidCharsReplaced": "无效字符已被替换为连字符。",
+    "nameLabel": "名称",
+    "namePlaceholder": "名称",
+    "pathPlaceholder": "路径",
+    "willBeCreatedAs": "将创建为 {{name}}"
   },
   "welcome": {
     "start": {
