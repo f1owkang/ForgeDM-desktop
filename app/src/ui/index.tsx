@@ -3,6 +3,7 @@ import '../lib/logging/renderer/install'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as Path from 'path'
+import { I18nextProvider } from 'react-i18next'
 import { App } from './app'
 import {
   Dispatcher,
@@ -56,6 +57,12 @@ import { RepositoryStateCache } from '../lib/stores/repository-state-cache'
 import { ApiRepositoriesStore } from '../lib/stores/api-repositories-store'
 import { CommitStatusStore } from '../lib/stores/commit-status-store'
 import { PullRequestCoordinator } from '../lib/stores/pull-request-coordinator'
+import {
+  getLanguageFromCountryCode,
+  i18n,
+  initializeI18n,
+  normalizeLanguage,
+} from '../lib/i18n'
 
 import { sendNonFatalException } from '../lib/helpers/non-fatal-exception'
 import { enableUnhandledRejectionReporting } from '../lib/feature-flag'
@@ -80,6 +87,25 @@ import { createCredentialHelperTrampolineHandler } from '../lib/trampoline/tramp
 if (__DEV__) {
   installDevGlobals()
 }
+
+function getInitialLanguage() {
+  const envLanguage = process.env.FORGEDM_LOCALE
+
+  if (envLanguage != null && envLanguage.length > 0) {
+    return normalizeLanguage(envLanguage)
+  }
+
+  const locale = normalizeLanguage(navigator.language)
+
+  if (locale !== 'en-US') {
+    return locale
+  }
+
+  const locationHash = new URLSearchParams(window.location.hash.slice(1))
+  return getLanguageFromCountryCode(locationHash.get('lc'))
+}
+
+initializeI18n(getInitialLanguage())
 
 migrateRendererGUID()
 
@@ -418,15 +444,17 @@ ipcRenderer.on('cli-action', (_, action) =>
 })(Grid.defaultProps, Grid.propTypes)
 
 ReactDOM.render(
-  <App
-    dispatcher={dispatcher}
-    appStore={appStore}
-    repositoryStateManager={repositoryStateManager}
-    issuesStore={issuesStore}
-    gitHubUserStore={gitHubUserStore}
-    aheadBehindStore={aheadBehindStore}
-    notificationsDebugStore={notificationsDebugStore}
-    startTime={startTime}
-  />,
+  <I18nextProvider i18n={i18n}>
+    <App
+      dispatcher={dispatcher}
+      appStore={appStore}
+      repositoryStateManager={repositoryStateManager}
+      issuesStore={issuesStore}
+      gitHubUserStore={gitHubUserStore}
+      aheadBehindStore={aheadBehindStore}
+      notificationsDebugStore={notificationsDebugStore}
+      startTime={startTime}
+    />
+  </I18nextProvider>,
   document.getElementById('desktop-app-container')!
 )

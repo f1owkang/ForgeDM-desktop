@@ -5,6 +5,14 @@ import { stat } from 'fs/promises'
 import { isApplicationBundle } from '../lib/is-application-bundle'
 import { pathExists } from '../lib/path-exists'
 
+type RequestChannelParameters<T extends keyof RequestChannels> =
+  RequestChannels[T] extends (...args: infer P) => void ? P : never
+
+type RequestResponseChannelParameters<T extends keyof RequestResponseChannels> =
+  RequestResponseChannels[T] extends (...args: infer P) => Promise<unknown>
+    ? P
+    : never
+
 /**
  * Creates a strongly typed proxy method for sending a duplex IPC message to the
  * main process. The parameter types and return type are infered from the
@@ -24,7 +32,7 @@ export function invokeProxy<T extends keyof RequestResponseChannels>(
   channel: T,
   numArgs: ParameterCount<RequestResponseChannels[T]>
 ) {
-  return (...args: Parameters<RequestResponseChannels[T]>) => {
+  return (...args: RequestResponseChannelParameters<T>) => {
     // This as any cast here may seem unsafe but it isn't since we're guaranteed
     // that numArgs will match the parameter count of the IPC declaration.
     args = args.length !== numArgs ? (args.slice(0, numArgs) as any) : args
@@ -51,7 +59,7 @@ export function sendProxy<T extends keyof RequestChannels>(
   channel: T,
   numArgs: ParameterCount<RequestChannels[T]>
 ) {
-  return (...args: Parameters<RequestChannels[T]>) => {
+  return (...args: RequestChannelParameters<T>) => {
     // This as any cast here may seem unsafe but it isn't since we're guaranteed
     // that numArgs will match the parameter count of the IPC declaration.
     args = args.length !== numArgs ? (args.slice(0, numArgs) as any) : args

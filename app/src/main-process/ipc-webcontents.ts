@@ -3,6 +3,9 @@
 import { WebContents } from 'electron'
 import { RequestChannels } from '../lib/ipc-shared'
 
+type RequestChannelParameters<T extends keyof RequestChannels> =
+  RequestChannels[T] extends (...args: infer P) => void ? P : never
+
 /**
  * Send a message to a renderer process via its webContents asynchronously. This
  * is the equivalent of webContents.send except with strong typing guarantees.
@@ -10,7 +13,7 @@ import { RequestChannels } from '../lib/ipc-shared'
 export function send<T extends keyof RequestChannels>(
   webContents: WebContents,
   channel: T,
-  ...args: Parameters<RequestChannels[T]>
+  ...args: RequestChannelParameters<T>
 ): void {
   if (webContents.isDestroyed()) {
     const msg = `failed to send on ${channel}, webContents was destroyed`

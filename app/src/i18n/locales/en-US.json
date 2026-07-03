@@ -1,0 +1,332 @@
+{
+  "common": {
+    "cancel": "Cancel"
+  },
+  "menu": {
+    "app": {
+      "about": "About GitHub Desktop",
+      "installCli": "Install Command Line Tool...",
+      "label": "GitHub Desktop",
+      "settings": "Settings..."
+    },
+    "branch": {
+      "compareOnGitHub": {
+        "darwin": "Compare on GitHub",
+        "default": "Compare on &GitHub"
+      },
+      "compareToBranch": {
+        "darwin": "Compare to Branch",
+        "default": "&Compare to branch"
+      },
+      "createPullRequest": {
+        "darwin": "Create Pull Request",
+        "default": "Create &pull request"
+      },
+      "delete": {
+        "darwin": "Delete...",
+        "default": "&Delete..."
+      },
+      "discardAllChanges": {
+        "darwin": "Discard All Changes...",
+        "default": "Discard all changes..."
+      },
+      "forcePush": {
+        "darwin": "Force Push",
+        "default": "Force P&ush"
+      },
+      "forcePushWithConfirmation": {
+        "darwin": "Force Push...",
+        "default": "Force P&ush..."
+      },
+      "hideStashedChanges": {
+        "darwin": "Hide Stashed Changes",
+        "default": "H&ide stashed changes"
+      },
+      "label": {
+        "darwin": "Branch",
+        "default": "&Branch"
+      },
+      "mergeBranch": {
+        "darwin": "Merge into Current Branch...",
+        "default": "&Merge into current branch..."
+      },
+      "newBranch": {
+        "darwin": "New Branch...",
+        "default": "New &branch..."
+      },
+      "previewPullRequest": {
+        "darwin": "Preview Pull Request",
+        "default": "Preview pull request"
+      },
+      "push": {
+        "darwin": "Push",
+        "default": "P&ush"
+      },
+      "rebaseBranch": {
+        "darwin": "Rebase Current Branch...",
+        "default": "R&ebase current branch..."
+      },
+      "rename": {
+        "darwin": "Rename...",
+        "default": "&Rename..."
+      },
+      "showStashedChanges": {
+        "darwin": "Show Stashed Changes",
+        "default": "Sho&w stashed changes"
+      },
+      "showPullRequest": {
+        "darwin": "View Pull Request on GitHub",
+        "default": "View &pull request on GitHub"
+      },
+      "squashAndMergeBranch": {
+        "darwin": "Squash and Merge into Current Branch...",
+        "default": "Squas&h and merge into current branch..."
+      },
+      "stashAllChanges": {
+        "darwin": "Stash All Changes",
+        "default": "&Stash all changes"
+      },
+      "stashAllChangesWithConfirmation": {
+        "darwin": "Stash All Changes...",
+        "default": "&Stash all changes..."
+      },
+      "updateFromDefaultBranch": {
+        "darwin": "Update from {{branch}}",
+        "default": "&Update from {{branch}}"
+      },
+      "viewBranchOnGitHub": {
+        "darwin": "View Branch on GitHub",
+        "default": "View branch on GitHub"
+      }
+    },
+    "edit": {
+      "copy": {
+        "darwin": "Copy",
+        "default": "&Copy"
+      },
+      "cut": {
+        "darwin": "Cut",
+        "default": "Cu&t"
+      },
+      "find": {
+        "darwin": "Find",
+        "default": "&Find"
+      },
+      "label": {
+        "darwin": "Edit",
+        "default": "&Edit"
+      },
+      "paste": {
+        "darwin": "Paste",
+        "default": "&Paste"
+      },
+      "redo": {
+        "darwin": "Redo",
+        "default": "&Redo"
+      },
+      "selectAll": {
+        "darwin": "Select All",
+        "default": "Select &all"
+      },
+      "undo": {
+        "darwin": "Undo",
+        "default": "&Undo"
+      }
+    },
+    "file": {
+      "addLocalRepository": {
+        "darwin": "Add Local Repository...",
+        "default": "Add &local repository..."
+      },
+      "cloneRepository": {
+        "darwin": "Clone Repository...",
+        "default": "Clo&ne repository..."
+      },
+      "exit": "E&xit",
+      "label": {
+        "darwin": "File",
+        "default": "&File"
+      },
+      "newRepository": {
+        "darwin": "New Repository...",
+        "default": "New &repository..."
+      },
+      "options": "&Options..."
+    },
+    "help": {
+      "about": "&About GitHub Desktop",
+      "contactSupport": {
+        "darwin": "Contact GitHub Support...",
+        "default": "&Contact GitHub support..."
+      },
+      "label": "&Help",
+      "reportIssue": {
+        "darwin": "Report Issue...",
+        "default": "Report issue..."
+      },
+      "showKeyboardShortcuts": {
+        "darwin": "Show Keyboard Shortcuts",
+        "default": "Show keyboard shortcuts"
+      },
+      "showLogs": {
+        "darwin": "Show Logs in Finder",
+        "linux": "S&how logs in your File Manager",
+        "win32": "S&how logs in Explorer"
+      },
+      "showUserGuides": "Show User Guides"
+    },
+    "repository": {
+      "createIssue": {
+        "darwin": "Create Issue on GitHub",
+        "default": "Create &issue on GitHub"
+      },
+      "defaultBranch": {
+        "darwin": "Default Branch",
+        "default": "default branch"
+      },
+      "externalEditorFallback": {
+        "darwin": "External Editor",
+        "default": "external editor"
+      },
+      "fetch": {
+        "darwin": "Fetch",
+        "default": "&Fetch"
+      },
+      "label": {
+        "darwin": "Repository",
+        "default": "&Repository"
+      },
+      "newWorktree": {
+        "darwin": "New Worktree...",
+        "default": "New work&tree..."
+      },
+      "openInEditor": {
+        "darwin": "Open in {{editor}}",
+        "default": "&Open in {{editor}}"
+      },
+      "openInShell": {
+        "darwin": "Open in {{shell}}",
+        "default": "O&pen in {{shell}}"
+      },
+      "openWith": {
+        "darwin": "Open With...",
+        "default": "Open &with..."
+      },
+      "pull": {
+        "darwin": "Pull",
+        "default": "Pu&ll"
+      },
+      "remove": {
+        "darwin": "Remove",
+        "default": "&Remove"
+      },
+      "removeWithConfirmation": {
+        "darwin": "Remove...",
+        "default": "&Remove..."
+      },
+      "settings": {
+        "darwin": "Repository Settings...",
+        "default": "Repository &settings..."
+      },
+      "shellFallback": {
+        "darwin": "Shell",
+        "default": "shell"
+      },
+      "showInDirectory": {
+        "darwin": "Show in Finder",
+        "linux": "Show in your File Manager",
+        "win32": "Show in E&xplorer"
+      },
+      "viewOnGitHub": {
+        "darwin": "View on GitHub",
+        "default": "&View on GitHub"
+      }
+    },
+    "view": {
+      "contractActiveResizable": {
+        "darwin": "Contract Active Resizable",
+        "default": "Contract active resizable"
+      },
+      "expandActiveResizable": {
+        "darwin": "Expand Active Resizable",
+        "default": "Expand active resizable"
+      },
+      "goToSummary": {
+        "darwin": "Go to Summary",
+        "default": "Go to &Summary"
+      },
+      "hideChangesFilter": {
+        "darwin": "Hide Changes Filter",
+        "default": "Hide Toggle Chan&ges Filter"
+      },
+      "label": {
+        "darwin": "View",
+        "default": "&View"
+      },
+      "reload": "&Reload",
+      "resetZoom": {
+        "darwin": "Reset Zoom",
+        "default": "Reset zoom"
+      },
+      "showBranchesList": {
+        "darwin": "Show Branches List",
+        "default": "&Branches list"
+      },
+      "showChanges": {
+        "darwin": "Show Changes",
+        "default": "&Changes"
+      },
+      "showChangesFilter": {
+        "darwin": "Show Changes Filter",
+        "default": "Show Toggle Chan&ges Filter"
+      },
+      "showDevtools": {
+        "darwin": "Toggle Developer Tools",
+        "default": "&Toggle developer tools"
+      },
+      "showHistory": {
+        "darwin": "Show History",
+        "default": "&History"
+      },
+      "showRepositoryList": {
+        "darwin": "Show Repository List",
+        "default": "Repository &list"
+      },
+      "showWorktreesList": {
+        "darwin": "Show Worktrees List",
+        "default": "Wor&ktrees list"
+      },
+      "toggleFullScreen": {
+        "darwin": "Toggle Full Screen",
+        "default": "Toggle &full screen"
+      },
+      "zoomIn": {
+        "darwin": "Zoom In",
+        "default": "Zoom in"
+      },
+      "zoomOut": {
+        "darwin": "Zoom Out",
+        "default": "Zoom out"
+      }
+    }
+  },
+  "welcome": {
+    "start": {
+      "ariaLabel": "Welcome to GitHub Desktop",
+      "createAccount": "Create your free account.",
+      "description": "GitHub Desktop is a seamless way to contribute to projects on GitHub and GitHub Enterprise. Sign in below to get started with your existing projects.",
+      "metrics": "GitHub Desktop sends usage metrics to improve the product and inform feature decisions.",
+      "metricsLink": "Learn more about user metrics.",
+      "newToGitHub": "New to GitHub?",
+      "privacy": "GitHub Privacy Statement.",
+      "privacyPrefix": ". For more information about GitHub's privacy practices, see the",
+      "signInEnterprise": "Sign in to GitHub Enterprise",
+      "signInGitHub": "Sign in to GitHub.com",
+      "skip": "Skip this step",
+      "terms": "Terms of Service",
+      "termsPrefix": "By creating an account, you agree to the",
+      "titlePrefix": "Welcome to",
+      "titleProduct": "GitHub Desktop"
+    }
+  }
+}
