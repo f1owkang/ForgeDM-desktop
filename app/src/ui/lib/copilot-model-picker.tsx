@@ -12,6 +12,7 @@ import type {
   Model,
   ModelBilling,
 } from '@github/copilot-sdk/dist/generated/rpc'
+import { t } from '../../lib/i18n'
 
 interface ICopilotModelPickerProps {
   readonly label: string
@@ -86,8 +87,10 @@ const formatReasoningEffortLevels = (
   }
 
   return supportedReasoningEfforts.length === 1
-    ? '1 level'
-    : `${supportedReasoningEfforts.length} levels`
+    ? t('copilotModelPicker.reasoningLevels.one')
+    : t('copilotModelPicker.reasoningLevels.other', {
+        count: supportedReasoningEfforts.length,
+      })
 }
 
 const formatAIModelCreditAmount = (value: number | undefined) =>
@@ -142,7 +145,9 @@ const getListItemSubtitle = (item: ICopilotModelListItem) => {
   const modelPickerPriceCategory = getModelPickerPriceCategory(item)
   return modelPickerPriceCategory === null
     ? null
-    : `Use of credits: ${modelPickerPriceCategory}`
+    : t('copilotModelPicker.useOfCredits', {
+        category: modelPickerPriceCategory,
+      })
 }
 
 export const getCopilotModelPickerSelectionInfo = (
@@ -167,16 +172,17 @@ export const getCopilotModelPickerSelectionInfo = (
   }
 
   const modelPickerCategory = selectedModel?.modelPickerCategory?.trim()
-  const useOfCredits = `Use of credits: ${formatModelPickerCategory(
-    modelPickerPriceCategory
-  )}`
+  const useOfCredits = t('copilotModelPicker.useOfCredits', {
+    category: formatModelPickerCategory(modelPickerPriceCategory),
+  })
 
   const summary =
     modelPickerCategory === undefined || modelPickerCategory.length === 0
       ? useOfCredits
-      : `${formatModelPickerCategoryHeader(
-          modelPickerCategory
-        )} model. ${useOfCredits}`
+      : t('copilotModelPicker.summaryWithCategory', {
+          category: formatModelPickerCategoryHeader(modelPickerCategory),
+          useOfCredits,
+        })
   const contextWindowTokenCount = getContextWindowTokenCount(
     tokenPrices.contextMax,
     selectedModel.capabilities.limits?.max_output_tokens,
@@ -208,7 +214,7 @@ const getCopilotModelTitle = (item: ICopilotModelListItem) => {
     ? ''
     : getPremiumRequestsBillingLabel(item.billing)
   return item.isDefault
-    ? `${item.name} (default)`
+    ? t('copilotModelPicker.defaultTitle', { name: item.name })
     : `${item.name}${billingLabel}`
 }
 
@@ -424,7 +430,11 @@ export class CopilotModelPicker extends React.Component<
   }
 
   private renderNoItems = () => {
-    return <div className="copilot-model-list-empty">No models found.</div>
+    return (
+      <div className="copilot-model-list-empty">
+        {t('copilotModelPicker.noModelsFound')}
+      </div>
+    )
   }
 
   private getItemAriaLabel = (item: ICopilotModelListItem) => {
@@ -454,13 +464,17 @@ export class CopilotModelPicker extends React.Component<
       this.props.value
     )
     const buttonItem = this.getItemByValue(groups, this.props.value)
-    const buttonAriaLabel = `${this.props.label}: ${
-      buttonItem === undefined ? 'None' : getCopilotModelTitle(buttonItem)
-    }`
+    const buttonAriaLabel = t('copilotModelPicker.buttonAriaLabel', {
+      label: this.props.label,
+      selection:
+        buttonItem === undefined
+          ? t('copilotModelPicker.none')
+          : getCopilotModelTitle(buttonItem),
+    })
     return (
       <PopoverDropdown
         className="copilot-model-picker"
-        contentTitle="Choose a model"
+        contentTitle={t('copilotModelPicker.chooseModel')}
         buttonContent={this.renderButtonContent(buttonItem)}
         buttonAriaLabel={buttonAriaLabel}
         decoration={PopoverDecoration.Bordered}
@@ -482,7 +496,7 @@ export class CopilotModelPicker extends React.Component<
           onSelectionChanged={this.onSelectionChanged}
           getItemAriaLabel={this.getItemAriaLabel}
           getGroupAriaLabel={this.getGroupAriaLabel}
-          placeholderText="Filter models"
+          placeholderText={t('copilotModelPicker.filterModels')}
           renderNoItems={this.renderNoItems}
         />
       </PopoverDropdown>

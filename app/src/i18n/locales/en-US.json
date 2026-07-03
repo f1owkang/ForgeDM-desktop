@@ -7,6 +7,31 @@
     "name": "Name",
     "otherEmail": "Other"
   },
+  "copilotModelPicker": {
+    "buttonAriaLabel": "{{label}}: {{selection}}",
+    "chooseModel": "Choose a model",
+    "defaultTitle": "{{name}} (default)",
+    "filterModels": "Filter models",
+    "noModelsFound": "No models found.",
+    "none": "None",
+    "reasoningLevels": {
+      "one": "1 level",
+      "other": "{{count}} levels"
+    },
+    "summaryWithCategory": "{{category}} model. {{useOfCredits}}",
+    "useOfCredits": "Use of credits: {{category}}"
+  },
+  "copilotModelSelectionInfo": {
+    "aiCreditsPerTokens": "AI credits per {{tokenCount}} tokens",
+    "cachedInput": "Cached input",
+    "context": "Context",
+    "input": "Input",
+    "output": "Output",
+    "reasoning": "Reasoning",
+    "showCostsAria": "Show Copilot model credit costs",
+    "showCostsTooltip": "Show credit costs",
+    "unavailable": "Unavailable"
+  },
   "menu": {
     "app": {
       "about": "About GitHub Desktop",
@@ -385,6 +410,58 @@
         "light": "Light",
         "loadingSystem": "Loading system theme",
         "system": "System"
+      }
+    },
+    "copilot": {
+      "access": {
+        "checking": "Checking Copilot access…",
+        "desktopDisabled": {
+          "action": "Open Copilot feature settings",
+          "message": "A Copilot license is available for your account, but \"Copilot in GitHub Desktop\" is disabled in your Copilot feature settings."
+        },
+        "noLicense": {
+          "action": "View Copilot plans",
+          "message": "Copilot features in GitHub Desktop require a GitHub Copilot license."
+        },
+        "signedOut": {
+          "action": "Sign In",
+          "message": "Sign in to an account with a Copilot license to configure Copilot settings."
+        }
+      },
+      "models": {
+        "alwaysUseForConflicts": {
+          "darwin": "Always Use Copilot When Conflicts Are Detected",
+          "default": "Always use Copilot when conflicts are detected"
+        },
+        "commitMessageGeneration": {
+          "darwin": "Commit Message Generation",
+          "default": "Commit message generation"
+        },
+        "conflictModelDescription": "Model changes apply to future conflict resolutions.",
+        "conflictResolution": {
+          "darwin": "Conflict Resolution",
+          "default": "Conflict resolution"
+        },
+        "customInstructions": "Tailor how Copilot behaves by using <instructions>custom instructions</instructions>.",
+        "empty": "No Copilot models available.",
+        "learnCommitMessages": "Learn more about generating commit messages.",
+        "loading": "Loading available models…"
+      },
+      "providers": {
+        "add": {
+          "darwin": "Add Provider…",
+          "default": "Add provider…"
+        },
+        "editAria": "Edit {{name}}",
+        "empty": "Add a custom provider to use your own API keys with OpenAI-compatible endpoints, Azure, Anthropic, or local providers like Ollama.",
+        "local": "Local",
+        "modelCountOne": "1 model",
+        "modelCountOther": "{{count}} models",
+        "removeAria": "Remove {{name}}"
+      },
+      "tabs": {
+        "models": "Models",
+        "providers": "Providers"
       }
     },
     "integrations": {
