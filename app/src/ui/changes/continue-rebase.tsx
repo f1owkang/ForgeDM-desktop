@@ -7,6 +7,7 @@ import { Repository } from '../../models/repository'
 import { WorkingDirectoryStatus } from '../../models/status'
 import { getConflictedFiles } from '../../lib/status'
 import { MultiCommitOperationKind } from '../../models/multi-commit-operation'
+import { t } from '../../lib/i18n'
 
 interface IContinueRebaseProps {
   readonly dispatcher: Dispatcher
@@ -33,7 +34,7 @@ export class ContinueRebase extends React.Component<IContinueRebaseProps, {}> {
     const { manualResolutions } = this.props.rebaseConflictState
 
     let canCommit = true
-    let tooltip = 'Continue rebase'
+    let tooltip = t('changes.continueRebase')
 
     const conflictedFilesCount = getConflictedFiles(
       this.props.workingDirectory,
@@ -41,7 +42,7 @@ export class ContinueRebase extends React.Component<IContinueRebaseProps, {}> {
     ).length
 
     if (conflictedFilesCount > 0) {
-      tooltip = 'Resolve all conflicts before continuing'
+      tooltip = t('changes.continueRebaseResolveConflicts')
       canCommit = false
     }
 
@@ -51,7 +52,7 @@ export class ContinueRebase extends React.Component<IContinueRebaseProps, {}> {
 
     const warnAboutUntrackedFiles = this.props.hasUntrackedChanges ? (
       <div className="warning-untracked-files">
-        Untracked files will be excluded
+        {t('changes.untrackedExcluded')}
       </div>
     ) : undefined
 
@@ -65,7 +66,7 @@ export class ContinueRebase extends React.Component<IContinueRebaseProps, {}> {
           tooltip={tooltip}
         >
           {loading}
-          <span>{loading !== undefined ? 'Rebasing' : 'Continue rebase'}</span>
+          <span>{loading !== undefined ? t('changes.rebasing') : t('changes.continueRebase')}</span>
         </Button>
 
         {warnAboutUntrackedFiles}
