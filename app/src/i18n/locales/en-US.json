@@ -316,6 +316,18 @@
     }
   },
   "preferences": {
+    "accessibility": {
+      "diffCheckMarks": {
+        "description": "When enabled, check marks will be displayed along side the line numbers and groups of line numbers in the diff when committing. When disabled, the line number controls will be less prominent.",
+        "label": "Show check marks in the diff"
+      },
+      "heading": "Accessibility",
+      "underlineLinks": {
+        "description": "When enabled, GitHub Desktop will underline links in commit messages, comments, and other text fields. This can help make links easier to distinguish.",
+        "example": "This is an example link",
+        "label": "Underline links"
+      }
+    },
     "accounts": {
       "addEnterpriseAccount": "Add GitHub Enterprise account",
       "githubDotCom": "GitHub.com",
@@ -401,6 +413,20 @@
         "author": "Author",
         "defaultBranch": "Default branch",
         "hooks": "Hooks"
+      }
+    },
+    "notifications": {
+      "configureStates": {
+        "enabled": "enabled",
+        "properlyConfigured": "properly configured"
+      },
+      "description": "Allows the display of notifications when high-signal events take place in the current repository.",
+      "enable": "Enable notifications",
+      "heading": "Notifications",
+      "hints": {
+        "configure": " Make sure notifications are {{state}} for GitHub Desktop in the <settings>Notifications Settings</settings>.",
+        "denied": "GitHub Desktop has no permission to display notifications. Please, enable them in the <settings>Notifications Settings</settings>.",
+        "grantPermission": " You need to <permission>grant permission</permission> to display these notifications from GitHub Desktop."
       }
     },
     "save": "Save",

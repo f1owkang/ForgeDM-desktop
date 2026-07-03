@@ -316,6 +316,18 @@
     }
   },
   "preferences": {
+    "accessibility": {
+      "diffCheckMarks": {
+        "description": "启用后，提交时差异视图中的行号和行号组旁会显示勾选标记。禁用后，行号控件会更加低调。",
+        "label": "在差异视图中显示勾选标记"
+      },
+      "heading": "辅助功能",
+      "underlineLinks": {
+        "description": "启用后，GitHub Desktop 会为提交消息、评论和其它文本字段中的链接添加下划线。这有助于更容易地区分链接。",
+        "example": "这是一个示例链接",
+        "label": "为链接添加下划线"
+      }
+    },
     "accounts": {
       "addEnterpriseAccount": "添加 GitHub Enterprise 账户",
       "githubDotCom": "GitHub.com",
@@ -401,6 +413,20 @@
         "author": "作者",
         "defaultBranch": "默认分支",
         "hooks": "Hooks"
+      }
+    },
+    "notifications": {
+      "configureStates": {
+        "enabled": "启用",
+        "properlyConfigured": "正确配置"
+      },
+      "description": "允许在当前仓库发生高信号事件时显示通知。",
+      "enable": "启用通知",
+      "heading": "通知",
+      "hints": {
+        "configure": "请确保 GitHub Desktop 的通知已在<settings>通知设置</settings>中{{state}}。",
+        "denied": "GitHub Desktop 没有显示通知的权限。请在<settings>通知设置</settings>中启用通知。",
+        "grantPermission": "你需要<permission>授予权限</permission>，才能显示来自 GitHub Desktop 的这些通知。"
       }
     },
     "save": "保存",
