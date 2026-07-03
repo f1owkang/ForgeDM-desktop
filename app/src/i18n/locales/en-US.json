@@ -85,6 +85,21 @@
       },
       "viewOnGitHub": "View on GitHub",
       "viewOnGitHubEnterprise": "View on GitHub Enterprise"
+    },
+    "expandableCommitSummary": {
+      "emptyMessage": "Empty commit message",
+      "collapse": "Collapse",
+      "expand": "Expand",
+      "collapseDetails": "Collapse commit details",
+      "expandDetails": "Expand commit details",
+      "unreachableCommits": "{{count}} unreachable {{commits}}",
+      "notIncluded": "not included.",
+      "unknownUser": "Unknown user",
+      "copySha": "Copy the full SHA",
+      "showingChangesFrom": "Showing changes from",
+      "commitCount": "{{count}} {{commits}}",
+      "addedLines": "{{count}} added lines",
+      "removedLines": "{{count}} removed lines"
     }
   },
   "enterpriseServerEntry": {

@@ -21,6 +21,7 @@ import { Avatar } from '../lib/avatar'
 import { CopyButton } from '../copy-button'
 import { Account } from '../../models/account'
 import { Emoji } from '../../lib/emoji'
+import { t } from '../../lib/i18n'
 
 interface IExpandableCommitSummaryProps {
   readonly repository: Repository
@@ -125,7 +126,7 @@ function createState(
 
 function getCommitSummary(selectedCommits: ReadonlyArray<Commit>) {
   return selectedCommits[0].summary.length === 0
-    ? 'Empty commit message'
+    ? t('history.expandableCommitSummary.emptyMessage')
     : selectedCommits[0].summary
 }
 
@@ -220,11 +221,11 @@ export class ExpandableCommitSummary extends React.Component<
       <Button
         onClick={isExpanded ? this.onCollapse : this.onExpand}
         className="expander"
-        tooltip={isExpanded ? 'Collapse' : 'Expand'}
+        tooltip={isExpanded ? t('history.expandableCommitSummary.collapse') : t('history.expandableCommitSummary.expand')}
         applyTooltipAriaDescribedBy={false}
         ariaExpanded={isExpanded}
         ariaLabel={
-          isExpanded ? 'Collapse commit details' : 'Expand commit details'
+          isExpanded ? t('history.expandableCommitSummary.collapseDetails') : t('history.expandableCommitSummary.expandDetails')
         }
         ariaControls="expandable-commit-summary"
       >
@@ -369,16 +370,16 @@ export class ExpandableCommitSummary extends React.Component<
           onMouseOver={this.onHighlightShasNotInDiff}
           onMouseOut={this.onRemoveHighlightOfShas}
         >
-          {excludedCommitsCount} unreachable {commitsPluralized}
+          {t('history.expandableCommitSummary.unreachableCommits', { count: excludedCommitsCount, commits: commitsPluralized })}
         </LinkButton>{' '}
-        not included.
+        {t('history.expandableCommitSummary.notIncluded')}
       </div>
     )
   }
 
   private renderExpandedAuthor(user: IAvatarUser): string | JSX.Element {
     if (!user) {
-      return 'Unknown user'
+      return t('history.expandableCommitSummary.unknownUser')
     }
 
     if (user.name) {
@@ -443,7 +444,7 @@ export class ExpandableCommitSummary extends React.Component<
       <div className="ecs-meta-item commit-ref">
         <Octicon symbol={octicons.gitCommit} />
         <div className="ref selectable">{isExpanded ? sha : shortSha}</div>
-        <CopyButton ariaLabel="Copy the full SHA" copyContent={sha} />
+        <CopyButton ariaLabel={t('history.expandableCommitSummary.copySha')} copyContent={sha} />
       </div>
     )
   }
@@ -472,7 +473,7 @@ export class ExpandableCommitSummary extends React.Component<
 
     return (
       <>
-        Showing changes from{' '}
+        {t('history.expandableCommitSummary.showingChangesFrom')}{' '}
         {commitsNotInDiff > 0 ? (
           <LinkButton
             className="commits-in-diff"
@@ -480,12 +481,12 @@ export class ExpandableCommitSummary extends React.Component<
             onMouseOut={this.onRemoveHighlightOfShas}
             onClick={this.showReachableCommits}
           >
-            {numInDiff} {commitsPluralized}
+            {t('history.expandableCommitSummary.commitCount', { count: numInDiff, commits: commitsPluralized })}
           </LinkButton>
         ) : (
           <>
             {' '}
-            {numInDiff} {commitsPluralized}
+            {t('history.expandableCommitSummary.commitCount', { count: numInDiff, commits: commitsPluralized })}
           </>
         )}
       </>
@@ -553,13 +554,13 @@ export class ExpandableCommitSummary extends React.Component<
       <div className="ecs-meta-item lines-added-deleted">
         {isExpanded ? <Octicon symbol={octicons.diff} /> : null}
         <div className="lines-added">
-          {!isExpanded ? <>+{linesAdded}</> : <>{linesAdded} added lines</>}
+          {!isExpanded ? <>+{linesAdded}</> : <>{t('history.expandableCommitSummary.addedLines', { count: linesAdded })}</>}
         </div>
         <div className="lines-deleted">
           {!isExpanded ? (
             <>-{linesDeleted}</>
           ) : (
-            <>{linesDeleted} removed lines</>
+            <>{t('history.expandableCommitSummary.removedLines', { count: linesDeleted })}</>
           )}
         </div>
       </div>
