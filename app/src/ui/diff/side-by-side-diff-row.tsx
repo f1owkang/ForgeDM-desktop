@@ -13,6 +13,7 @@ import classNames from 'classnames'
 import { Octicon, OcticonSymbolVariant } from '../octicons'
 import * as octicons from '../octicons/octicons.generated'
 import { shallowEquals, structuralEquals } from '../../lib/equality'
+import { t } from '../../lib/i18n'
 import { DiffHunkExpansionType, DiffSelectionType } from '../../models/diff'
 import { PopoverAnchorPosition } from '../lib/popover'
 import { WhitespaceHintPopover } from './whitespace-hint-popover'
@@ -455,7 +456,7 @@ export class SideBySideDiffRow extends React.Component<
           {data.noNewLineIndicator && (
             <span className="no-newline-indicator">
               <Octicon symbol={narrowNoNewlineSymbol} />
-              <span> No newline at end of file</span>
+              <span> {t('diff.noNewline')}</span>
             </span>
           )}
         </div>
@@ -472,7 +473,7 @@ export class SideBySideDiffRow extends React.Component<
       case DiffHunkExpansionType.Up:
         return {
           icon: octicons.foldUp,
-          title: 'Expand Up',
+          title: t('diff.expandUp'),
           handler: this.onExpandHunk(hunkIndex, expansionType),
         }
       // This can only be the last dummy hunk. In this case, we expand the
@@ -480,13 +481,13 @@ export class SideBySideDiffRow extends React.Component<
       case DiffHunkExpansionType.Down:
         return {
           icon: octicons.foldDown,
-          title: 'Expand Down',
+          title: t('diff.expandDown'),
           handler: this.onExpandHunk(hunkIndex - 1, expansionType),
         }
       case DiffHunkExpansionType.Short:
         return {
           icon: octicons.fold,
-          title: 'Expand All',
+          title: t('diff.expandAll'),
           handler: this.onExpandHunk(hunkIndex, expansionType),
         }
     }

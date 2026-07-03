@@ -1,8 +1,10 @@
 import React from 'react'
+import { Trans } from 'react-i18next'
 import { Octicon } from '../octicons'
 import * as octicons from '../octicons/octicons.generated'
 import { LinkButton } from '../lib/link-button'
 import { ITextDiff, LineEndingsChange } from '../../models/diff'
+import { t } from '../../lib/i18n'
 
 enum DiffContentsWarningType {
   UnicodeBidiCharacters,
@@ -67,12 +69,9 @@ export class DiffContentsWarning extends React.Component<IDiffContentsWarningPro
       case DiffContentsWarningType.UnicodeBidiCharacters:
         return (
           <>
-            This diff contains bidirectional Unicode text that may be
-            interpreted or compiled differently than what appears below. To
-            review, open the file in an editor that reveals hidden Unicode
-            characters.{' '}
+            {t('diff.bidirectionalUnicode')}{' '}
             <LinkButton uri="https://github.co/hiddenchars">
-              Learn more about bidirectional Unicode characters
+              {t('diff.learnMoreBidirectional')}
             </LinkButton>
           </>
         )
@@ -81,11 +80,18 @@ export class DiffContentsWarning extends React.Component<IDiffContentsWarningPro
         const { lineEndingsChange } = item
         return (
           <>
-            This file uses '{lineEndingsChange.from}' line endings, but{' '}
-            <LinkButton uri="https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings">
-              Git is configured to convert them
-            </LinkButton>{' '}
-            to '{lineEndingsChange.to}' the next time the file is checked out.
+            <Trans
+              i18nKey="diff.lineEndingChange"
+              values={{
+                from: lineEndingsChange.from,
+                to: lineEndingsChange.to,
+              }}
+              components={{
+                link: (
+                  <LinkButton uri="https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings" />
+                ),
+              }}
+            />
           </>
         )
     }

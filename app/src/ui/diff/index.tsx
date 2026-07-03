@@ -33,6 +33,7 @@ import { IFileContents } from './syntax-highlighting'
 import { SubmoduleDiff } from './submodule-diff'
 import { Octicon } from '../octicons'
 import * as OcticonSymbol from '../octicons/octicons.generated'
+import { t, platformT } from '../../lib/i18n'
 
 // image used when no diff is displayed
 const NoDiffImage = encodePathAsUrl(__dirname, 'static/ufo-alert.svg')
@@ -180,14 +181,13 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
       <div className="panel empty large-diff">
         <img src={NoDiffImage} className="blankslate-image" alt="" />
         <div className="description">
-          <p>The diff is too large to be displayed by default.</p>
+          <p>{t('diff.tooLargeDefault')}</p>
           <p>
-            You can try to show it anyway, but performance may be negatively
-            impacted.
+            {t('diff.tooLargeShowAnyway')}
           </p>
         </div>
         <Button onClick={this.showLargeDiff}>
-          {__DARWIN__ ? 'Show Diff' : 'Show diff'}
+          {platformT('diff.showDiff')}
         </Button>
       </div>
     )
@@ -197,7 +197,7 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
     return (
       <div className="panel empty large-diff">
         <img src={NoDiffImage} alt="" />
-        <p>The diff is too large to be displayed.</p>
+        <p>{t('diff.tooLarge')}</p>
       </div>
     )
   }
@@ -222,7 +222,7 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
         this.props.file.status.kind === AppFileStatusKind.New ||
         this.props.file.status.kind === AppFileStatusKind.Untracked
       ) {
-        return <div className="panel empty">The file is empty</div>
+        return <div className="panel empty">{t('diff.fileEmpty')}</div>
       }
 
       if (this.props.file.status.kind === AppFileStatusKind.Renamed) {
@@ -231,13 +231,13 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
           return (
             <div className="panel renamed">
               <Octicon symbol={OcticonSymbol.alert} />
-              The file was renamed and includes changes.
+              {t('diff.renamedWithChanges')}
             </div>
           )
         }
         return (
           <div className="panel renamed">
-            The file was renamed but not changed
+            {t('diff.renamedNoChanges')}
           </div>
         )
       }
@@ -248,16 +248,16 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
       ) {
         return (
           <div className="panel empty">
-            The file is in conflict and must be resolved via the command line.
+            {t('diff.inConflict')}
           </div>
         )
       }
 
       if (this.props.hideWhitespaceInDiff) {
-        return <div className="panel empty">Only whitespace changes found</div>
+        return <div className="panel empty">{t('diff.onlyWhitespace')}</div>
       }
 
-      return <div className="panel empty">No content changes found</div>
+      return <div className="panel empty">{t('diff.noContentChanges')}</div>
     }
 
     return this.renderTextDiff(diff)
