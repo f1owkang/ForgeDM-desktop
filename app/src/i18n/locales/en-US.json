@@ -19,6 +19,14 @@
     "name": "Name",
     "otherEmail": "Other"
   },
+  "gitEmailNotFoundWarning": {
+    "learnMore": "Learn more.",
+    "learnMoreAria": "Learn more about commit attribution",
+    "matched": "This email address matches {{accountType}}.",
+    "multipleAccounts": "either of your GitHub.com nor GitHub Enterprise accounts",
+    "notMatched": "This email address does not match {{accountType}}. Your commits will be wrongly attributed.",
+    "singleAccount": "your {{accountType}} account"
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise address",
     "continue": "Continue"
@@ -29,6 +37,9 @@
   "textBox": {
     "clear": "Clear",
     "inputCleared": "Input cleared"
+  },
+  "tooltippedCommitSha": {
+    "copy": "Copy"
   },
   "copilotModelPicker": {
     "buttonAriaLabel": "{{label}}: {{selection}}",
