@@ -276,6 +276,31 @@
         "default": "Commit message rule failures"
       },
       "ruleLeadingText": "This commit message"
+    },
+    "noChanges": {
+      "title": "No local changes",
+      "description": "There are no uncommitted changes in this repository. Here are some friendly suggestions for what to do next.",
+      "publishRepoTitle": "Publish your repository to GitHub",
+      "publishRepoDescription": "This repository is currently only available on your local machine. By publishing it on GitHub you can share it, and collaborate with others.",
+      "publishRepoButton": "Publish repository",
+      "publishBranchTitle": "Publish your branch",
+      "publishBranchButton": "Publish branch",
+      "viewStashTitle": "View your stashed changes",
+      "viewStashDescription": "You have {{count}} {{changes}} in progress that you have not yet committed.",
+      "viewStashDiscoverability": "When a stash exists, access it at the bottom of the Changes tab to the left.",
+      "viewStashButton": "View stash",
+      "createPRTitle": "Create a Pull Request from your current branch",
+      "createPRButton": "Create Pull Request",
+      "previewPRTitle": "Preview the Pull Request from your current branch",
+      "previewPRButton": "Preview Pull Request",
+      "pullTitle": "Pull {{numCommits}} {{commits}} from the {{remote}} remote",
+      "pullButton": "Pull {{remote}}",
+      "pushTitle": "Push {{items}} to the {{remote}} remote",
+      "pushButton": "Push {{remote}}",
+      "openEditorTitle": "Open the repository in your external editor",
+      "showInFileManager": "View the files of your repository in {{fileManager}}",
+      "viewOnGitHub": "Open the repository page on GitHub in your browser",
+      "selectEditor": "Select your editor in"
     }
   },
   "diff": {

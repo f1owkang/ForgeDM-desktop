@@ -276,6 +276,31 @@
         "default": "提交信息规则违规"
       },
       "ruleLeadingText": "此提交信息"
+    },
+    "noChanges": {
+      "title": "无本地更改",
+      "description": "此仓库中没有未提交的更改。以下是一些友好的下一步建议。",
+      "publishRepoTitle": "将仓库发布到 GitHub",
+      "publishRepoDescription": "此仓库目前仅存在于你的本地计算机上。通过将其发布到 GitHub，你可以共享并与他人协作。",
+      "publishRepoButton": "发布仓库",
+      "publishBranchTitle": "发布你的分支",
+      "publishBranchButton": "发布分支",
+      "viewStashTitle": "查看暂存的更改",
+      "viewStashDescription": "你有 {{count}} 个{{changes}}尚未提交。",
+      "viewStashDiscoverability": "当存在暂存时，可在左侧更改标签页底部访问。",
+      "viewStashButton": "查看暂存",
+      "createPRTitle": "从当前分支创建拉取请求",
+      "createPRButton": "创建拉取请求",
+      "previewPRTitle": "预览当前分支的拉取请求",
+      "previewPRButton": "预览拉取请求",
+      "pullTitle": "从 {{remote}} 远程拉取 {{numCommits}} 个{{commits}}",
+      "pullButton": "拉取 {{remote}}",
+      "pushTitle": "推送 {{items}} 到 {{remote}} 远程",
+      "pushButton": "推送 {{remote}}",
+      "openEditorTitle": "在外部编辑器中打开仓库",
+      "showInFileManager": "在{{fileManager}}中查看仓库文件",
+      "viewOnGitHub": "在浏览器中打开 GitHub 上的仓库页面",
+      "selectEditor": "在以下位置选择编辑器"
     }
   },
   "diff": {
