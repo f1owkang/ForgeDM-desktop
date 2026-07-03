@@ -447,6 +447,31 @@
         "grantPermission": " You need to <permission>grant permission</permission> to display these notifications from GitHub Desktop."
       }
     },
+    "prompts": {
+      "commitLength": {
+        "heading": "Commit Length",
+        "showWarning": "Show commit length warning"
+      },
+      "confirm": {
+        "checkoutCommit": "Checking out a commit",
+        "commitFilteredChanges": "Committing changes hidden by filter",
+        "commitMessageOverride": "Overriding commit message with generated message",
+        "discardChanges": "Discarding changes",
+        "discardChangesPermanently": "Discarding changes permanently",
+        "discardStash": "Discarding stash",
+        "forcePush": "Force pushing",
+        "heading": "Show a confirmation dialog before...",
+        "repositoryRemoval": "Removing repositories",
+        "undoCommit": "Undo commit",
+        "worktreeRemoval": "Removing worktrees"
+      },
+      "switchBranch": {
+        "ask": "Ask me where I want the changes to go",
+        "heading": "If I have changes and I switch branches...",
+        "moveToNewBranch": "Always bring my changes to my new branch",
+        "stashOnCurrentBranch": "Always stash and leave my changes on the current branch"
+      }
+    },
     "save": "Save",
     "tabs": {
       "accessibility": "Accessibility",
