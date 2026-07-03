@@ -352,6 +352,27 @@
         "system": "System"
       }
     },
+    "integrations": {
+      "applications": "Applications",
+      "configureCustomEditor": "Configure custom editor...",
+      "configureCustomShell": "Configure custom shell...",
+      "custom": {
+        "arguments": "Arguments",
+        "argumentsPlaceholder": "Command line arguments",
+        "choose": "Choose...",
+        "executablesFilter": "Executables",
+        "invalidArguments": "These arguments are not valid.",
+        "invalidPath": "This path does not appear to be a valid executable.",
+        "missingTargetPathArgument": "Arguments must include the target path placeholder ({{argument}}).",
+        "path": "Path",
+        "pathPlaceholder": "Path to executable"
+      },
+      "externalEditor": "External editor",
+      "installEditor": "Install {{editor}}?",
+      "noEditorsFound": "No editors found.",
+      "noOtherEditorsFound": "No other editors found.",
+      "shell": "Shell"
+    },
     "save": "Save",
     "tabs": {
       "accessibility": "Accessibility",

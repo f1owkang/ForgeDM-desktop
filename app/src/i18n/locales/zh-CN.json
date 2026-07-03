@@ -352,6 +352,27 @@
         "system": "跟随系统"
       }
     },
+    "integrations": {
+      "applications": "应用程序",
+      "configureCustomEditor": "配置自定义编辑器...",
+      "configureCustomShell": "配置自定义 Shell...",
+      "custom": {
+        "arguments": "参数",
+        "argumentsPlaceholder": "命令行参数",
+        "choose": "选择...",
+        "executablesFilter": "可执行文件",
+        "invalidArguments": "这些参数无效。",
+        "invalidPath": "此路径似乎不是有效的可执行文件。",
+        "missingTargetPathArgument": "参数必须包含目标路径占位符（{{argument}}）。",
+        "path": "路径",
+        "pathPlaceholder": "可执行文件路径"
+      },
+      "externalEditor": "外部编辑器",
+      "installEditor": "安装 {{editor}}？",
+      "noEditorsFound": "未找到编辑器。",
+      "noOtherEditorsFound": "未找到其它编辑器。",
+      "shell": "Shell"
+    },
     "save": "保存",
     "tabs": {
       "accessibility": "辅助功能",
