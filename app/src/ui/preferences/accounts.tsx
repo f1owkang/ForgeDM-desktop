@@ -13,6 +13,7 @@ import { DialogContent, DialogPreferredFocusClassName } from '../dialog'
 import { Avatar } from '../lib/avatar'
 import { CallToAction } from '../lib/call-to-action'
 import { getHTMLURL } from '../../lib/api'
+import { t } from '../../lib/i18n'
 
 interface IAccountsProps {
   readonly accounts: ReadonlyArray<Account>
@@ -34,12 +35,12 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
 
     return (
       <DialogContent className="accounts-tab">
-        <h2>GitHub.com</h2>
+        <h2>{t('preferences.accounts.githubDotCom')}</h2>
         {dotComAccount
           ? this.renderAccount(dotComAccount, SignInType.DotCom)
           : this.renderSignIn(SignInType.DotCom)}
 
-        <h2>GitHub Enterprise</h2>
+        <h2>{t('preferences.accounts.githubEnterprise')}</h2>
         {this.renderMultipleEnterpriseAccounts()}
       </DialogContent>
     )
@@ -57,7 +58,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
           this.renderSignIn(SignInType.Enterprise)
         ) : (
           <Button onClick={this.props.onEnterpriseSignIn}>
-            Add GitHub Enterprise account
+            {t('preferences.accounts.addEnterpriseAccount')}
           </Button>
         )}
       </>
@@ -100,7 +101,7 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
           </div>
         </div>
         <Button onClick={this.logout(account)} className={className}>
-          {__DARWIN__ ? 'Sign Out' : 'Sign out'}
+          {t('preferences.accounts.signOut')}
         </Button>
       </Row>
     )
@@ -115,33 +116,27 @@ export class Accounts extends React.Component<IAccountsProps, {}> {
   }
 
   private renderSignIn(type: SignInType) {
-    const signInTitle = __DARWIN__ ? 'Sign Into' : 'Sign into'
     switch (type) {
       case SignInType.DotCom: {
         return (
           <CallToAction
-            actionTitle={signInTitle + ' GitHub.com'}
+            actionTitle={t('preferences.accounts.signInDotCom')}
             onAction={this.onDotComSignIn}
             // The DotCom account is shown first, so its sign in/out button should be
             // focused initially when the dialog is opened.
             buttonClassName={DialogPreferredFocusClassName}
           >
-            <div>
-              Sign in to your GitHub.com account to access your repositories.
-            </div>
+            <div>{t('preferences.accounts.signInDotComDescription')}</div>
           </CallToAction>
         )
       }
       case SignInType.Enterprise:
         return (
           <CallToAction
-            actionTitle={signInTitle + ' GitHub Enterprise'}
+            actionTitle={t('preferences.accounts.signInEnterprise')}
             onAction={this.onEnterpriseSignIn}
           >
-            <div>
-              If you are using GitHub Enterprise at work, sign in to it to get
-              access to your repositories.
-            </div>
+            <div>{t('preferences.accounts.signInEnterpriseDescription')}</div>
           </CallToAction>
         )
       default:

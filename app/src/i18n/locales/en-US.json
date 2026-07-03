@@ -311,6 +311,16 @@
     }
   },
   "preferences": {
+    "accounts": {
+      "addEnterpriseAccount": "Add GitHub Enterprise account",
+      "githubDotCom": "GitHub.com",
+      "githubEnterprise": "GitHub Enterprise",
+      "signInDotCom": "Sign into GitHub.com",
+      "signInDotComDescription": "Sign in to your GitHub.com account to access your repositories.",
+      "signInEnterprise": "Sign into GitHub Enterprise",
+      "signInEnterpriseDescription": "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.",
+      "signOut": "Sign out"
+    },
     "appearance": {
       "diff": {
         "defaultTabSize": "{{size}} (default)",
@@ -341,7 +351,21 @@
         "loadingSystem": "Loading system theme",
         "system": "System"
       }
-    }
+    },
+    "save": "Save",
+    "tabs": {
+      "accessibility": "Accessibility",
+      "accounts": "Accounts",
+      "advanced": "Advanced",
+      "appearance": "Appearance",
+      "copilot": "Copilot",
+      "git": "Git",
+      "integrations": "Integrations",
+      "notifications": "Notifications",
+      "prompts": "Prompts"
+    },
+    "title": "Options",
+    "titleDarwin": "Settings"
   },
   "welcome": {
     "start": {
