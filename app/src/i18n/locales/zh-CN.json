@@ -447,6 +447,31 @@
         "grantPermission": "你需要<permission>授予权限</permission>，才能显示来自 GitHub Desktop 的这些通知。"
       }
     },
+    "prompts": {
+      "commitLength": {
+        "heading": "提交长度",
+        "showWarning": "显示提交长度警告"
+      },
+      "confirm": {
+        "checkoutCommit": "检出提交",
+        "commitFilteredChanges": "提交被筛选器隐藏的更改",
+        "commitMessageOverride": "用生成的消息覆盖提交消息",
+        "discardChanges": "丢弃更改",
+        "discardChangesPermanently": "永久丢弃更改",
+        "discardStash": "丢弃贮藏",
+        "forcePush": "强制推送",
+        "heading": "在执行以下操作前显示确认对话框...",
+        "repositoryRemoval": "移除仓库",
+        "undoCommit": "撤销提交",
+        "worktreeRemoval": "移除工作树"
+      },
+      "switchBranch": {
+        "ask": "询问我希望将更改放在哪里",
+        "heading": "如果我有更改并切换分支...",
+        "moveToNewBranch": "始终将我的更改带到新分支",
+        "stashOnCurrentBranch": "始终贮藏并将我的更改留在当前分支"
+      }
+    },
     "save": "保存",
     "tabs": {
       "accessibility": "辅助功能",
