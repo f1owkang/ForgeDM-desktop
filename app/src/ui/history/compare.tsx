@@ -22,7 +22,6 @@ import { FancyTextBox } from '../lib/fancy-text-box'
 import * as octicons from '../octicons/octicons.generated'
 import { SelectionSource } from '../lib/filter-list'
 import { IMatches } from '../../lib/fuzzy-find'
-import { Ref } from '../lib/ref'
 import { MergeCallToActionWithConflicts } from './merge-call-to-action-with-conflicts'
 import { AheadBehindStore } from '../../lib/stores/ahead-behind-store'
 import { DragType } from '../../models/drag-drop'
@@ -34,6 +33,7 @@ import { KeyboardInsertionData } from '../lib/list'
 import { Account } from '../../models/account'
 import { Emoji } from '../../lib/emoji'
 import { formatNumber } from '../../lib/format-number'
+import { t } from '../../lib/i18n'
 
 interface ICompareSidebarProps {
   readonly repository: Repository
@@ -220,20 +220,18 @@ export class CompareSidebar extends React.Component<
 
     let emptyListMessage: string | JSX.Element
     if (formState.kind === HistoryTabMode.History) {
-      emptyListMessage = 'No history'
+      emptyListMessage = t('history.noHistory')
     } else {
       const currentlyComparedBranchName = formState.comparisonBranch.name
 
       emptyListMessage =
         formState.comparisonMode === ComparisonMode.Ahead ? (
           <p>
-            The compared branch (<Ref>{currentlyComparedBranchName}</Ref>) is up
-            to date with your branch
+            {t('history.compareAheadUpToDate', { branch: currentlyComparedBranchName })}
           </p>
         ) : (
           <p>
-            Your branch is up to date with the compared branch (
-            <Ref>{currentlyComparedBranchName}</Ref>)
+            {t('history.compareBehindUpToDate', { branch: currentlyComparedBranchName })}
           </p>
         )
     }

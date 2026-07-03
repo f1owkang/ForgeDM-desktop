@@ -7,6 +7,7 @@ import { CommitList } from './commit-list'
 import { LinkButton } from '../lib/link-button'
 import { Account } from '../../models/account'
 import { Emoji } from '../../lib/emoji'
+import { t, platformT } from '../../lib/i18n'
 
 export enum UnreachableCommitsTab {
   Unreachable,
@@ -95,8 +96,8 @@ export class UnreachableCommitsDialog extends React.Component<
         onTabClicked={this.onTabClicked}
         selectedIndex={this.state.selectedTab}
       >
-        <span>Unreachable</span>
-        <span>Reachable</span>
+        <span>{t('history.unreachable')}</span>
+        <span>{t('history.reachable')}</span>
       </TabBar>
     )
   }
@@ -138,20 +139,15 @@ export class UnreachableCommitsDialog extends React.Component<
     const count = this.getShasToDisplay().length
     const commitsPluralized = count > 1 ? 'commits' : 'commit'
     const pronounPluralized = count > 1 ? `they're` : `it's`
+    const isUnreachable = this.state.selectedTab === UnreachableCommitsTab.Unreachable
     return (
       <div className="message">
-        You will{' '}
-        {this.state.selectedTab === UnreachableCommitsTab.Unreachable
-          ? 'not'
-          : ''}{' '}
-        see changes from the following {commitsPluralized} because{' '}
-        {pronounPluralized}{' '}
-        {this.state.selectedTab === UnreachableCommitsTab.Unreachable
-          ? 'not'
-          : ''}{' '}
-        in the ancestry path of the most recent commit in your selection.{' '}
+        {isUnreachable
+          ? t('history.unreachableMessage', { commits: commitsPluralized, pronoun: pronounPluralized })
+          : t('history.reachableMessage', { commits: commitsPluralized, pronoun: pronounPluralized })
+        }{' '}
         <LinkButton uri="https://github.com/desktop/desktop/blob/development/docs/learn-more/unreachable-commits.md">
-          Learn more about unreachable commits.
+          {t('history.learnMoreUnreachable')}
         </LinkButton>
       </div>
     )
@@ -161,7 +157,7 @@ export class UnreachableCommitsDialog extends React.Component<
     return (
       <Dialog
         className="unreachable-commits"
-        title={__DARWIN__ ? 'Commit Reachability' : 'Commit reachability'}
+        title={platformT('history.commitReachability')}
         onSubmit={this.props.onDismissed}
         onDismissed={this.props.onDismissed}
       >
