@@ -170,6 +170,30 @@
       "default": "Create a new repository"
     }
   },
+  "changes": {
+    "continueRebase": "Continue rebase",
+    "continueRebaseResolveConflicts": "Resolve all conflicts before continuing",
+    "multipleSelection": "{{count}} files selected",
+    "oversizedFiles": {
+      "commitAnyway": {
+        "darwin": "Commit Anyway",
+        "default": "Commit anyway"
+      },
+      "cannotPush": "If you commit these files, you will no longer be able to push this repository to GitHub.com.",
+      "over100MB": "The following files are over 100MB.",
+      "recommendation": "We recommend you avoid committing these files or use",
+      "title": {
+        "darwin": "Files Too Large",
+        "default": "Files too large"
+      },
+      "toStoreLarge": "to store large files on GitHub."
+    },
+    "rebasing": "Rebasing",
+    "undoCommitCommitted": "Committed",
+    "undoCommitDisabled": "Undo is disabled while the repository is being updated",
+    "undoCommitUndo": "Undo",
+    "untrackedExcluded": "Untracked files will be excluded"
+  },
   "diff": {
     "bidirectionalUnicode": "This diff contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.",
     "binaryFileChanged": "This binary file has changed.",

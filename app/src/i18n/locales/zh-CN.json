@@ -170,6 +170,30 @@
       "default": "创建新仓库"
     }
   },
+  "changes": {
+    "continueRebase": "继续变基",
+    "continueRebaseResolveConflicts": "请先解决所有冲突再继续",
+    "multipleSelection": "已选择 {{count}} 个文件",
+    "oversizedFiles": {
+      "commitAnyway": {
+        "darwin": "仍然提交",
+        "default": "仍然提交"
+      },
+      "cannotPush": "如果你提交这些文件，将无法再将此仓库推送到 GitHub.com。",
+      "over100MB": "以下文件超过 100MB。",
+      "recommendation": "建议你避免提交这些文件，或使用",
+      "title": {
+        "darwin": "文件过大",
+        "default": "文件过大"
+      },
+      "toStoreLarge": "在 GitHub 上存储大文件。"
+    },
+    "rebasing": "正在变基",
+    "undoCommitCommitted": "已提交",
+    "undoCommitDisabled": "仓库正在更新时无法撤销",
+    "undoCommitUndo": "撤销",
+    "untrackedExcluded": "未跟踪的文件将被排除"
+  },
   "diff": {
     "bidirectionalUnicode": "此差异包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在显示隐藏 Unicode 字符的编辑器中打开文件。",
     "binaryFileChanged": "此二进制文件已更改。",

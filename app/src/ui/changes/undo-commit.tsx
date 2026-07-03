@@ -5,6 +5,7 @@ import { RichText } from '../lib/rich-text'
 import { RelativeTime } from '../relative-time'
 import { Button } from '../lib/button'
 import { Emoji } from '../../lib/emoji'
+import { t } from '../../lib/i18n'
 
 interface IUndoCommitProps {
   /** The function to call when the Undo button is clicked. */
@@ -29,7 +30,7 @@ export class UndoCommit extends React.Component<IUndoCommitProps, {}> {
     const disabled =
       this.props.isPushPullFetchInProgress || this.props.isCommitting
     const title = disabled
-      ? 'Undo is disabled while the repository is being updated'
+      ? t('changes.undoCommitDisabled')
       : undefined
 
     const authorDate = this.props.commit.author.date
@@ -37,7 +38,7 @@ export class UndoCommit extends React.Component<IUndoCommitProps, {}> {
       <div id="undo-commit" role="group" aria-label="Undo commit">
         <div className="commit-info">
           <div className="ago">
-            Committed <RelativeTime date={authorDate} />
+            {t('changes.undoCommitCommitted')} <RelativeTime date={authorDate} />
           </div>
           <RichText
             emoji={this.props.emoji}
@@ -53,7 +54,7 @@ export class UndoCommit extends React.Component<IUndoCommitProps, {}> {
             onClick={this.props.onUndo}
             tooltip={title}
           >
-            Undo
+            {t('changes.undoCommitUndo')}
           </Button>
         </div>
       </div>
