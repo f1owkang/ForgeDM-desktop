@@ -8,6 +8,7 @@ import { suggestedExternalEditor } from '../../lib/editors/shared'
 import { CustomIntegrationForm } from './custom-integration-form'
 import { ICustomIntegration } from '../../lib/custom-integration'
 import { enableCustomIntegration } from '../../lib/feature-flag'
+import { t } from '../../lib/i18n'
 
 const CustomIntegrationValue = 'other'
 
@@ -184,7 +185,7 @@ export class Integrations extends React.Component<
   private renderExternalEditor() {
     const options = this.props.availableEditors
     const { selectedExternalEditor, useCustomEditor } = this.state
-    const label = __DARWIN__ ? 'External Editor' : 'External editor'
+    const label = t('preferences.integrations.externalEditor')
 
     if (!enableCustomIntegration() && options.length === 0) {
       // this is emulating the <Select/> component's UI so the styles are
@@ -196,9 +197,11 @@ export class Integrations extends React.Component<
         <div className="select-component no-options-found">
           <label>{label}</label>
           <span>
-            No editors found.{' '}
+            {t('preferences.integrations.noEditorsFound')}{' '}
             <LinkButton uri={suggestedExternalEditor.url}>
-              Install {suggestedExternalEditor.name}?
+              {t('preferences.integrations.installEditor', {
+                editor: suggestedExternalEditor.name,
+              })}
             </LinkButton>
           </span>
         </div>
@@ -208,7 +211,7 @@ export class Integrations extends React.Component<
     return (
       <Select
         label={enableCustomIntegration() ? undefined : label}
-        aria-label="External editor"
+        aria-label={t('preferences.integrations.externalEditor')}
         value={
           useCustomEditor
             ? CustomIntegrationValue
@@ -223,9 +226,7 @@ export class Integrations extends React.Component<
         ))}
         {enableCustomIntegration() && (
           <option key={CustomIntegrationValue} value={CustomIntegrationValue}>
-            {__DARWIN__
-              ? 'Configure Custom Editor…'
-              : 'Configure custom editor…'}
+            {t('preferences.integrations.configureCustomEditor')}
           </option>
         )}
       </Select>
@@ -242,9 +243,11 @@ export class Integrations extends React.Component<
       <Row>
         <div className="no-options-found">
           <span>
-            No other editors found.{' '}
+            {t('preferences.integrations.noOtherEditorsFound')}{' '}
             <LinkButton uri={suggestedExternalEditor.url}>
-              Install {suggestedExternalEditor.name}?
+              {t('preferences.integrations.installEditor', {
+                editor: suggestedExternalEditor.name,
+              })}
             </LinkButton>
           </span>
         </div>
@@ -295,8 +298,12 @@ export class Integrations extends React.Component<
 
     return (
       <Select
-        label={enableCustomIntegration() ? undefined : 'Shell'}
-        aria-label="Shell"
+        label={
+          enableCustomIntegration()
+            ? undefined
+            : t('preferences.integrations.shell')
+        }
+        aria-label={t('preferences.integrations.shell')}
         value={useCustomShell ? CustomIntegrationValue : selectedShell}
         onChange={this.onSelectedShellChanged}
       >
@@ -307,7 +314,7 @@ export class Integrations extends React.Component<
         ))}
         {enableCustomIntegration() && (
           <option key={CustomIntegrationValue} value={CustomIntegrationValue}>
-            {__DARWIN__ ? 'Configure Custom Shell…' : 'Configure custom shell…'}
+            {t('preferences.integrations.configureCustomShell')}
           </option>
         )}
       </Select>
@@ -355,7 +362,7 @@ export class Integrations extends React.Component<
     if (!enableCustomIntegration()) {
       return (
         <DialogContent>
-          <h2>Applications</h2>
+          <h2>{t('preferences.integrations.applications')}</h2>
           <Row>{this.renderExternalEditor()}</Row>
           <Row>{this.renderSelectedShell()}</Row>
         </DialogContent>
@@ -366,7 +373,7 @@ export class Integrations extends React.Component<
       <DialogContent>
         <fieldset>
           <legend>
-            <h2>{__DARWIN__ ? 'External Editor' : 'External editor'}</h2>
+            <h2>{t('preferences.integrations.externalEditor')}</h2>
           </legend>
           <Row>{this.renderExternalEditor()}</Row>
           {this.state.useCustomEditor && this.renderCustomExternalEditor()}
@@ -374,7 +381,7 @@ export class Integrations extends React.Component<
         </fieldset>
         <fieldset>
           <legend>
-            <h2>Shell</h2>
+            <h2>{t('preferences.integrations.shell')}</h2>
           </legend>
           <Row>{this.renderSelectedShell()}</Row>
           {this.state.useCustomShell && this.renderCustomShell()}
