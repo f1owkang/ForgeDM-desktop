@@ -338,6 +338,24 @@
       "signInEnterpriseDescription": "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.",
       "signOut": "Sign out"
     },
+    "advanced": {
+      "backgroundUpdates": {
+        "descriptionPrimary": "These icons indicate which repositories have local or remote changes, and require the periodic fetching of repositories that are not currently selected.",
+        "descriptionSecondary": "Turning this off will not stop the periodic fetching of your currently selected repository, but may improve overall app performance for users with many repositories.",
+        "heading": "Background updates",
+        "repositoryIndicators": "Show status icons in the repository list"
+      },
+      "network": {
+        "gitCredentialManagerDescription": "Use <gcm>Git Credential Manager</gcm> for private repositories outside of GitHub.com. This feature is experimental and subject to change.",
+        "heading": "Network and credentials",
+        "useGitCredentialManager": "Use Git Credential Manager",
+        "useSystemOpenSSH": "Use system OpenSSH (recommended)"
+      },
+      "usage": {
+        "heading": "Usage",
+        "reportStats": "Help GitHub Desktop improve by submitting <stats>usage stats</stats>"
+      }
+    },
     "appearance": {
       "diff": {
         "defaultTabSize": "{{size}} (default)",
