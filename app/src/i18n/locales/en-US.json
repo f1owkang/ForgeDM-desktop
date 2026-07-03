@@ -2,6 +2,11 @@
   "common": {
     "cancel": "Cancel"
   },
+  "gitConfigUser": {
+    "email": "Email",
+    "name": "Name",
+    "otherEmail": "Other"
+  },
   "menu": {
     "app": {
       "about": "About GitHub Desktop",
@@ -372,6 +377,31 @@
       "noEditorsFound": "No editors found.",
       "noOtherEditorsFound": "No other editors found.",
       "shell": "Shell"
+    },
+    "git": {
+      "defaultBranch": {
+        "descriptionMiddle": ". You may want to change it due to different workflows, or because your integrations still require the historical default branch name of ",
+        "descriptionPrefix": "GitHub's default branch name is",
+        "descriptionSuffix": ".",
+        "heading": "Default branch name for new repositories"
+      },
+      "globalConfig": {
+        "link": "edit your global Git config file",
+        "prefix": "These preferences will",
+        "suffix": "."
+      },
+      "hooks": {
+        "cacheEnvironment": "Cache Git hook environment variables",
+        "cacheEnvironmentDescription": "Cache hook environment variables to improve performance. Disable if your hooks rely on frequently changing environment variables.",
+        "loadEnvironment": "Load Git hook environment variables from shell",
+        "loadEnvironmentDescription": "When enabled, GitHub Desktop will attempt to load environment variables from your shell when executing Git hooks. This is useful if your Git hooks depend on environment variables set in your shell configuration files, a common practice for version managers such as nvm, rbenv, asdf, etc.",
+        "shell": "Shell to use when loading environment"
+      },
+      "tabs": {
+        "author": "Author",
+        "defaultBranch": "Default branch",
+        "hooks": "Hooks"
+      }
     },
     "save": "Save",
     "tabs": {
