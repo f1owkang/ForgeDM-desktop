@@ -8,6 +8,7 @@ import { Button } from '../lib/button'
 import { Loading } from '../lib/loading'
 import { BrowserRedirectMessage } from '../lib/authentication-form'
 import { SamplesURL } from '../../lib/stats'
+import { t } from '../../lib/i18n'
 
 /**
  * The URL to the sign-up page on GitHub.com. Used in conjunction
@@ -28,19 +29,18 @@ export class Start extends React.Component<IStartProps, {}> {
     return (
       <section
         id="start"
-        aria-label="Welcome to GitHub Desktop"
+        aria-label={t('welcome.start.ariaLabel')}
         aria-describedby="start-description"
       >
         <div className="start-content">
           <h1 className="welcome-title">
-            Welcome to <span>GitHub Desktop</span>
+            {t('welcome.start.titlePrefix')}{' '}
+            <span>{t('welcome.start.titleProduct')}</span>
           </h1>
           {!this.props.loadingBrowserAuth ? (
             <>
               <p id="start-description" className="welcome-text">
-                GitHub Desktop is a seamless way to contribute to projects on
-                GitHub and GitHub Enterprise. Sign in below to get started with
-                your existing projects.
+                {t('welcome.start.description')}
               </p>
             </>
           ) : (
@@ -57,49 +57,50 @@ export class Start extends React.Component<IStartProps, {}> {
               role="link"
             >
               {this.props.loadingBrowserAuth && <Loading />}
-              Sign in to GitHub.com
+              {t('welcome.start.signInGitHub')}
               <Octicon symbol={octicons.linkExternal} />
             </Button>
             {this.props.loadingBrowserAuth ? (
-              <Button onClick={this.cancelBrowserAuth}>Cancel</Button>
+              <Button onClick={this.cancelBrowserAuth}>
+                {t('common.cancel')}
+              </Button>
             ) : (
               <Button onClick={this.signInToEnterprise}>
-                Sign in to GitHub Enterprise
+                {t('welcome.start.signInEnterprise')}
               </Button>
             )}
           </div>
           <div className="skip-action-container">
             <p className="welcome-text">
-              New to GitHub?{' '}
+              {t('welcome.start.newToGitHub')}{' '}
               <LinkButton
                 uri={CreateAccountURL}
                 className="create-account-link"
               >
-                Create your free account.
+                {t('welcome.start.createAccount')}
               </LinkButton>
             </p>
             <LinkButton className="skip-button" onClick={this.skip}>
-              Skip this step
+              {t('welcome.start.skip')}
             </LinkButton>
           </div>
         </div>
 
         <div className="start-footer">
           <p>
-            By creating an account, you agree to the{' '}
+            {t('welcome.start.termsPrefix')}{' '}
             <LinkButton uri={'https://github.com/site/terms'}>
-              Terms of Service
+              {t('welcome.start.terms')}
             </LinkButton>
-            . For more information about GitHub's privacy practices, see the{' '}
+            {t('welcome.start.privacyPrefix')}{' '}
             <LinkButton uri={'https://github.com/site/privacy'}>
-              GitHub Privacy Statement.
+              {t('welcome.start.privacy')}
             </LinkButton>
           </p>
           <p>
-            GitHub Desktop sends usage metrics to improve the product and inform
-            feature decisions.{' '}
+            {t('welcome.start.metrics')}{' '}
             <LinkButton uri={SamplesURL}>
-              Learn more about user metrics.
+              {t('welcome.start.metricsLink')}
             </LinkButton>
           </p>
         </div>

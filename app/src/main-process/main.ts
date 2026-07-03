@@ -43,6 +43,7 @@ import {
 } from '../lib/get-architecture'
 import { buildSpellCheckMenu } from './menu/build-spell-check-menu'
 import { getMainGUID, saveGUIDFile } from '../lib/get-main-guid'
+import { initializeI18n, normalizeLanguage } from '../lib/i18n'
 import {
   getNotificationsPermission,
   requestNotificationsPermission,
@@ -327,6 +328,10 @@ app.on('ready', () => {
   if (isDuplicateInstance || handlingSquirrelEvent) {
     return
   }
+
+  initializeI18n(
+    normalizeLanguage(process.env.FORGEDM_LOCALE || app.getLocale())
+  )
 
   readyTime = now() - launchTime
 

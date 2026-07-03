@@ -1,0 +1,332 @@
+{
+  "common": {
+    "cancel": "取消"
+  },
+  "menu": {
+    "app": {
+      "about": "关于 GitHub Desktop",
+      "installCli": "安装命令行工具...",
+      "label": "GitHub Desktop",
+      "settings": "设置..."
+    },
+    "branch": {
+      "compareOnGitHub": {
+        "darwin": "在 GitHub 上比较",
+        "default": "在 GitHub 上比较(&G)"
+      },
+      "compareToBranch": {
+        "darwin": "与分支比较",
+        "default": "与分支比较(&C)"
+      },
+      "createPullRequest": {
+        "darwin": "创建拉取请求",
+        "default": "创建拉取请求(&P)"
+      },
+      "delete": {
+        "darwin": "删除...",
+        "default": "删除(&D)..."
+      },
+      "discardAllChanges": {
+        "darwin": "丢弃所有更改...",
+        "default": "丢弃所有更改..."
+      },
+      "forcePush": {
+        "darwin": "强制推送",
+        "default": "强制推送(&U)"
+      },
+      "forcePushWithConfirmation": {
+        "darwin": "强制推送...",
+        "default": "强制推送(&U)..."
+      },
+      "hideStashedChanges": {
+        "darwin": "隐藏贮藏的更改",
+        "default": "隐藏贮藏的更改(&I)"
+      },
+      "label": {
+        "darwin": "分支",
+        "default": "分支(&B)"
+      },
+      "mergeBranch": {
+        "darwin": "合并到当前分支...",
+        "default": "合并到当前分支(&M)..."
+      },
+      "newBranch": {
+        "darwin": "新建分支...",
+        "default": "新建分支(&B)..."
+      },
+      "previewPullRequest": {
+        "darwin": "预览拉取请求",
+        "default": "预览拉取请求"
+      },
+      "push": {
+        "darwin": "推送",
+        "default": "推送(&U)"
+      },
+      "rebaseBranch": {
+        "darwin": "变基当前分支...",
+        "default": "变基当前分支(&E)..."
+      },
+      "rename": {
+        "darwin": "重命名...",
+        "default": "重命名(&R)..."
+      },
+      "showStashedChanges": {
+        "darwin": "显示贮藏的更改",
+        "default": "显示贮藏的更改(&W)"
+      },
+      "showPullRequest": {
+        "darwin": "在 GitHub 上查看拉取请求",
+        "default": "在 GitHub 上查看拉取请求(&P)"
+      },
+      "squashAndMergeBranch": {
+        "darwin": "压缩并合并到当前分支...",
+        "default": "压缩并合并到当前分支(&H)..."
+      },
+      "stashAllChanges": {
+        "darwin": "贮藏所有更改",
+        "default": "贮藏所有更改(&S)"
+      },
+      "stashAllChangesWithConfirmation": {
+        "darwin": "贮藏所有更改...",
+        "default": "贮藏所有更改(&S)..."
+      },
+      "updateFromDefaultBranch": {
+        "darwin": "从 {{branch}} 更新",
+        "default": "从 {{branch}} 更新(&U)"
+      },
+      "viewBranchOnGitHub": {
+        "darwin": "在 GitHub 上查看分支",
+        "default": "在 GitHub 上查看分支"
+      }
+    },
+    "edit": {
+      "copy": {
+        "darwin": "复制",
+        "default": "复制(&C)"
+      },
+      "cut": {
+        "darwin": "剪切",
+        "default": "剪切(&T)"
+      },
+      "find": {
+        "darwin": "查找",
+        "default": "查找(&F)"
+      },
+      "label": {
+        "darwin": "编辑",
+        "default": "编辑(&E)"
+      },
+      "paste": {
+        "darwin": "粘贴",
+        "default": "粘贴(&P)"
+      },
+      "redo": {
+        "darwin": "重做",
+        "default": "重做(&R)"
+      },
+      "selectAll": {
+        "darwin": "全选",
+        "default": "全选(&A)"
+      },
+      "undo": {
+        "darwin": "撤销",
+        "default": "撤销(&U)"
+      }
+    },
+    "file": {
+      "addLocalRepository": {
+        "darwin": "添加本地仓库...",
+        "default": "添加本地仓库(&L)..."
+      },
+      "cloneRepository": {
+        "darwin": "克隆仓库...",
+        "default": "克隆仓库(&N)..."
+      },
+      "exit": "退出(&X)",
+      "label": {
+        "darwin": "文件",
+        "default": "文件(&F)"
+      },
+      "newRepository": {
+        "darwin": "新建仓库...",
+        "default": "新建仓库(&R)..."
+      },
+      "options": "选项(&O)..."
+    },
+    "help": {
+      "about": "关于 GitHub Desktop(&A)",
+      "contactSupport": {
+        "darwin": "联系 GitHub 支持...",
+        "default": "联系 GitHub 支持(&C)..."
+      },
+      "label": "帮助(&H)",
+      "reportIssue": {
+        "darwin": "报告问题...",
+        "default": "报告问题..."
+      },
+      "showKeyboardShortcuts": {
+        "darwin": "显示键盘快捷键",
+        "default": "显示键盘快捷键"
+      },
+      "showLogs": {
+        "darwin": "在 Finder 中显示日志",
+        "linux": "在文件管理器中显示日志(&H)",
+        "win32": "在资源管理器中显示日志(&H)"
+      },
+      "showUserGuides": "显示用户指南"
+    },
+    "repository": {
+      "createIssue": {
+        "darwin": "在 GitHub 上创建议题",
+        "default": "在 GitHub 上创建议题(&I)"
+      },
+      "defaultBranch": {
+        "darwin": "默认分支",
+        "default": "默认分支"
+      },
+      "externalEditorFallback": {
+        "darwin": "外部编辑器",
+        "default": "外部编辑器"
+      },
+      "fetch": {
+        "darwin": "获取",
+        "default": "获取(&F)"
+      },
+      "label": {
+        "darwin": "仓库",
+        "default": "仓库(&R)"
+      },
+      "newWorktree": {
+        "darwin": "新建工作树...",
+        "default": "新建工作树(&T)..."
+      },
+      "openInEditor": {
+        "darwin": "在 {{editor}} 中打开",
+        "default": "在 {{editor}} 中打开(&O)"
+      },
+      "openInShell": {
+        "darwin": "在 {{shell}} 中打开",
+        "default": "在 {{shell}} 中打开(&P)"
+      },
+      "openWith": {
+        "darwin": "打开方式...",
+        "default": "打开方式(&W)..."
+      },
+      "pull": {
+        "darwin": "拉取",
+        "default": "拉取(&L)"
+      },
+      "remove": {
+        "darwin": "移除",
+        "default": "移除(&R)"
+      },
+      "removeWithConfirmation": {
+        "darwin": "移除...",
+        "default": "移除(&R)..."
+      },
+      "settings": {
+        "darwin": "仓库设置...",
+        "default": "仓库设置(&S)..."
+      },
+      "shellFallback": {
+        "darwin": "Shell",
+        "default": "shell"
+      },
+      "showInDirectory": {
+        "darwin": "在 Finder 中显示",
+        "linux": "在文件管理器中显示",
+        "win32": "在资源管理器中显示(&X)"
+      },
+      "viewOnGitHub": {
+        "darwin": "在 GitHub 上查看",
+        "default": "在 GitHub 上查看(&V)"
+      }
+    },
+    "view": {
+      "contractActiveResizable": {
+        "darwin": "收缩活动可调整区域",
+        "default": "收缩活动可调整区域"
+      },
+      "expandActiveResizable": {
+        "darwin": "展开活动可调整区域",
+        "default": "展开活动可调整区域"
+      },
+      "goToSummary": {
+        "darwin": "转到摘要",
+        "default": "转到摘要(&S)"
+      },
+      "hideChangesFilter": {
+        "darwin": "隐藏更改筛选器",
+        "default": "隐藏更改筛选器(&G)"
+      },
+      "label": {
+        "darwin": "视图",
+        "default": "视图(&V)"
+      },
+      "reload": "重新加载(&R)",
+      "resetZoom": {
+        "darwin": "重置缩放",
+        "default": "重置缩放"
+      },
+      "showBranchesList": {
+        "darwin": "显示分支列表",
+        "default": "分支列表(&B)"
+      },
+      "showChanges": {
+        "darwin": "显示更改",
+        "default": "更改(&C)"
+      },
+      "showChangesFilter": {
+        "darwin": "显示更改筛选器",
+        "default": "显示更改筛选器(&G)"
+      },
+      "showDevtools": {
+        "darwin": "切换开发者工具",
+        "default": "切换开发者工具(&T)"
+      },
+      "showHistory": {
+        "darwin": "显示历史记录",
+        "default": "历史记录(&H)"
+      },
+      "showRepositoryList": {
+        "darwin": "显示仓库列表",
+        "default": "仓库列表(&L)"
+      },
+      "showWorktreesList": {
+        "darwin": "显示工作树列表",
+        "default": "工作树列表(&K)"
+      },
+      "toggleFullScreen": {
+        "darwin": "切换全屏",
+        "default": "切换全屏(&F)"
+      },
+      "zoomIn": {
+        "darwin": "放大",
+        "default": "放大"
+      },
+      "zoomOut": {
+        "darwin": "缩小",
+        "default": "缩小"
+      }
+    }
+  },
+  "welcome": {
+    "start": {
+      "ariaLabel": "欢迎使用 GitHub Desktop",
+      "createAccount": "创建免费账户。",
+      "description": "GitHub Desktop 是参与 GitHub 和 GitHub Enterprise 项目的顺畅方式。请在下方登录，开始使用你已有的项目。",
+      "metrics": "GitHub Desktop 会发送使用指标，用于改进产品并辅助功能决策。",
+      "metricsLink": "了解有关用户指标的更多信息。",
+      "newToGitHub": "刚接触 GitHub？",
+      "privacy": "GitHub 隐私声明。",
+      "privacyPrefix": "。有关 GitHub 隐私实践的更多信息，请参阅",
+      "signInEnterprise": "登录 GitHub Enterprise",
+      "signInGitHub": "登录 GitHub.com",
+      "skip": "跳过此步骤",
+      "terms": "服务条款",
+      "termsPrefix": "创建账户即表示你同意",
+      "titlePrefix": "欢迎使用",
+      "titleProduct": "GitHub Desktop"
+    }
+  }
+}

@@ -2,6 +2,14 @@ import { RequestResponseChannels, RequestChannels } from './ipc-shared'
 // eslint-disable-next-line no-restricted-imports
 import { ipcRenderer, IpcRendererEvent } from 'electron'
 
+type RequestChannelParameters<T extends keyof RequestChannels> =
+  RequestChannels[T] extends (...args: infer P) => void ? P : never
+
+type RequestResponseChannelParameters<T extends keyof RequestResponseChannels> =
+  RequestResponseChannels[T] extends (...args: infer P) => Promise<unknown>
+    ? P
+    : never
+
 /**
  * Send a message to the main process via channel and expect a result
  * asynchronously. This is the equivalent of ipcRenderer.invoke except with
@@ -9,7 +17,7 @@ import { ipcRenderer, IpcRendererEvent } from 'electron'
  */
 export function invoke<T extends keyof RequestResponseChannels>(
   channel: T,
-  ...args: Parameters<RequestResponseChannels[T]>
+  ...args: RequestResponseChannelParameters<T>
 ): ReturnType<RequestResponseChannels[T]> {
   return ipcRenderer.invoke(channel, ...args) as any
 }
@@ -20,7 +28,7 @@ export function invoke<T extends keyof RequestResponseChannels>(
  */
 export function send<T extends keyof RequestChannels>(
   channel: T,
-  ...args: Parameters<RequestChannels[T]>
+  ...args: RequestChannelParameters<T>
 ): void {
   return ipcRenderer.send(channel, ...args) as any
 }
@@ -31,7 +39,7 @@ export function send<T extends keyof RequestChannels>(
  */
 export function sendSync<T extends keyof RequestChannels>(
   channel: T,
-  ...args: Parameters<RequestChannels[T]>
+  ...args: RequestChannelParameters<T>
 ): void {
   // eslint-disable-next-line no-sync
   return ipcRenderer.sendSync(channel, ...args) as any
@@ -46,7 +54,7 @@ export function on<T extends keyof RequestChannels>(
   channel: T,
   listener: (
     event: IpcRendererEvent,
-    ...args: Parameters<RequestChannels[T]>
+    ...args: RequestChannelParameters<T>
   ) => void
 ) {
   ipcRenderer.on(channel, listener as any)
@@ -61,7 +69,7 @@ export function once<T extends keyof RequestChannels>(
   channel: T,
   listener: (
     event: IpcRendererEvent,
-    ...args: Parameters<RequestChannels[T]>
+    ...args: RequestChannelParameters<T>
   ) => void
 ) {
   ipcRenderer.once(channel, listener as any)
@@ -76,7 +84,7 @@ export function removeListener<T extends keyof RequestChannels>(
   channel: T,
   listener: (
     event: IpcRendererEvent,
-    ...args: Parameters<RequestChannels[T]>
+    ...args: RequestChannelParameters<T>
   ) => void
 ) {
   ipcRenderer.removeListener(channel, listener as any)
