@@ -38,6 +38,7 @@ import { ExpandableCommitSummary } from './expandable-commit-summary'
 import { DiffHeader } from '../diff/diff-header'
 import { Account } from '../../models/account'
 import { Emoji } from '../../lib/emoji'
+import { t, platformT } from '../../lib/i18n'
 
 interface ISelectedCommitsProps {
   readonly repository: Repository
@@ -146,7 +147,7 @@ export class SelectedCommits extends React.Component<
     if (file == null) {
       // don't show both 'empty' messages
       const message =
-        this.props.changesetData.files.length === 0 ? '' : 'No file selected'
+        this.props.changesetData.files.length === 0 ? '' : t('history.selectedCommits.noFileSelected')
 
       return (
         <div className="panel blankslate" id="diff">
@@ -253,7 +254,7 @@ export class SelectedCommits extends React.Component<
   private renderFileList() {
     const files = this.props.changesetData.files
     if (files.length === 0) {
-      return <div className="fill-window">No files in commit</div>
+      return <div className="fill-window">{t('history.selectedCommits.noFilesInCommit')}</div>
     }
 
     // -1 for right hand side border
@@ -279,7 +280,7 @@ export class SelectedCommits extends React.Component<
     const filesPlural = fileCount === 1 ? 'file' : 'files'
     return (
       <div className="file-list-header">
-        {fileCount} changed {filesPlural}
+        {t('history.selectedCommits.changedFiles', { count: fileCount, files: filesPlural })}
       </div>
     )
   }
@@ -349,17 +350,16 @@ export class SelectedCommits extends React.Component<
           <img src={BlankSlateImage} className="blankslate-image" alt="" />
           <div>
             <p>
-              Unable to display diff when multiple non-consecutive selected.
+              {t('history.selectedCommits.multiSelectUnable')}
             </p>
-            <div>You can:</div>
+            <div>{t('history.selectedCommits.multiSelectYouCan')}</div>
             <ul>
               <li>
-                Select a single commit or a range of consecutive commits to view
-                a diff.
+                {t('history.selectedCommits.multiSelectSingle')}
               </li>
-              <li>Drag the commits to the branch menu to cherry-pick them.</li>
-              <li>Drag the commits to squash or reorder them.</li>
-              <li>Right click on multiple commits to see options.</li>
+              <li>{t('history.selectedCommits.multiSelectCherryPick')}</li>
+              <li>{t('history.selectedCommits.multiSelectSquash')}</li>
+              <li>{t('history.selectedCommits.multiSelectRightClick')}</li>
             </ul>
           </div>
         </div>
@@ -386,9 +386,7 @@ export class SelectedCommits extends React.Component<
     if (!fileExistsOnDisk) {
       showContextualMenu([
         {
-          label: __DARWIN__
-            ? 'File Does Not Exist on Disk'
-            : 'File does not exist on disk',
+          label: platformT('history.selectedCommits.fileNotOnDisk'),
           enabled: false,
         },
       ])
@@ -430,14 +428,14 @@ export class SelectedCommits extends React.Component<
       { type: 'separator' },
     ]
 
-    let viewOnGitHubLabel = 'View on GitHub'
+    let viewOnGitHubLabel = t('history.selectedCommits.viewOnGitHub')
     const gitHubRepository = repository.gitHubRepository
 
     if (
       gitHubRepository &&
       gitHubRepository.endpoint !== getDotComAPIEndpoint()
     ) {
-      viewOnGitHubLabel = 'View on GitHub Enterprise'
+      viewOnGitHubLabel = t('history.selectedCommits.viewOnGitHubEnterprise')
     }
 
     items.push({

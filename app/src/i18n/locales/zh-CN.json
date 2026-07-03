@@ -68,6 +68,23 @@
     "commitReachability": {
       "darwin": "提交可达性",
       "default": "提交可达性"
+    },
+    "selectedCommits": {
+      "noFileSelected": "未选择文件",
+      "noFilesInCommit": "提交中无文件",
+      "changedFiles": "{{count}} 个已更改{{files}}",
+      "multiSelectUnable": "选择多个不连续的提交时无法显示差异。",
+      "multiSelectYouCan": "你可以：",
+      "multiSelectSingle": "选择单个提交或连续范围的提交以查看差异。",
+      "multiSelectCherryPick": "将提交拖放到分支菜单以拣选它们。",
+      "multiSelectSquash": "拖放提交以压缩或重新排序。",
+      "multiSelectRightClick": "右键单击多个提交以查看选项。",
+      "fileNotOnDisk": {
+        "darwin": "磁盘上不存在此文件",
+        "default": "磁盘上不存在此文件"
+      },
+      "viewOnGitHub": "在 GitHub 上查看",
+      "viewOnGitHubEnterprise": "在 GitHub Enterprise 上查看"
     }
   },
   "enterpriseServerEntry": {
