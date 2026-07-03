@@ -106,6 +106,13 @@ import {
   setPersistedTheme,
 } from '../../ui/lib/application-theme'
 import {
+  ApplicationLanguagePreference,
+  getPersistedLanguagePreference,
+  initializeI18n,
+  resolveLanguagePreference,
+  setPersistedLanguagePreference,
+} from '../i18n'
+import {
   getAppMenu,
   getCurrentWindowState,
   getCurrentWindowZoomFactor,
@@ -668,6 +675,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
   private selectedTheme = ApplicationTheme.System
   private currentTheme: ApplicableTheme = ApplicationTheme.Light
   private selectedTabSize = tabSizeDefault
+  private selectedLanguagePreference: ApplicationLanguagePreference = 'system'
 
   private useWindowsOpenSSH: boolean = false
 
@@ -1244,6 +1252,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
       selectedTheme: this.selectedTheme,
       currentTheme: this.currentTheme,
       selectedTabSize: this.selectedTabSize,
+      selectedLanguagePreference: this.selectedLanguagePreference,
       apiRepositories: this.apiRepositoriesStore.getState(),
       useWindowsOpenSSH: this.useWindowsOpenSSH,
       showCommitLengthWarning: this.showCommitLengthWarning,
@@ -2460,6 +2469,9 @@ export class AppStore extends TypedBaseStore<IAppState> {
     const shellValue = localStorage.getItem(shellKey)
     this.selectedShell = shellValue ? parseShell(shellValue) : DefaultShell
 
+    this.selectedLanguagePreference = getPersistedLanguagePreference()
+    initializeI18n(this.getResolvedLanguage())
+
     this.updateMenuLabelsForSelectedRepository()
 
     const imageDiffTypeValue = localStorage.getItem(imageDiffTypeKey)
@@ -2801,6 +2813,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
     } = this
 
     const labels: MenuLabelsEvent = {
+      language: this.getResolvedLanguage(),
       selectedShell: useCustomShell ? null : selectedShell,
       selectedExternalEditor: useCustomEditor ? null : selectedExternalEditor,
       askForConfirmationOnRepositoryRemoval,
@@ -8549,6 +8562,18 @@ export class AppStore extends TypedBaseStore<IAppState> {
     return Promise.resolve()
   }
 
+  public _setSelectedLanguagePreference(
+    preference: ApplicationLanguagePreference
+  ) {
+    setPersistedLanguagePreference(preference)
+    this.selectedLanguagePreference = preference
+    initializeI18n(this.getResolvedLanguage())
+    this.updateMenuLabelsForSelectedRepository()
+    this.emitUpdate()
+
+    return Promise.resolve()
+  }
+
   /**
    * Set the application-wide tab indentation
    */
@@ -8560,6 +8585,13 @@ export class AppStore extends TypedBaseStore<IAppState> {
     }
 
     return Promise.resolve()
+  }
+
+  private getResolvedLanguage() {
+    return resolveLanguagePreference(
+      this.selectedLanguagePreference,
+      navigator.language
+    )
   }
 
   public async _resolveCurrentEditor() {

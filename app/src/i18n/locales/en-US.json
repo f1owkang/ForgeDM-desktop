@@ -310,6 +310,39 @@
       }
     }
   },
+  "preferences": {
+    "appearance": {
+      "diff": {
+        "defaultTabSize": "{{size}} (default)",
+        "heading": "Diff",
+        "tabSize": "Tab size"
+      },
+      "formatting": {
+        "dateFormat": "Date format",
+        "heading": "Formatting",
+        "numberFormat": "Number format",
+        "preferAbsoluteDates": "Prefer absolute dates over relative",
+        "timeFormat": "Time format"
+      },
+      "language": {
+        "heading": "Language",
+        "label": "Application language",
+        "options": {
+          "enUS": "English",
+          "pseudo": "Pseudo-localized",
+          "system": "System default",
+          "zhCN": "Simplified Chinese"
+        }
+      },
+      "theme": {
+        "dark": "Dark",
+        "heading": "Theme",
+        "light": "Light",
+        "loadingSystem": "Loading system theme",
+        "system": "System"
+      }
+    }
+  },
   "welcome": {
     "start": {
       "ariaLabel": "Welcome to GitHub Desktop",

@@ -310,6 +310,39 @@
       }
     }
   },
+  "preferences": {
+    "appearance": {
+      "diff": {
+        "defaultTabSize": "{{size}}（默认）",
+        "heading": "差异",
+        "tabSize": "制表符宽度"
+      },
+      "formatting": {
+        "dateFormat": "日期格式",
+        "heading": "格式",
+        "numberFormat": "数字格式",
+        "preferAbsoluteDates": "优先使用绝对日期而不是相对日期",
+        "timeFormat": "时间格式"
+      },
+      "language": {
+        "heading": "语言",
+        "label": "应用语言",
+        "options": {
+          "enUS": "English",
+          "pseudo": "伪本地化",
+          "system": "跟随系统",
+          "zhCN": "简体中文"
+        }
+      },
+      "theme": {
+        "dark": "深色",
+        "heading": "主题",
+        "light": "浅色",
+        "loadingSystem": "正在加载系统主题",
+        "system": "跟随系统"
+      }
+    }
+  },
   "welcome": {
     "start": {
       "ariaLabel": "欢迎使用 GitHub Desktop",

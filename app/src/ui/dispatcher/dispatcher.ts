@@ -49,6 +49,7 @@ import {
   urlsMatch,
 } from '../../lib/repository-matching'
 import { Shell } from '../../lib/shells'
+import type { ApplicationLanguagePreference } from '../../lib/i18n'
 import { ILaunchStats, StatsStore } from '../../lib/stats'
 import { AppStore } from '../../lib/stores/app-store'
 import type {
@@ -2676,6 +2677,15 @@ export class Dispatcher {
    */
   public setSelectedTheme(theme: ApplicationTheme) {
     return this.appStore._setSelectedTheme(theme)
+  }
+
+  /**
+   * Set the application-wide language preference
+   */
+  public setSelectedLanguagePreference(
+    preference: ApplicationLanguagePreference
+  ) {
+    return this.appStore._setSelectedLanguagePreference(preference)
   }
 
   /**

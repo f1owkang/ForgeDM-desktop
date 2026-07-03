@@ -58,10 +58,11 @@ import { ApiRepositoriesStore } from '../lib/stores/api-repositories-store'
 import { CommitStatusStore } from '../lib/stores/commit-status-store'
 import { PullRequestCoordinator } from '../lib/stores/pull-request-coordinator'
 import {
-  getLanguageFromCountryCode,
+  getPersistedLanguagePreference,
   i18n,
   initializeI18n,
   normalizeLanguage,
+  resolveLanguagePreference,
 } from '../lib/i18n'
 
 import { sendNonFatalException } from '../lib/helpers/non-fatal-exception'
@@ -95,14 +96,12 @@ function getInitialLanguage() {
     return normalizeLanguage(envLanguage)
   }
 
-  const locale = normalizeLanguage(navigator.language)
-
-  if (locale !== 'en-US') {
-    return locale
-  }
-
   const locationHash = new URLSearchParams(window.location.hash.slice(1))
-  return getLanguageFromCountryCode(locationHash.get('lc'))
+  return resolveLanguagePreference(
+    getPersistedLanguagePreference(),
+    navigator.language,
+    locationHash.get('lc')
+  )
 }
 
 initializeI18n(getInitialLanguage())

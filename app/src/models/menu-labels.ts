@@ -1,6 +1,10 @@
 import { Shell } from '../lib/shells'
+import type { SupportedLanguage } from '../lib/i18n'
 
 export type MenuLabelsEvent = {
+  /** The language to use when rebuilding menu labels. */
+  readonly language?: SupportedLanguage
+
   /**
    * Specify the user's selected shell to display in the menu.
    *

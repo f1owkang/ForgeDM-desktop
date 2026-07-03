@@ -366,6 +366,10 @@ app.on('ready', () => {
   ipcMain.on('update-accounts', (_, accounts) => updateAccounts(accounts))
 
   ipcMain.on('update-preferred-app-menu-item-labels', (_, labels) => {
+    if (labels.language !== undefined) {
+      initializeI18n(labels.language)
+    }
+
     // The current application menu is mutable and we frequently
     // change whether particular items are enabled or not through
     // the update-menu-state IPC event. This menu that we're creating

@@ -79,6 +79,7 @@ import {
 } from '../../models/formatting-preferences'
 import { enableFormattingPreferences } from '../../lib/feature-flag'
 import type { Model } from '@github/copilot-sdk/dist/generated/rpc'
+import type { ApplicationLanguagePreference } from '../../lib/i18n'
 
 interface IPreferencesProps {
   readonly dispatcher: Dispatcher
@@ -106,6 +107,7 @@ interface IPreferencesProps {
   readonly selectedShell: Shell
   readonly selectedTheme: ApplicationTheme
   readonly selectedTabSize: number
+  readonly selectedLanguagePreference: ApplicationLanguagePreference
   readonly useCustomEditor: boolean
   readonly customEditor: ICustomIntegration | null
   readonly useCustomShell: boolean
@@ -610,6 +612,10 @@ export class Preferences extends React.Component<
             onSelectedThemeChanged={this.onSelectedThemeChanged}
             selectedTabSize={this.props.selectedTabSize}
             onSelectedTabSizeChanged={this.onSelectedTabSizeChanged}
+            selectedLanguagePreference={this.props.selectedLanguagePreference}
+            onSelectedLanguagePreferenceChanged={
+              this.onSelectedLanguagePreferenceChanged
+            }
             selectedDateFormat={
               this.state.selectedDateFormat ?? getDateFormatPreference()
             }
@@ -875,6 +881,12 @@ export class Preferences extends React.Component<
 
   private onSelectedThemeChanged = (theme: ApplicationTheme) => {
     this.props.dispatcher.setSelectedTheme(theme)
+  }
+
+  private onSelectedLanguagePreferenceChanged = (
+    preference: ApplicationLanguagePreference
+  ) => {
+    this.props.dispatcher.setSelectedLanguagePreference(preference)
   }
 
   private onUnderlineLinksChanged = (underlineLinks: boolean) => {
