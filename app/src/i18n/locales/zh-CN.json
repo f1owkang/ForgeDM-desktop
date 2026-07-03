@@ -100,6 +100,23 @@
       "commitCount": "{{count}} 个{{commits}}",
       "addedLines": "{{count}} 行新增",
       "removedLines": "{{count}} 行删除"
+    },
+    "mergeCallToAction": {
+      "mergeInto": "合并到",
+      "willMerge": "将合并",
+      "commits": "{{numCommits}} 个{{commits}}",
+      "from": "从",
+      "into": "到",
+      "mergeOptions": "合并选项",
+      "checkingAbility": "正在检查{{operation}}的自动执行能力…",
+      "willUpdate": "将更新",
+      "byApplying": "通过应用其",
+      "onTopOf": "之上",
+      "unableRebase": "无法开始变基。请检查你是否选择了有效的分支。",
+      "unableMerge": "无法在此仓库中合并不相关的历史",
+      "conflictsWillBe": "将有",
+      "conflictedFiles": "{{count}} 个冲突{{files}}",
+      "whenMerging": "合并时"
     }
   },
   "enterpriseServerEntry": {

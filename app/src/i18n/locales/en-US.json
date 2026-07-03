@@ -100,6 +100,23 @@
       "commitCount": "{{count}} {{commits}}",
       "addedLines": "{{count}} added lines",
       "removedLines": "{{count}} removed lines"
+    },
+    "mergeCallToAction": {
+      "mergeInto": "Merge into",
+      "willMerge": "This will merge",
+      "commits": "{{numCommits}} {{commits}}",
+      "from": "from",
+      "into": "into",
+      "mergeOptions": "Merge options",
+      "checkingAbility": "Checking for ability to {{operation}} automatically\u2026",
+      "willUpdate": "This will update",
+      "byApplying": "by applying its",
+      "onTopOf": "on top of",
+      "unableRebase": "Unable to start rebase. Check you have chosen a valid branch.",
+      "unableMerge": "Unable to merge unrelated histories in this repository",
+      "conflictsWillBe": "There will be",
+      "conflictedFiles": "{{count}} conflicted {{files}}",
+      "whenMerging": "when merging"
     }
   },
   "enterpriseServerEntry": {
