@@ -71,6 +71,7 @@ import { getAccountForCommitMessageGeneration } from '../../lib/get-account-for-
 import { AriaLiveContainer } from '../accessibility/aria-live-container'
 import { HookProgress } from '../../lib/git'
 import { assertNever } from '../../lib/fatal-error'
+import { t, platformT } from '../../lib/i18n'
 
 const addAuthorIcon: OcticonSymbolVariant = {
   w: 18,
@@ -407,7 +408,7 @@ export class CommitMessage extends React.Component<
       this.props.mostRecentLocalCommit !== null
     ) {
       this.setState({
-        isCommittingStatusMessage: `Committed Just now - ${this.props.mostRecentLocalCommit.summary} (Sha: ${this.props.mostRecentLocalCommit.shortSha})`,
+        isCommittingStatusMessage: t('changes.commitMessage.committedJustNow', { summary: this.props.mostRecentLocalCommit.summary, sha: this.props.mostRecentLocalCommit.shortSha }),
       })
     }
 
@@ -852,12 +853,8 @@ export class CommitMessage extends React.Component<
 
   private get toggleCoAuthorsText(): string {
     return this.props.showCoAuthoredBy
-      ? __DARWIN__
-        ? 'Remove Co-Authors'
-        : 'Remove co-authors'
-      : __DARWIN__
-      ? 'Add Co-Authors'
-      : 'Add co-authors'
+      ? platformT('changes.commitMessage.removeCoAuthors')
+      : platformT('changes.commitMessage.addCoAuthors')
   }
 
   private getAddRemoveCoAuthorsMenuItem(): IMenuItem {
@@ -891,9 +888,7 @@ export class CommitMessage extends React.Component<
     const noChangesAvailable = !commitToAmend && noFilesSelected
 
     return {
-      label: __DARWIN__
-        ? 'Generate Commit Message with Copilot'
-        : 'Generate commit message with Copilot',
+      label: platformT('changes.commitMessage.generateWithCopilot'),
       action: () => {
         const { commitMessage } = this.state
         onGenerateCommitMessage(
@@ -950,12 +945,8 @@ export class CommitMessage extends React.Component<
   }
 
   private getCommitSpellcheckEnabilityMenuItem(isEnabled: boolean): IMenuItem {
-    const enableLabel = __DARWIN__
-      ? 'Enable Commit Spellcheck'
-      : 'Enable commit spellcheck'
-    const disableLabel = __DARWIN__
-      ? 'Disable Commit Spellcheck'
-      : 'Disable commit spellcheck'
+    const enableLabel = platformT('changes.commitMessage.enableSpellcheck')
+    const disableLabel = platformT('changes.commitMessage.disableSpellcheck')
     return {
       label: isEnabled ? disableLabel : enableLabel,
       action: () => this.props.onCommitSpellcheckEnabledChanged(!isEnabled),
@@ -1006,17 +997,17 @@ export class CommitMessage extends React.Component<
     const noFilesSelected = filesSelected.length === 0
     const noChangesAvailable = !commitToAmend && noFilesSelected
 
-    let ariaLabel = 'Generate commit message with Copilot'
+    let ariaLabel = t('changes.commitMessage.copilotAria')
     const canCancelGenerateCommitMessage = this.canCancelGenerateCommitMessage
     const showCancelGenerateCommitMessage =
       isGeneratingCommitMessage === true && canCancelGenerateCommitMessage
 
     if (!isGeneratingCommitMessage && noChangesAvailable) {
-      ariaLabel += '. Files must be selected to generate a commit message.'
+      ariaLabel = t('changes.commitMessage.copilotAriaNoFiles')
     } else if (showCancelGenerateCommitMessage) {
-      ariaLabel = 'Cancel generating commit details'
+      ariaLabel = t('changes.commitMessage.cancelGenerating')
     } else if (isGeneratingCommitMessage) {
-      ariaLabel = 'Generating commit details…'
+      ariaLabel = t('changes.commitMessage.generating')
     }
 
     return (
@@ -1036,7 +1027,7 @@ export class CommitMessage extends React.Component<
         >
           <AriaLiveContainer
             message={
-              isGeneratingCommitMessage ? 'Generating commit details…' : ''
+              isGeneratingCommitMessage ? t('changes.commitMessage.generating') : ''
             }
           />
           <Octicon
@@ -1047,7 +1038,7 @@ export class CommitMessage extends React.Component<
             }
           />
           {shouldShowGenerateCommitMessageCallOut && (
-            <span className="call-to-action-bubble">New</span>
+            <span className="call-to-action-bubble">{t('changes.commitMessage.newBadge')}</span>
           )}
         </Button>
       </>
@@ -1055,7 +1046,7 @@ export class CommitMessage extends React.Component<
   }
 
   private renderCommitOptionsButton() {
-    const ariaLabel = 'Configure commit options'
+    const ariaLabel = t('changes.commitMessage.configureOptions')
 
     return (
       <>
@@ -1090,7 +1081,7 @@ export class CommitMessage extends React.Component<
       items.push({
         type: 'checkbox',
         checked: this.props.skipCommitHooks,
-        label: __DARWIN__ ? 'Bypass Commit Hooks' : 'Bypass Commit hooks',
+        label: platformT('changes.commitMessage.bypassHooks'),
         action: () => {
           this.props.onUpdateCommitOptions(this.props.repository, {
             skipCommitHooks: !this.props.skipCommitHooks,
@@ -1102,9 +1093,7 @@ export class CommitMessage extends React.Component<
     items.push({
       type: 'checkbox',
       checked: this.props.signOffCommits,
-      label: __DARWIN__
-        ? 'Add Signed-off-by Trailer'
-        : 'Add Signed-off-by trailer',
+      label: platformT('changes.commitMessage.addSignedOffBy'),
       action: () => {
         this.props.onUpdateCommitOptions(this.props.repository, {
           signOffCommits: !this.props.signOffCommits,
@@ -1116,7 +1105,7 @@ export class CommitMessage extends React.Component<
       items.push({
         type: 'checkbox',
         checked: this.props.allowEmptyCommit,
-        label: __DARWIN__ ? 'Allow Empty Commit' : 'Allow empty commit',
+        label: platformT('changes.commitMessage.allowEmptyCommit'),
         action: () => {
           this.props.onUpdateCommitOptions(this.props.repository, {
             allowEmptyCommit: !this.props.allowEmptyCommit,
@@ -1455,9 +1444,7 @@ export class CommitMessage extends React.Component<
       return
     }
 
-    const header = __DARWIN__
-      ? 'Commit Message Rule Failures'
-      : 'Commit message rule failures'
+    const header = platformT('changes.commitMessage.ruleFailures')
     return (
       <Popover
         anchor={this.summaryTextInput}
@@ -1473,7 +1460,7 @@ export class CommitMessage extends React.Component<
           repository={repository.gitHubRepository}
           branch={branch}
           failures={this.state.repoRuleCommitMessageFailures}
-          leadingText="This commit message"
+          leadingText={t('changes.commitMessage.ruleLeadingText')}
         />
       </Popover>
     )

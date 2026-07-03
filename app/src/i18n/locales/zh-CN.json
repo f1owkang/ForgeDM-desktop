@@ -230,6 +230,52 @@
       "modifiedFiles": "已修改文件 ({{count}})",
       "deletedFiles": "已删除文件 ({{count}})",
       "clearAll": "清除所有筛选"
+    },
+    "commitMessage": {
+      "addCoAuthors": {
+        "darwin": "添加共同作者",
+        "default": "添加共同作者"
+      },
+      "removeCoAuthors": {
+        "darwin": "移除共同作者",
+        "default": "移除共同作者"
+      },
+      "generateWithCopilot": {
+        "darwin": "使用 Copilot 生成提交信息",
+        "default": "使用 Copilot 生成提交信息"
+      },
+      "enableSpellcheck": {
+        "darwin": "启用提交拼写检查",
+        "default": "启用提交拼写检查"
+      },
+      "disableSpellcheck": {
+        "darwin": "禁用提交拼写检查",
+        "default": "禁用提交拼写检查"
+      },
+      "copilotAria": "使用 Copilot 生成提交信息",
+      "copilotAriaNoFiles": "使用 Copilot 生成提交信息。需要先选择文件才能生成提交信息。",
+      "cancelGenerating": "取消生成提交详情",
+      "generating": "正在生成提交详情…",
+      "configureOptions": "配置提交选项",
+      "bypassHooks": {
+        "darwin": "绕过提交钩子",
+        "default": "绕过提交钩子"
+      },
+      "addSignedOffBy": {
+        "darwin": "添加 Signed-off-by 尾部",
+        "default": "添加 Signed-off-by 尾部"
+      },
+      "allowEmptyCommit": {
+        "darwin": "允许空提交",
+        "default": "允许空提交"
+      },
+      "committedJustNow": "刚刚提交 - {{summary}} (Sha: {{sha}})",
+      "newBadge": "新",
+      "ruleFailures": {
+        "darwin": "提交信息规则违规",
+        "default": "提交信息规则违规"
+      },
+      "ruleLeadingText": "此提交信息"
     }
   },
   "diff": {

@@ -230,6 +230,52 @@
       "modifiedFiles": "Modified files ({{count}})",
       "deletedFiles": "Deleted files ({{count}})",
       "clearAll": "Clear all filters"
+    },
+    "commitMessage": {
+      "addCoAuthors": {
+        "darwin": "Add Co-Authors",
+        "default": "Add co-authors"
+      },
+      "removeCoAuthors": {
+        "darwin": "Remove Co-Authors",
+        "default": "Remove co-authors"
+      },
+      "generateWithCopilot": {
+        "darwin": "Generate Commit Message with Copilot",
+        "default": "Generate commit message with Copilot"
+      },
+      "enableSpellcheck": {
+        "darwin": "Enable Commit Spellcheck",
+        "default": "Enable commit spellcheck"
+      },
+      "disableSpellcheck": {
+        "darwin": "Disable Commit Spellcheck",
+        "default": "Disable commit spellcheck"
+      },
+      "copilotAria": "Generate commit message with Copilot",
+      "copilotAriaNoFiles": "Generate commit message with Copilot. Files must be selected to generate a commit message.",
+      "cancelGenerating": "Cancel generating commit details",
+      "generating": "Generating commit details\u2026",
+      "configureOptions": "Configure commit options",
+      "bypassHooks": {
+        "darwin": "Bypass Commit Hooks",
+        "default": "Bypass commit hooks"
+      },
+      "addSignedOffBy": {
+        "darwin": "Add Signed-off-by Trailer",
+        "default": "Add Signed-off-by trailer"
+      },
+      "allowEmptyCommit": {
+        "darwin": "Allow Empty Commit",
+        "default": "Allow empty commit"
+      },
+      "committedJustNow": "Committed just now - {{summary}} (Sha: {{sha}})",
+      "newBadge": "New",
+      "ruleFailures": {
+        "darwin": "Commit Message Rule Failures",
+        "default": "Commit message rule failures"
+      },
+      "ruleLeadingText": "This commit message"
     }
   },
   "diff": {
