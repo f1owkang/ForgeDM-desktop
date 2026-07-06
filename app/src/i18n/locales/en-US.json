@@ -219,6 +219,48 @@
         "darwin": "Publish Repository",
         "default": "Publish repository"
       }
+    },
+    "deleteRemoteBranch": {
+      "title": {
+        "darwin": "Delete Remote Branch",
+        "default": "Delete remote branch"
+      },
+      "confirm": "Delete remote branch <1>{{name}}</1>?",
+      "cannotUndo": "This action cannot be undone.",
+      "notLocal": "This branch does not exist locally. Deleting it may impact others collaborating on this branch.",
+      "delete": "Delete"
+    },
+    "confirmDiscardStash": {
+      "title": {
+        "darwin": "Discard Stash?",
+        "default": "Discard stash?"
+      },
+      "message": "Are you sure you want to discard these stashed changes?",
+      "doNotShow": "Do not show this message again"
+    },
+    "overwriteStash": {
+      "title": {
+        "darwin": "Overwrite Stash?",
+        "default": "Overwrite stash?"
+      },
+      "message": "Are you sure you want to proceed? This will overwrite your existing stash with your current changes.",
+      "overwrite": "Overwrite"
+    },
+    "switchBranch": {
+      "title": {
+        "darwin": "Switch Branch",
+        "default": "Switch branch"
+      },
+      "okButton": {
+        "darwin": "Switch Branch",
+        "default": "Switch branch"
+      },
+      "stashOverwriteWarning": "Your current stash will be overwritten by creating a new stash",
+      "stashLabel": "You have changes on this branch. What would you like to do with them?",
+      "leaveChanges": "Leave my changes on {{branch}}",
+      "leaveChangesDescription": "Your in-progress work will be stashed on this branch for you to return to later",
+      "bringChanges": "Bring my changes to {{branch}}",
+      "bringChangesDescription": "Your in-progress work will follow you to the new branch"
     }
   },
   "enterpriseServerEntry": {

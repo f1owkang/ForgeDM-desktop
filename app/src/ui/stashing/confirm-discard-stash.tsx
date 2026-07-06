@@ -6,6 +6,7 @@ import { Row } from '../lib/row'
 import { IStashEntry } from '../../models/stash-entry'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
+import { t, platformT } from '../../lib/i18n'
 
 interface IConfirmDiscardStashProps {
   readonly dispatcher: Dispatcher
@@ -36,7 +37,7 @@ export class ConfirmDiscardStashDialog extends React.Component<
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Discard Stash?' : 'Discard stash?'
+    const title = platformT('dialogs.confirmDiscardStash.title')
 
     return (
       <Dialog
@@ -52,11 +53,11 @@ export class ConfirmDiscardStashDialog extends React.Component<
       >
         <DialogContent>
           <Row id="discard-stash-warning-message">
-            Are you sure you want to discard these stashed changes?
+            {t('dialogs.confirmDiscardStash.message')}
           </Row>
           <Row>
             <Checkbox
-              label="Do not show this message again"
+              label={t('dialogs.confirmDiscardStash.doNotShow')}
               value={
                 this.state.confirmDiscardStash
                   ? CheckboxValue.Off

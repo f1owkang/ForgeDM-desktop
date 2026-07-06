@@ -219,6 +219,48 @@
         "darwin": "发布仓库",
         "default": "发布仓库"
       }
+    },
+    "deleteRemoteBranch": {
+      "title": {
+        "darwin": "删除远程分支",
+        "default": "删除远程分支"
+      },
+      "confirm": "删除远程分支 <1>{{name}}</1>？",
+      "cannotUndo": "此操作无法撤销。",
+      "notLocal": "此分支在本地不存在。删除它可能会影响在此分支上协作的其他人。",
+      "delete": "删除"
+    },
+    "confirmDiscardStash": {
+      "title": {
+        "darwin": "丢弃暂存？",
+        "default": "丢弃暂存？"
+      },
+      "message": "你确定要丢弃这些暂存的更改吗？",
+      "doNotShow": "不再显示此消息"
+    },
+    "overwriteStash": {
+      "title": {
+        "darwin": "覆盖暂存？",
+        "default": "覆盖暂存？"
+      },
+      "message": "你确定要继续吗？这将用当前更改覆盖你现有的暂存。",
+      "overwrite": "覆盖"
+    },
+    "switchBranch": {
+      "title": {
+        "darwin": "切换分支",
+        "default": "切换分支"
+      },
+      "okButton": {
+        "darwin": "切换分支",
+        "default": "切换分支"
+      },
+      "stashOverwriteWarning": "创建新暂存将覆盖你当前的暂存",
+      "stashLabel": "你在此分支上有更改。你想如何处理？",
+      "leaveChanges": "将我的更改留在 {{branch}}",
+      "leaveChangesDescription": "你正在进行的工作将暂存在此分支上，供你稍后返回",
+      "bringChanges": "将我的更改带到 {{branch}}",
+      "bringChangesDescription": "你正在进行的工作将跟随你到新分支"
     }
   },
   "enterpriseServerEntry": {

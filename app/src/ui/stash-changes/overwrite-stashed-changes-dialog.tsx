@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { Repository } from '../../models/repository'
 import { Branch } from '../../models/branch'
 import { Dispatcher } from '../dispatcher'
@@ -31,7 +32,7 @@ export class OverwriteStash extends React.Component<
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Overwrite Stash?' : 'Overwrite stash?'
+    const title = platformT('dialogs.overwriteStash.title')
 
     return (
       <Dialog
@@ -47,12 +48,11 @@ export class OverwriteStash extends React.Component<
       >
         <DialogContent>
           <Row id="overwrite-stash-warning-message">
-            Are you sure you want to proceed? This will overwrite your existing
-            stash with your current changes.
+            {t('dialogs.overwriteStash.message')}
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Overwrite" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.overwriteStash.overwrite')} />
         </DialogFooter>
       </Dialog>
     )
