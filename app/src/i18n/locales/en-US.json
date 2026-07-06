@@ -1999,5 +1999,27 @@
       "titlePrefix": "Welcome to",
       "titleProduct": "GitHub Desktop"
     }
+  },
+  "accountPicker": {
+    "chooseAccount": "Choose an account"
+  },
+  "noRemote": {
+    "publish": "Publish",
+    "publishMessage": "Publish your repository to GitHub. Need help?",
+    "learnMore": "Learn more about remote repositories."
+  },
+  "unmergedFile": {
+    "noConflictsRemaining": "No conflicts remaining",
+    "undo": "Undo",
+    "resolve": "Resolve",
+    "targetBranch": "target branch",
+    "fileDoesNotExist": "File does not exist on {{branch}}.",
+    "manualConflict": "Manual conflict",
+    "conflictsCount": "{{count}} conflicts",
+    "conflictsCount_one": "1 conflict",
+    "noEditorConfigured": {
+      "darwin": "No editor configured in Preferences > Advanced",
+      "default": "No editor configured in Options > Advanced"
+    }
   }
 }

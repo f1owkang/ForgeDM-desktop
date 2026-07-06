@@ -146,7 +146,7 @@ export class AccountPicker extends React.Component<
     return (
       <PopoverDropdown
         className="account-picker"
-        contentTitle="Choose an account"
+        contentTitle={t('accountPicker.chooseAccount')}
         buttonContent={
           <div className="account">
             <span className="login">@{account.login}</span> -{' '}
