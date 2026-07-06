@@ -5,6 +5,7 @@ import { IRefCheck } from '../../lib/ci-checks/ci-checks'
 import { CICheckRunList } from './ci-check-run-list'
 import { GitHubRepository } from '../../models/github-repository'
 import { Dispatcher } from '../dispatcher'
+import { t } from '../../lib/i18n'
 import {
   APICheckConclusion,
   APICheckStatus,
@@ -200,19 +201,17 @@ export class CICheckRunRerunDialog extends React.Component<
 
   public getTitle = (showDescriptor: boolean = true) => {
     const { checkRuns, failedOnly } = this.props
-    const s = checkRuns.length === 1 ? '' : 's'
-    const c = __DARWIN__ ? 'C' : 'c'
+    const isMultiple = checkRuns.length > 1
 
-    let descriptor = ''
-    if (showDescriptor && checkRuns.length === 1) {
-      descriptor = __DARWIN__ ? 'Single ' : 'single '
+    if (!showDescriptor) {
+      return isMultiple ? t('dialogs.ciChecks.rerunChecks') : t('dialogs.ciChecks.rerunCheck')
     }
 
-    if (showDescriptor && failedOnly) {
-      descriptor = __DARWIN__ ? 'Failed ' : 'failed '
+    if (failedOnly) {
+      return isMultiple ? t('dialogs.ciChecks.rerunFailedChecks') : t('dialogs.ciChecks.rerunFailedCheck')
     }
 
-    return `Re-run ${descriptor}${c}heck${s}`
+    return isMultiple ? t('dialogs.ciChecks.rerunSingleChecks') : t('dialogs.ciChecks.rerunSingleCheck')
   }
 
   private renderDialogContent = () => {
