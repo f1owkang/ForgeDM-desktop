@@ -6,6 +6,7 @@ import { WorkingDirectoryFileChange } from '../../models/status'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { PathText } from '../lib/path-text'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
+import { platformT } from '../../lib/i18n'
 import { TrashNameLabel } from '../lib/context-menu'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
@@ -57,18 +58,16 @@ export class DiscardChanges extends React.Component<
 
   private getOkButtonLabel() {
     if (this.props.discardingAllChanges) {
-      return __DARWIN__ ? 'Discard All Changes' : 'Discard all changes'
+      return platformT('dialogs.discardChanges.discardAll')
     }
-    return __DARWIN__ ? 'Discard Changes' : 'Discard changes'
+    return platformT('dialogs.discardChanges.discard')
   }
 
   private getDialogTitle() {
     if (this.props.discardingAllChanges) {
-      return __DARWIN__
-        ? 'Confirm Discard All Changes'
-        : 'Confirm discard all changes'
+      return platformT('dialogs.discardChanges.confirmAll')
     }
-    return __DARWIN__ ? 'Confirm Discard Changes' : 'Confirm discard changes'
+    return platformT('dialogs.discardChanges.confirm')
   }
 
   public render() {

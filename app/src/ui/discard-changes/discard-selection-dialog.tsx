@@ -6,6 +6,7 @@ import { WorkingDirectoryFileChange } from '../../models/status'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { PathText } from '../lib/path-text'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
+import { t, platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { ITextDiff, DiffSelection } from '../../models/diff'
 
@@ -59,7 +60,7 @@ export class DiscardSelection extends React.Component<
   }
 
   private getOkButtonLabel() {
-    return __DARWIN__ ? 'Discard Changes' : 'Discard changes'
+    return platformT('dialogs.discardChanges.discard')
   }
 
   public render() {
@@ -68,9 +69,7 @@ export class DiscardSelection extends React.Component<
     return (
       <Dialog
         id="discard-changes"
-        title={
-          __DARWIN__ ? 'Confirm Discard changes' : 'Confirm discard changes'
-        }
+        title={platformT('dialogs.discardChanges.confirmSelection')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.discard}
         dismissDisabled={isDiscardingChanges}
@@ -79,7 +78,7 @@ export class DiscardSelection extends React.Component<
         type="warning"
       >
         <DialogContent>
-          <p>Are you sure you want to discard the selected changes to:</p>
+          <p>{t('dialogs.discardChanges.confirmSelectionMessage')}</p>
 
           <ul>
             <li>
