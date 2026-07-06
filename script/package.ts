@@ -39,6 +39,8 @@ if (process.platform === 'darwin') {
   packageOSX()
 } else if (process.platform === 'win32') {
   packageWindows()
+} else if (process.platform === 'linux') {
+  packageLinux()
 } else {
   console.error(`I don't know how to package for ${process.platform} :(`)
   process.exit(1)
@@ -57,6 +59,17 @@ function packageOSX() {
   console.log('Packaging for macOS…')
   cp.execSync(
     `ditto -ck --keepParent "${distPath}/${productName}.app" "${dest}"`
+  )
+}
+
+function packageLinux() {
+  if (!existsSync(distPath)) {
+    console.error(`expected dist path not found at location: ${distPath}`)
+    process.exit(1)
+  }
+
+  console.log(
+    'Linux packaging: archive creation is handled by the CI workflow.'
   )
 }
 
