@@ -7,6 +7,7 @@ import { RichText } from '../lib/rich-text'
 import { shell } from '../../lib/app-shell'
 import { ReleaseNotesUri } from '../lib/releases'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
+import { t, platformT } from '../../lib/i18n'
 import { DesktopFakeRepository } from '../../lib/desktop-fake-repository'
 import { SandboxedMarkdown } from '../lib/sandboxed-markdown'
 import { Button } from '../lib/button'
@@ -60,9 +61,9 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
     return (
       <div className="container">
         <div className="column">
-          {this.renderList(release.bugfixes, 'Bugfixes')}
-          {this.renderList(release.enhancements, 'Enhancements')}
-          {this.renderList(release.other, 'Other')}
+          {this.renderList(release.bugfixes, t('dialogs.releaseNotes.bugfixes'))}
+          {this.renderList(release.enhancements, t('dialogs.releaseNotes.enhancements'))}
+          {this.renderList(release.other, t('dialogs.releaseNotes.other'))}
         </div>
       </div>
     )
@@ -72,11 +73,11 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
     return (
       <div className="container">
         <div className="column">
-          {this.renderList(release.enhancements, 'Enhancements')}
-          {this.renderList(release.other, 'Other')}
+          {this.renderList(release.enhancements, t('dialogs.releaseNotes.enhancements'))}
+          {this.renderList(release.other, t('dialogs.releaseNotes.other'))}
         </div>
         <div className="column">
-          {this.renderList(release.bugfixes, 'Bugfixes')}
+          {this.renderList(release.bugfixes, t('dialogs.releaseNotes.bugfixes'))}
         </div>
       </div>
     )
@@ -121,7 +122,7 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
         emoji={this.props.emoji}
         onMarkdownLinkClicked={this.onMarkdownLinkClicked}
         underlineLinks={this.props.underlineLinks}
-        ariaLabel="Release notes generated from markdown"
+        ariaLabel={t('dialogs.releaseNotes.ariaLabel')}
       />
     )
   }
@@ -144,10 +145,8 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
     return (
       <OkCancelButtonGroup
         destructive={true}
-        okButtonText={
-          __DARWIN__ ? 'Install and Restart' : 'Install and restart'
-        }
-        cancelButtonText="Close"
+        okButtonText={platformT('dialogs.releaseNotes.installAndRestart')}
+        cancelButtonText={t('dialogs.releaseNotes.close')}
       />
     )
   }

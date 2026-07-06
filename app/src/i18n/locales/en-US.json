@@ -541,6 +541,38 @@
         "darwin": "View Certificate",
         "default": "Add certificate"
       }
+    },
+    "releaseNotes": {
+      "bugfixes": "Bugfixes",
+      "enhancements": "Enhancements",
+      "other": "Other",
+      "installAndRestart": {
+        "darwin": "Install and Restart",
+        "default": "Install and restart"
+      },
+      "close": "Close",
+      "ariaLabel": "Release notes generated from markdown"
+    },
+    "ciChecks": {
+      "reRunFailedChecks": {
+        "darwin": "Re-run Failed Checks",
+        "default": "Re-run failed checks"
+      },
+      "reRunAllChecks": {
+        "darwin": "Re-run All Checks",
+        "default": "Re-run all checks"
+      },
+      "reRun": "Re-run",
+      "reRunChecks": "Re-run Checks"
+    },
+    "commitConflictsWarning": {
+      "title": "Confirm committing conflicted files",
+      "message": "If you choose to commit, you'll be committing the following conflicted files into your repository:",
+      "confirm": "Are you sure you want to commit these conflicted files?",
+      "yesCommitFiles": {
+        "darwin": "Yes, Commit Files",
+        "default": "Yes, commit files"
+      }
     }
   },
   "enterpriseServerEntry": {
