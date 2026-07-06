@@ -6,7 +6,13 @@
       "darwin": "本地路径",
       "default": "本地路径"
     },
-    "repositoryPath": "仓库路径"
+    "repositoryPath": "仓库路径",
+    "close": "关闭",
+    "continue": "继续",
+    "no": "否",
+    "yes": "是",
+    "doNotShowAgain": "不再显示此消息",
+    "error": "错误"
   },
   "addExistingRepository": {
     "bareRepoError": "此目录似乎是一个裸仓库。目前不支持裸仓库。",
@@ -996,6 +1002,29 @@
       "updateAvailable": {
         "appleSilicon": "Apple 芯片"
       }
+    },
+    "chooseForkSettings": {
+      "title": "你打算如何使用这个 Fork？",
+      "forkDescription": "此仓库是一个 Fork。你打算如何使用它？"
+    },
+    "createTutorialRepository": {
+      "title": "开始教程"
+    },
+    "generateCommitOverride": {
+      "title": "提交信息覆盖"
+    },
+    "moveToApplicationsFolder": {
+      "title": "将 GitHub Desktop 移动到 Applications 文件夹？"
+    },
+    "confirmForcePush": {
+      "title": "你确定要强制推送吗？"
+    },
+    "revertProgress": {
+      "title": "正在还原…"
+    },
+    "publishRepositoryToolbar": {
+      "publishRepo": "发布仓库",
+      "publishBranch": "发布分支"
     }
   },
   "enterpriseServerEntry": {

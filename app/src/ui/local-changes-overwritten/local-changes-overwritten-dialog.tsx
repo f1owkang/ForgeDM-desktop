@@ -1,13 +1,14 @@
 import * as React from 'react'
 import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DefaultDialogFooter,
+    Dialog,
+    DialogContent,
+    DialogFooter,
+    DefaultDialogFooter,
 } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Repository } from '../../models/repository'
 import { RetryAction, RetryActionType } from '../../models/retry-actions'
+import { t } from '../../lib/i18n'
 import { Dispatcher } from '../dispatcher'
 import { PathText } from '../lib/path-text'
 import { assertNever } from '../../lib/fatal-error'
@@ -55,7 +56,7 @@ export class LocalChangesOverwrittenDialog extends React.Component<
 
     return (
       <Dialog
-        title="Error"
+        title={t('common.error')}
         id="local-changes-overwritten"
         loading={this.state.stashing}
         disabled={this.state.stashing}
@@ -129,7 +130,7 @@ export class LocalChangesOverwrittenDialog extends React.Component<
               : 'Stash changes and continue'
           }
           okButtonTitle="This will create a stash with your current changes. You can recover them by restoring the stash afterwards."
-          cancelButtonText="Close"
+          cancelButtonText={t('common.close')}
         />
       </DialogFooter>
     )

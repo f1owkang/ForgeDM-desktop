@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Dispatcher } from '../dispatcher'
 import { TrashNameLabel } from '../lib/context-menu'
@@ -66,7 +67,7 @@ export class DiscardChangesRetryDialog extends React.Component<
   private renderConfirmDiscardChanges() {
     return (
       <Checkbox
-        label="Do not show this message again"
+        label={t('common.doNotShowAgain')}
         value={
           this.state.confirmDiscardChanges
             ? CheckboxValue.Off
@@ -87,7 +88,7 @@ export class DiscardChangesRetryDialog extends React.Component<
               : 'Permanently discard changes'
           }
           okButtonTitle={`This will discard changes and they will be unrecoverable.`}
-          cancelButtonText="Cancel"
+          cancelButtonText={t('common.cancel')}
           destructive={true}
         />
       </DialogFooter>

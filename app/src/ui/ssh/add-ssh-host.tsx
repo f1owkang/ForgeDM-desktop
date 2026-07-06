@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
 interface IAddSSHHostProps {
@@ -35,8 +36,8 @@ export class AddSSHHost extends React.Component<IAddSSHHostProps> {
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText="Yes"
-            cancelButtonText="No"
+            okButtonText={t('common.yes')}
+            cancelButtonText={t('common.no')}
             onCancelButtonClick={this.onCancel}
           />
         </DialogFooter>

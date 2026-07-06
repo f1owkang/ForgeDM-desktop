@@ -5,6 +5,7 @@ import { Branch } from '../../models/branch'
 import { ImageDiffType } from '../../models/diff'
 import { Repository } from '../../models/repository'
 import { DialogFooter, OkCancelButtonGroup, Dialog } from '../dialog'
+import { t } from '../../lib/i18n'
 import { Dispatcher } from '../dispatcher'
 import { Ref } from '../lib/ref'
 import { Octicon } from '../octicons'
@@ -276,7 +277,7 @@ export class OpenPullRequestDialog extends React.Component<IOpenPullRequestDialo
         <OkCancelButtonGroup
           okButtonText={okButton}
           okButtonTitle={buttonTitle}
-          cancelButtonText="Cancel"
+          cancelButtonText={t('common.cancel')}
           okButtonDisabled={commitSHAs === null || commitSHAs.length === 0}
         />
       </DialogFooter>

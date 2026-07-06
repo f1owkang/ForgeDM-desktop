@@ -8,6 +8,7 @@ import {
   OkCancelButtonGroup,
 } from '../dialog'
 import { Dispatcher } from '../dispatcher'
+import { t } from '../../lib/i18n'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { LinkButton } from '../lib/link-button'
 import { Row } from '../lib/row'
@@ -47,7 +48,7 @@ export class GenerateCommitMessageOverrideWarning extends React.Component<
 
     return (
       <Dialog
-        title="Commit message override"
+        title={t('dialogs.generateCommitOverride.title')}
         id="generate-commit-message-override-warning"
         type="warning"
         onDismissed={this.props.onDismissed}
@@ -73,7 +74,7 @@ export class GenerateCommitMessageOverrideWarning extends React.Component<
           ) : null}
           <Row>
             <Checkbox
-              label="Do not show this message again"
+              label={t('common.doNotShowAgain')}
               value={
                 this.state.confirmCommitMessageOverride
                   ? CheckboxValue.Off

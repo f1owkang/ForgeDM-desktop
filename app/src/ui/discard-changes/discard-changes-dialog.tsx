@@ -6,7 +6,7 @@ import { WorkingDirectoryFileChange } from '../../models/status'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { PathText } from '../lib/path-text'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
-import { platformT } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import { TrashNameLabel } from '../lib/context-menu'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
@@ -111,7 +111,7 @@ export class DiscardChanges extends React.Component<
     if (this.props.showDiscardChangesSetting) {
       return (
         <Checkbox
-          label="Do not show this message again"
+          label={t('common.doNotShowAgain')}
           value={
             this.state.confirmDiscardChanges
               ? CheckboxValue.Off

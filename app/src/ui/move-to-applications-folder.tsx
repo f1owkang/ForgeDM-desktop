@@ -7,6 +7,7 @@ import {
 } from './dialog'
 import { Dispatcher } from './dispatcher'
 import { Checkbox, CheckboxValue } from './lib/checkbox'
+import { t } from '../lib/i18n'
 
 interface IMoveToApplicationsFolderProps {
   readonly dispatcher: Dispatcher
@@ -35,7 +36,7 @@ export class MoveToApplicationsFolder extends React.Component<
   public render() {
     return (
       <Dialog
-        title="Move GitHub Desktop to the Applications folder?"
+        title={t('dialogs.moveToApplicationsFolder.title')}
         id="move-to-applications-folder"
         backdropDismissable={false}
         onDismissed={this.props.onDismissed}
@@ -54,7 +55,7 @@ export class MoveToApplicationsFolder extends React.Component<
           </p>
           <div>
             <Checkbox
-              label="Do not show this message again"
+              label={t('common.doNotShowAgain')}
               value={
                 this.state.askToMoveToApplicationsFolder
                   ? CheckboxValue.Off

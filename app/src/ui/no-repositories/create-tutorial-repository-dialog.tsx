@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { Account } from '../../models/account'
 import { getHTMLURL } from '../../lib/api'
 import { Ref } from '../lib/ref'
@@ -72,7 +73,7 @@ export class CreateTutorialRepositoryDialog extends React.Component<ICreateTutor
     return (
       <Dialog
         id="create-tutorial-repository-dialog"
-        title="Start tutorial"
+        title={t('dialogs.createTutorialRepository.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onSubmit}
         dismissDisabled={loading}
@@ -92,7 +93,7 @@ export class CreateTutorialRepositoryDialog extends React.Component<ICreateTutor
           {this.renderProgress()}
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText="Continue" />
+          <OkCancelButtonGroup okButtonText={t('common.continue')} />
         </DialogFooter>
       </Dialog>
     )

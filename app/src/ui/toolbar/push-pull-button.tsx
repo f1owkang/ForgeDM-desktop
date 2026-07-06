@@ -18,6 +18,7 @@ import * as octicons from '../octicons/octicons.generated'
 import { RelativeTime } from '../relative-time'
 
 import { ToolbarButton, ToolbarButtonStyle } from './button'
+import { t } from '../../lib/i18n'
 import classNames from 'classnames'
 import {
   DropdownState,
@@ -528,7 +529,7 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarButton
         {...this.defaultButtonProps()}
-        title="Publish repository"
+        title={t('dialogs.publishRepositoryToolbar.publishRepo')}
         description="Publish this repository to GitHub"
         className="push-pull-button"
         icon={octicons.upload}
@@ -546,7 +547,7 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarButton
         {...this.defaultButtonProps()}
-        title="Publish branch"
+        title={t('dialogs.publishRepositoryToolbar.publishBranch')}
         description={description}
         icon={octicons.upload}
         disabled={true}

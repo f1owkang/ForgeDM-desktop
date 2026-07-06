@@ -87,7 +87,7 @@ export class DiscardSelection extends React.Component<
           </ul>
 
           <Checkbox
-            label="Do not show this message again"
+            label={t('common.doNotShowAgain')}
             value={
               this.state.confirmDiscardSelection
                 ? CheckboxValue.Off
