@@ -1088,6 +1088,21 @@
     "signInEnterprise": {
       "ariaLabel": "Sign in to your GitHub Enterprise",
       "title": "Sign in to your GitHub Enterprise"
+    },
+    "signIn": {
+      "browserTitle": {
+        "darwin": "Sign in Using Your Browser",
+        "default": "Sign in using your browser"
+      },
+      "title": "Sign in",
+      "browserSignInInfo": "Your browser will redirect you back to GitHub Desktop once you've signed in. If your browser asks for your permission to launch GitHub Desktop, please allow it.",
+      "continueWithBrowser": {
+        "darwin": "Continue With Browser",
+        "default": "Continue with browser"
+      },
+      "continue": "Continue",
+      "existingAccountWarning": "You're already signed in to <1>{{host}}</1> with the account <3>{{login}}</3>. If you continue, you will first be signed out.",
+      "credentialHelperInfo": "Git requesting credentials to access <1>{{url}}</1>."
     }
   },
   "enterpriseServerEntry": {
@@ -1957,6 +1972,12 @@
     "was": "was"
   },
   "welcome": {
+    "configureGit": {
+      "ariaLabel": "Configure Git",
+      "title": "Configure Git",
+      "description": "This is used to identify the commits you create. Anyone will be able to see this information if you publish commits.",
+      "finish": "Finish"
+    },
     "start": {
       "ariaLabel": "Welcome to GitHub Desktop",
       "createAccount": "Create your free account.",

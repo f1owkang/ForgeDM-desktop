@@ -3,6 +3,7 @@ import { WelcomeStep } from './welcome'
 import { Account } from '../../models/account'
 import { ConfigureGitUser } from '../lib/configure-git-user'
 import { Button } from '../lib/button'
+import { t } from '../../lib/i18n'
 
 interface IConfigureGitProps {
   readonly accounts: ReadonlyArray<Account>
@@ -16,21 +17,20 @@ interface IConfigureGitProps {
 export class ConfigureGit extends React.Component<IConfigureGitProps, {}> {
   public render() {
     return (
-      <section id="configure-git" aria-label="Configure Git">
-        <h1 className="welcome-title">Configure Git</h1>
+      <section id="configure-git" aria-label={t('welcome.configureGit.ariaLabel')}>
+        <h1 className="welcome-title">{t('welcome.configureGit.title')}</h1>
         <p className="welcome-text">
-          This is used to identify the commits you create. Anyone will be able
-          to see this information if you publish commits.
+          {t('welcome.configureGit.description')}
         </p>
 
         <ConfigureGitUser
           accounts={this.props.accounts}
           onSave={this.props.done}
-          saveLabel="Finish"
+          saveLabel={t('welcome.configureGit.finish')}
           globalUserName={this.props.globalUserName}
           globalUserEmail={this.props.globalUserEmail}
         >
-          <Button onClick={this.cancel}>Cancel</Button>
+          <Button onClick={this.cancel}>{t('common.cancel')}</Button>
         </ConfigureGitUser>
       </section>
     )
