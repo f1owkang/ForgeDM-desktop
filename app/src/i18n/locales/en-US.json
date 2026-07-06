@@ -345,6 +345,85 @@
       "repoUse": "This repository uses",
       "toContributeThem": "To contribute to them",
       "toContributeIt": "To contribute to it"
+    },
+    "copilotConfirmDeleteProvider": {
+      "title": {
+        "darwin": "Remove Custom Provider",
+        "default": "Remove custom provider"
+      },
+      "message": "Are you sure you want to remove the custom provider <1>{{name}}</1>?",
+      "apiKeyConsequence": "Its API key will also be removed from your keychain.",
+      "bearerConsequence": "Its bearer token will also be removed from your keychain.",
+      "noneConsequence": "Any models you have configured for it will no longer be available.",
+      "remove": "Remove"
+    },
+    "copilotEditModel": {
+      "titleEdit": {
+        "darwin": "Edit Model",
+        "default": "Edit model"
+      },
+      "titleAdd": {
+        "darwin": "Add Model",
+        "default": "Add model"
+      },
+      "displayName": {
+        "darwin": "Display Name",
+        "default": "Display name"
+      },
+      "displayNameHint": "The friendly name shown in the Copilot model picker.",
+      "modelIdentifier": {
+        "darwin": "Model Identifier",
+        "default": "Model identifier"
+      },
+      "modelIdentifierHint": "The exact name your provider expects (e.g. <1>gpt-4o</1>, <2>llama3</2>).",
+      "reasoningEffort": {
+        "darwin": "Reasoning Effort",
+        "default": "Reasoning effort"
+      },
+      "defaultChoice": "Default (provider's choice)",
+      "reasoningHint": "Reasoning models (o1, o3, GPT-5 reasoning variants, etc.) think before responding. Higher levels are slower but produce better answers on complex tasks. Leave on <em>Default</em> for non-reasoning models or to let the provider pick.",
+      "save": "Save",
+      "add": "Add",
+      "enterIdentifier": "Please enter a model identifier."
+    },
+    "copilotEditProvider": {
+      "titleEdit": {
+        "darwin": "Edit Custom Provider",
+        "default": "Edit custom provider"
+      },
+      "titleAdd": {
+        "darwin": "Add Custom Provider",
+        "default": "Add custom provider"
+      },
+      "save": "Save",
+      "add": "Add",
+      "name": "Name",
+      "namePlaceholder": "My provider",
+      "type": "Type",
+      "baseUrl": {
+        "darwin": "Base URL",
+        "default": "Base URL"
+      },
+      "azureApiVersion": {
+        "darwin": "Azure API Version",
+        "default": "Azure API version"
+      },
+      "requestTimeout": {
+        "darwin": "Request Timeout (seconds)",
+        "default": "Request timeout (seconds)"
+      },
+      "authentication": "Authentication",
+      "bearerToken": "Bearer token",
+      "apiKey": "API key",
+      "addModel": {
+        "darwin": "Add Model\u2026",
+        "default": "Add model\u2026"
+      },
+      "untitledModel": "Untitled model",
+      "enterName": "Please enter a name.",
+      "enterBaseUrl": "Please enter a base URL.",
+      "baseUrlMustBeHttps": "Base URL must be an https URL, or an http URL pointing at the local machine.",
+      "addAtLeastOneModel": "Please add at least one model."
     }
   },
   "enterpriseServerEntry": {

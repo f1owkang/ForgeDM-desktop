@@ -345,6 +345,85 @@
       "repoUse": "此仓库使用了",
       "toContributeThem": "要参与这些仓库",
       "toContributeIt": "要参与此仓库"
+    },
+    "copilotConfirmDeleteProvider": {
+      "title": {
+        "darwin": "移除自定义提供商",
+        "default": "移除自定义提供商"
+      },
+      "message": "你确定要移除自定义提供商 <1>{{name}}</1> 吗？",
+      "apiKeyConsequence": "其 API 密钥也将从你的钥匙串中移除。",
+      "bearerConsequence": "其 Bearer 令牌也将从你的钥匙串中移除。",
+      "noneConsequence": "你为其配置的所有模型将不再可用。",
+      "remove": "移除"
+    },
+    "copilotEditModel": {
+      "titleEdit": {
+        "darwin": "编辑模型",
+        "default": "编辑模型"
+      },
+      "titleAdd": {
+        "darwin": "添加模型",
+        "default": "添加模型"
+      },
+      "displayName": {
+        "darwin": "显示名称",
+        "default": "显示名称"
+      },
+      "displayNameHint": "在 Copilot 模型选择器中显示的友好名称。",
+      "modelIdentifier": {
+        "darwin": "模型标识符",
+        "default": "模型标识符"
+      },
+      "modelIdentifierHint": "你的提供商期望的确切名称（例如 <1>gpt-4o</1>、<2>llama3</2>）。",
+      "reasoningEffort": {
+        "darwin": "推理强度",
+        "default": "推理强度"
+      },
+      "defaultChoice": "默认（提供商选择）",
+      "reasoningHint": "推理模型（o1、o3、GPT-5 推理变体等）会在响应前进行思考。更高的级别更慢，但在复杂任务上能产生更好的答案。对于非推理模型或让提供商选择，请保留为<em>默认</em>。",
+      "save": "保存",
+      "add": "添加",
+      "enterIdentifier": "请输入模型标识符。"
+    },
+    "copilotEditProvider": {
+      "titleEdit": {
+        "darwin": "编辑自定义提供商",
+        "default": "编辑自定义提供商"
+      },
+      "titleAdd": {
+        "darwin": "添加自定义提供商",
+        "default": "添加自定义提供商"
+      },
+      "save": "保存",
+      "add": "添加",
+      "name": "名称",
+      "namePlaceholder": "我的提供商",
+      "type": "类型",
+      "baseUrl": {
+        "darwin": "基础 URL",
+        "default": "基础 URL"
+      },
+      "azureApiVersion": {
+        "darwin": "Azure API 版本",
+        "default": "Azure API 版本"
+      },
+      "requestTimeout": {
+        "darwin": "请求超时（秒）",
+        "default": "请求超时（秒）"
+      },
+      "authentication": "身份验证",
+      "bearerToken": "Bearer 令牌",
+      "apiKey": "API 密钥",
+      "addModel": {
+        "darwin": "添加模型…",
+        "default": "添加模型…"
+      },
+      "untitledModel": "未命名模型",
+      "enterName": "请输入名称。",
+      "enterBaseUrl": "请输入基础 URL。",
+      "baseUrlMustBeHttps": "基础 URL 必须是 https URL，或指向本地机器的 http URL。",
+      "addAtLeastOneModel": "请至少添加一个模型。"
     }
   },
   "enterpriseServerEntry": {
