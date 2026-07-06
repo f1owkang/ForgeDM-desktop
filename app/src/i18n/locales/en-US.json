@@ -521,12 +521,6 @@
         "default": "Quit anyway"
       }
     },
-    "upstreamAlreadyExists": {
-      "title": {
-        "darwin": "Upstream Already Exists",
-        "default": "Upstream already exists"
-      }
-    },
     "untrustedCertificate": {
       "title": {
         "darwin": "Untrusted Server",
@@ -666,6 +660,44 @@
         "darwin": "Fork This Repository",
         "default": "Fork this repository"
       }
+    },
+    "pullRequestNotification": {
+      "switchToRepoAndPR": {
+        "darwin": "Switch to Repository and Pull Request",
+        "default": "Switch to repository and pull request"
+      },
+      "switchToPR": {
+        "darwin": "Switch to Pull Request",
+        "default": "Switch to pull request"
+      },
+      "dismiss": "Dismiss",
+      "openInBrowser": {
+        "darwin": "Open in Browser",
+        "default": "Open in browser"
+      }
+    },
+    "samlReauth": {
+      "title": {
+        "darwin": "Re-authorization Required",
+        "default": "Re-authorization required"
+      },
+      "message": "The \"{{org}}\" organization has enabled or enforced SAML SSO. To access this repository, you must sign in again and grant GitHub Desktop permission to access the organization's repositories.",
+      "continueInBrowser": {
+        "darwin": "Continue in Browser",
+        "default": "Continue in browser"
+      }
+    },
+    "upstreamAlreadyExists": {
+      "title": {
+        "darwin": "Upstream Already Exists",
+        "default": "Upstream already exists"
+      },
+      "message": "The repository <1>{{name}}</1> is a fork of <2>{{parent}}</2>, but its <3>{{remote}}</3> remote points elsewhere.",
+      "current": "Current:",
+      "expected": "Expected:",
+      "updateQuestion": "Would you like to update the remote to use the expected URL?",
+      "update": "Update",
+      "ignore": "Ignore"
     }
   },
   "enterpriseServerEntry": {

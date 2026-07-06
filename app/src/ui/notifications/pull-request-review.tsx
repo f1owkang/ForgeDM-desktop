@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Row } from '../lib/row'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
+import { t, platformT } from '../../lib/i18n'
 import { PullRequest } from '../../models/pull-request'
 import { Dispatcher } from '../dispatcher'
 import { RepositoryWithGitHubRepository } from '../../models/repository'
@@ -102,20 +103,16 @@ export class PullRequestReview extends React.Component<
 
     if (!isApprovedReview) {
       if (shouldChangeRepository) {
-        okButtonTitle = __DARWIN__
-          ? 'Switch to Repository and Pull Request'
-          : 'Switch to repository and pull request'
+        okButtonTitle = platformT('dialogs.pullRequestNotification.switchToRepoAndPR')
       } else if (shouldCheckoutBranch) {
-        okButtonTitle = __DARWIN__
-          ? 'Switch to Pull Request'
-          : 'Switch to pull request'
+        okButtonTitle = platformT('dialogs.pullRequestNotification.switchToPR')
       }
     }
 
     const okCancelButtonGroup = (
       <OkCancelButtonGroup
         onCancelButtonClick={this.props.onDismissed}
-        cancelButtonText="Dismiss"
+        cancelButtonText={t('dialogs.pullRequestNotification.dismiss')}
         // If there is nothing special about the OK button, just hide the cancel
         // button, since they will both just dismiss the dialog.
         cancelButtonVisible={okButtonTitle !== undefined}
@@ -125,7 +122,7 @@ export class PullRequestReview extends React.Component<
       />
     )
 
-    const openInBrowserText = __DARWIN__ ? 'Open in Browser' : 'Open in browser'
+    const openInBrowserText = platformT('dialogs.pullRequestNotification.openInBrowser')
 
     return (
       <Row>

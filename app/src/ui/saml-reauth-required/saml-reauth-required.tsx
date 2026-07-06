@@ -4,8 +4,9 @@ import { Dispatcher } from '../dispatcher'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { RetryAction } from '../../models/retry-actions'
 import { SignInResult } from '../../lib/stores'
+import { t, platformT } from '../../lib/i18n'
 
-const okButtonText = __DARWIN__ ? 'Continue in Browser' : 'Continue in browser'
+const okButtonText = platformT('dialogs.samlReauth.continueInBrowser')
 
 interface ISAMLReauthRequiredDialogProps {
   readonly dispatcher: Dispatcher
@@ -37,9 +38,7 @@ export class SAMLReauthRequiredDialog extends React.Component<
   public render() {
     return (
       <Dialog
-        title={
-          __DARWIN__ ? 'Re-authorization Required' : 'Re-authorization required'
-        }
+        title={platformT('dialogs.samlReauth.title')}
         loading={this.state.loading}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onSignIn}
@@ -47,10 +46,7 @@ export class SAMLReauthRequiredDialog extends React.Component<
       >
         <DialogContent>
           <p>
-            The "{this.props.organizationName}" organization has enabled or
-            enforced SAML SSO. To access this repository, you must sign in again
-            and grant GitHub Desktop permission to access the organization's
-            repositories.
+            {t('dialogs.samlReauth.message', { org: this.props.organizationName })}
           </p>
           <p>
             Would you like to open a browser to grant GitHub Desktop permission
