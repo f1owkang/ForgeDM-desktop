@@ -171,6 +171,38 @@
         "default": "Rename branch"
       },
       "name": "Name"
+    },
+    "discardChanges": {
+      "discardAll": {
+        "darwin": "Discard All Changes",
+        "default": "Discard all changes"
+      },
+      "discard": {
+        "darwin": "Discard Changes",
+        "default": "Discard changes"
+      },
+      "confirmAll": {
+        "darwin": "Confirm Discard All Changes",
+        "default": "Confirm discard all changes"
+      },
+      "confirm": {
+        "darwin": "Confirm Discard Changes",
+        "default": "Confirm discard changes"
+      },
+      "confirmSelection": {
+        "darwin": "Confirm Discard changes",
+        "default": "Confirm discard changes"
+      },
+      "confirmSelectionMessage": "Are you sure you want to discard the selected changes to:"
+    },
+    "deletePullRequest": {
+      "title": {
+        "darwin": "Delete Branch",
+        "default": "Delete branch"
+      },
+      "hasPR": "This branch may have an open pull request associated with it.",
+      "mergedHint": "If <1>#{{number}}</1> has been merged, you can also go to GitHub to delete the remote branch.",
+      "delete": "Delete"
     }
   },
   "enterpriseServerEntry": {

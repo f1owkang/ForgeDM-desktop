@@ -171,6 +171,38 @@
         "default": "重命名分支"
       },
       "name": "名称"
+    },
+    "discardChanges": {
+      "discardAll": {
+        "darwin": "丢弃所有更改",
+        "default": "丢弃所有更改"
+      },
+      "discard": {
+        "darwin": "丢弃更改",
+        "default": "丢弃更改"
+      },
+      "confirmAll": {
+        "darwin": "确认丢弃所有更改",
+        "default": "确认丢弃所有更改"
+      },
+      "confirm": {
+        "darwin": "确认丢弃更改",
+        "default": "确认丢弃更改"
+      },
+      "confirmSelection": {
+        "darwin": "确认丢弃更改",
+        "default": "确认丢弃更改"
+      },
+      "confirmSelectionMessage": "你确定要丢弃对以下文件的选定更改吗："
+    },
+    "deletePullRequest": {
+      "title": {
+        "darwin": "删除分支",
+        "default": "删除分支"
+      },
+      "hasPR": "此分支可能关联了一个打开的拉取请求。",
+      "mergedHint": "如果 <1>#{{number}}</1> 已合并，你也可以前往 GitHub 删除远程分支。",
+      "delete": "删除"
     }
   },
   "enterpriseServerEntry": {
