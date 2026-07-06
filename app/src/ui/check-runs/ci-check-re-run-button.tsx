@@ -55,7 +55,8 @@ export class CICheckReRunButton extends React.PureComponent<ICICheckReRunButtonP
     const text =
       this.props.canReRunFailed && this.failedChecksExist ? (
         <>
-          {t('dialogs.ciChecks.reRun')} <Octicon symbol={octicons.triangleDown} />
+          {t('dialogs.ciChecks.reRun')}{' '}
+          <Octicon symbol={octicons.triangleDown} />
         </>
       ) : (
         t('dialogs.ciChecks.reRunChecks')

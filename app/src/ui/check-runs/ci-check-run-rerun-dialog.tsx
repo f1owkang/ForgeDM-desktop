@@ -204,14 +204,20 @@ export class CICheckRunRerunDialog extends React.Component<
     const isMultiple = checkRuns.length > 1
 
     if (!showDescriptor) {
-      return isMultiple ? t('dialogs.ciChecks.rerunChecks') : t('dialogs.ciChecks.rerunCheck')
+      return isMultiple
+        ? t('dialogs.ciChecks.rerunChecks')
+        : t('dialogs.ciChecks.rerunCheck')
     }
 
     if (failedOnly) {
-      return isMultiple ? t('dialogs.ciChecks.rerunFailedChecks') : t('dialogs.ciChecks.rerunFailedCheck')
+      return isMultiple
+        ? t('dialogs.ciChecks.rerunFailedChecks')
+        : t('dialogs.ciChecks.rerunFailedCheck')
     }
 
-    return isMultiple ? t('dialogs.ciChecks.rerunSingleChecks') : t('dialogs.ciChecks.rerunSingleCheck')
+    return isMultiple
+      ? t('dialogs.ciChecks.rerunSingleChecks')
+      : t('dialogs.ciChecks.rerunSingleCheck')
   }
 
   private renderDialogContent = () => {

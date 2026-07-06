@@ -277,9 +277,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
       case PublishTab.DotCom:
         return (
           <CallToAction actionTitle={signInTitle} onAction={this.signInDotCom}>
-            <div>
-              {t('dialogs.publishRepository.signInDotCom')}
-            </div>
+            <div>{t('dialogs.publishRepository.signInDotCom')}</div>
           </CallToAction>
         )
       case PublishTab.Enterprise:
@@ -288,9 +286,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
             actionTitle={signInTitle}
             onAction={this.signInEnterprise}
           >
-            <div>
-              {t('dialogs.publishRepository.signInEnterprise')}
-            </div>
+            <div>{t('dialogs.publishRepository.signInEnterprise')}</div>
           </CallToAction>
         )
       default:

@@ -40,9 +40,7 @@ export class PushNeedsPullWarning extends React.Component<
         type="warning"
       >
         <DialogContent>
-          <p>
-            {t('dialogs.pushNeedsPull.message')}
-          </p>
+          <p>{t('dialogs.pushNeedsPull.message')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup

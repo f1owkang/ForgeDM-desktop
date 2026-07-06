@@ -42,11 +42,11 @@ export class WorkflowPushRejectedDialog extends React.Component<
       >
         <DialogContent>
           <p>
-            {t('dialogs.workflowPushRejected.message', { path: this.props.rejectedPath })}
+            {t('dialogs.workflowPushRejected.message', {
+              path: this.props.rejectedPath,
+            })}
           </p>
-          <p>
-            {t('dialogs.workflowPushRejected.question')}
-          </p>
+          <p>{t('dialogs.workflowPushRejected.question')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup okButtonText={okButtonText} />

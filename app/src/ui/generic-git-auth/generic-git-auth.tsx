@@ -57,8 +57,10 @@ export class GenericGitAuthentication extends React.Component<
             {t('dialogs.genericGitAuth.message', {
               url: this.props.remoteUrl,
               credential: this.props.username
-                ? t('dialogs.genericGitAuth.passwordForUser', { username: this.props.username })
-                : t('dialogs.genericGitAuth.usernameAndPassword')
+                ? t('dialogs.genericGitAuth.passwordForUser', {
+                    username: this.props.username,
+                  })
+                : t('dialogs.genericGitAuth.usernameAndPassword'),
             })}
           </p>
 

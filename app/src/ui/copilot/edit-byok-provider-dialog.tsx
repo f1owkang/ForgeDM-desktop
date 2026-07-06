@@ -166,7 +166,13 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
           {this.renderModelsSection()}
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText={isEditing ? t('dialogs.copilotEditProvider.save') : t('dialogs.copilotEditProvider.add')} />
+          <OkCancelButtonGroup
+            okButtonText={
+              isEditing
+                ? t('dialogs.copilotEditProvider.save')
+                : t('dialogs.copilotEditProvider.add')
+            }
+          />
         </DialogFooter>
       </Dialog>
     )
@@ -249,8 +255,12 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
             value={this.state.authKind}
             onChange={this.onAuthKindChanged}
           >
-            <option value="apiKey">{t('dialogs.copilotEditProvider.apiKey')}</option>
-            <option value="bearer">{t('dialogs.copilotEditProvider.bearerToken')}</option>
+            <option value="apiKey">
+              {t('dialogs.copilotEditProvider.apiKey')}
+            </option>
+            <option value="bearer">
+              {t('dialogs.copilotEditProvider.bearerToken')}
+            </option>
             <option value="none">None</option>
           </Select>
         </Row>

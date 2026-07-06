@@ -182,9 +182,7 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
         <img src={NoDiffImage} className="blankslate-image" alt="" />
         <div className="description">
           <p>{t('diff.tooLargeDefault')}</p>
-          <p>
-            {t('diff.tooLargeShowAnyway')}
-          </p>
+          <p>{t('diff.tooLargeShowAnyway')}</p>
         </div>
         <Button onClick={this.showLargeDiff}>
           {platformT('diff.showDiff')}
@@ -235,22 +233,14 @@ export class Diff extends React.Component<IDiffProps, IDiffState> {
             </div>
           )
         }
-        return (
-          <div className="panel renamed">
-            {t('diff.renamedNoChanges')}
-          </div>
-        )
+        return <div className="panel renamed">{t('diff.renamedNoChanges')}</div>
       }
 
       if (
         isConflictedFileStatus(this.props.file.status) &&
         isManualConflict(this.props.file.status)
       ) {
-        return (
-          <div className="panel empty">
-            {t('diff.inConflict')}
-          </div>
-        )
+        return <div className="panel empty">{t('diff.inConflict')}</div>
       }
 
       if (this.props.hideWhitespaceInDiff) {

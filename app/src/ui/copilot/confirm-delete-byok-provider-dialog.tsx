@@ -29,7 +29,9 @@ export class ConfirmDeleteCopilotBYOKProviderDialog extends React.Component<ICon
       >
         <DialogContent>
           <p id="confirm-delete-copilot-byok-provider-message">
-            {t('dialogs.copilotConfirmDeleteProvider.message', { name: this.props.provider.name })}{' '}
+            {t('dialogs.copilotConfirmDeleteProvider.message', {
+              name: this.props.provider.name,
+            })}{' '}
             {this.renderSecretConsequence()}
           </p>
         </DialogContent>

@@ -177,7 +177,9 @@ export class ChangesListFilterOptions extends React.Component<
                 : CheckboxValue.Off
             }
             onChange={this.onFilterToIncludedInCommit}
-            label={t('changes.filterOptions.included', { count: includedFilesCount })}
+            label={t('changes.filterOptions.included', {
+              count: includedFilesCount,
+            })}
           />
           <Checkbox
             value={
@@ -186,7 +188,9 @@ export class ChangesListFilterOptions extends React.Component<
                 : CheckboxValue.Off
             }
             onChange={this.onFilterExcludedFiles}
-            label={t('changes.filterOptions.excluded', { count: excludedFilesCount })}
+            label={t('changes.filterOptions.excluded', {
+              count: excludedFilesCount,
+            })}
           />
           <Checkbox
             value={
@@ -195,7 +199,9 @@ export class ChangesListFilterOptions extends React.Component<
                 : CheckboxValue.Off
             }
             onChange={this.onFilterNewFiles}
-            label={t('changes.filterOptions.newFiles', { count: newFilesCount })}
+            label={t('changes.filterOptions.newFiles', {
+              count: newFilesCount,
+            })}
           />
           <Checkbox
             value={
@@ -204,7 +210,9 @@ export class ChangesListFilterOptions extends React.Component<
                 : CheckboxValue.Off
             }
             onChange={this.onFilterModifiedFiles}
-            label={t('changes.filterOptions.modifiedFiles', { count: modifiedFilesCount })}
+            label={t('changes.filterOptions.modifiedFiles', {
+              count: modifiedFilesCount,
+            })}
           />
           <Checkbox
             value={
@@ -213,12 +221,16 @@ export class ChangesListFilterOptions extends React.Component<
                 : CheckboxValue.Off
             }
             onChange={this.onFilterDeletedFiles}
-            label={t('changes.filterOptions.deletedFiles', { count: deletedFilesCount })}
+            label={t('changes.filterOptions.deletedFiles', {
+              count: deletedFilesCount,
+            })}
           />
         </div>
         {filtersActive && (
           <div className="filter-options-footer">
-            <Button onClick={this.onClearAllFilters}>{t('changes.filterOptions.clearAll')}</Button>
+            <Button onClick={this.onClearAllFilters}>
+              {t('changes.filterOptions.clearAll')}
+            </Button>
           </div>
         )}
       </Popover>

@@ -75,8 +75,8 @@ export class UpdateAvailable extends React.Component<IUpdateAvailableProps> {
       return (
         <span onSubmit={this.updateNow}>
           An optimized version of GitHub Desktop is available for your{' '}
-          {platformT('dialogs.banners.updateAvailable.appleSilicon')} machine and will be installed
-          at the next launch or{' '}
+          {platformT('dialogs.banners.updateAvailable.appleSilicon')} machine
+          and will be installed at the next launch or{' '}
           <LinkButton onClick={this.updateNow}>
             restart GitHub Desktop
           </LinkButton>{' '}

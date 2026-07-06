@@ -68,7 +68,10 @@ export class ConfirmDiscardStashDialog extends React.Component<
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('common.discard')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('common.discard')}
+          />
         </DialogFooter>
       </Dialog>
     )

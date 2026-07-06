@@ -103,7 +103,9 @@ export class PullRequestReview extends React.Component<
 
     if (!isApprovedReview) {
       if (shouldChangeRepository) {
-        okButtonTitle = platformT('dialogs.pullRequestNotification.switchToRepoAndPR')
+        okButtonTitle = platformT(
+          'dialogs.pullRequestNotification.switchToRepoAndPR'
+        )
       } else if (shouldCheckoutBranch) {
         okButtonTitle = platformT('dialogs.pullRequestNotification.switchToPR')
       }
@@ -122,7 +124,9 @@ export class PullRequestReview extends React.Component<
       />
     )
 
-    const openInBrowserText = platformT('dialogs.pullRequestNotification.openInBrowser')
+    const openInBrowserText = platformT(
+      'dialogs.pullRequestNotification.openInBrowser'
+    )
 
     return (
       <Row>

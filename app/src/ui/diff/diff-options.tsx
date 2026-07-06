@@ -172,9 +172,7 @@ export class DiffOptions extends React.Component<
           label={platformT('diff.hideWhitespace')}
         />
         {this.props.isInteractiveDiff && (
-          <p className="secondary-text">
-            {t('diff.hideWhitespaceHint')}
-          </p>
+          <p className="secondary-text">{t('diff.hideWhitespaceHint')}</p>
         )}
       </fieldset>
     )

@@ -102,9 +102,7 @@ export class SubmoduleDiff extends React.Component<ISubmoduleDiffProps> {
     const { oldSHA, newSHA } = diff
 
     const verb = readOnly ? t('submodule.was') : t('submodule.hasBeen')
-    const suffix = readOnly
-      ? ''
-      : ` ${t('submodule.canBeCommitted')}`
+    const suffix = readOnly ? '' : ` ${t('submodule.canBeCommitted')}`
 
     if (oldSHA !== null && newSHA !== null) {
       return this.renderSubmoduleDiffItem(
@@ -119,16 +117,16 @@ export class SubmoduleDiff extends React.Component<ISubmoduleDiffProps> {
       return this.renderSubmoduleDiffItem(
         { octicon: octicons.diffAdded, className: 'added-icon' },
         <>
-          {t('submodule.added', { verb })}{' '}
-          {this.renderCommitSHA(newSHA)}.{suffix}
+          {t('submodule.added', { verb })} {this.renderCommitSHA(newSHA)}.
+          {suffix}
         </>
       )
     } else if (oldSHA !== null && newSHA === null) {
       return this.renderSubmoduleDiffItem(
         { octicon: octicons.diffRemoved, className: 'removed-icon' },
         <>
-          {t('submodule.removed', { verb })}{' '}
-          {this.renderCommitSHA(oldSHA)}.{suffix}
+          {t('submodule.removed', { verb })} {this.renderCommitSHA(oldSHA)}.
+          {suffix}
         </>
       )
     }
@@ -137,13 +135,22 @@ export class SubmoduleDiff extends React.Component<ISubmoduleDiffProps> {
   }
 
   private renderCommitSHA(sha: string, which?: 'previous' | 'new') {
-    const whichLabel = which === 'previous' ? t('submodule.previousLabel') : which === 'new' ? t('submodule.newLabel') : ''
+    const whichLabel =
+      which === 'previous'
+        ? t('submodule.previousLabel')
+        : which === 'new'
+        ? t('submodule.newLabel')
+        : ''
 
     return (
       <>
         <Ref>{shortenSHA(sha)}</Ref>
         <CopyButton
-          ariaLabel={which ? t('submodule.copyShaWithInfix', { infix: whichLabel }) : t('submodule.copySha')}
+          ariaLabel={
+            which
+              ? t('submodule.copyShaWithInfix', { infix: whichLabel })
+              : t('submodule.copySha')
+          }
           copyContent={sha}
         />
       </>
@@ -166,9 +173,7 @@ export class SubmoduleDiff extends React.Component<ISubmoduleDiffProps> {
 
     return this.renderSubmoduleDiffItem(
       { octicon: octicons.fileDiff, className: 'untracked-icon' },
-      <>
-        {t('submodule.submoduleHasChanges', { changes })}
-      </>
+      <>{t('submodule.submoduleHasChanges', { changes })}</>
     )
   }
 

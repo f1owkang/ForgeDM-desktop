@@ -113,15 +113,17 @@ export class MissingRepository extends React.Component<
         <UiView id="missing-repository-view">
           <div className="title-container">
             <div className="title">
-              {t('dialogs.missingRepository.potentiallyUnsafe', { name: this.props.repository.name })}
+              {t('dialogs.missingRepository.potentiallyUnsafe', {
+                name: this.props.repository.name,
+              })}
             </div>
             <div className="details">
               <p>
-                {t('dialogs.missingRepository.unsafeMessage', { path: unsafePath })}
+                {t('dialogs.missingRepository.unsafeMessage', {
+                  path: unsafePath,
+                })}
               </p>
-              <p>
-                {t('dialogs.missingRepository.trustOwner')}
-              </p>
+              <p>{t('dialogs.missingRepository.trustOwner')}</p>
             </div>
           </div>
 
@@ -133,11 +135,17 @@ export class MissingRepository extends React.Component<
     return (
       <UiView id="missing-repository-view">
         <div className="title-container">
-          <div className="title">{t('dialogs.missingRepository.cantFind', { name: this.props.repository.name })}</div>
+          <div className="title">
+            {t('dialogs.missingRepository.cantFind', {
+              name: this.props.repository.name,
+            })}
+          </div>
           <div className="details">
             {t('dialogs.missingRepository.lastSeen')}{' '}
             <span className="path">{this.props.repository.path}</span>.{' '}
-            <LinkButton onClick={this.checkAgain}>{t('dialogs.missingRepository.checkAgain')}</LinkButton>
+            <LinkButton onClick={this.checkAgain}>
+              {t('dialogs.missingRepository.checkAgain')}
+            </LinkButton>
           </div>
         </div>
 

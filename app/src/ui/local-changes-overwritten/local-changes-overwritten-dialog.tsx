@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {
-    Dialog,
-    DialogContent,
-    DialogFooter,
-    DefaultDialogFooter,
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DefaultDialogFooter,
 } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Repository } from '../../models/repository'

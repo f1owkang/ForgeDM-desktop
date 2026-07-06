@@ -45,23 +45,24 @@ export class UntrustedCertificate extends React.Component<
       >
         <DialogContent>
           <p>
-            {t('dialogs.untrustedCertificate.message', { host, cert: this.props.certificate.subjectName })}
+            {t('dialogs.untrustedCertificate.message', {
+              host,
+              cert: this.props.certificate.subjectName,
+            })}
           </p>
           <p>{t('dialogs.untrustedCertificate.expectedCases')}</p>
           <ul>
             <li>{t('dialogs.untrustedCertificate.githubEnterpriseTrial')}</li>
-            <li>
-              {t('dialogs.untrustedCertificate.unusualDomain')}
-            </li>
+            <li>{t('dialogs.untrustedCertificate.unusualDomain')}</li>
           </ul>
-          <p>
-            {t('dialogs.untrustedCertificate.unsure')}
-          </p>
+          <p>{t('dialogs.untrustedCertificate.unsure')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={platformT('dialogs.untrustedCertificate.viewCertificate')}
+            okButtonText={platformT(
+              'dialogs.untrustedCertificate.viewCertificate'
+            )}
           />
         </DialogFooter>
       </Dialog>

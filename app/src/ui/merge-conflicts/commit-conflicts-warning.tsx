@@ -68,16 +68,16 @@ export class CommitConflictsWarning extends React.Component<
         type={'warning'}
       >
         <DialogContent>
-          <p>
-            {t('dialogs.commitConflictsWarning.message')}
-          </p>
+          <p>{t('dialogs.commitConflictsWarning.message')}</p>
           {this.renderFiles(this.props.files)}
           <p>{t('dialogs.commitConflictsWarning.confirm')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={platformT('dialogs.commitConflictsWarning.yesCommitFiles')}
+            okButtonText={platformT(
+              'dialogs.commitConflictsWarning.yesCommitFiles'
+            )}
           />
         </DialogFooter>
       </Dialog>
