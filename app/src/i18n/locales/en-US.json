@@ -1,12 +1,18 @@
 {
   "common": {
     "cancel": "Cancel",
-    "choose": "Choose\u2026",
+    "choose": "Choose…",
+    "close": "Close",
+    "continue": "Continue",
+    "no": "No",
+    "yes": "Yes",
     "localPath": {
       "darwin": "Local Path",
       "default": "Local path"
     },
-    "repositoryPath": "repository path"
+    "repositoryPath": "repository path",
+    "doNotShowAgain": "Do not show this message again",
+    "error": "Error"
   },
   "addExistingRepository": {
     "bareRepoError": "This directory appears to be a bare repository. Bare repositories are not currently supported.",
@@ -108,7 +114,7 @@
       "from": "from",
       "into": "into",
       "mergeOptions": "Merge options",
-      "checkingAbility": "Checking for ability to {{operation}} automatically\u2026",
+      "checkingAbility": "Checking for ability to {{operation}} automatically…",
       "willUpdate": "This will update",
       "byApplying": "by applying its",
       "onTopOf": "on top of",
@@ -416,8 +422,8 @@
       "bearerToken": "Bearer token",
       "apiKey": "API key",
       "addModel": {
-        "darwin": "Add Model\u2026",
-        "default": "Add model\u2026"
+        "darwin": "Add Model…",
+        "default": "Add model…"
       },
       "untitledModel": "Untitled model",
       "enterName": "Please enter a name.",
@@ -512,8 +518,8 @@
     },
     "installingUpdate": {
       "title": {
-        "darwin": "Installing Update\u2026",
-        "default": "Installing update\u2026"
+        "darwin": "Installing Update…",
+        "default": "Installing update…"
       },
       "message": "Do not close GitHub Desktop while the update is in progress. Closing now may break your installation.",
       "quitAnyway": {
@@ -786,30 +792,30 @@
     },
     "repositoriesList": {
       "cloneRepo": {
-        "darwin": "Clone Repository\u2026",
-        "default": "Clone repository\u2026"
+        "darwin": "Clone Repository…",
+        "default": "Clone repository…"
       },
       "createRepo": {
-        "darwin": "Create New Repository\u2026",
-        "default": "Create new repository\u2026"
+        "darwin": "Create New Repository…",
+        "default": "Create new repository…"
       },
       "addExistingRepo": {
-        "darwin": "Add Existing Repository\u2026",
-        "default": "Add existing repository\u2026"
+        "darwin": "Add Existing Repository…",
+        "default": "Add existing repository…"
       }
     },
     "commitList": {
       "amendCommit": {
-        "darwin": "Amend Commit\u2026",
-        "default": "Amend commit\u2026"
+        "darwin": "Amend Commit…",
+        "default": "Amend commit…"
       },
       "undoCommit": {
-        "darwin": "Undo Commit\u2026",
-        "default": "Undo commit\u2026"
+        "darwin": "Undo Commit…",
+        "default": "Undo commit…"
       },
       "resetToCommit": {
-        "darwin": "Reset to Commit\u2026",
-        "default": "Reset to commit\u2026"
+        "darwin": "Reset to Commit…",
+        "default": "Reset to commit…"
       },
       "checkoutCommit": {
         "darwin": "Checkout Commit",
@@ -827,7 +833,7 @@
         "darwin": "Create Branch from Commit",
         "default": "Create branch from commit"
       },
-      "createTag": "Create Tag\u2026",
+      "createTag": "Create Tag…",
       "copySha": "Copy SHA",
       "copyTags": {
         "darwin": "Copy Tags",
@@ -838,8 +844,8 @@
         "default": "Copy tag"
       },
       "cherryPickCommit": {
-        "darwin": "Cherry-pick Commit\u2026",
-        "default": "Cherry-pick commit\u2026"
+        "darwin": "Cherry-pick Commit…",
+        "default": "Cherry-pick commit…"
       }
     },
     "compare": {
@@ -876,8 +882,8 @@
     },
     "copilotConflictResolution": {
       "settingsLink": {
-        "darwin": "Settings \u2192 Copilot",
-        "default": "File \u2192 Options \u2192 Copilot"
+        "darwin": "Settings → Copilot",
+        "default": "File → Options → Copilot"
       }
     },
     "toolbar": {
@@ -890,14 +896,14 @@
         "default": "Current worktree"
       },
       "newWorktree": {
-        "darwin": "New Worktree\u2026",
-        "default": "New worktree\u2026"
+        "darwin": "New Worktree…",
+        "default": "New worktree…"
       }
     },
     "openWithExternalEditor": {
       "title": {
-        "darwin": "Open With\u2026",
-        "default": "Open with\u2026"
+        "darwin": "Open With…",
+        "default": "Open with…"
       }
     },
     "openPullRequestHeader": {
@@ -936,12 +942,12 @@
       "viewBranchOnGitHub": "View Branch on GitHub",
       "viewPullRequestOnGitHub": "View Pull Request on GitHub",
       "checkoutInNewWorktree": {
-        "darwin": "Checkout in New Worktree\u2026",
-        "default": "Checkout in new worktree\u2026"
+        "darwin": "Checkout in New Worktree…",
+        "default": "Checkout in new worktree…"
       },
       "deleteBranch": {
-        "darwin": "Delete\u2026",
-        "default": "Delete\u2026"
+        "darwin": "Delete…",
+        "default": "Delete…"
       }
     },
     "sideBySideDiff": {
@@ -972,8 +978,8 @@
     },
     "filterChangesList": {
       "discardAllChanges": {
-        "darwin": "Discard All Changes\u2026",
-        "default": "Discard all changes\u2026"
+        "darwin": "Discard All Changes…",
+        "default": "Discard all changes…"
       }
     },
     "commitMessageAvatar": {
@@ -996,6 +1002,29 @@
       "updateAvailable": {
         "appleSilicon": "Apple silicon"
       }
+    },
+    "chooseForkSettings": {
+      "title": "How are you planning to use this fork?",
+      "forkDescription": "This repository is a fork. How do you plan to use it?"
+    },
+    "createTutorialRepository": {
+      "title": "Start tutorial"
+    },
+    "generateCommitOverride": {
+      "title": "Commit message override"
+    },
+    "moveToApplicationsFolder": {
+      "title": "Move GitHub Desktop to the Applications folder?"
+    },
+    "confirmForcePush": {
+      "title": "Are you sure you want to force push?"
+    },
+    "revertProgress": {
+      "title": "Reverting…"
+    },
+    "publishRepositoryToolbar": {
+      "publishRepo": "Publish repository",
+      "publishBranch": "Publish branch"
     }
   },
   "enterpriseServerEntry": {
@@ -1069,7 +1098,7 @@
     "emptyListPrefix": "Looks like there are no repositories for ",
     "emptyListSuffix": ". ",
     "filterPlaceholder": "Filter your repositories",
-    "loading": "Loading repositories from {{endpoint}}\u2026",
+    "loading": "Loading repositories from {{endpoint}}…",
     "noResultsPrefix": "Sorry, I can't find any repository matching ",
     "noResultsSuffix": "",
     "refreshList": "Refresh this list",
@@ -1213,7 +1242,7 @@
       "copilotAria": "Generate commit message with Copilot",
       "copilotAriaNoFiles": "Generate commit message with Copilot. Files must be selected to generate a commit message.",
       "cancelGenerating": "Cancel generating commit details",
-      "generating": "Generating commit details\u2026",
+      "generating": "Generating commit details…",
       "configureOptions": "Configure commit options",
       "bypassHooks": {
         "darwin": "Bypass Commit Hooks",
@@ -1283,7 +1312,7 @@
     "openFileExternal": "Open file in external program.",
     "renamedNoChanges": "The file was renamed but not changed",
     "renamedWithChanges": "The file was renamed and includes changes.",
-    "search": "Search\u2026",
+    "search": "Search…",
     "selectingDisabled": "Selecting lines is disabled when hiding whitespace changes.",
     "settings": {
       "darwin": "Diff Settings",

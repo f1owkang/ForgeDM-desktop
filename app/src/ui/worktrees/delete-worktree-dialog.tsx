@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Path from 'path'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
-import { platformT } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Repository } from '../../models/repository'
@@ -58,7 +58,7 @@ export class DeleteWorktreeDialog extends React.Component<
             Are you sure you want to delete the worktree <Ref>{name}</Ref>?
           </p>
           <Checkbox
-            label="Do not show this message again"
+            label={t('common.doNotShowAgain')}
             value={
               this.state.confirmWorktreeRemoval
                 ? CheckboxValue.Off

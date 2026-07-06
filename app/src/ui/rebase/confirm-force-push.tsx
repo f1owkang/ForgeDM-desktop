@@ -6,6 +6,7 @@ import { Dispatcher } from '../dispatcher'
 import { DialogFooter, DialogContent, Dialog } from '../dialog'
 import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
+import { t } from '../../lib/i18n'
 
 interface IConfirmForcePushProps {
   readonly dispatcher: Dispatcher
@@ -36,7 +37,7 @@ export class ConfirmForcePush extends React.Component<
   public render() {
     return (
       <Dialog
-        title="Are you sure you want to force push?"
+        title={t('dialogs.confirmForcePush.title')}
         dismissDisabled={this.state.isLoading}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onForcePush}
@@ -51,7 +52,7 @@ export class ConfirmForcePush extends React.Component<
           </p>
           <div>
             <Checkbox
-              label="Do not show this message again"
+              label={t('common.doNotShowAgain')}
               value={
                 this.state.askForConfirmationOnForcePush
                   ? CheckboxValue.Off

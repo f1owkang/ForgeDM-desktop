@@ -3,6 +3,7 @@ import { Checkbox, CheckboxValue } from '../../lib/checkbox'
 import { Dispatcher } from '../../dispatcher'
 import { DialogFooter, DialogContent, Dialog } from '../../dialog'
 import { OkCancelButtonGroup } from '../../dialog/ok-cancel-button-group'
+import { t } from '../../../lib/i18n'
 
 interface IWarnForcePushProps {
   /**
@@ -66,7 +67,7 @@ export class WarnForcePushDialog extends React.Component<
           </p>
           <div>
             <Checkbox
-              label="Do not show this message again"
+              label={t('common.doNotShowAgain')}
               value={
                 this.state.askForConfirmationOnForcePush
                   ? CheckboxValue.Off

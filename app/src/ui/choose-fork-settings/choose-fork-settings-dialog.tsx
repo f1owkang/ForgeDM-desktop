@@ -7,6 +7,7 @@ import {
 import { Dispatcher } from '../dispatcher'
 import { Row } from '../lib/row'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { ForkContributionTarget } from '../../models/workflow-preferences'
@@ -76,7 +77,7 @@ export class ChooseForkSettings extends React.Component<
     return (
       <Dialog
         id="fork-settings"
-        title="How are you planning to use this fork?"
+        title={t('dialogs.chooseForkSettings.title')}
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
       >
@@ -98,7 +99,7 @@ export class ChooseForkSettings extends React.Component<
         </DialogContent>
 
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText="Continue" />
+          <OkCancelButtonGroup okButtonText={t('common.continue')} />
         </DialogFooter>
       </Dialog>
     )

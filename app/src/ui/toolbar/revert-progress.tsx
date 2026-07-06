@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { IRevertProgress } from '../../models/progress'
 import { ToolbarButton, ToolbarButtonStyle } from './button'
+import { t } from '../../lib/i18n'
 import { syncClockwise } from '../octicons'
 import { enableResizingToolbarButtons } from '../../lib/feature-flag'
 import { Resizable } from '../resizable'
@@ -42,12 +43,12 @@ export class RevertProgress extends React.Component<IRevertProgressProps, {}> {
 
   public render() {
     const progress = this.props.progress
-    const title = progress.title || 'Hang on…'
+    const title = progress.title || 'Hang on\u2026'
 
     if (!enableResizingToolbarButtons()) {
       return (
         <ToolbarButton
-          title="Reverting…"
+          title={t('dialogs.revertProgress.title')}
           description={title}
           progressValue={progress.value}
           className="revert-progress"
@@ -69,7 +70,7 @@ export class RevertProgress extends React.Component<IRevertProgressProps, {}> {
         description="Revert progress button"
       >
         <ToolbarButton
-          title="Reverting…"
+          title={t('dialogs.revertProgress.title')}
           description={title}
           progressValue={progress.value}
           className="revert-progress"

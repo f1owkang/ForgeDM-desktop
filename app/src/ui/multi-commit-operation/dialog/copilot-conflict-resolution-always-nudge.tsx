@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../../dialog'
 import { OkCancelButtonGroup } from '../../dialog/ok-cancel-button-group'
-import { platformT } from '../../../lib/i18n'
+import { t, platformT } from '../../../lib/i18n'
 
 interface ICopilotConflictResolutionAlwaysNudgeProps {
   readonly onAlwaysUseCopilot: () => void
@@ -45,8 +45,8 @@ export class CopilotConflictResolutionAlwaysNudge extends React.Component<ICopil
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText="Yes"
-            cancelButtonText="No"
+            okButtonText={t('common.yes')}
+            cancelButtonText={t('common.no')}
             onCancelButtonClick={this.onNo}
           />
         </DialogFooter>
