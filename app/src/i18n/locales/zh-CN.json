@@ -1069,6 +1069,9 @@
     },
     "iconPreview": {
       "title": "图标预览"
+    },
+    "signInEnterprise": {
+      "ariaLabel": "登录你的 GitHub Enterprise"
     }
   },
   "enterpriseServerEntry": {
