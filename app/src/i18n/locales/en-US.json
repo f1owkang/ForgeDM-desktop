@@ -290,6 +290,61 @@
       "mergeCommitWarning": "Undoing a merge commit will apply the changes from the merge into your working directory, and committing again will create an entirely new commit. This means you will lose the merge commit and, as a result, commits from the merged branch could disappear from this branch.",
       "mergeCommitWithChanges": "You have changes in progress. Undoing the merge commit might result in some of these changes being lost.",
       "continueAnyway": "Do you want to continue anyway?"
+    },
+    "installGit": {
+      "title": {
+        "darwin": "Unable to Locate Git",
+        "default": "Unable to locate Git"
+      },
+      "message": "We were unable to locate Git on your system. This means you won't be able to execute any Git commands in the {{terminal}}.",
+      "terminal": {
+        "darwin": "Terminal window",
+        "default": "command prompt"
+      },
+      "resources": "To help you get Git installed and configured for your operating system, we have some external resources available.",
+      "openWithoutGit": {
+        "darwin": "Open Without Git",
+        "default": "Open without Git"
+      },
+      "installGit": "Install Git"
+    },
+    "hookFailed": {
+      "title": "{{hookName}} {{failed}}",
+      "failed": {
+        "darwin": "Failed",
+        "default": "failed"
+      },
+      "message": "The {{hookName}} hook failed. What would you like to do?",
+      "ignoreAndContinue": "Ignore and Continue",
+      "abort": "Abort"
+    },
+    "lfsAttributeMismatch": {
+      "title": {
+        "darwin": "Update Existing Git LFS Filters?",
+        "default": "Update existing Git LFS filters?"
+      },
+      "message": "Git LFS filters are already configured in <1>your global git config</1> but are not the values it expects. Would you like to update them now?",
+      "okButton": {
+        "darwin": "Update Existing Filters",
+        "default": "Update existing filters"
+      },
+      "cancelButton": {
+        "darwin": "Not Now",
+        "default": "Not now"
+      }
+    },
+    "initializeLfs": {
+      "title": "Initialize Git LFS",
+      "okButton": "Initialize Git LFS",
+      "cancelButton": {
+        "darwin": "Not Now",
+        "default": "Not now"
+      },
+      "manyRepos": "{{count}} repositories use <1>Git LFS</1>. To contribute to them, Git LFS must first be initialized. Would you like to do so now?",
+      "reposUse": "The repositories use",
+      "repoUse": "This repository uses",
+      "toContributeThem": "To contribute to them",
+      "toContributeIt": "To contribute to it"
     }
   },
   "enterpriseServerEntry": {

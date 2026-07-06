@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { shell } from '../../lib/app-shell'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
@@ -45,25 +46,22 @@ export class InstallGit extends React.Component<IInstallGitProps, {}> {
       <Dialog
         id="install-git"
         type="warning"
-        title={__DARWIN__ ? 'Unable to Locate Git' : 'Unable to locate Git'}
+        title={platformT('dialogs.installGit.title')}
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
       >
         <DialogContent>
           <p>
-            We were unable to locate Git on your system. This means you won't be
-            able to execute any Git commands in the{' '}
-            {__DARWIN__ ? 'Terminal window' : 'command prompt'}.
+            {t('dialogs.installGit.message', { terminal: platformT('dialogs.installGit.terminal') })}
           </p>
           <p>
-            To help you get Git installed and configured for your operating
-            system, we have some external resources available.
+            {t('dialogs.installGit.resources')}
           </p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText={__DARWIN__ ? 'Open Without Git' : 'Open without Git'}
-            cancelButtonText="Install Git"
+            okButtonText={platformT('dialogs.installGit.openWithoutGit')}
+            cancelButtonText={t('dialogs.installGit.installGit')}
             onCancelButtonClick={this.onExternalLink}
           />
         </DialogFooter>

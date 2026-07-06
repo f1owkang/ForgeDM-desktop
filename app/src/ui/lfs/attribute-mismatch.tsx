@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
-import { LinkButton } from '../lib/link-button'
+import { t, platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
 interface IAttributeMismatchProps {
@@ -18,31 +18,20 @@ export class AttributeMismatch extends React.Component<IAttributeMismatchProps> 
     return (
       <Dialog
         id="lfs-attribute-mismatch"
-        title={
-          __DARWIN__
-            ? 'Update Existing Git LFS Filters?'
-            : 'Update existing Git LFS filters?'
-        }
+        title={platformT('dialogs.lfsAttributeMismatch.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onSubmit}
       >
         <DialogContent>
           <p>
-            Git LFS filters are already configured in{' '}
-            <LinkButton onClick={this.props.onEditGlobalGitConfig}>
-              your global git config
-            </LinkButton>{' '}
-            but are not the values it expects. Would you like to update them
-            now?
+            {t('dialogs.lfsAttributeMismatch.message')}
           </p>
         </DialogContent>
 
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText={
-              __DARWIN__ ? 'Update Existing Filters' : 'Update existing filters'
-            }
-            cancelButtonText={__DARWIN__ ? 'Not Now' : 'Not now'}
+            okButtonText={platformT('dialogs.lfsAttributeMismatch.okButton')}
+            cancelButtonText={platformT('dialogs.lfsAttributeMismatch.cancelButton')}
           />
         </DialogFooter>
       </Dialog>
