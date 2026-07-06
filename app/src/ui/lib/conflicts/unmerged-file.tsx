@@ -29,8 +29,9 @@ import {
 } from '../../../lib/status'
 import { revealInFileManager } from '../../../lib/app-shell'
 import { DialogPreferredFocusClassName } from '../../dialog'
+import { t, platformT } from '../../../lib/i18n'
 
-const defaultConflictsResolvedMessage = 'No conflicts remaining'
+const defaultConflictsResolvedMessage = t('unmergedFile.noConflictsRemaining')
 
 /**
  * Renders an unmerged file status and associated buttons for the merge conflicts modal
@@ -161,7 +162,7 @@ const renderResolvedFile: React.FunctionComponent<{
           )}
           ariaDescribedBy={props.path}
         >
-          Undo
+          {t('unmergedFile.undo')}
         </Button>
       )}
       <div className="green-circle">
@@ -205,7 +206,7 @@ const renderManualConflictedFile: React.FunctionComponent<{
   let conflictTypeString = manualConflictString
 
   if ([entry.us, entry.them].includes(GitStatusEntry.Deleted)) {
-    let targetBranch = 'target branch'
+    let targetBranch = t('unmergedFile.targetBranch')
     if (entry.us === GitStatusEntry.Deleted && ourBranch !== undefined) {
       targetBranch = ourBranch
     }
@@ -213,7 +214,7 @@ const renderManualConflictedFile: React.FunctionComponent<{
     if (entry.them === GitStatusEntry.Deleted && theirBranch !== undefined) {
       targetBranch = theirBranch
     }
-    conflictTypeString = `File does not exist on ${targetBranch}.`
+    conflictTypeString = t('unmergedFile.fileDoesNotExist', { branch: targetBranch })
   }
 
   const resolveButtonClassName = props.isFirstConflictedFile
@@ -232,7 +233,7 @@ const renderManualConflictedFile: React.FunctionComponent<{
           onClick={onDropdownClick}
           onKeyDown={onDropdownKeyDown}
         >
-          Resolve
+          {t('unmergedFile.resolve')}
           <Octicon symbol={octicons.triangleDown} />
         </Button>
       </div>
@@ -274,8 +275,8 @@ const renderConflictedFileWithConflictMarkers: React.FunctionComponent<{
   )
   const message =
     humanReadableConflicts === 1
-      ? `1 conflict`
-      : `${humanReadableConflicts} conflicts`
+      ? t('unmergedFile.conflictsCount_one')
+      : t('unmergedFile.conflictsCount', { count: humanReadableConflicts })
 
   const disabled = props.resolvedExternalEditor === null
   const tooltip = editorButtonTooltip(props.resolvedExternalEditor)
@@ -530,11 +531,7 @@ function editorButtonTooltip(editorName: string | null): string | undefined {
     return
   }
 
-  if (__DARWIN__) {
-    return `No editor configured in Preferences > Advanced`
-  } else {
-    return `No editor configured in Options > Advanced`
-  }
+    return platformT('unmergedFile.noEditorConfigured')
 }
 
-const manualConflictString = 'Manual conflict'
+const manualConflictString = t('unmergedFile.manualConflict')

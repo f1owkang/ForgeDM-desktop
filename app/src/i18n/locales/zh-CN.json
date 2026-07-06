@@ -1999,5 +1999,27 @@
       "titlePrefix": "欢迎使用",
       "titleProduct": "GitHub Desktop"
     }
+  },
+  "accountPicker": {
+    "chooseAccount": "选择账户"
+  },
+  "noRemote": {
+    "publish": "发布",
+    "publishMessage": "将你的仓库发布到 GitHub。需要帮助？",
+    "learnMore": "了解有关远程仓库的更多信息。"
+  },
+  "unmergedFile": {
+    "noConflictsRemaining": "无剩余冲突",
+    "undo": "撤销",
+    "resolve": "解决",
+    "targetBranch": "目标分支",
+    "fileDoesNotExist": "文件在 {{branch}} 上不存在。",
+    "manualConflict": "手动冲突",
+    "conflictsCount_one": "1 个冲突",
+    "conflictsCount": "{{count}} 个冲突",
+    "noEditorConfigured": {
+      "darwin": "未在偏好设置 > 高级中配置编辑器",
+      "default": "未在选项 > 高级中配置编辑器"
+    }
   }
 }
