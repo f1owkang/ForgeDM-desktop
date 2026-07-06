@@ -3,7 +3,7 @@ import { Checkbox, CheckboxValue } from '../../lib/checkbox'
 import { Dispatcher } from '../../dispatcher'
 import { DialogFooter, DialogContent, Dialog } from '../../dialog'
 import { OkCancelButtonGroup } from '../../dialog/ok-cancel-button-group'
-import { t } from '../../../lib/i18n'
+import { t, platformT } from '../../../lib/i18n'
 
 interface IWarnForcePushProps {
   /**
@@ -41,9 +41,7 @@ export class WarnForcePushDialog extends React.Component<
   public render() {
     const { operation, onDismissed } = this.props
 
-    const title = __DARWIN__
-      ? `${operation} Will Require Force Push`
-      : `${operation} will require force push`
+    const title = platformT('dialogs.warnForcePush.title', { operation })
 
     return (
       <Dialog
@@ -57,13 +55,14 @@ export class WarnForcePushDialog extends React.Component<
       >
         <DialogContent>
           <p id="warn-force-push-confirmation-title">
-            Are you sure you want to {operation.toLowerCase()}?
+            {t('dialogs.warnForcePush.confirmMessage', {
+              operation: operation.toLowerCase(),
+            })}
           </p>
           <p id="warn-force-push-confirmation-message">
-            At the end of the {operation.toLowerCase()} flow, GitHub Desktop
-            will enable you to force push the branch to update the upstream
-            branch. Force pushing will alter the history on the remote and
-            potentially cause problems for others collaborating on this branch.
+            {t('dialogs.warnForcePush.description', {
+              operation: operation.toLowerCase(),
+            })}
           </p>
           <div>
             <Checkbox
@@ -79,9 +78,9 @@ export class WarnForcePushDialog extends React.Component<
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText={`Begin ${
-              __DARWIN__ ? operation : operation.toLowerCase()
-            }`}
+            okButtonText={platformT('dialogs.warnForcePush.okButton', {
+              operation: __DARWIN__ ? operation : operation.toLowerCase(),
+            })}
             onCancelButtonClick={this.props.onDismissed}
           />
         </DialogFooter>

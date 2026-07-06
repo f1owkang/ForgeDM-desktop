@@ -3,7 +3,6 @@ import * as Path from 'path'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { t, platformT } from '../../lib/i18n'
-import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Repository } from '../../models/repository'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
@@ -55,7 +54,7 @@ export class DeleteWorktreeDialog extends React.Component<
       >
         <DialogContent>
           <p id="delete-worktree-confirmation">
-            Are you sure you want to delete the worktree <Ref>{name}</Ref>?
+            {t('dialogs.worktree.deleteConfirm', { name })}
           </p>
           <Checkbox
             label={t('common.doNotShowAgain')}
@@ -68,7 +67,10 @@ export class DeleteWorktreeDialog extends React.Component<
           />
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('common.delete')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('common.delete')}
+          />
         </DialogFooter>
       </Dialog>
     )
