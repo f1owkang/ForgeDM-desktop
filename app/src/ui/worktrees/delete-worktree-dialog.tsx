@@ -68,7 +68,7 @@ export class DeleteWorktreeDialog extends React.Component<
           />
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Delete" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('common.delete')} />
         </DialogFooter>
       </Dialog>
     )

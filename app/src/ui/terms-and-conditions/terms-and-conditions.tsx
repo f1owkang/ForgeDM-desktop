@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DefaultDialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { LinkButton } from '../lib/link-button'
 
 interface ITermsAndConditionsProps {
@@ -21,7 +22,7 @@ export class TermsAndConditions extends React.Component<
     return (
       <Dialog
         id="terms-and-conditions"
-        title="GitHub Open Source Applications Terms and Conditions"
+        title={t('dialogs.termsAndConditions.title')}
         onSubmit={this.props.onDismissed}
         onDismissed={this.props.onDismissed}
       >

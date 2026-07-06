@@ -12,7 +12,15 @@
     "no": "否",
     "yes": "是",
     "doNotShowAgain": "不再显示此消息",
-    "error": "错误"
+    "error": "错误",
+    "discard": "丢弃",
+    "delete": "删除",
+    "override": "覆盖",
+    "open": "打开",
+    "moveAndRestart": "移动并重启",
+    "notNow": "暂不",
+    "restore": "恢复",
+    "forcefullyDelete": "强制删除"
   },
   "addExistingRepository": {
     "bareRepoError": "此目录似乎是一个裸仓库。目前不支持裸仓库。",
@@ -137,7 +145,8 @@
       },
       "alreadyExists": "名为 {{name}} 的分支已存在。",
       "defaultBranchError": "无法确定默认分支。",
-      "currentBranchHint": "当前检出的分支。如果你需要基于此分支的工作进行构建，请选择此项。"
+      "currentBranchHint": "当前检出的分支。如果你需要基于此分支的工作进行构建，请选择此项。",
+      "createBasedOn": "基于以下创建分支…"
     },
     "createTag": {
       "title": {
@@ -161,7 +170,8 @@
       },
       "confirm": "删除分支 <1>{{name}}</1>？",
       "cannotUndo": "此操作无法撤销。",
-      "delete": "删除"
+      "delete": "删除",
+      "deleteRemoteToo": "是的，同时删除远程分支"
     },
     "deleteTag": {
       "title": {
@@ -224,7 +234,10 @@
       "okButton": {
         "darwin": "发布仓库",
         "default": "发布仓库"
-      }
+      },
+      "orgLabel": "组织",
+      "nameLabel": "名称",
+      "descriptionLabel": "描述"
     },
     "deleteRemoteBranch": {
       "title": {
@@ -774,7 +787,8 @@
       "title": {
         "darwin": "移除仓库",
         "default": "移除仓库"
-      }
+      },
+      "remove": "移除"
     },
     "app": {
       "selectRepository": {
@@ -878,7 +892,8 @@
       "bypassPushDetection": {
         "darwin": "绕过推送检测",
         "default": "绕过推送检测"
-      }
+      },
+      "allowExpose": "允许我暴露此密钥"
     },
     "copilotConflictResolution": {
       "settingsLink": {
@@ -904,7 +919,9 @@
       "title": {
         "darwin": "打开方式…",
         "default": "打开方式…"
-      }
+      },
+      "open": "打开",
+      "selectEditor": "选择编辑器"
     },
     "openPullRequestHeader": {
       "title": {
@@ -1011,7 +1028,8 @@
       "title": "开始教程"
     },
     "generateCommitOverride": {
-      "title": "提交信息覆盖"
+      "title": "提交信息覆盖",
+      "override": "覆盖"
     },
     "moveToApplicationsFolder": {
       "title": "将 GitHub Desktop 移动到 Applications 文件夹？"
@@ -1025,6 +1043,22 @@
     "publishRepositoryToolbar": {
       "publishRepo": "发布仓库",
       "publishBranch": "发布分支"
+    },
+    "stashDiffHeader": {
+      "restore": "恢复",
+      "discard": "丢弃"
+    },
+    "copilotDisclaimer": {
+      "title": "GitHub Copilot"
+    },
+    "termsAndConditions": {
+      "title": "GitHub 开源应用条款和条件"
+    },
+    "acknowledgements": {
+      "title": "许可证和开源声明"
+    },
+    "iconPreview": {
+      "title": "图标预览"
     }
   },
   "enterpriseServerEntry": {

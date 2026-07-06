@@ -575,7 +575,7 @@ export class PushPullButton extends React.Component<
     return (
       <ToolbarDropdown
         {...this.defaultDropdownProps()}
-        title="Publish branch"
+        title={t('dialogs.publishRepositoryToolbar.publishBranch')}
         description={description}
         icon={octicons.upload}
         onClick={onClick}

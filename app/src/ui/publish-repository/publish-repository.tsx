@@ -4,6 +4,7 @@ import { API, IAPIOrganization } from '../../lib/api'
 import { TextBox } from '../lib/text-box'
 import { Select } from '../lib/select'
 import { DialogContent } from '../dialog'
+import { t } from '../../lib/i18n'
 import { Row } from '../lib/row'
 import { merge } from '../../lib/merge'
 import { caseInsensitiveCompare } from '../../lib/compare'
@@ -136,7 +137,7 @@ export class PublishRepository extends React.Component<
 
     return (
       <Select
-        label="Organization"
+        label={t('dialogs.publishRepository.orgLabel')}
         value={selectedIndex.toString()}
         onChange={this.onOrgChange}
       >
@@ -161,7 +162,7 @@ export class PublishRepository extends React.Component<
 
         <Row>
           <TextBox
-            label="Name"
+            label={t('dialogs.publishRepository.nameLabel')}
             value={this.name}
             onValueChanged={this.onNameChange}
           />
@@ -171,7 +172,7 @@ export class PublishRepository extends React.Component<
 
         <Row>
           <TextBox
-            label="Description"
+            label={t('dialogs.publishRepository.descriptionLabel')}
             value={this.props.settings.description}
             onValueChanged={this.onDescriptionChange}
           />
