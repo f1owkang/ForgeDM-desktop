@@ -745,6 +745,98 @@
         "darwin": "Remove Repository",
         "default": "Remove repository"
       }
+    },
+    "app": {
+      "selectRepository": {
+        "darwin": "Select a Repository",
+        "default": "Select a repository"
+      },
+      "noRepositories": {
+        "darwin": "No Repositories",
+        "default": "No repositories"
+      },
+      "currentRepository": {
+        "darwin": "Current Repository",
+        "default": "Current repository"
+      }
+    },
+    "repositoriesList": {
+      "cloneRepo": {
+        "darwin": "Clone Repository\u2026",
+        "default": "Clone repository\u2026"
+      },
+      "createRepo": {
+        "darwin": "Create New Repository\u2026",
+        "default": "Create new repository\u2026"
+      },
+      "addExistingRepo": {
+        "darwin": "Add Existing Repository\u2026",
+        "default": "Add existing repository\u2026"
+      }
+    },
+    "commitList": {
+      "amendCommit": {
+        "darwin": "Amend Commit\u2026",
+        "default": "Amend commit\u2026"
+      },
+      "undoCommit": {
+        "darwin": "Undo Commit\u2026",
+        "default": "Undo commit\u2026"
+      },
+      "resetToCommit": {
+        "darwin": "Reset to Commit\u2026",
+        "default": "Reset to commit\u2026"
+      },
+      "checkoutCommit": {
+        "darwin": "Checkout Commit",
+        "default": "Checkout commit"
+      },
+      "reorderCommit": {
+        "darwin": "Reorder Commit",
+        "default": "Reorder commit"
+      },
+      "revertChanges": {
+        "darwin": "Revert Changes in Commit",
+        "default": "Revert changes in commit"
+      },
+      "createBranchFromCommit": {
+        "darwin": "Create Branch from Commit",
+        "default": "Create branch from commit"
+      },
+      "createTag": "Create Tag\u2026",
+      "copySha": "Copy SHA",
+      "copyTags": {
+        "darwin": "Copy Tags",
+        "default": "Copy tags"
+      },
+      "copyTag": {
+        "darwin": "Copy Tag",
+        "default": "Copy tag"
+      },
+      "cherryPickCommit": {
+        "darwin": "Cherry-pick Commit\u2026",
+        "default": "Cherry-pick commit\u2026"
+      }
+    },
+    "compare": {
+      "noBranchesToCompare": {
+        "darwin": "No Branches to Compare",
+        "default": "No branches to compare"
+      },
+      "noBranchesToCompareUpToDate": {
+        "darwin": "Your branch is up to date with the compared branch",
+        "default": "Your branch is up to date with the compared branch"
+      }
+    },
+    "worktreeList": {
+      "worktree": {
+        "darwin": "Worktree",
+        "default": "worktree"
+      },
+      "newWorktree": {
+        "darwin": "New Worktree",
+        "default": "New worktree"
+      }
     }
   },
   "enterpriseServerEntry": {

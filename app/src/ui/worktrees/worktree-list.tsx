@@ -8,6 +8,7 @@ import { Button } from '../lib/button'
 import { IMatches } from '../../lib/fuzzy-find'
 import { ClickSource } from '../lib/list'
 import memoizeOne from 'memoize-one'
+import { platformT } from '../../lib/i18n'
 
 const RowHeight = 30
 
@@ -87,7 +88,7 @@ export class WorktreeList extends React.Component<IWorktreeListProps> {
   }
 
   private renderGroupHeader = (identifier: WorktreeGroupIdentifier) => {
-    const worktree = __DARWIN__ ? 'Worktree' : 'worktree'
+    const worktree = platformT('dialogs.worktreeList.worktree')
     const label =
       identifier === 'main' ? `Main ${worktree}` : `Linked ${worktree}s`
     return <div className="filter-list-group-header">{label}</div>
@@ -102,7 +103,7 @@ export class WorktreeList extends React.Component<IWorktreeListProps> {
         className="new-worktree-button"
         onClick={this.props.onCreateNewWorktree}
       >
-        {__DARWIN__ ? 'New Worktree' : 'New worktree'}
+        {platformT('dialogs.worktreeList.newWorktree')}
       </Button>
     )
   }
