@@ -119,6 +119,60 @@
       "whenMerging": "when merging"
     }
   },
+  "dialogs": {
+    "createBranch": {
+      "title": {
+        "darwin": "Create a Branch",
+        "default": "Create a branch"
+      },
+      "okButton": {
+        "darwin": "Create Branch",
+        "default": "Create branch"
+      },
+      "alreadyExists": "A branch named {{name}} already exists.",
+      "defaultBranchError": "Could not determine the default branch.",
+      "currentBranchHint": "The currently checked out branch. Pick this if you need to build on work done on this branch."
+    },
+    "createTag": {
+      "title": {
+        "darwin": "Create a Tag",
+        "default": "Create a tag"
+      },
+      "name": "Name",
+      "okButton": {
+        "darwin": "Create Tag",
+        "default": "Create tag"
+      },
+      "previousTags": {
+        "darwin": "Previous Tags",
+        "default": "Previous tags"
+      }
+    },
+    "deleteBranch": {
+      "title": {
+        "darwin": "Delete Branch",
+        "default": "Delete branch"
+      },
+      "confirm": "Delete branch <1>{{name}}</1>?",
+      "cannotUndo": "This action cannot be undone.",
+      "delete": "Delete"
+    },
+    "deleteTag": {
+      "title": {
+        "darwin": "Delete Tag",
+        "default": "Delete tag"
+      },
+      "confirm": "Are you sure you want to delete the tag <1>{{name}}</1>?",
+      "delete": "Delete"
+    },
+    "renameBranch": {
+      "title": {
+        "darwin": "Rename Branch",
+        "default": "Rename branch"
+      },
+      "name": "Name"
+    }
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise address",
     "continue": "Continue"

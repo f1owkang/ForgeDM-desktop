@@ -5,7 +5,7 @@ import { Repository } from '../../models/repository'
 import { Branch } from '../../models/branch'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
-import { Ref } from '../lib/ref'
+import { t, platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
 interface IDeleteBranchProps {
@@ -39,7 +39,7 @@ export class DeleteBranch extends React.Component<
     return (
       <Dialog
         id="delete-branch"
-        title={__DARWIN__ ? 'Delete Branch' : 'Delete branch'}
+        title={platformT('dialogs.deleteBranch.title')}
         type="warning"
         onSubmit={this.deleteBranch}
         onDismissed={this.props.onDismissed}
@@ -51,15 +51,15 @@ export class DeleteBranch extends React.Component<
         <DialogContent>
           <div id="delete-branch-confirmation-message">
             <p>
-              Delete branch <Ref>{this.props.branch.name}</Ref>?
+              {t('dialogs.deleteBranch.confirm', { name: this.props.branch.name })}
             </p>
-            <p>This action cannot be undone.</p>
+            <p>{t('dialogs.deleteBranch.cannotUndo')}</p>
 
             {this.renderDeleteOnRemote()}
           </div>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Delete" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.deleteBranch.delete')} />
         </DialogFooter>
       </Dialog>
     )

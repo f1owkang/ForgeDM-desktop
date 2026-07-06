@@ -8,6 +8,7 @@ import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { startTimer } from '../lib/timing'
 import { Ref } from '../lib/ref'
 import { RefNameTextBox } from '../lib/ref-name-text-box'
+import { t, platformT } from '../../lib/i18n'
 import { enablePreviousTagSuggestions } from '../../lib/feature-flag'
 
 interface ICreateTagProps {
@@ -56,7 +57,7 @@ export class CreateTag extends React.Component<
     return (
       <Dialog
         id="create-tag"
-        title={__DARWIN__ ? 'Create a Tag' : 'Create a tag'}
+        title={platformT('dialogs.createTag.title')}
         onSubmit={this.createTag}
         onDismissed={this.props.onDismissed}
         loading={this.state.isCreatingTag}
@@ -66,7 +67,7 @@ export class CreateTag extends React.Component<
 
         <DialogContent>
           <RefNameTextBox
-            label="Name"
+            label={t('dialogs.createTag.name')}
             initialValue={this.props.initialName}
             onValueChange={this.updateTagName}
           />
@@ -76,7 +77,7 @@ export class CreateTag extends React.Component<
 
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText={__DARWIN__ ? 'Create Tag' : 'Create tag'}
+            okButtonText={platformT('dialogs.createTag.okButton')}
             okButtonDisabled={disabled}
           />
         </DialogFooter>
@@ -96,7 +97,7 @@ export class CreateTag extends React.Component<
       return null
     }
 
-    const title = __DARWIN__ ? 'Previous Tags' : 'Previous tags'
+    const title = platformT('dialogs.createTag.previousTags')
     const lastThreeTags = previousTags.slice(-3)
 
     return (
