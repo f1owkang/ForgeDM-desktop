@@ -19,6 +19,7 @@ import { SelectionDirection, ClickSource } from '../lib/list'
 import { generateBranchContextMenuItems } from './branch-list-item-context-menu'
 import { showContextualMenu } from '../../lib/menu-item'
 import { SectionFilterList } from '../lib/section-filter-list'
+import { platformT } from '../../lib/i18n'
 import memoizeOne from 'memoize-one'
 import { getAuthors } from '../../lib/git/log'
 import { Repository } from '../../models/repository'
@@ -387,11 +388,11 @@ export class BranchList extends React.Component<
 
   private getGroupLabel(identifier: BranchGroupIdentifier) {
     if (identifier === 'default') {
-      return __DARWIN__ ? 'Default Branch' : 'Default branch'
+      return platformT('branches.defaultBranch')
     } else if (identifier === 'recent') {
-      return __DARWIN__ ? 'Recent Branches' : 'Recent branches'
+      return platformT('branches.recentBranches')
     } else if (identifier === 'other') {
-      return __DARWIN__ ? 'Other Branches' : 'Other branches'
+      return platformT('branches.otherBranches')
     } else {
       return assertNever(identifier, `Unknown identifier: ${identifier}`)
     }
@@ -410,7 +411,7 @@ export class BranchList extends React.Component<
   private onRenderNewButton = () => {
     return this.props.canCreateNewBranch ? (
       <Button className="new-branch-button" onClick={this.onCreateNewBranch}>
-        {__DARWIN__ ? 'New Branch' : 'New branch'}
+        {platformT('branches.newBranch')}
       </Button>
     ) : null
   }

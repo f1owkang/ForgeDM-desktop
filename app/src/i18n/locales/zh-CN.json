@@ -287,6 +287,36 @@
       "default": "创建新仓库"
     }
   },
+  "branches": {
+    "tabBranches": "分支",
+    "tabPullRequests": {
+      "darwin": "拉取请求",
+      "default": "拉取请求"
+    },
+    "newBranch": {
+      "darwin": "新建分支",
+      "default": "新建分支"
+    },
+    "defaultBranch": {
+      "darwin": "默认分支",
+      "default": "默认分支"
+    },
+    "recentBranches": {
+      "darwin": "最近的分支",
+      "default": "最近的分支"
+    },
+    "otherBranches": {
+      "darwin": "其他分支",
+      "default": "其他分支"
+    },
+    "noBranchesTitle": "抱歉，找不到该分支",
+    "noBranchesSubtitle": "是否要创建一个新分支？",
+    "createNewBranch": {
+      "darwin": "创建新分支",
+      "default": "创建新分支"
+    },
+    "proTip": "提示！按 {{shortcut}} 可在应用内任何位置快速创建新分支"
+  },
   "changes": {
     "continueRebase": "继续变基",
     "continueRebaseResolveConflicts": "请先解决所有冲突再继续",

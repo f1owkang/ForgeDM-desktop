@@ -287,6 +287,36 @@
       "default": "Create a new repository"
     }
   },
+  "branches": {
+    "tabBranches": "Branches",
+    "tabPullRequests": {
+      "darwin": "Pull Requests",
+      "default": "Pull requests"
+    },
+    "newBranch": {
+      "darwin": "New Branch",
+      "default": "New branch"
+    },
+    "defaultBranch": {
+      "darwin": "Default Branch",
+      "default": "Default branch"
+    },
+    "recentBranches": {
+      "darwin": "Recent Branches",
+      "default": "Recent branches"
+    },
+    "otherBranches": {
+      "darwin": "Other Branches",
+      "default": "Other branches"
+    },
+    "noBranchesTitle": "Sorry, I can't find that branch",
+    "noBranchesSubtitle": "Do you want to create a new branch instead?",
+    "createNewBranch": {
+      "darwin": "Create New Branch",
+      "default": "Create new branch"
+    },
+    "proTip": "ProTip! Press {{shortcut}} to quickly create a new branch from anywhere within the app"
+  },
   "changes": {
     "continueRebase": "Continue rebase",
     "continueRebaseResolveConflicts": "Resolve all conflicts before continuing",
