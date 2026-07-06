@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../../dialog'
 import { OkCancelButtonGroup } from '../../dialog/ok-cancel-button-group'
+import { platformT } from '../../../lib/i18n'
 
 interface ICopilotConflictResolutionAlwaysNudgeProps {
   readonly onAlwaysUseCopilot: () => void
@@ -39,7 +40,7 @@ export class CopilotConflictResolutionAlwaysNudge extends React.Component<ICopil
           <p>
             Would you like to automatically start with Copilot whenever
             conflicts are detected? You can change this anytime in{' '}
-            {__DARWIN__ ? 'Settings → Copilot' : 'File → Options → Copilot'}.
+            {platformT('dialogs.copilotConflictResolution.settingsLink')}.
           </p>
         </DialogContent>
         <DialogFooter>

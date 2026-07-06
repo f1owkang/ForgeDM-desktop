@@ -838,6 +838,24 @@
         "default": "New worktree"
       }
     },
+    "repositoryRules": {
+      "rules": {
+        "darwin": "Rules",
+        "default": "rules"
+      }
+    },
+    "secretScanning": {
+      "bypassPushDetection": {
+        "darwin": "Bypass Push Detection",
+        "default": "Bypass push detection"
+      }
+    },
+    "copilotConflictResolution": {
+      "settingsLink": {
+        "darwin": "Settings \u2192 Copilot",
+        "default": "File \u2192 Options \u2192 Copilot"
+      }
+    },
     "toolbar": {
       "currentBranch": {
         "darwin": "Current Branch",
@@ -910,6 +928,22 @@
       "expandWholeFile": {
         "darwin": "Expand Whole File",
         "default": "Expand whole file"
+      },
+      "added": {
+        "darwin": "Added",
+        "default": "added"
+      },
+      "removed": {
+        "darwin": "Removed",
+        "default": "removed"
+      },
+      "modified": {
+        "darwin": "Modified",
+        "default": "modified"
+      },
+      "discardLine": {
+        "darwin": "Discard {{type}} Line{{suffix}}",
+        "default": "Discard {{type}} line{{suffix}}"
       }
     },
     "filterChangesList": {

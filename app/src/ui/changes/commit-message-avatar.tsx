@@ -2,6 +2,7 @@ import React from 'react'
 import { Select } from '../lib/select'
 import { Button } from '../lib/button'
 import { Row } from '../lib/row'
+import { platformT } from '../../lib/i18n'
 import {
   Popover,
   PopoverAnchorPosition,
@@ -243,7 +244,7 @@ export class CommitMessageAvatar extends React.Component<
     const settings = isGitConfigLocal
       ? 'repository settings'
       : `git ${settingsName}`
-    const buttonText = __DARWIN__ ? 'Open Git Settings' : 'Open git settings'
+    const buttonText = platformT('dialogs.commitMessageAvatar.openGitSettings')
 
     return (
       <>
@@ -277,7 +278,7 @@ export class CommitMessageAvatar extends React.Component<
   private renderWarningPopover() {
     const { warningType, emailRuleFailures } = this.props
 
-    const updateEmailTitle = __DARWIN__ ? 'Update Email' : 'Update email'
+    const updateEmailTitle = platformT('dialogs.commitMessageAvatar.updateEmail')
 
     const sharedHeader = (
       <>

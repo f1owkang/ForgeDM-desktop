@@ -3,6 +3,7 @@ import * as Path from 'path'
 
 import { Dispatcher } from '../dispatcher'
 import { IMenuItem } from '../../lib/menu-item'
+import { platformT } from '../../lib/i18n'
 import { revealInFileManager } from '../../lib/app-shell'
 import { encodePathAsUrl } from '../../lib/path'
 import {
@@ -555,7 +556,7 @@ export class FilterChangesList extends React.Component<
 
     const items: IMenuItem[] = [
       {
-        label: __DARWIN__ ? 'Discard All Changes…' : 'Discard all changes…',
+        label: platformT('dialogs.filterChangesList.discardAllChanges'),
         action: this.onDiscardAllChanges,
         enabled: hasLocalChanges,
       },

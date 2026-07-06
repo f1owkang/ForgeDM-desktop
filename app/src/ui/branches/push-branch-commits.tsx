@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import { Branch } from '../../models/branch'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { Repository } from '../../models/repository'
 import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -128,7 +129,7 @@ export class PushBranchCommits extends React.Component<
 
   private renderDialogTitle() {
     if (renderPublishView(this.props.unPushedCommits)) {
-      return __DARWIN__ ? 'Publish Branch?' : 'Publish branch?'
+      return platformT('dialogs.pushBranch.title')
     }
 
     return __DARWIN__ ? `Push Local Changes?` : `Push local changes?`
@@ -138,17 +139,15 @@ export class PushBranchCommits extends React.Component<
     if (renderPublishView(this.props.unPushedCommits)) {
       return (
         <OkCancelButtonGroup
-          okButtonText={__DARWIN__ ? 'Publish Branch' : 'Publish branch'}
+          okButtonText={platformT('dialogs.pushBranch.publishButton')}
         />
       )
     }
 
     return (
       <OkCancelButtonGroup
-        okButtonText={__DARWIN__ ? 'Push Commits' : 'Push commits'}
-        cancelButtonText={
-          __DARWIN__ ? 'Create Without Pushing' : 'Create without pushing'
-        }
+        okButtonText={platformT('dialogs.pushBranch.pushCommits')}
+        cancelButtonText={platformT('dialogs.pushBranch.createWithoutPushing')}
         onCancelButtonClick={this.onCreateWithoutPushButtonClick}
       />
     )
