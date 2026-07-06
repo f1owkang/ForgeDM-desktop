@@ -4,6 +4,7 @@ import { Button } from '../lib/button'
 import { SignIn } from '../lib/sign-in'
 import { Dispatcher } from '../dispatcher'
 import { SignInState } from '../../lib/stores'
+import { t } from '../../lib/i18n'
 
 interface ISignInEnterpriseProps {
   readonly dispatcher: Dispatcher
@@ -26,7 +27,7 @@ export class SignInEnterprise extends React.Component<
     return (
       <section
         id="sign-in-enterprise"
-        aria-label="Sign in to your GitHub Enterprise"
+        aria-label={t('dialogs.signInEnterprise.ariaLabel')}
       >
         <h1 className="welcome-title">Sign in to your GitHub Enterprise</h1>
 

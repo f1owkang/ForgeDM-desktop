@@ -1,16 +1,17 @@
 import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import {
-  SignInState,
-  SignInStep,
-  IEndpointEntryState,
-  IAuthenticationState,
-  IExistingAccountWarning,
+    SignInState,
+    SignInStep,
+    IEndpointEntryState,
+    IAuthenticationState,
+    IExistingAccountWarning,
 } from '../../lib/stores'
 import { assertNever } from '../../lib/fatal-error'
 import { Row } from '../lib/row'
 import { TextBox } from '../lib/text-box'
 import { Dialog, DialogError, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Ref } from '../lib/ref'
@@ -170,7 +171,7 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
       <DialogContent>
         <Row>
           <TextBox
-            label="Enterprise address"
+            label={t('enterpriseServerEntry.address')}
             value={this.state.endpoint}
             onValueChanged={this.onEndpointChanged}
             placeholder="https://example.ghe.com"
