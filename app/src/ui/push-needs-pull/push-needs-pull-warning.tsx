@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import { DialogFooter, DialogContent, Dialog } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { FetchType } from '../../models/fetch'
 import { Repository } from '../../models/repository'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -30,9 +31,7 @@ export class PushNeedsPullWarning extends React.Component<
   public render() {
     return (
       <Dialog
-        title={
-          __DARWIN__ ? 'Newer Commits on Remote' : 'Newer commits on remote'
-        }
+        title={platformT('dialogs.pushNeedsPull.title')}
         dismissDisabled={this.state.isLoading}
         disabled={this.state.isLoading}
         onDismissed={this.props.onDismissed}
@@ -42,15 +41,12 @@ export class PushNeedsPullWarning extends React.Component<
       >
         <DialogContent>
           <p>
-            GitHub Desktop is unable to push commits to this branch because
-            there are commits on the remote that are not present on your local
-            branch. Fetch these new commits before pushing in order to reconcile
-            them with your local commits.
+            {t('dialogs.pushNeedsPull.message')}
           </p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText="Fetch"
+            okButtonText={t('dialogs.pushNeedsPull.fetch')}
             okButtonDisabled={this.state.isLoading}
           />
         </DialogFooter>

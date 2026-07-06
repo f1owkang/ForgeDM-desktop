@@ -4,7 +4,7 @@ import { Dispatcher } from '../dispatcher'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Account, isEnterpriseAccount } from '../../models/account'
 import { getHTMLURL } from '../../lib/api'
-import { Ref } from '../lib/ref'
+import { t, platformT } from '../../lib/i18n'
 
 interface IInvalidatedTokenProps {
   readonly dispatcher: Dispatcher
@@ -24,19 +24,15 @@ export class InvalidatedToken extends React.Component<IInvalidatedTokenProps> {
       <Dialog
         id="invalidated-token"
         type="warning"
-        title={
-          __DARWIN__ ? 'Invalidated Account Token' : 'Invalidated account token'
-        }
+        title={platformT('dialogs.invalidatedToken.title')}
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
       >
         <DialogContent>
-          Your account token has been invalidated and you have been signed out
-          from your <Ref>{account.friendlyEndpoint}</Ref> account. Do you want
-          to sign in again?
+          {t('dialogs.invalidatedToken.message', { endpoint: account.friendlyEndpoint })}
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText="Yes" cancelButtonText="No" />
+          <OkCancelButtonGroup okButtonText={t('dialogs.invalidatedToken.yes')} cancelButtonText={t('dialogs.invalidatedToken.no')} />
         </DialogFooter>
       </Dialog>
     )

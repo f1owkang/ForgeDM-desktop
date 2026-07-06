@@ -4,7 +4,7 @@ import { TextBox } from '../lib/text-box'
 import { Row } from '../lib/row'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
-import { Ref } from '../lib/ref'
+import { t, platformT } from '../../lib/i18n'
 import { LinkButton } from '../lib/link-button'
 import { PasswordTextBox } from '../lib/password-text-box'
 
@@ -46,7 +46,7 @@ export class GenericGitAuthentication extends React.Component<
     return (
       <Dialog
         id="generic-git-auth"
-        title={__DARWIN__ ? `Authentication Failed` : `Authentication failed`}
+        title={platformT('dialogs.genericGitAuth.title')}
         onDismissed={this.props.onDismiss}
         onSubmit={this.save}
         role="alertdialog"
@@ -54,22 +54,18 @@ export class GenericGitAuthentication extends React.Component<
       >
         <DialogContent>
           <p id="generic-git-auth-error">
-            We were unable to authenticate with{' '}
-            <Ref>{this.props.remoteUrl}</Ref>. Please enter{' '}
-            {this.props.username ? (
-              <>
-                the password for the user <Ref>{this.props.username}</Ref>
-              </>
-            ) : (
-              'your username and password'
-            )}{' '}
-            to try again.
+            {t('dialogs.genericGitAuth.message', {
+              url: this.props.remoteUrl,
+              credential: this.props.username
+                ? t('dialogs.genericGitAuth.passwordForUser', { username: this.props.username })
+                : t('dialogs.genericGitAuth.usernameAndPassword')
+            })}
           </p>
 
           {this.props.username === undefined && (
             <Row>
               <TextBox
-                label="Username"
+                label={t('dialogs.genericGitAuth.username')}
                 autoFocus={true}
                 value={this.state.username}
                 onValueChanged={this.onUsernameChange}
@@ -79,7 +75,7 @@ export class GenericGitAuthentication extends React.Component<
 
           <Row>
             <PasswordTextBox
-              label="Password"
+              label={t('dialogs.genericGitAuth.password')}
               value={this.state.password}
               onValueChanged={this.onPasswordChange}
               ariaDescribedBy="generic-git-auth-password-description"
