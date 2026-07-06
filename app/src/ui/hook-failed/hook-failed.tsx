@@ -3,6 +3,7 @@ import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Terminal } from '../terminal'
+import { t, platformT } from '../../lib/i18n'
 import { TerminalOutput } from '../../lib/git'
 
 interface IHookFailedProps {
@@ -15,7 +16,7 @@ interface IHookFailedProps {
 /** A component to confirm and then discard changes. */
 export class HookFailed extends React.Component<IHookFailedProps> {
   private getDialogTitle() {
-    return `${this.props.hookName} ${__DARWIN__ ? 'Failed' : 'failed'}`
+    return t('dialogs.hookFailed.title', { hookName: this.props.hookName, failed: platformT('dialogs.hookFailed.failed') })
   }
 
   private onDismissed = () => {
@@ -41,7 +42,7 @@ export class HookFailed extends React.Component<IHookFailedProps> {
       >
         <DialogContent>
           <p id="hook-failure-message">
-            The {this.props.hookName} hook failed. What would you like to do?
+            {t('dialogs.hookFailed.message', { hookName: this.props.hookName })}
           </p>
           <Terminal
             terminalOutput={this.props.terminalOutput}
@@ -53,8 +54,8 @@ export class HookFailed extends React.Component<IHookFailedProps> {
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={'Ignore and Continue'}
-            cancelButtonText={'Abort'}
+            okButtonText={t('dialogs.hookFailed.ignoreAndContinue')}
+            cancelButtonText={t('dialogs.hookFailed.abort')}
           />
         </DialogFooter>
       </Dialog>

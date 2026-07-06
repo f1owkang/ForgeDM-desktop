@@ -290,6 +290,61 @@
       "mergeCommitWarning": "撤销合并提交将把合并中的更改应用到你的工作目录，再次提交将创建一个全新的提交。这意味着你将丢失合并提交，因此被合并分支的提交可能会从此分支中消失。",
       "mergeCommitWithChanges": "你有正在进行的更改。撤销合并提交可能会导致部分更改丢失。",
       "continueAnyway": "你确定要继续吗？"
+    },
+    "installGit": {
+      "title": {
+        "darwin": "无法找到 Git",
+        "default": "无法找到 Git"
+      },
+      "message": "我们无法在你的系统上找到 Git。这意味着你将无法在{{terminal}}中执行任何 Git 命令。",
+      "terminal": {
+        "darwin": "终端窗口",
+        "default": "命令提示符"
+      },
+      "resources": "为了帮助你安装和配置 Git，我们提供了一些外部资源。",
+      "openWithoutGit": {
+        "darwin": "不使用 Git 打开",
+        "default": "不使用 Git 打开"
+      },
+      "installGit": "安装 Git"
+    },
+    "hookFailed": {
+      "title": "{{hookName}} {{failed}}",
+      "failed": {
+        "darwin": "失败",
+        "default": "失败"
+      },
+      "message": "{{hookName}} 钩子执行失败。你想怎么做？",
+      "ignoreAndContinue": "忽略并继续",
+      "abort": "中止"
+    },
+    "lfsAttributeMismatch": {
+      "title": {
+        "darwin": "更新现有 Git LFS 过滤器？",
+        "default": "更新现有 Git LFS 过滤器？"
+      },
+      "message": "Git LFS 过滤器已在<1>你的全局 git 配置</1>中配置，但不是它期望的值。你想现在更新吗？",
+      "okButton": {
+        "darwin": "更新现有过滤器",
+        "default": "更新现有过滤器"
+      },
+      "cancelButton": {
+        "darwin": "暂不更新",
+        "default": "暂不更新"
+      }
+    },
+    "initializeLfs": {
+      "title": "初始化 Git LFS",
+      "okButton": "初始化 Git LFS",
+      "cancelButton": {
+        "darwin": "暂不初始化",
+        "default": "暂不初始化"
+      },
+      "manyRepos": "{{count}} 个仓库使用了 <1>Git LFS</1>。要参与这些仓库，必须先初始化 Git LFS。你想现在初始化吗？",
+      "reposUse": "这些仓库使用了",
+      "repoUse": "此仓库使用了",
+      "toContributeThem": "要参与这些仓库",
+      "toContributeIt": "要参与此仓库"
     }
   },
   "enterpriseServerEntry": {
