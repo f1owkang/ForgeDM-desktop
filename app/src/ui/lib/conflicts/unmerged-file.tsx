@@ -1,11 +1,11 @@
 import * as React from 'react'
 import {
-  isConflictWithMarkers,
-  isManualConflict,
-  ConflictedFileStatus,
-  ConflictsWithMarkers,
-  ManualConflict,
-  GitStatusEntry,
+    isConflictWithMarkers,
+    isManualConflict,
+    ConflictedFileStatus,
+    ConflictsWithMarkers,
+    ManualConflict,
+    GitStatusEntry,
 } from '../../../models/status'
 import { join } from 'path'
 import { Repository } from '../../../models/repository'
@@ -16,16 +16,16 @@ import * as octicons from '../../octicons/octicons.generated'
 import { PathText } from '../path-text'
 import { ManualConflictResolution } from '../../../models/manual-conflict-resolution'
 import {
-  OpenWithDefaultProgramLabel,
-  RevealInFileManagerLabel,
+    OpenWithDefaultProgramLabel,
+    RevealInFileManagerLabel,
 } from '../context-menu'
 import { openFile } from '../open-file'
 import { Button } from '../button'
 import { IMenuItem } from '../../../lib/menu-item'
 import {
-  hasUnresolvedConflicts,
-  getUnmergedStatusEntryDescription,
-  getLabelForManualResolutionOption,
+    hasUnresolvedConflicts,
+    getUnmergedStatusEntryDescription,
+    getLabelForManualResolutionOption,
 } from '../../../lib/status'
 import { revealInFileManager } from '../../../lib/app-shell'
 import { DialogPreferredFocusClassName } from '../../dialog'

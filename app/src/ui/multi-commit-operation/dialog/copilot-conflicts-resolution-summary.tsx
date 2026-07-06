@@ -3,8 +3,8 @@ import * as React from 'react'
 import { assertNever } from '../../../lib/fatal-error'
 import { Emoji } from '../../../lib/emoji'
 import {
-  ICopilotResolutionSummary,
-  IConflictContextReference,
+    ICopilotResolutionSummary,
+    IConflictContextReference,
 } from '../../../lib/copilot-conflict-resolution'
 import { GitHubRepository } from '../../../models/github-repository'
 import { MultiCommitOperationKind } from '../../../models/multi-commit-operation'
