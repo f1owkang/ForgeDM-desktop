@@ -424,6 +424,48 @@
       "enterBaseUrl": "请输入基础 URL。",
       "baseUrlMustBeHttps": "基础 URL 必须是 https URL，或指向本地机器的 http URL。",
       "addAtLeastOneModel": "请至少添加一个模型。"
+    },
+    "genericGitAuth": {
+      "title": {
+        "darwin": "身份验证失败",
+        "default": "身份验证失败"
+      },
+      "message": "我们无法与 <1>{{url}}</1> 进行身份验证。请输入{{credential}}以重试。",
+      "passwordForUser": "用户 <1>{{username}}</1> 的密码",
+      "usernameAndPassword": "你的用户名和密码",
+      "username": "用户名",
+      "password": "密码"
+    },
+    "invalidatedToken": {
+      "title": {
+        "darwin": "账户令牌已失效",
+        "default": "账户令牌已失效"
+      },
+      "message": "你的账户令牌已失效，你已从 <1>{{endpoint}}</1> 账户退出登录。你想重新登录吗？",
+      "yes": "是",
+      "no": "否"
+    },
+    "pushNeedsPull": {
+      "title": {
+        "darwin": "远程有更新的提交",
+        "default": "远程有更新的提交"
+      },
+      "message": "GitHub Desktop 无法将提交推送到此分支，因为远程上有你本地分支没有的提交。请在推送前获取这些新提交，以便与你的本地提交协调。",
+      "fetch": "获取"
+    },
+    "missingRepository": {
+      "cloneAgain": "重新克隆",
+      "trustRepository": {
+        "darwin": "信任仓库",
+        "default": "信任仓库"
+      },
+      "remove": "移除",
+      "potentiallyUnsafe": "{{name}} 可能不安全",
+      "unsafeMessage": "位于 <1>{{path}}</1> 的 Git 仓库似乎属于你计算机上的另一个用户。添加不受信任的仓库可能会自动执行仓库中的文件。",
+      "trustOwner": "如果你信任该目录的所有者，可以为此目录添加例外以继续操作。",
+      "cantFind": "找不到 \"{{name}}\"",
+      "lastSeen": "上次在此位置",
+      "checkAgain": "再次检查。"
     }
   },
   "enterpriseServerEntry": {

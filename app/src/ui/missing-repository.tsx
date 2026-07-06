@@ -7,8 +7,8 @@ import { Repository } from '../models/repository'
 import { Button } from './lib/button'
 import { Row } from './lib/row'
 import { LinkButton } from './lib/link-button'
+import { t, platformT } from '../lib/i18n'
 import { addSafeDirectory, getRepositoryType } from '../lib/git'
-import { Ref } from './lib/ref'
 import { Loading } from './lib/loading'
 
 interface IMissingRepositoryProps {
@@ -84,7 +84,7 @@ export class MissingRepository extends React.Component<
       if (this.canCloneAgain()) {
         buttons.push(
           <Button key="clone-again" onClick={this.cloneAgain}>
-            Clone Again
+            {t('dialogs.missingRepository.cloneAgain')}
           </Button>
         )
       }
@@ -97,14 +97,14 @@ export class MissingRepository extends React.Component<
           disabled={this.state.isTrustingPath}
         >
           {this.state.isTrustingPath && <Loading />}
-          {__DARWIN__ ? 'Trust Repository' : 'Trust repository'}
+          {platformT('dialogs.missingRepository.trustRepository')}
         </Button>
       )
     }
 
     buttons.push(
       <Button key="remove" onClick={this.remove}>
-        Remove
+        {t('dialogs.missingRepository.remove')}
       </Button>
     )
 
@@ -113,17 +113,14 @@ export class MissingRepository extends React.Component<
         <UiView id="missing-repository-view">
           <div className="title-container">
             <div className="title">
-              {this.props.repository.name} is potentially unsafe
+              {t('dialogs.missingRepository.potentiallyUnsafe', { name: this.props.repository.name })}
             </div>
             <div className="details">
               <p>
-                The Git repository at <Ref>{unsafePath}</Ref> appears to be
-                owned by another user on your machine. Adding untrusted
-                repositories may automatically execute files in the repository.
+                {t('dialogs.missingRepository.unsafeMessage', { path: unsafePath })}
               </p>
               <p>
-                If you trust the owner of the directory you can add an exception
-                for this directory in order to continue.
+                {t('dialogs.missingRepository.trustOwner')}
               </p>
             </div>
           </div>
@@ -136,11 +133,11 @@ export class MissingRepository extends React.Component<
     return (
       <UiView id="missing-repository-view">
         <div className="title-container">
-          <div className="title">Can't find "{this.props.repository.name}"</div>
+          <div className="title">{t('dialogs.missingRepository.cantFind', { name: this.props.repository.name })}</div>
           <div className="details">
-            It was last seen at{' '}
+            {t('dialogs.missingRepository.lastSeen')}{' '}
             <span className="path">{this.props.repository.path}</span>.{' '}
-            <LinkButton onClick={this.checkAgain}>Check&nbsp;again.</LinkButton>
+            <LinkButton onClick={this.checkAgain}>{t('dialogs.missingRepository.checkAgain')}</LinkButton>
           </div>
         </div>
 

@@ -424,6 +424,48 @@
       "enterBaseUrl": "Please enter a base URL.",
       "baseUrlMustBeHttps": "Base URL must be an https URL, or an http URL pointing at the local machine.",
       "addAtLeastOneModel": "Please add at least one model."
+    },
+    "genericGitAuth": {
+      "title": {
+        "darwin": "Authentication Failed",
+        "default": "Authentication failed"
+      },
+      "message": "We were unable to authenticate with <1>{{url}}</1>. Please enter {{credential}} to try again.",
+      "passwordForUser": "the password for the user <1>{{username}}</1>",
+      "usernameAndPassword": "your username and password",
+      "username": "Username",
+      "password": "Password"
+    },
+    "invalidatedToken": {
+      "title": {
+        "darwin": "Invalidated Account Token",
+        "default": "Invalidated account token"
+      },
+      "message": "Your account token has been invalidated and you have been signed out from your <1>{{endpoint}}</1> account. Do you want to sign in again?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "pushNeedsPull": {
+      "title": {
+        "darwin": "Newer Commits on Remote",
+        "default": "Newer commits on remote"
+      },
+      "message": "GitHub Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.",
+      "fetch": "Fetch"
+    },
+    "missingRepository": {
+      "cloneAgain": "Clone Again",
+      "trustRepository": {
+        "darwin": "Trust Repository",
+        "default": "Trust repository"
+      },
+      "remove": "Remove",
+      "potentiallyUnsafe": "{{name}} is potentially unsafe",
+      "unsafeMessage": "The Git repository at <1>{{path}}</1> appears to be owned by another user on your machine. Adding untrusted repositories may automatically execute files in the repository.",
+      "trustOwner": "If you trust the owner of the directory you can add an exception for this directory in order to continue.",
+      "cantFind": "Can't find \"{{name}}\"",
+      "lastSeen": "It was last seen at",
+      "checkAgain": "Check again."
     }
   },
   "enterpriseServerEntry": {
