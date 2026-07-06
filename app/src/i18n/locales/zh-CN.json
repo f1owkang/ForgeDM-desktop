@@ -1164,6 +1164,9 @@
       "darwin": "登录",
       "default": "登录"
     },
+    "tabDotCom": "GitHub.com",
+    "tabEnterprise": "GitHub Enterprise",
+    "tabUrl": "URL",
     "title": {
       "darwin": "克隆仓库",
       "default": "克隆仓库"

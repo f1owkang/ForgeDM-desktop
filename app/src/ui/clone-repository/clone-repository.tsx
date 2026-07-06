@@ -3,15 +3,15 @@ import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import { getDefaultDir, setDefaultDir } from '../lib/default-dir'
 import {
-  Account,
-  isDotComAccount,
-  isEnterpriseAccount,
+    Account,
+    isDotComAccount,
+    isEnterpriseAccount,
 } from '../../models/account'
 import { FoldoutType } from '../../lib/app-state'
 import {
-  IRepositoryIdentifier,
-  parseRepositoryIdentifier,
-  parseRemote,
+    IRepositoryIdentifier,
+    parseRepositoryIdentifier,
+    parseRemote,
 } from '../../lib/remote-parsing'
 import { findAccountForRemoteURL } from '../../lib/find-account'
 import { API, IAPIRepository, IAPIRepositoryCloneInfo } from '../../lib/api'
@@ -274,9 +274,9 @@ export class CloneRepository extends React.Component<
           onTabClicked={this.onTabClicked}
           selectedIndex={this.props.selectedTab}
         >
-          <span id="dotcom-tab">GitHub.com</span>
-          <span id="enterprise-tab">GitHub Enterprise</span>
-          <span id="url-tab">URL</span>
+          <span id="dotcom-tab">{t('cloneRepository.tabDotCom')}</span>
+          <span id="enterprise-tab">{t('cloneRepository.tabEnterprise')}</span>
+          <span id="url-tab">{t('cloneRepository.tabUrl')}</span>
         </TabBar>
 
         {error ? <DialogError>{error.message}</DialogError> : null}

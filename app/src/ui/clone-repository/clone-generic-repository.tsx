@@ -3,7 +3,6 @@ import { TextBox } from '../lib/text-box'
 import { Button } from '../lib/button'
 import { Row } from '../lib/row'
 import { DialogContent } from '../dialog'
-import { Ref } from '../lib/ref'
 import { t, platformT } from '../../lib/i18n'
 
 interface ICloneGenericRepositoryProps {
@@ -43,7 +42,7 @@ export class CloneGenericRepository extends React.Component<
               <div className="clone-url-textbox-label">
                 <p>{t('cloneGenericRepository.urlLabel')}</p>
                 <p>
-                  (<Ref>hubot/cool-repo</Ref>)
+                  {t('cloneGenericRepository.urlLabelExample')}
                 </p>
               </div>
             }
