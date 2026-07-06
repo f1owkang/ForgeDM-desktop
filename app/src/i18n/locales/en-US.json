@@ -1164,6 +1164,9 @@
       "darwin": "Sign In",
       "default": "Sign in"
     },
+    "tabDotCom": "GitHub.com",
+    "tabEnterprise": "GitHub Enterprise",
+    "tabUrl": "URL",
     "title": {
       "darwin": "Clone a Repository",
       "default": "Clone a repository"
