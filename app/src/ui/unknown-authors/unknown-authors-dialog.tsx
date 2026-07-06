@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { PathText } from '../lib/path-text'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { UnknownAuthor } from '../../models/author'
@@ -26,7 +27,7 @@ export class UnknownAuthors extends React.Component<IUnknownAuthorsProps> {
     return (
       <Dialog
         id="unknown-authors"
-        title={__DARWIN__ ? 'Unknown Co-Authors' : 'Unknown co-authors'}
+        title={platformT('dialogs.unknownAuthors.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.commit}
         type="warning"
@@ -36,7 +37,7 @@ export class UnknownAuthors extends React.Component<IUnknownAuthorsProps> {
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={__DARWIN__ ? 'Commit Anyway' : 'Commit anyway'}
+            okButtonText={platformT('dialogs.unknownAuthors.commitAnyway')}
           />
         </DialogFooter>
       </Dialog>

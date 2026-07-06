@@ -573,6 +573,65 @@
         "darwin": "Yes, Commit Files",
         "default": "Yes, commit files"
       }
+    },
+    "unknownAuthors": {
+      "title": {
+        "darwin": "Unknown Co-Authors",
+        "default": "Unknown co-authors"
+      },
+      "commitAnyway": {
+        "darwin": "Commit Anyway",
+        "default": "Commit anyway"
+      }
+    },
+    "confirmExitTutorial": {
+      "title": {
+        "darwin": "Exit Tutorial",
+        "default": "Exit tutorial"
+      },
+      "message": "Are you sure you want to leave the tutorial? This will bring you back to the home screen."
+    },
+    "tutorialDone": {
+      "exploreOnGitHub": "Explore projects on GitHub",
+      "exploreDescription": "Contribute to a project that interests you",
+      "openInBrowser": {
+        "darwin": "Open in Browser",
+        "default": "Open in browser"
+      },
+      "createNewRepo": "Create a new repository",
+      "createRepoDescription": "Get started on a brand new project",
+      "createRepoButton": {
+        "darwin": "Create Repository",
+        "default": "Create repository"
+      },
+      "addLocalRepo": "Add a local repository",
+      "addLocalRepoDescription": "Work on an existing project in GitHub Desktop",
+      "addRepoButton": {
+        "darwin": "Add Repository",
+        "default": "Add repository"
+      }
+    },
+    "tutorialPanel": {
+      "settings": {
+        "darwin": "Settings",
+        "default": "options"
+      },
+      "newBranch": {
+        "darwin": "New Branch",
+        "default": "New branch"
+      },
+      "openEditor": {
+        "darwin": "Open Editor",
+        "default": "Open editor"
+      },
+      "openPullRequest": {
+        "darwin": "Open Pull Request",
+        "default": "Open pull request"
+      },
+      "exitTutorial": {
+        "darwin": "Exit Tutorial",
+        "default": "Exit tutorial"
+      }
     }
   },
   "enterpriseServerEntry": {
