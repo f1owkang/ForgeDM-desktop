@@ -2,7 +2,7 @@ import React from 'react'
 import { Select } from '../lib/select'
 import { Button } from '../lib/button'
 import { Row } from '../lib/row'
-import { platformT } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import {
   Popover,
   PopoverAnchorPosition,
@@ -294,7 +294,7 @@ export class CommitMessageAvatar extends React.Component<
         {hasEmails && (
           <Row>
             <Select
-              label="Your Account Emails"
+              label={t('dialogs.commitMessageAvatar.accountEmails')}
               value={this.state.accountEmail}
               onChange={this.onSelectedGitHubEmailChange}
             >

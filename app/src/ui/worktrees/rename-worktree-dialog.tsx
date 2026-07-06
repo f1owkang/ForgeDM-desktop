@@ -4,7 +4,7 @@ import * as Path from 'path'
 import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
-import { platformT } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import { TextBox } from '../lib/text-box'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
@@ -74,7 +74,7 @@ export class RenameWorktreeDialog extends React.Component<
       >
         <DialogContent>
           <TextBox
-            label="Name"
+            label={t('dialogs.renameBranch.name')}
             value={this.state.newName}
             onValueChanged={this.onNameChanged}
           />

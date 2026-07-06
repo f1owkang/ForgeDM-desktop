@@ -8,6 +8,7 @@ import {
 import { AppMenuBarButton } from './app-menu-bar-button'
 import { Dispatcher } from '../dispatcher'
 import { AppMenuFoldout, FoldoutType } from '../../lib/app-state'
+import { t } from '../../lib/i18n'
 
 /** This is the id used for the windows app menu and used elsewhere
  * to determine if the app menu is is focus */
@@ -166,7 +167,7 @@ export class AppMenuBar extends React.Component<
         id="app-menu-bar"
         ref={this.onMenuBarRef}
         role="menubar"
-        aria-label="Application menu"
+        aria-label={t('common.applicationMenu')}
       >
         {this.state.menuItems.map(this.renderMenuItem, this)}
       </div>

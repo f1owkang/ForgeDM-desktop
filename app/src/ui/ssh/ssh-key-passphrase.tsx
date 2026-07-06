@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { Row } from '../lib/row'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
@@ -51,7 +52,7 @@ export class SSHKeyPassphrase extends React.Component<
           </Row>
           <Row>
             <Checkbox
-              label="Remember passphrase"
+              label={t('common.rememberPassphrase')}
               value={
                 this.state.rememberPassphrase
                   ? CheckboxValue.On
