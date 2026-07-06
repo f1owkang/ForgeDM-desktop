@@ -698,6 +698,53 @@
       "updateQuestion": "Would you like to update the remote to use the expected URL?",
       "update": "Update",
       "ignore": "Ignore"
+    },
+    "appError": {
+      "retryClone": {
+        "darwin": "Retry Clone",
+        "default": "Retry clone"
+      },
+      "openPreferences": {
+        "darwin": "Open Preferences",
+        "default": "Open options"
+      },
+      "close": "Close"
+    },
+    "worktree": {
+      "addWorktree": {
+        "darwin": "Add Worktree",
+        "default": "Add worktree"
+      },
+      "worktreeName": {
+        "darwin": "Worktree Name",
+        "default": "Worktree name"
+      },
+      "branchName": {
+        "darwin": "Branch Name",
+        "default": "Branch name"
+      },
+      "createWorktree": {
+        "darwin": "Create Worktree",
+        "default": "Create worktree"
+      },
+      "deleteWorktree": {
+        "darwin": "Delete Worktree",
+        "default": "Delete worktree"
+      },
+      "renameWorktree": {
+        "darwin": "Rename Worktree",
+        "default": "Rename worktree"
+      },
+      "deleteWorktreeFailed": {
+        "darwin": "Delete Worktree Failed",
+        "default": "Delete worktree failed"
+      }
+    },
+    "removeRepository": {
+      "title": {
+        "darwin": "Remove Repository",
+        "default": "Remove repository"
+      }
     }
   },
   "enterpriseServerEntry": {

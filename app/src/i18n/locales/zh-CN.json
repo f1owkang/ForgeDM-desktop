@@ -698,6 +698,53 @@
       "updateQuestion": "你想更新远程以使用预期的 URL 吗？",
       "update": "更新",
       "ignore": "忽略"
+    },
+    "appError": {
+      "retryClone": {
+        "darwin": "重试克隆",
+        "default": "重试克隆"
+      },
+      "openPreferences": {
+        "darwin": "打开偏好设置",
+        "default": "打开选项"
+      },
+      "close": "关闭"
+    },
+    "worktree": {
+      "addWorktree": {
+        "darwin": "添加工作树",
+        "default": "添加工作树"
+      },
+      "worktreeName": {
+        "darwin": "工作树名称",
+        "default": "工作树名称"
+      },
+      "branchName": {
+        "darwin": "分支名称",
+        "default": "分支名称"
+      },
+      "createWorktree": {
+        "darwin": "创建工作树",
+        "default": "创建工作树"
+      },
+      "deleteWorktree": {
+        "darwin": "删除工作树",
+        "default": "删除工作树"
+      },
+      "renameWorktree": {
+        "darwin": "重命名工作树",
+        "default": "重命名工作树"
+      },
+      "deleteWorktreeFailed": {
+        "darwin": "删除工作树失败",
+        "default": "删除工作树失败"
+      }
+    },
+    "removeRepository": {
+      "title": {
+        "darwin": "移除仓库",
+        "default": "移除仓库"
+      }
     }
   },
   "enterpriseServerEntry": {

@@ -4,6 +4,7 @@ import { Branch, BranchType } from '../../models/branch'
 import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { RefNameTextBox } from '../lib/ref-name-text-box'
 import { Row } from '../lib/row'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -186,7 +187,7 @@ export class AddWorktreeDialog extends React.Component<
     return (
       <Dialog
         id="add-worktree"
-        title={__DARWIN__ ? 'Add Worktree' : 'Add worktree'}
+        title={platformT('dialogs.worktree.addWorktree')}
         loading={this.state.creating}
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
@@ -198,14 +199,14 @@ export class AddWorktreeDialog extends React.Component<
             }
             onFullPathChanged={this.onFullPathChanged}
             onNameChanged={this.onWorktreeNameChanged}
-            nameLabel={__DARWIN__ ? 'Worktree Name' : 'Worktree name'}
+            nameLabel={platformT('dialogs.worktree.worktreeName')}
             namePlaceholder="worktree name"
             pathPlaceholder="worktree path"
           />
 
           <Row>
             <RefNameTextBox
-              label={__DARWIN__ ? 'Branch Name' : 'Branch name'}
+              label={platformT('dialogs.worktree.branchName')}
               placeholder={branchPlaceholder}
               initialValue={this.state.branchName}
               onValueChange={this.onBranchNameChanged}
@@ -220,7 +221,7 @@ export class AddWorktreeDialog extends React.Component<
         <DialogFooter>
           {this.renderPathMessage()}
           <OkCancelButtonGroup
-            okButtonText={__DARWIN__ ? 'Create Worktree' : 'Create worktree'}
+            okButtonText={platformT('dialogs.worktree.createWorktree')}
             okButtonDisabled={disabled}
           />
         </DialogFooter>

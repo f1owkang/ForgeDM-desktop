@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as Path from 'path'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Repository } from '../../models/repository'
@@ -43,7 +44,7 @@ export class DeleteWorktreeDialog extends React.Component<
     return (
       <Dialog
         id="delete-worktree"
-        title={__DARWIN__ ? 'Delete Worktree' : 'Delete worktree'}
+        title={platformT('dialogs.worktree.deleteWorktree')}
         type="warning"
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
