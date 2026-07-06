@@ -521,12 +521,6 @@
         "default": "仍然退出"
       }
     },
-    "upstreamAlreadyExists": {
-      "title": {
-        "darwin": "上游远程已存在",
-        "default": "上游远程已存在"
-      }
-    },
     "untrustedCertificate": {
       "title": {
         "darwin": "不受信任的服务器",
@@ -666,6 +660,44 @@
         "darwin": "复刻此仓库",
         "default": "复刻此仓库"
       }
+    },
+    "pullRequestNotification": {
+      "switchToRepoAndPR": {
+        "darwin": "切换到仓库和拉取请求",
+        "default": "切换到仓库和拉取请求"
+      },
+      "switchToPR": {
+        "darwin": "切换到拉取请求",
+        "default": "切换到拉取请求"
+      },
+      "dismiss": "关闭",
+      "openInBrowser": {
+        "darwin": "在浏览器中打开",
+        "default": "在浏览器中打开"
+      }
+    },
+    "samlReauth": {
+      "title": {
+        "darwin": "需要重新授权",
+        "default": "需要重新授权"
+      },
+      "message": "\"{{org}}\" 组织已启用或强制执行 SAML SSO。要访问此仓库，你必须重新登录并授予 GitHub Desktop 访问该组织仓库的权限。",
+      "continueInBrowser": {
+        "darwin": "在浏览器中继续",
+        "default": "在浏览器中继续"
+      }
+    },
+    "upstreamAlreadyExists": {
+      "title": {
+        "darwin": "上游远程已存在",
+        "default": "上游远程已存在"
+      },
+      "message": "仓库 <1>{{name}}</1> 是 <2>{{parent}}</2> 的复刻，但其 <3>{{remote}}</3> 远程指向其他位置。",
+      "current": "当前：",
+      "expected": "预期：",
+      "updateQuestion": "你想更新远程以使用预期的 URL 吗？",
+      "update": "更新",
+      "ignore": "忽略"
     }
   },
   "enterpriseServerEntry": {

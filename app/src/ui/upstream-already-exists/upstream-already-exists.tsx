@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { Repository } from '../../models/repository'
 import { IRemote } from '../../models/remote'
 import { Ref } from '../lib/ref'
+import { t, platformT } from '../../lib/i18n'
 import { forceUnwrap } from '../../lib/fatal-error'
 import { UpstreamRemoteName } from '../../lib/stores'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -40,34 +41,30 @@ export class UpstreamAlreadyExists extends React.Component<IUpstreamAlreadyExist
     const replacementURL = parent.cloneURL
     return (
       <Dialog
-        title={
-          __DARWIN__ ? 'Upstream Already Exists' : 'Upstream already exists'
-        }
+        title={platformT('dialogs.upstreamAlreadyExists.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onUpdate}
         type="warning"
       >
         <DialogContent>
           <p>
-            The repository <Ref>{name}</Ref> is a fork of{' '}
-            <Ref>{parentName}</Ref>, but its <Ref>{UpstreamRemoteName}</Ref>{' '}
-            remote points elsewhere.
+            {t('dialogs.upstreamAlreadyExists.message', { name, parent: parentName, remote: UpstreamRemoteName })}
           </p>
           <ul>
             <li>
-              Current: <Ref>{existingURL}</Ref>
+              {t('dialogs.upstreamAlreadyExists.current')} <Ref>{existingURL}</Ref>
             </li>
             <li>
-              Expected: <Ref>{replacementURL}</Ref>
+              {t('dialogs.upstreamAlreadyExists.expected')} <Ref>{replacementURL}</Ref>
             </li>
           </ul>
-          <p>Would you like to update the remote to use the expected URL?</p>
+          <p>{t('dialogs.upstreamAlreadyExists.updateQuestion')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText="Update"
-            cancelButtonText="Ignore"
+            okButtonText={t('dialogs.upstreamAlreadyExists.update')}
+            cancelButtonText={t('dialogs.upstreamAlreadyExists.ignore')}
             onCancelButtonClick={this.onIgnore}
           />
         </DialogFooter>
