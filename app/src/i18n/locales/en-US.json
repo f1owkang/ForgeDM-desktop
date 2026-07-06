@@ -179,7 +179,8 @@
       "confirm": "Delete branch <1>{{name}}</1>?",
       "cannotUndo": "This action cannot be undone.",
       "delete": "Delete",
-      "deleteRemoteToo": "Yes, delete this branch on the remote"
+      "deleteRemoteToo": "Yes, delete this branch on the remote",
+      "existsOnRemote": "The branch also exists on the remote, do you wish to delete it there as well?"
     },
     "deleteTag": {
       "title": {
