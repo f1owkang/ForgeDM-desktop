@@ -5,6 +5,7 @@ import {
   DialogFooter,
   OkCancelButtonGroup,
 } from '../dialog'
+import { t } from '../../lib/i18n'
 import { LinkButton } from '../lib/link-button'
 
 interface ICopilotDisclaimerProps {
@@ -37,7 +38,7 @@ export class CopilotDisclaimer extends React.Component<ICopilotDisclaimerProps> 
     const { children, onDismissed } = this.props
     return (
       <Dialog
-        title="GitHub Copilot"
+        title={t('dialogs.copilotDisclaimer.title')}
         type="warning"
         onDismissed={onDismissed}
         onSubmit={this.onSubmit}

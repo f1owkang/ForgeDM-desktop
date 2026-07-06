@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent } from '../dialog'
+import { t } from '../../lib/i18n'
 import * as octicons from './octicons.generated'
 import { Octicon, OcticonSymbolVariant, OcticonSymbolVariants } from '.'
 
@@ -13,7 +14,7 @@ export class IconPreviewDialog extends React.Component<IIconPreviewDialogProps> 
       <Dialog
         id="octicons-preview-dialog"
         className="octicons-preview-dialog"
-        title="Icon Preview"
+        title={t('dialogs.iconPreview.title')}
         onDismissed={this.props.onDismissed}
       >
         <DialogContent>

@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { Row } from '../lib/row'
 import { Select } from '../lib/select'
 import { platformT } from '../../lib/i18n'
@@ -106,7 +107,7 @@ export class OpenWithExternalEditor extends React.Component<
 
     return (
       <Select
-        label="Select an editor"
+        label={t('dialogs.openWithExternalEditor.selectEditor')}
         value={
           this.state.useCustomEditor
             ? CustomIntegrationValue
@@ -167,7 +168,7 @@ export class OpenWithExternalEditor extends React.Component<
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText="Open"
+            okButtonText={t('dialogs.openWithExternalEditor.open')}
             okButtonDisabled={disabled}
             onCancelButtonClick={this.props.onDismissed}
           />

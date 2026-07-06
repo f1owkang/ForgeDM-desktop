@@ -137,7 +137,7 @@ export class PullRequestChecksFailed extends React.Component<
             {this.renderSummary()}
             <OkCancelButtonGroup
               onCancelButtonClick={this.props.onDismissed}
-              cancelButtonText="Dismiss"
+              cancelButtonText={t('dialogs.pullRequestNotification.dismiss')}
               okButtonText={okButtonTitle}
               okButtonDisabled={this.state.switchingToPullRequest}
               onOkButtonClick={this.onSubmit}

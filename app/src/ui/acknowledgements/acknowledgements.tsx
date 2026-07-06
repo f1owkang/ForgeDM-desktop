@@ -5,6 +5,7 @@ import { getAppPath } from '../lib/app-proxy'
 import { Loading } from '../lib/loading'
 import { LinkButton } from '../lib/link-button'
 import { Dialog, DialogContent, DefaultDialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 
 const WebsiteURL = 'https://desktop.github.com'
 const RepositoryURL = 'https://github.com/desktop/desktop'
@@ -115,7 +116,7 @@ export class Acknowledgements extends React.Component<
     return (
       <Dialog
         id="acknowledgements"
-        title="License and Open Source Notices"
+        title={t('dialogs.acknowledgements.title')}
         onSubmit={this.props.onDismissed}
         onDismissed={this.props.onDismissed}
       >

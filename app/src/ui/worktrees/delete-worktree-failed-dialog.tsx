@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as Path from 'path'
 
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { platformT } from '../../lib/i18n'
 import { Ref } from '../lib/ref'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -73,7 +74,7 @@ export class DeleteWorktreeFailedDialog extends React.Component<
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText="Forcefully delete"
+            okButtonText={t('common.forcefullyDelete')}
           />
         </DialogFooter>
       </Dialog>

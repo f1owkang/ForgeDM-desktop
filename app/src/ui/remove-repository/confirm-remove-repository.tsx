@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t } from '../../lib/i18n'
 import { platformT } from '../../lib/i18n'
 import { Ref } from '../lib/ref'
 import { Repository } from '../../models/repository'
@@ -90,7 +91,7 @@ export class ConfirmRemoveRepository extends React.Component<
           </div>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Remove" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.removeRepository.remove')} />
         </DialogFooter>
       </Dialog>
     )

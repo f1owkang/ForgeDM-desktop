@@ -12,7 +12,15 @@
     },
     "repositoryPath": "repository path",
     "doNotShowAgain": "Do not show this message again",
-    "error": "Error"
+    "error": "Error",
+    "discard": "Discard",
+    "delete": "Delete",
+    "override": "Override",
+    "open": "Open",
+    "moveAndRestart": "Move and Restart",
+    "notNow": "Not Now",
+    "restore": "Restore",
+    "forcefullyDelete": "Forcefully delete"
   },
   "addExistingRepository": {
     "bareRepoError": "This directory appears to be a bare repository. Bare repositories are not currently supported.",
@@ -137,7 +145,8 @@
       },
       "alreadyExists": "A branch named {{name}} already exists.",
       "defaultBranchError": "Could not determine the default branch.",
-      "currentBranchHint": "The currently checked out branch. Pick this if you need to build on work done on this branch."
+      "currentBranchHint": "The currently checked out branch. Pick this if you need to build on work done on this branch.",
+      "createBasedOn": "Create branch based on…"
     },
     "createTag": {
       "title": {
@@ -161,7 +170,8 @@
       },
       "confirm": "Delete branch <1>{{name}}</1>?",
       "cannotUndo": "This action cannot be undone.",
-      "delete": "Delete"
+      "delete": "Delete",
+      "deleteRemoteToo": "Yes, delete this branch on the remote"
     },
     "deleteTag": {
       "title": {
@@ -224,7 +234,10 @@
       "okButton": {
         "darwin": "Publish Repository",
         "default": "Publish repository"
-      }
+      },
+      "orgLabel": "Organization",
+      "nameLabel": "Name",
+      "descriptionLabel": "Description"
     },
     "deleteRemoteBranch": {
       "title": {
@@ -774,7 +787,8 @@
       "title": {
         "darwin": "Remove Repository",
         "default": "Remove repository"
-      }
+      },
+      "remove": "Remove"
     },
     "app": {
       "selectRepository": {
@@ -878,7 +892,8 @@
       "bypassPushDetection": {
         "darwin": "Bypass Push Detection",
         "default": "Bypass push detection"
-      }
+      },
+      "allowExpose": "Allow me to expose this secret"
     },
     "copilotConflictResolution": {
       "settingsLink": {
@@ -904,7 +919,9 @@
       "title": {
         "darwin": "Open With…",
         "default": "Open with…"
-      }
+      },
+      "open": "Open",
+      "selectEditor": "Select an editor"
     },
     "openPullRequestHeader": {
       "title": {
@@ -1011,7 +1028,8 @@
       "title": "Start tutorial"
     },
     "generateCommitOverride": {
-      "title": "Commit message override"
+      "title": "Commit message override",
+      "override": "Override"
     },
     "moveToApplicationsFolder": {
       "title": "Move GitHub Desktop to the Applications folder?"
@@ -1025,6 +1043,22 @@
     "publishRepositoryToolbar": {
       "publishRepo": "Publish repository",
       "publishBranch": "Publish branch"
+    },
+    "stashDiffHeader": {
+      "restore": "Restore",
+      "discard": "Discard"
+    },
+    "copilotDisclaimer": {
+      "title": "GitHub Copilot"
+    },
+    "termsAndConditions": {
+      "title": "GitHub Open Source Applications Terms and Conditions"
+    },
+    "acknowledgements": {
+      "title": "License and Open Source Notices"
+    },
+    "iconPreview": {
+      "title": "Icon Preview"
     }
   },
   "enterpriseServerEntry": {

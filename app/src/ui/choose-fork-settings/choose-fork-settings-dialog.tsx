@@ -84,7 +84,7 @@ export class ChooseForkSettings extends React.Component<
         <DialogContent>
           <Row>
             <VerticalSegmentedControl
-              label="This repository is a fork. How do you plan to use it?"
+              label={t('dialogs.chooseForkSettings.forkDescription')}
               items={items}
               selectedKey={this.state.forkContributionTarget}
               onSelectionChanged={this.onSelectionChanged}
