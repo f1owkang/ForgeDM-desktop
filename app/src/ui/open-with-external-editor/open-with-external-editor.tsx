@@ -3,6 +3,7 @@ import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { Row } from '../lib/row'
 import { Select } from '../lib/select'
+import { platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { CustomIntegrationForm } from '../preferences/custom-integration-form'
 import {
@@ -148,7 +149,7 @@ export class OpenWithExternalEditor extends React.Component<
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Open With…' : 'Open with…'
+    const title = platformT('dialogs.openWithExternalEditor.title')
     const disabled =
       (!this.state.useCustomEditor && this.state.selectedEditor === null) ||
       (this.state.useCustomEditor && !this.state.customEditor.path)

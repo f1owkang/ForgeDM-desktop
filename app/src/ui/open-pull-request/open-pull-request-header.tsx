@@ -3,6 +3,7 @@ import { Branch } from '../../models/branch'
 import { BranchSelect } from '../branches/branch-select'
 import { DialogHeader } from '../dialog/header'
 import { Ref } from '../lib/ref'
+import { platformT } from '../../lib/i18n'
 import { Repository } from '../../models/repository'
 import { IChangesetData } from '../../lib/git'
 
@@ -64,7 +65,7 @@ export class OpenPullRequestDialogHeader extends React.Component<IOpenPullReques
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Open a Pull Request' : 'Open a pull request'
+    const title = platformT('dialogs.openPullRequestHeader.title')
     const {
       baseBranch,
       currentBranch,

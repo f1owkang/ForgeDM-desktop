@@ -32,7 +32,7 @@ import {
 } from '../../models/pull-request'
 import { KeyboardShortcut } from '../keyboard-shortcut/keyboard-shortcut'
 import { formatNumber } from '../../lib/format-number'
-import { t } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 
 function formatMenuItemLabel(text: string) {
   if (__WIN32__ || __LINUX__) {
@@ -329,7 +329,7 @@ export class NoChanges extends React.Component<
       <>
         {t('changes.noChanges.selectEditor')}{' '}
         <LinkButton onClick={this.openIntegrationPreferences}>
-          {__DARWIN__ ? 'Settings' : 'Options'}
+          {platformT('dialogs.noChangesSettings.settings')}
         </LinkButton>
       </>
     )

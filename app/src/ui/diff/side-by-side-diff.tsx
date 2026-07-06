@@ -9,6 +9,7 @@ import {
   DiffHunkExpansionType,
   DiffSelectionType,
 } from '../../models/diff'
+import { t, platformT } from '../../lib/i18n'
 import {
   getLineFilters,
   highlightContents,
@@ -1425,7 +1426,7 @@ export class SideBySideDiff extends React.Component<
         enabled: selectionLength > 0,
       },
       {
-        label: __DARWIN__ ? 'Select All' : 'Select all',
+        label: platformT('dialogs.sideBySideDiff.selectAll'),
         action: () => this.onSelectAll(),
       },
     ]
@@ -1480,7 +1481,7 @@ export class SideBySideDiff extends React.Component<
 
     return this.diffToRestore === null
       ? {
-          label: __DARWIN__ ? 'Expand Whole File' : 'Expand whole file',
+          label: platformT('dialogs.sideBySideDiff.expandWholeFile'),
           action: this.onExpandWholeFile,
           // If there is only one hunk that can't be expanded, disable this item
           enabled:
@@ -1568,23 +1569,21 @@ export class SideBySideDiff extends React.Component<
   }
 
   private getDiscardLabel(rangeType: DiffRangeType, numLines: number): string {
-    const suffix = this.props.askForConfirmationOnDiscardChanges ? '…' : ''
+    const suffix = this.props.askForConfirmationOnDiscardChanges ? '\u2026' : ''
     let type = ''
 
     if (rangeType === DiffRangeType.Additions) {
-      type = __DARWIN__ ? 'Added' : 'added'
+      type = t('dialogs.sideBySideDiff.added')
     } else if (rangeType === DiffRangeType.Deletions) {
-      type = __DARWIN__ ? 'Removed' : 'removed'
+      type = t('dialogs.sideBySideDiff.removed')
     } else if (rangeType === DiffRangeType.Mixed) {
-      type = __DARWIN__ ? 'Modified' : 'modified'
+      type = t('dialogs.sideBySideDiff.modified')
     } else {
       assertNever(rangeType, `Invalid range type: ${rangeType}`)
     }
 
     const plural = numLines > 1 ? 's' : ''
-    return __DARWIN__
-      ? `Discard ${type} Line${plural}${suffix}`
-      : `Discard ${type} line${plural}${suffix}`
+    return t('dialogs.sideBySideDiff.discardLine', { type, suffix: `${plural}${suffix}` })
   }
 
   private onDiscardChanges(startLine: number, endLine: number = startLine) {

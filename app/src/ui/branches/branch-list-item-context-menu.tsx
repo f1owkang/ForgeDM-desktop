@@ -1,4 +1,5 @@
 import { IMenuItem } from '../../lib/menu-item'
+import { platformT } from '../../lib/i18n'
 import { clipboard } from 'electron'
 import { Branch, BranchType } from '../../models/branch'
 
@@ -33,7 +34,7 @@ export function generateBranchContextMenuItems(
   }
 
   items.push({
-    label: __DARWIN__ ? 'Copy Branch Name' : 'Copy branch name',
+    label: platformT('dialogs.branchContextMenu.copyBranchName'),
     action: () => clipboard.writeText(branch.name),
   })
 

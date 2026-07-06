@@ -4,6 +4,7 @@ import {
   RepoRulesMetadataFailure,
   RepoRulesMetadataFailures,
 } from '../../models/repo-rules'
+import { platformT } from '../../lib/i18n'
 import { RepoRulesetsForBranchLink } from './repo-rulesets-for-branch-link'
 import { RepoRulesetLink } from './repo-ruleset-link'
 
@@ -59,7 +60,7 @@ export class RepoRulesMetadataFailureList extends React.Component<IRepoRulesMeta
     if (failures.length === 0) {
       return null
     }
-    const rulesText = __DARWIN__ ? 'Rules' : 'rules'
+    const rulesText = platformT('dialogs.repositoryRules.rules')
     const labelId = `repo-rule-list-label-${label.toLowerCase()}`
     return (
       <div className="repo-rule-list">

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Dispatcher } from '../dispatcher/index'
 import { LinkButton } from '../lib/link-button'
+import { platformT } from '../../lib/i18n'
 import {
   UpdateStatus,
   lastShowCaseVersionSeen,
@@ -74,7 +75,7 @@ export class UpdateAvailable extends React.Component<IUpdateAvailableProps> {
       return (
         <span onSubmit={this.updateNow}>
           An optimized version of GitHub Desktop is available for your{' '}
-          {__DARWIN__ ? 'Apple silicon' : 'Arm64'} machine and will be installed
+          {platformT('dialogs.banners.updateAvailable.appleSilicon')} machine and will be installed
           at the next launch or{' '}
           <LinkButton onClick={this.updateNow}>
             restart GitHub Desktop

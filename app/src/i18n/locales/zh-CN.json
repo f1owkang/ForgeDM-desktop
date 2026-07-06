@@ -838,6 +838,24 @@
         "default": "新建工作树"
       }
     },
+    "repositoryRules": {
+      "rules": {
+        "darwin": "规则",
+        "default": "规则"
+      }
+    },
+    "secretScanning": {
+      "bypassPushDetection": {
+        "darwin": "绕过推送检测",
+        "default": "绕过推送检测"
+      }
+    },
+    "copilotConflictResolution": {
+      "settingsLink": {
+        "darwin": "设置 → Copilot",
+        "default": "文件 → 选项 → Copilot"
+      }
+    },
     "toolbar": {
       "currentBranch": {
         "darwin": "当前分支",
@@ -910,6 +928,22 @@
       "expandWholeFile": {
         "darwin": "展开整个文件",
         "default": "展开整个文件"
+      },
+      "added": {
+        "darwin": "已添加",
+        "default": "已添加"
+      },
+      "removed": {
+        "darwin": "已删除",
+        "default": "已删除"
+      },
+      "modified": {
+        "darwin": "已修改",
+        "default": "已修改"
+      },
+      "discardLine": {
+        "darwin": "丢弃{{type}}{{suffix}}",
+        "default": "丢弃{{type}}{{suffix}}"
       }
     },
     "filterChangesList": {

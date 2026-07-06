@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { ISecretScanResult } from './push-protection-error-dialog'
 import { VerticalSegmentedControl } from '../lib/vertical-segmented-control'
+import { platformT } from '../../lib/i18n'
 
 export enum BypassReason {
   FalsePositive = 'false_positive',
@@ -68,7 +69,7 @@ export class BypassPushProtectionDialog extends React.Component<
 
     return (
       <Dialog
-        title={__DARWIN__ ? 'Bypass Push Detection' : 'Bypass push detection'}
+        title={platformT('dialogs.secretScanning.bypassPushDetection')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.bypassPushProtection}
         className="bypass-push-protection-dialog"
