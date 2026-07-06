@@ -541,6 +541,38 @@
         "darwin": "查看证书",
         "default": "添加证书"
       }
+    },
+    "releaseNotes": {
+      "bugfixes": "修复",
+      "enhancements": "改进",
+      "other": "其他",
+      "installAndRestart": {
+        "darwin": "安装并重启",
+        "default": "安装并重启"
+      },
+      "close": "关闭",
+      "ariaLabel": "从 Markdown 生成的发布说明"
+    },
+    "ciChecks": {
+      "reRunFailedChecks": {
+        "darwin": "重新运行失败的检查",
+        "default": "重新运行失败的检查"
+      },
+      "reRunAllChecks": {
+        "darwin": "重新运行所有检查",
+        "default": "重新运行所有检查"
+      },
+      "reRun": "重新运行",
+      "reRunChecks": "重新运行检查"
+    },
+    "commitConflictsWarning": {
+      "title": "确认提交冲突文件",
+      "message": "如果你选择提交，你将把以下冲突文件提交到你的仓库中：",
+      "confirm": "你确定要提交这些冲突文件吗？",
+      "yesCommitFiles": {
+        "darwin": "是的，提交文件",
+        "default": "是的，提交文件"
+      }
     }
   },
   "enterpriseServerEntry": {

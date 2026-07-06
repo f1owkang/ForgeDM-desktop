@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { Dispatcher } from '../dispatcher'
 import { Repository } from '../../models/repository'
 import { ICommitContext } from '../../models/commit'
@@ -63,23 +64,20 @@ export class CommitConflictsWarning extends React.Component<
         id="commit-conflict-markers-warning"
         onDismissed={this.onCancel}
         onSubmit={this.onSubmit}
-        title={'Confirm committing conflicted files'}
+        title={t('dialogs.commitConflictsWarning.title')}
         type={'warning'}
       >
         <DialogContent>
           <p>
-            If you choose to commit, you’ll be committing the following
-            conflicted files into your repository:
+            {t('dialogs.commitConflictsWarning.message')}
           </p>
           {this.renderFiles(this.props.files)}
-          <p>Are you sure you want to commit these conflicted files?</p>
+          <p>{t('dialogs.commitConflictsWarning.confirm')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={
-              __DARWIN__ ? 'Yes, Commit Files' : 'Yes, commit files'
-            }
+            okButtonText={platformT('dialogs.commitConflictsWarning.yesCommitFiles')}
           />
         </DialogFooter>
       </Dialog>
