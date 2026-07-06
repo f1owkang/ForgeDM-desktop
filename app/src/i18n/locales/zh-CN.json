@@ -2021,5 +2021,30 @@
       "darwin": "未在偏好设置 > 高级中配置编辑器",
       "default": "未在选项 > 高级中配置编辑器"
     }
+  },
+  "multiCommitOperation": {
+    "progressDialog": {
+      "title": "{{operation}}进行中",
+      "commitProgress": "提交 {{position}} / {{total}}"
+    },
+    "confirmAbort": {
+      "title": {
+        "darwin": "确认中止{{operation}}",
+        "default": "确认中止{{operation}}"
+      },
+      "confirmMessage": "你确定要中止此{{operation}}吗？",
+      "description": "这将带你回到原始分支状态，已解决的冲突将被丢弃。",
+      "okButton": {
+        "darwin": "中止{{operation}}",
+        "default": "中止{{operation}}"
+      }
+    },
+    "copilotResolution": {
+      "merging": "将 <1>{{theirLabel}}</1> 合并到 <3>{{ourLabel}}</3>",
+      "rebasing": "将 <1>{{ourLabel}}</1> 变基到 <3>{{theirLabel}}</3>",
+      "cherryPicking": "从 <1>{{theirLabel}}</1> 拣选到 <3>{{ourLabel}}</3>",
+      "squashing": "压缩到 <1>{{ourLabel}}</1>",
+      "reordering": "重新排序 <1>{{ourLabel}}</1>"
+    }
   }
 }

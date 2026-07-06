@@ -2021,5 +2021,30 @@
       "darwin": "No editor configured in Preferences > Advanced",
       "default": "No editor configured in Options > Advanced"
     }
+  },
+  "multiCommitOperation": {
+    "progressDialog": {
+      "title": "{{operation}} in progress",
+      "commitProgress": "Commit {{position}} of {{total}}"
+    },
+    "confirmAbort": {
+      "title": {
+        "darwin": "Confirm Abort {{operation}}",
+        "default": "Confirm abort {{operation}}"
+      },
+      "confirmMessage": "Are you sure you want to abort this {{operation}}?",
+      "description": "This will take you back to the original branch state and the conflicts you have already resolved will be discarded.",
+      "okButton": {
+        "darwin": "Abort {{operation}}",
+        "default": "Abort {{operation}}"
+      }
+    },
+    "copilotResolution": {
+      "merging": "Merging <1>{{theirLabel}}</1> into <3>{{ourLabel}}</3>",
+      "rebasing": "Rebasing <1>{{ourLabel}}</1> onto <3>{{theirLabel}}</3>",
+      "cherryPicking": "Cherry-picking from <1>{{theirLabel}}</1> into <3>{{ourLabel}}</3>",
+      "squashing": "Squashing into <1>{{ourLabel}}</1>",
+      "reordering": "Reordering <1>{{ourLabel}}</1>"
+    }
   }
 }
