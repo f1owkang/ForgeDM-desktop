@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogFooter, DialogError } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { TextBox } from '../lib/text-box'
 import { Select } from '../lib/select'
+import { t, platformT } from '../../lib/i18n'
 import { Button } from '../lib/button'
 import { Row } from '../lib/row'
 import { Octicon } from '../octicons'
@@ -71,7 +72,7 @@ class ModelRow extends React.Component<IModelRowProps> {
         ? model.name
         : model.id !== ''
         ? model.id
-        : 'Untitled model'
+        : t('dialogs.copilotEditProvider.untitledModel')
     const reasoningLabel =
       model.reasoningEffort !== undefined
         ? `Reasoning: ${formatReasoningEffort(model.reasoningEffort)}`
@@ -146,12 +147,8 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
   public render() {
     const isEditing = this.props.provider !== null
     const title = isEditing
-      ? __DARWIN__
-        ? 'Edit Custom Provider'
-        : 'Edit custom provider'
-      : __DARWIN__
-      ? 'Add Custom Provider'
-      : 'Add custom provider'
+      ? platformT('dialogs.copilotEditProvider.titleEdit')
+      : platformT('dialogs.copilotEditProvider.titleAdd')
 
     return (
       <Dialog
@@ -169,7 +166,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
           {this.renderModelsSection()}
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText={isEditing ? 'Save' : 'Add'} />
+          <OkCancelButtonGroup okButtonText={isEditing ? t('dialogs.copilotEditProvider.save') : t('dialogs.copilotEditProvider.add')} />
         </DialogFooter>
       </Dialog>
     )
@@ -181,17 +178,17 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
         <legend>Provider</legend>
         <Row>
           <TextBox
-            label="Name"
+            label={t('dialogs.copilotEditProvider.name')}
             value={this.state.name}
             onValueChanged={this.onNameChanged}
-            placeholder="My provider"
+            placeholder={t('dialogs.copilotEditProvider.namePlaceholder')}
             required={true}
             autoFocus={true}
           />
         </Row>
         <Row>
           <Select
-            label="Type"
+            label={t('dialogs.copilotEditProvider.type')}
             value={this.state.type}
             onChange={this.onTypeChanged}
           >
@@ -202,7 +199,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
         </Row>
         <Row>
           <TextBox
-            label={__DARWIN__ ? 'Base URL' : 'Base URL'}
+            label={platformT('dialogs.copilotEditProvider.baseUrl')}
             value={this.state.baseUrl}
             onValueChanged={this.onBaseUrlChanged}
             placeholder={getBaseUrlPlaceholder(this.state.type)}
@@ -212,7 +209,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
         {this.state.type === 'openai' && (
           <Row>
             <Select
-              label={__DARWIN__ ? 'API Format' : 'API format'}
+              label="API Format"
               value={this.state.wireApi}
               onChange={this.onWireApiChanged}
             >
@@ -224,7 +221,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
         {this.state.type === 'azure' && (
           <Row>
             <TextBox
-              label={__DARWIN__ ? 'Azure API Version' : 'Azure API version'}
+              label={platformT('dialogs.copilotEditProvider.azureApiVersion')}
               value={this.state.azureApiVersion}
               onValueChanged={this.onAzureApiVersionChanged}
               placeholder="2024-10-21"
@@ -233,11 +230,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
         )}
         <Row>
           <TextBox
-            label={
-              __DARWIN__
-                ? 'Request Timeout (seconds)'
-                : 'Request timeout (seconds)'
-            }
+            label={platformT('dialogs.copilotEditProvider.requestTimeout')}
             value={this.state.requestTimeoutSeconds}
             onValueChanged={this.onRequestTimeoutChanged}
             placeholder="60"
@@ -252,12 +245,12 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
       <fieldset className="copilot-byok-fieldset">
         <Row>
           <Select
-            label="Authentication"
+            label={t('dialogs.copilotEditProvider.authentication')}
             value={this.state.authKind}
             onChange={this.onAuthKindChanged}
           >
-            <option value="apiKey">API key</option>
-            <option value="bearer">Bearer token</option>
+            <option value="apiKey">{t('dialogs.copilotEditProvider.apiKey')}</option>
+            <option value="bearer">{t('dialogs.copilotEditProvider.bearerToken')}</option>
             <option value="none">None</option>
           </Select>
         </Row>
@@ -309,7 +302,7 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
           </ul>
         )}
         <Button onClick={this.onAddModel}>
-          {__DARWIN__ ? 'Add Model…' : 'Add model…'}
+          {platformT('dialogs.copilotEditProvider.addModel')}
         </Button>
       </fieldset>
     )
@@ -433,20 +426,20 @@ export class EditCopilotBYOKProviderDialog extends React.Component<
 
   private validate(): string | null {
     if (this.state.name.trim() === '') {
-      return 'Please enter a name.'
+      return t('dialogs.copilotEditProvider.enterName')
     }
 
     const trimmedUrl = this.state.baseUrl.trim()
     if (trimmedUrl === '') {
-      return 'Please enter a base URL.'
+      return t('dialogs.copilotEditProvider.enterBaseUrl')
     }
     if (!isValidBYOKBaseUrl(trimmedUrl)) {
-      return 'Base URL must be an https URL, or an http URL pointing at the local machine.'
+      return t('dialogs.copilotEditProvider.baseUrlMustBeHttps')
     }
 
     const trimmedModels = this.state.models.filter(m => m.id.trim() !== '')
     if (trimmedModels.length === 0) {
-      return 'Please add at least one model.'
+      return t('dialogs.copilotEditProvider.addAtLeastOneModel')
     }
 
     const ids = new Set<string>()

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
-import { Ref } from '../lib/ref'
+import { t, platformT } from '../../lib/i18n'
 import { IBYOKProvider } from '../../lib/copilot/byok'
 
 interface IConfirmDeleteCopilotBYOKProviderDialogProps {
@@ -20,7 +20,7 @@ export class ConfirmDeleteCopilotBYOKProviderDialog extends React.Component<ICon
     return (
       <Dialog
         id="confirm-delete-copilot-byok-provider"
-        title={__DARWIN__ ? 'Remove Custom Provider' : 'Remove custom provider'}
+        title={platformT('dialogs.copilotConfirmDeleteProvider.title')}
         type="warning"
         onSubmit={this.onConfirm}
         onDismissed={this.props.onDismissed}
@@ -29,15 +29,14 @@ export class ConfirmDeleteCopilotBYOKProviderDialog extends React.Component<ICon
       >
         <DialogContent>
           <p id="confirm-delete-copilot-byok-provider-message">
-            Are you sure you want to remove the custom provider{' '}
-            <Ref>{this.props.provider.name}</Ref>?{' '}
+            {t('dialogs.copilotConfirmDeleteProvider.message', { name: this.props.provider.name })}{' '}
             {this.renderSecretConsequence()}
           </p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={__DARWIN__ ? 'Remove' : 'Remove'}
+            okButtonText={t('dialogs.copilotConfirmDeleteProvider.remove')}
           />
         </DialogFooter>
       </Dialog>
@@ -47,11 +46,11 @@ export class ConfirmDeleteCopilotBYOKProviderDialog extends React.Component<ICon
   private renderSecretConsequence() {
     switch (this.props.provider.authKind) {
       case 'apiKey':
-        return 'Its API key will also be removed from your keychain.'
+        return t('dialogs.copilotConfirmDeleteProvider.apiKeyConsequence')
       case 'bearer':
-        return 'Its bearer token will also be removed from your keychain.'
+        return t('dialogs.copilotConfirmDeleteProvider.bearerConsequence')
       case 'none':
-        return 'Any models you have configured for it will no longer be available.'
+        return t('dialogs.copilotConfirmDeleteProvider.noneConsequence')
     }
   }
 

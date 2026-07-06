@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogFooter, DialogError } from '../dialog'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { TextBox } from '../lib/text-box'
 import { Select } from '../lib/select'
+import { t, platformT } from '../../lib/i18n'
 import { Row } from '../lib/row'
 import { IBYOKModel } from '../../lib/copilot/byok'
 import {
@@ -54,12 +55,8 @@ export class EditCopilotBYOKModelDialog extends React.Component<
   public render() {
     const isEditing = this.props.model !== null
     const title = isEditing
-      ? __DARWIN__
-        ? 'Edit Model'
-        : 'Edit model'
-      : __DARWIN__
-      ? 'Add Model'
-      : 'Add model'
+      ? platformT('dialogs.copilotEditModel.titleEdit')
+      : platformT('dialogs.copilotEditModel.titleAdd')
 
     return (
       <Dialog
@@ -74,37 +71,36 @@ export class EditCopilotBYOKModelDialog extends React.Component<
         <DialogContent>
           <Row className="copilot-byok-field">
             <TextBox
-              label={__DARWIN__ ? 'Display Name' : 'Display name'}
+              label={platformT('dialogs.copilotEditModel.displayName')}
               value={this.state.name}
               onValueChanged={this.onNameChanged}
               placeholder="GPT-4o"
               autoFocus={true}
             />
             <p className="copilot-byok-field-hint">
-              The friendly name shown in the Copilot model picker.
+              {t('dialogs.copilotEditModel.displayNameHint')}
             </p>
           </Row>
           <Row className="copilot-byok-field">
             <TextBox
-              label={__DARWIN__ ? 'Model Identifier' : 'Model identifier'}
+              label={platformT('dialogs.copilotEditModel.modelIdentifier')}
               value={this.state.id}
               onValueChanged={this.onIdChanged}
               placeholder="gpt-4o"
               required={true}
             />
             <p className="copilot-byok-field-hint">
-              The exact name your provider expects (e.g. <code>gpt-4o</code>,{' '}
-              <code>llama3</code>).
+              {t('dialogs.copilotEditModel.modelIdentifierHint')}
             </p>
           </Row>
           <Row className="copilot-byok-field">
             <Select
-              label={__DARWIN__ ? 'Reasoning Effort' : 'Reasoning effort'}
+              label={platformT('dialogs.copilotEditModel.reasoningEffort')}
               value={this.state.reasoningEffort}
               onChange={this.onReasoningEffortChanged}
             >
               <option value={NoReasoningEffort}>
-                Default (provider's choice)
+                {t('dialogs.copilotEditModel.defaultChoice')}
               </option>
               {ReasoningEffortOrder.map(effort => (
                 <option key={effort} value={effort}>
@@ -113,15 +109,12 @@ export class EditCopilotBYOKModelDialog extends React.Component<
               ))}
             </Select>
             <p className="copilot-byok-field-hint">
-              Reasoning models (o1, o3, GPT-5 reasoning variants, etc.) think
-              before responding. Higher levels are slower but produce better
-              answers on complex tasks. Leave on <em>Default</em> for
-              non-reasoning models or to let the provider pick.
+              {t('dialogs.copilotEditModel.reasoningHint')}
             </p>
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText={isEditing ? 'Save' : 'Add'} />
+          <OkCancelButtonGroup okButtonText={isEditing ? t('dialogs.copilotEditModel.save') : t('dialogs.copilotEditModel.add')} />
         </DialogFooter>
       </Dialog>
     )
@@ -167,7 +160,7 @@ export class EditCopilotBYOKModelDialog extends React.Component<
   private validate(): string | null {
     const id = this.state.id.trim()
     if (id === '') {
-      return 'Please enter a model identifier.'
+      return t('dialogs.copilotEditModel.enterIdentifier')
     }
     if (this.props.otherModelIds.includes(id)) {
       return `Another model with the identifier '${id}' already exists.`
