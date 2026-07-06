@@ -10,6 +10,7 @@ import { dialogTransitionTimeout } from './app'
 import { GitError, isAuthFailureError } from '../lib/git/core'
 import { Popup, PopupType } from '../models/popup'
 import { OkCancelButtonGroup } from './dialog/ok-cancel-button-group'
+import { t, platformT } from '../lib/i18n'
 import { ErrorWithMetadata } from '../lib/error-with-metadata'
 import { RetryActionType, RetryAction } from '../models/retry-actions'
 import { Ref } from './lib/ref'
@@ -260,7 +261,7 @@ export class AppError extends React.Component<IAppErrorProps, IAppErrorState> {
     return (
       <DialogFooter>
         <OkCancelButtonGroup
-          okButtonText={__DARWIN__ ? 'Retry Clone' : 'Retry clone'}
+          okButtonText={platformT('dialogs.appError.retryClone')}
           onOkButtonClick={this.onRetryAction}
           onCancelButtonClick={this.onCloseButtonClick}
         />
@@ -272,9 +273,9 @@ export class AppError extends React.Component<IAppErrorProps, IAppErrorState> {
     return (
       <DialogFooter>
         <OkCancelButtonGroup
-          okButtonText="Close"
+          okButtonText={t('dialogs.appError.close')}
           onOkButtonClick={this.onCloseButtonClick}
-          cancelButtonText={__DARWIN__ ? 'Open Preferences' : 'Open options'}
+          cancelButtonText={platformT('dialogs.appError.openPreferences')}
           onCancelButtonClick={this.showPreferencesDialog}
         />
       </DialogFooter>

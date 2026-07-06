@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { Ref } from '../lib/ref'
 import { Repository } from '../../models/repository'
 import { TrashNameLabel } from '../lib/context-menu'
@@ -57,7 +58,7 @@ export class ConfirmRemoveRepository extends React.Component<
         id="confirm-remove-repository"
         key="remove-repository-confirmation"
         type="warning"
-        title={__DARWIN__ ? 'Remove Repository' : 'Remove repository'}
+        title={platformT('dialogs.removeRepository.title')}
         dismissDisabled={isRemovingRepository}
         loading={isRemovingRepository}
         disabled={isRemovingRepository}

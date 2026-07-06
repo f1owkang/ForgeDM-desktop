@@ -4,6 +4,7 @@ import * as Path from 'path'
 import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { platformT } from '../../lib/i18n'
 import { TextBox } from '../lib/text-box'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
@@ -66,7 +67,7 @@ export class RenameWorktreeDialog extends React.Component<
     return (
       <Dialog
         id="rename-worktree"
-        title={__DARWIN__ ? 'Rename Worktree' : 'Rename worktree'}
+        title={platformT('dialogs.worktree.renameWorktree')}
         loading={this.state.renaming}
         onSubmit={this.onSubmit}
         onDismissed={this.props.onDismissed}
