@@ -261,6 +261,35 @@
       "leaveChangesDescription": "Your in-progress work will be stashed on this branch for you to return to later",
       "bringChanges": "Bring my changes to {{branch}}",
       "bringChangesDescription": "Your in-progress work will follow you to the new branch"
+    },
+    "confirmCheckout": {
+      "title": {
+        "darwin": "Checkout Commit?",
+        "default": "Checkout commit?"
+      },
+      "message": "Checking out a commit will create a detached HEAD, and you will no longer be on any branch. Are you sure you want to checkout this commit?",
+      "doNotShow": "Do not show this message again",
+      "checkout": "Checkout"
+    },
+    "warningBeforeReset": {
+      "title": {
+        "darwin": "Reset to Commit",
+        "default": "Reset to commit"
+      },
+      "message": "You have changes in progress. Resetting to a previous commit might result in some of these changes being lost. Do you want to continue anyway?",
+      "continue": "Continue"
+    },
+    "warnUndo": {
+      "title": {
+        "darwin": "Undo Commit",
+        "default": "Undo commit"
+      },
+      "message": "You have changes in progress. Undoing the commit might result in some of these changes being lost. Do you want to continue anyway?",
+      "doNotShow": "Do not show this message again",
+      "continue": "Continue",
+      "mergeCommitWarning": "Undoing a merge commit will apply the changes from the merge into your working directory, and committing again will create an entirely new commit. This means you will lose the merge commit and, as a result, commits from the merged branch could disappear from this branch.",
+      "mergeCommitWithChanges": "You have changes in progress. Undoing the merge commit might result in some of these changes being lost.",
+      "continueAnyway": "Do you want to continue anyway?"
     }
   },
   "enterpriseServerEntry": {

@@ -5,6 +5,7 @@ import { Dispatcher } from '../dispatcher'
 import { Row } from '../lib/row'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
+import { t, platformT } from '../../lib/i18n'
 import { CommitOneLine } from '../../models/commit'
 
 interface IConfirmCheckoutCommitProps {
@@ -36,7 +37,7 @@ export class ConfirmCheckoutCommitDialog extends React.Component<
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Checkout Commit?' : 'Checkout commit?'
+    const title = platformT('dialogs.confirmCheckout.title')
 
     return (
       <Dialog
@@ -52,13 +53,11 @@ export class ConfirmCheckoutCommitDialog extends React.Component<
       >
         <DialogContent>
           <Row id="checking-out-commit-confirmation">
-            Checking out a commit will create a detached HEAD, and you will no
-            longer be on any branch. Are you sure you want to checkout this
-            commit?
+            {t('dialogs.confirmCheckout.message')}
           </Row>
           <Row>
             <Checkbox
-              label="Do not show this message again"
+              label={t('dialogs.confirmCheckout.doNotShow')}
               value={
                 this.state.confirmCheckoutCommit
                   ? CheckboxValue.Off
@@ -69,7 +68,7 @@ export class ConfirmCheckoutCommitDialog extends React.Component<
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Checkout" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.confirmCheckout.checkout')} />
         </DialogFooter>
       </Dialog>
     )

@@ -4,6 +4,7 @@ import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Row } from '../lib/row'
 import { Checkbox, CheckboxValue } from '../lib/checkbox'
+import { t, platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { Commit } from '../../models/commit'
 
@@ -38,7 +39,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
   }
 
   public render() {
-    const title = __DARWIN__ ? 'Undo Commit' : 'Undo commit'
+    const title = platformT('dialogs.warnUndo.title')
 
     return (
       <Dialog
@@ -54,7 +55,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
       >
         {this.getWarningDialog()}
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText="Continue" />
+          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.warnUndo.continue')} />
         </DialogFooter>
       </Dialog>
     )
@@ -67,12 +68,11 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
     return (
       <DialogContent>
         <Row id="undo-warning-message">
-          You have changes in progress. Undoing the commit might result in some
-          of these changes being lost. Do you want to continue anyway?
+          {t('dialogs.warnUndo.message')}
         </Row>
         <Row>
           <Checkbox
-            label="Do not show this message again"
+            label={t('dialogs.warnUndo.doNotShow')}
             value={
               this.state.confirmUndoCommit
                 ? CheckboxValue.Off
@@ -90,27 +90,23 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
       return (
         <DialogContent>
           <p>{this.getMergeCommitUndoWarningText()}</p>
-          <p>Do you want to continue anyway?</p>
+          <p>{t('dialogs.warnUndo.continueAnyway')}</p>
         </DialogContent>
       )
     }
     return (
       <DialogContent>
         <p>
-          You have changes in progress. Undoing the merge commit might result in
-          some of these changes being lost.
+          {t('dialogs.warnUndo.mergeCommitWithChanges')}
         </p>
         <p>{this.getMergeCommitUndoWarningText()}</p>
-        <p>Do you want to continue anyway?</p>
+        <p>{t('dialogs.warnUndo.continueAnyway')}</p>
       </DialogContent>
     )
   }
 
   private getMergeCommitUndoWarningText() {
-    return `Undoing a merge commit will apply the changes from the merge into
-    your working directory, and committing again will create an entirely new
-    commit. This means you will lose the merge commit and, as a result, commits
-    from the merged branch could disappear from this branch.`
+    return t('dialogs.warnUndo.mergeCommitWarning')
   }
 
   private onSubmit = async () => {

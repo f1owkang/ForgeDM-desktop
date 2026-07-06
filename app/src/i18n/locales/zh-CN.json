@@ -261,6 +261,35 @@
       "leaveChangesDescription": "你正在进行的工作将暂存在此分支上，供你稍后返回",
       "bringChanges": "将我的更改带到 {{branch}}",
       "bringChangesDescription": "你正在进行的工作将跟随你到新分支"
+    },
+    "confirmCheckout": {
+      "title": {
+        "darwin": "检出提交？",
+        "default": "检出提交？"
+      },
+      "message": "检出提交将创建一个分离的 HEAD，你将不再位于任何分支上。你确定要检出此提交吗？",
+      "doNotShow": "不再显示此消息",
+      "checkout": "检出"
+    },
+    "warningBeforeReset": {
+      "title": {
+        "darwin": "重置到提交",
+        "default": "重置到提交"
+      },
+      "message": "你有正在进行的更改。重置到之前的提交可能会导致部分更改丢失。你确定要继续吗？",
+      "continue": "继续"
+    },
+    "warnUndo": {
+      "title": {
+        "darwin": "撤销提交",
+        "default": "撤销提交"
+      },
+      "message": "你有正在进行的更改。撤销提交可能会导致部分更改丢失。你确定要继续吗？",
+      "doNotShow": "不再显示此消息",
+      "continue": "继续",
+      "mergeCommitWarning": "撤销合并提交将把合并中的更改应用到你的工作目录，再次提交将创建一个全新的提交。这意味着你将丢失合并提交，因此被合并分支的提交可能会从此分支中消失。",
+      "mergeCommitWithChanges": "你有正在进行的更改。撤销合并提交可能会导致部分更改丢失。",
+      "continueAnyway": "你确定要继续吗？"
     }
   },
   "enterpriseServerEntry": {
