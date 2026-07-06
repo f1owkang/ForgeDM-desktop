@@ -557,7 +557,31 @@
         "default": "Re-run all checks"
       },
       "reRun": "Re-run",
-      "reRunChecks": "Re-run Checks"
+      "reRunChecks": "Re-run Checks",
+      "rerunCheck": {
+        "darwin": "Re-run Check",
+        "default": "Re-run check"
+      },
+      "rerunChecks": {
+        "darwin": "Re-run Checks",
+        "default": "Re-run checks"
+      },
+      "rerunSingleCheck": {
+        "darwin": "Re-run Single Check",
+        "default": "Re-run single check"
+      },
+      "rerunSingleChecks": {
+        "darwin": "Re-run Single Checks",
+        "default": "Re-run single checks"
+      },
+      "rerunFailedCheck": {
+        "darwin": "Re-run Failed Check",
+        "default": "Re-run failed check"
+      },
+      "rerunFailedChecks": {
+        "darwin": "Re-run Failed Checks",
+        "default": "Re-run failed checks"
+      }
     },
     "commitConflictsWarning": {
       "title": "Confirm committing conflicted files",

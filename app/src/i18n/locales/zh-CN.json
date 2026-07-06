@@ -557,7 +557,31 @@
         "default": "重新运行所有检查"
       },
       "reRun": "重新运行",
-      "reRunChecks": "重新运行检查"
+      "reRunChecks": "重新运行检查",
+      "rerunCheck": {
+        "darwin": "重新运行检查",
+        "default": "重新运行检查"
+      },
+      "rerunChecks": {
+        "darwin": "重新运行检查",
+        "default": "重新运行检查"
+      },
+      "rerunSingleCheck": {
+        "darwin": "重新运行单项检查",
+        "default": "重新运行单项检查"
+      },
+      "rerunSingleChecks": {
+        "darwin": "重新运行单项检查",
+        "default": "重新运行单项检查"
+      },
+      "rerunFailedCheck": {
+        "darwin": "重新运行失败的检查",
+        "default": "重新运行失败的检查"
+      },
+      "rerunFailedChecks": {
+        "darwin": "重新运行失败的检查",
+        "default": "重新运行失败的检查"
+      }
     },
     "commitConflictsWarning": {
       "title": "确认提交冲突文件",
