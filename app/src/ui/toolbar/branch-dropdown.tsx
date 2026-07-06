@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import * as octicons from '../octicons/octicons.generated'
 import { OcticonSymbol, syncClockwise } from '../octicons'
+import { platformT } from '../../lib/i18n'
 import {
   isRepositoryWithGitHubRepository,
   Repository,
@@ -140,7 +141,7 @@ export class BranchDropdown extends React.Component<IBranchDropdownProps> {
     let icon: OcticonSymbol = octicons.gitBranch
     let iconClassName: string | undefined = undefined
     let title: string
-    let description = __DARWIN__ ? 'Current Branch' : 'Current branch'
+    let description = platformT('dialogs.toolbar.currentBranch')
     let canOpen = true
     let disabled = false
     let tooltip: string

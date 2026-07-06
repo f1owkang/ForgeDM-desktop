@@ -837,6 +837,107 @@
         "darwin": "新建工作树",
         "default": "新建工作树"
       }
+    },
+    "toolbar": {
+      "currentBranch": {
+        "darwin": "当前分支",
+        "default": "当前分支"
+      },
+      "currentWorktree": {
+        "darwin": "当前工作树",
+        "default": "当前工作树"
+      },
+      "newWorktree": {
+        "darwin": "新建工作树…",
+        "default": "新建工作树…"
+      }
+    },
+    "openWithExternalEditor": {
+      "title": {
+        "darwin": "打开方式…",
+        "default": "打开方式…"
+      }
+    },
+    "openPullRequestHeader": {
+      "title": {
+        "darwin": "打开拉取请求",
+        "default": "打开拉取请求"
+      }
+    },
+    "pushBranch": {
+      "title": {
+        "darwin": "发布分支？",
+        "default": "发布分支？"
+      },
+      "publishButton": {
+        "darwin": "发布分支",
+        "default": "发布分支"
+      },
+      "pushCommits": {
+        "darwin": "推送提交",
+        "default": "推送提交"
+      },
+      "createWithoutPushing": {
+        "darwin": "创建但不推送",
+        "default": "创建但不推送"
+      },
+      "pushLocalChanges": {
+        "darwin": "推送本地更改？",
+        "default": "推送本地更改？"
+      }
+    },
+    "branchContextMenu": {
+      "copyBranchName": {
+        "darwin": "复制分支名称",
+        "default": "复制分支名称"
+      },
+      "viewBranchOnGitHub": "在 GitHub 上查看分支",
+      "viewPullRequestOnGitHub": "在 GitHub 上查看拉取请求",
+      "checkoutInNewWorktree": {
+        "darwin": "在新工作树中检出…",
+        "default": "在新工作树中检出…"
+      },
+      "deleteBranch": {
+        "darwin": "删除…",
+        "default": "删除…"
+      }
+    },
+    "sideBySideDiff": {
+      "selectAll": {
+        "darwin": "全选",
+        "default": "全选"
+      },
+      "expandWholeFile": {
+        "darwin": "展开整个文件",
+        "default": "展开整个文件"
+      }
+    },
+    "filterChangesList": {
+      "discardAllChanges": {
+        "darwin": "丢弃所有更改…",
+        "default": "丢弃所有更改…"
+      }
+    },
+    "commitMessageAvatar": {
+      "openGitSettings": {
+        "darwin": "打开 Git 设置",
+        "default": "打开 Git 设置"
+      },
+      "updateEmail": {
+        "darwin": "更新电子邮件",
+        "default": "更新电子邮件"
+      }
+    },
+    "noChangesSettings": {
+      "settings": {
+        "darwin": "设置",
+        "default": "选项"
+      }
+    },
+    "banners": {
+      "updateAvailable": {
+        "appleSilicon": "Apple 芯片"
+      }
     }
   },
   "enterpriseServerEntry": {

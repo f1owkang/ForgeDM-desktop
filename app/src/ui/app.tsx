@@ -13,6 +13,7 @@ import {
 import { Dispatcher } from './dispatcher'
 import { AppStore, GitHubUserStore, IssuesStore } from '../lib/stores'
 import { assertNever } from '../lib/fatal-error'
+import { platformT } from '../lib/i18n'
 import { shell } from '../lib/app-shell'
 import { updateStore, UpdateStatus } from './lib/update-store'
 import { RetryAction } from '../models/retry-actions'
@@ -3345,10 +3346,10 @@ export class App extends React.Component<IAppProps, IAppState> {
       title = alias ?? repository.name
     } else if (this.state.repositories.length > 0) {
       icon = octicons.repo
-      title = __DARWIN__ ? 'Select a Repository' : 'Select a repository'
+      title = platformT('dialogs.app.selectRepository')
     } else {
       icon = octicons.repo
-      title = __DARWIN__ ? 'No Repositories' : 'No repositories'
+      title = platformT('dialogs.app.noRepositories')
     }
 
     const isOpen =
@@ -3379,7 +3380,7 @@ export class App extends React.Component<IAppProps, IAppState> {
       <ToolbarDropdown
         icon={icon}
         title={title}
-        description={__DARWIN__ ? 'Current Repository' : 'Current repository'}
+        description={platformT('dialogs.app.currentRepository')}
         tooltip={tooltip}
         foldoutStyle={foldoutStyle}
         onContextMenu={this.onRepositoryToolbarButtonContextMenu}
