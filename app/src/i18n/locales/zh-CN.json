@@ -1088,6 +1088,21 @@
     "signInEnterprise": {
       "ariaLabel": "登录你的 GitHub Enterprise",
       "title": "登录你的 GitHub Enterprise"
+    },
+    "signIn": {
+      "browserTitle": {
+        "darwin": "使用浏览器登录",
+        "default": "使用浏览器登录"
+      },
+      "title": "登录",
+      "browserSignInInfo": "登录后，浏览器会将你重定向回 GitHub Desktop。如果浏览器请求你允许启动 GitHub Desktop，请允许。",
+      "continueWithBrowser": {
+        "darwin": "使用浏览器继续",
+        "default": "使用浏览器继续"
+      },
+      "continue": "继续",
+      "existingAccountWarning": "你已经以账户 <3>{{login}}</3> 登录到 <1>{{host}}</1>。如果继续，你将先被登出。",
+      "credentialHelperInfo": "Git 正在请求凭据以访问 <1>{{url}}</1>。"
     }
   },
   "enterpriseServerEntry": {
@@ -1957,6 +1972,12 @@
     "was": "曾"
   },
   "welcome": {
+    "configureGit": {
+      "ariaLabel": "配置 Git",
+      "title": "配置 Git",
+      "description": "这将用于标识你创建的提交。如果你发布提交，任何人都可以看到此信息。",
+      "finish": "完成"
+    },
     "start": {
       "ariaLabel": "欢迎使用 GitHub Desktop",
       "createAccount": "创建免费账户。",

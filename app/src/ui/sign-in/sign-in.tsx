@@ -1,20 +1,19 @@
 import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import {
-    SignInState,
-    SignInStep,
-    IEndpointEntryState,
-    IAuthenticationState,
-    IExistingAccountWarning,
+  SignInState,
+  SignInStep,
+  IEndpointEntryState,
+  IAuthenticationState,
+  IExistingAccountWarning,
 } from '../../lib/stores'
 import { assertNever } from '../../lib/fatal-error'
 import { Row } from '../lib/row'
 import { TextBox } from '../lib/text-box'
 import { Dialog, DialogError, DialogContent, DialogFooter } from '../dialog'
-import { t } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
-import { Ref } from '../lib/ref'
 import { getHTMLURL } from '../../lib/api'
 
 interface ISignInProps {
@@ -28,20 +27,6 @@ interface ISignInProps {
 interface ISignInState {
   readonly endpoint: string
 }
-
-const SignInWithBrowserTitle = __DARWIN__
-  ? 'Sign in Using Your Browser'
-  : 'Sign in using your browser'
-
-const DefaultTitle = 'Sign in'
-
-const browserSignInInfoContent = (
-  <p>
-    Your browser will redirect you back to GitHub Desktop once you've signed in.
-    If your browser asks for your permission to launch GitHub Desktop, please
-    allow it.
-  </p>
-)
 
 export class SignIn extends React.Component<ISignInProps, ISignInState> {
   private readonly dialogRef = React.createRef<Dialog>()
@@ -121,20 +106,17 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
 
     let primaryButtonText: string
     const stepKind = state.kind
-    const continueWithBrowserLabel = __DARWIN__
-      ? 'Continue With Browser'
-      : 'Continue with browser'
 
     switch (state.kind) {
       case SignInStep.EndpointEntry:
         disableSubmit = this.state.endpoint.length === 0
-        primaryButtonText = 'Continue'
+        primaryButtonText = t('dialogs.signIn.continue')
         break
       case SignInStep.ExistingAccountWarning:
-        primaryButtonText = continueWithBrowserLabel
+        primaryButtonText = platformT('dialogs.signIn.continueWithBrowser')
         break
       case SignInStep.Authentication:
-        primaryButtonText = continueWithBrowserLabel
+        primaryButtonText = platformT('dialogs.signIn.continueWithBrowser')
         break
       default:
         return assertNever(state, `Unknown sign in step ${stepKind}`)
@@ -153,15 +135,16 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
   }
 
   private renderExistingAccountWarningStep(state: IExistingAccountWarning) {
+    const host = new URL(getHTMLURL(state.endpoint)).host
     return (
       <DialogContent>
         <p className="existing-account-warning">
-          You're already signed in to{' '}
-          <Ref>{new URL(getHTMLURL(state.endpoint)).host}</Ref> with the account{' '}
-          <Ref>{state.existingAccount.login}</Ref>. If you continue, you will
-          first be signed out.
+          {t('dialogs.signIn.existingAccountWarning', {
+            host,
+            login: state.existingAccount.login,
+          })}
         </p>
-        {browserSignInInfoContent}
+        <p>{t('dialogs.signIn.browserSignInInfo')}</p>
       </DialogContent>
     )
   }
@@ -185,15 +168,16 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
     const credentialHelperInfo =
       this.props.isCredentialHelperSignIn && this.props.credentialHelperUrl ? (
         <p>
-          Git requesting credentials to access{' '}
-          <Ref>{this.props.credentialHelperUrl}</Ref>.
+          {t('dialogs.signIn.credentialHelperInfo', {
+            url: this.props.credentialHelperUrl,
+          })}
         </p>
       ) : undefined
 
     return (
       <DialogContent>
         {credentialHelperInfo}
-        {browserSignInInfoContent}
+        <p>{t('dialogs.signIn.browserSignInInfo')}</p>
       </DialogContent>
     )
   }
@@ -234,8 +218,8 @@ export class SignIn extends React.Component<ISignInProps, ISignInState> {
 
     const title =
       this.props.signInState.kind === SignInStep.Authentication
-        ? SignInWithBrowserTitle
-        : DefaultTitle
+        ? platformT('dialogs.signIn.browserTitle')
+        : t('dialogs.signIn.title')
 
     return (
       <Dialog
