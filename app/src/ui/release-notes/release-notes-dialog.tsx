@@ -61,8 +61,14 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
     return (
       <div className="container">
         <div className="column">
-          {this.renderList(release.bugfixes, t('dialogs.releaseNotes.bugfixes'))}
-          {this.renderList(release.enhancements, t('dialogs.releaseNotes.enhancements'))}
+          {this.renderList(
+            release.bugfixes,
+            t('dialogs.releaseNotes.bugfixes')
+          )}
+          {this.renderList(
+            release.enhancements,
+            t('dialogs.releaseNotes.enhancements')
+          )}
           {this.renderList(release.other, t('dialogs.releaseNotes.other'))}
         </div>
       </div>
@@ -73,11 +79,17 @@ export class ReleaseNotes extends React.Component<IReleaseNotesProps, {}> {
     return (
       <div className="container">
         <div className="column">
-          {this.renderList(release.enhancements, t('dialogs.releaseNotes.enhancements'))}
+          {this.renderList(
+            release.enhancements,
+            t('dialogs.releaseNotes.enhancements')
+          )}
           {this.renderList(release.other, t('dialogs.releaseNotes.other'))}
         </div>
         <div className="column">
-          {this.renderList(release.bugfixes, t('dialogs.releaseNotes.bugfixes'))}
+          {this.renderList(
+            release.bugfixes,
+            t('dialogs.releaseNotes.bugfixes')
+          )}
         </div>
       </div>
     )

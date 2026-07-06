@@ -29,16 +29,15 @@ export class UndoCommit extends React.Component<IUndoCommitProps, {}> {
   public render() {
     const disabled =
       this.props.isPushPullFetchInProgress || this.props.isCommitting
-    const title = disabled
-      ? t('changes.undoCommitDisabled')
-      : undefined
+    const title = disabled ? t('changes.undoCommitDisabled') : undefined
 
     const authorDate = this.props.commit.author.date
     return (
       <div id="undo-commit" role="group" aria-label="Undo commit">
         <div className="commit-info">
           <div className="ago">
-            {t('changes.undoCommitCommitted')} <RelativeTime date={authorDate} />
+            {t('changes.undoCommitCommitted')}{' '}
+            <RelativeTime date={authorDate} />
           </div>
           <RichText
             emoji={this.props.emoji}

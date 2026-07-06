@@ -48,7 +48,10 @@ export class DeleteTag extends React.Component<
           </p>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.deleteTag.delete')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('dialogs.deleteTag.delete')}
+          />
         </DialogFooter>
       </Dialog>
     )

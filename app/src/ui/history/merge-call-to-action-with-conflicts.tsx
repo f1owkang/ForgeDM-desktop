@@ -250,7 +250,9 @@ export class MergeCallToActionWithConflicts extends React.Component<
   private renderLoadingMessage() {
     return (
       <div className="merge-message merge-message-loading">
-        {t('history.mergeCallToAction.checkingAbility', { operation: this.state.selectedOperation.toLowerCase() })}
+        {t('history.mergeCallToAction.checkingAbility', {
+          operation: this.state.selectedOperation.toLowerCase(),
+        })}
       </div>
     )
   }
@@ -265,7 +267,8 @@ export class MergeCallToActionWithConflicts extends React.Component<
     if (this.state.selectedOperation === MultiCommitOperationKind.Rebase) {
       return (
         <div className="merge-message">
-          {t('history.mergeCallToAction.willUpdate')} <strong>{currentBranch.name}</strong>
+          {t('history.mergeCallToAction.willUpdate')}{' '}
+          <strong>{currentBranch.name}</strong>
           {` ${t('history.mergeCallToAction.byApplying')} `}
           <strong>{`${this.commitCount} ${pluralized}`}</strong>
           {` ${t('history.mergeCallToAction.onTopOf')} `}
@@ -311,7 +314,10 @@ export class MergeCallToActionWithConflicts extends React.Component<
     return (
       <div className="merge-message">
         {t('history.mergeCallToAction.conflictsWillBe')}
-        <strong>{` ${t('history.mergeCallToAction.conflictedFiles', { count, files: pluralized })}`}</strong>
+        <strong>{` ${t('history.mergeCallToAction.conflictedFiles', {
+          count,
+          files: pluralized,
+        })}`}</strong>
         {` ${t('history.mergeCallToAction.whenMerging')} `}
         <strong>{branch.name}</strong>
         {` ${t('history.mergeCallToAction.into')} `}

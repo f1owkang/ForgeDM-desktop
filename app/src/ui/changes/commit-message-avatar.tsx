@@ -278,7 +278,9 @@ export class CommitMessageAvatar extends React.Component<
   private renderWarningPopover() {
     const { warningType, emailRuleFailures } = this.props
 
-    const updateEmailTitle = platformT('dialogs.commitMessageAvatar.updateEmail')
+    const updateEmailTitle = platformT(
+      'dialogs.commitMessageAvatar.updateEmail'
+    )
 
     const sharedHeader = (
       <>

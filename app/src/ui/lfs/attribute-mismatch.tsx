@@ -23,15 +23,15 @@ export class AttributeMismatch extends React.Component<IAttributeMismatchProps> 
         onSubmit={this.onSubmit}
       >
         <DialogContent>
-          <p>
-            {t('dialogs.lfsAttributeMismatch.message')}
-          </p>
+          <p>{t('dialogs.lfsAttributeMismatch.message')}</p>
         </DialogContent>
 
         <DialogFooter>
           <OkCancelButtonGroup
             okButtonText={platformT('dialogs.lfsAttributeMismatch.okButton')}
-            cancelButtonText={platformT('dialogs.lfsAttributeMismatch.cancelButton')}
+            cancelButtonText={platformT(
+              'dialogs.lfsAttributeMismatch.cancelButton'
+            )}
           />
         </DialogFooter>
       </Dialog>

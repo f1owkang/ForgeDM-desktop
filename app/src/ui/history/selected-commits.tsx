@@ -147,7 +147,9 @@ export class SelectedCommits extends React.Component<
     if (file == null) {
       // don't show both 'empty' messages
       const message =
-        this.props.changesetData.files.length === 0 ? '' : t('history.selectedCommits.noFileSelected')
+        this.props.changesetData.files.length === 0
+          ? ''
+          : t('history.selectedCommits.noFileSelected')
 
       return (
         <div className="panel blankslate" id="diff">
@@ -254,7 +256,11 @@ export class SelectedCommits extends React.Component<
   private renderFileList() {
     const files = this.props.changesetData.files
     if (files.length === 0) {
-      return <div className="fill-window">{t('history.selectedCommits.noFilesInCommit')}</div>
+      return (
+        <div className="fill-window">
+          {t('history.selectedCommits.noFilesInCommit')}
+        </div>
+      )
     }
 
     // -1 for right hand side border
@@ -280,7 +286,10 @@ export class SelectedCommits extends React.Component<
     const filesPlural = fileCount === 1 ? 'file' : 'files'
     return (
       <div className="file-list-header">
-        {t('history.selectedCommits.changedFiles', { count: fileCount, files: filesPlural })}
+        {t('history.selectedCommits.changedFiles', {
+          count: fileCount,
+          files: filesPlural,
+        })}
       </div>
     )
   }
@@ -349,14 +358,10 @@ export class SelectedCommits extends React.Component<
         <div className="panel blankslate">
           <img src={BlankSlateImage} className="blankslate-image" alt="" />
           <div>
-            <p>
-              {t('history.selectedCommits.multiSelectUnable')}
-            </p>
+            <p>{t('history.selectedCommits.multiSelectUnable')}</p>
             <div>{t('history.selectedCommits.multiSelectYouCan')}</div>
             <ul>
-              <li>
-                {t('history.selectedCommits.multiSelectSingle')}
-              </li>
+              <li>{t('history.selectedCommits.multiSelectSingle')}</li>
               <li>{t('history.selectedCommits.multiSelectCherryPick')}</li>
               <li>{t('history.selectedCommits.multiSelectSquash')}</li>
               <li>{t('history.selectedCommits.multiSelectRightClick')}</li>

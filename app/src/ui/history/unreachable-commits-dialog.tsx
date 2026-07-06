@@ -139,13 +139,19 @@ export class UnreachableCommitsDialog extends React.Component<
     const count = this.getShasToDisplay().length
     const commitsPluralized = count > 1 ? 'commits' : 'commit'
     const pronounPluralized = count > 1 ? `they're` : `it's`
-    const isUnreachable = this.state.selectedTab === UnreachableCommitsTab.Unreachable
+    const isUnreachable =
+      this.state.selectedTab === UnreachableCommitsTab.Unreachable
     return (
       <div className="message">
         {isUnreachable
-          ? t('history.unreachableMessage', { commits: commitsPluralized, pronoun: pronounPluralized })
-          : t('history.reachableMessage', { commits: commitsPluralized, pronoun: pronounPluralized })
-        }{' '}
+          ? t('history.unreachableMessage', {
+              commits: commitsPluralized,
+              pronoun: pronounPluralized,
+            })
+          : t('history.reachableMessage', {
+              commits: commitsPluralized,
+              pronoun: pronounPluralized,
+            })}{' '}
         <LinkButton uri="https://github.com/desktop/desktop/blob/development/docs/learn-more/unreachable-commits.md">
           {t('history.learnMoreUnreachable')}
         </LinkButton>

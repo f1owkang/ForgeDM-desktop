@@ -16,7 +16,10 @@ interface IHookFailedProps {
 /** A component to confirm and then discard changes. */
 export class HookFailed extends React.Component<IHookFailedProps> {
   private getDialogTitle() {
-    return t('dialogs.hookFailed.title', { hookName: this.props.hookName, failed: platformT('dialogs.hookFailed.failed') })
+    return t('dialogs.hookFailed.title', {
+      hookName: this.props.hookName,
+      failed: platformT('dialogs.hookFailed.failed'),
+    })
   }
 
   private onDismissed = () => {

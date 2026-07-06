@@ -27,9 +27,7 @@ export class NoBranches extends React.Component<INoBranchesProps> {
 
           <div className="title">{t('branches.noBranchesTitle')}</div>
 
-          <div className="subtitle">
-            {t('branches.noBranchesSubtitle')}
-          </div>
+          <div className="subtitle">{t('branches.noBranchesSubtitle')}</div>
 
           <Button
             className="create-branch-button"

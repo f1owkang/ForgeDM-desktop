@@ -89,7 +89,8 @@ export class StashAndSwitchBranch extends React.Component<
 
     return (
       <Row>
-        <Octicon symbol={octicons.alert} /> {t('dialogs.switchBranch.stashOverwriteWarning')}
+        <Octicon symbol={octicons.alert} />{' '}
+        {t('dialogs.switchBranch.stashOverwriteWarning')}
       </Row>
     )
   }
@@ -98,12 +99,16 @@ export class StashAndSwitchBranch extends React.Component<
     const { branchToCheckout } = this.props
     const items = [
       {
-        title: t('dialogs.switchBranch.leaveChanges', { branch: this.state.currentBranchName }),
+        title: t('dialogs.switchBranch.leaveChanges', {
+          branch: this.state.currentBranchName,
+        }),
         description: t('dialogs.switchBranch.leaveChangesDescription'),
         key: StashAction.StashOnCurrentBranch,
       },
       {
-        title: t('dialogs.switchBranch.bringChanges', { branch: branchToCheckout.name }),
+        title: t('dialogs.switchBranch.bringChanges', {
+          branch: branchToCheckout.name,
+        }),
         description: t('dialogs.switchBranch.bringChangesDescription'),
         key: StashAction.MoveToNewBranch,
       },

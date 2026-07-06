@@ -55,7 +55,10 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
       >
         {this.getWarningDialog()}
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.warnUndo.continue')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('dialogs.warnUndo.continue')}
+          />
         </DialogFooter>
       </Dialog>
     )
@@ -67,9 +70,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
     }
     return (
       <DialogContent>
-        <Row id="undo-warning-message">
-          {t('dialogs.warnUndo.message')}
-        </Row>
+        <Row id="undo-warning-message">{t('dialogs.warnUndo.message')}</Row>
         <Row>
           <Checkbox
             label={t('dialogs.warnUndo.doNotShow')}
@@ -96,9 +97,7 @@ export class WarnLocalChangesBeforeUndo extends React.Component<
     }
     return (
       <DialogContent>
-        <p>
-          {t('dialogs.warnUndo.mergeCommitWithChanges')}
-        </p>
+        <p>{t('dialogs.warnUndo.mergeCommitWithChanges')}</p>
         <p>{this.getMergeCommitUndoWarningText()}</p>
         <p>{t('dialogs.warnUndo.continueAnyway')}</p>
       </DialogContent>

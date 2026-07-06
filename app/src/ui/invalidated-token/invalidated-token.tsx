@@ -29,10 +29,15 @@ export class InvalidatedToken extends React.Component<IInvalidatedTokenProps> {
         onDismissed={this.props.onDismissed}
       >
         <DialogContent>
-          {t('dialogs.invalidatedToken.message', { endpoint: account.friendlyEndpoint })}
+          {t('dialogs.invalidatedToken.message', {
+            endpoint: account.friendlyEndpoint,
+          })}
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText={t('dialogs.invalidatedToken.yes')} cancelButtonText={t('dialogs.invalidatedToken.no')} />
+          <OkCancelButtonGroup
+            okButtonText={t('dialogs.invalidatedToken.yes')}
+            cancelButtonText={t('dialogs.invalidatedToken.no')}
+          />
         </DialogFooter>
       </Dialog>
     )

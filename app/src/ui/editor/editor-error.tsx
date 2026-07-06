@@ -74,7 +74,9 @@ export class EditorError extends React.Component<IEditorErrorProps, {}> {
         <DialogFooter>
           <OkCancelButtonGroup
             okButtonText={t('dialogs.editorError.close')}
-            cancelButtonText={t('dialogs.editorError.download', { name: suggestedExternalEditor.name })}
+            cancelButtonText={t('dialogs.editorError.download', {
+              name: suggestedExternalEditor.name,
+            })}
             onCancelButtonClick={this.onExternalLink}
           />
         </DialogFooter>

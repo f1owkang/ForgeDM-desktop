@@ -1583,7 +1583,10 @@ export class SideBySideDiff extends React.Component<
     }
 
     const plural = numLines > 1 ? 's' : ''
-    return t('dialogs.sideBySideDiff.discardLine', { type, suffix: `${plural}${suffix}` })
+    return t('dialogs.sideBySideDiff.discardLine', {
+      type,
+      suffix: `${plural}${suffix}`,
+    })
   }
 
   private onDiscardChanges(startLine: number, endLine: number = startLine) {

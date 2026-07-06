@@ -31,11 +31,16 @@ export class DeletePullRequest extends React.Component<IDeleteBranchProps, {}> {
         <DialogContent>
           <p>{t('dialogs.deletePullRequest.hasPR')}</p>
           <p>
-            {t('dialogs.deletePullRequest.mergedHint', { number: this.props.pullRequest.pullRequestNumber })}
+            {t('dialogs.deletePullRequest.mergedHint', {
+              number: this.props.pullRequest.pullRequestNumber,
+            })}
           </p>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.deletePullRequest.delete')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('dialogs.deletePullRequest.delete')}
+          />
         </DialogFooter>
       </Dialog>
     )

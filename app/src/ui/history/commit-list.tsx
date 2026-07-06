@@ -833,8 +833,14 @@ export class CommitList extends React.Component<
         deleteTagsMenuItem
       )
     }
-    const darwinTagsLabel = commit.tags.length > 1 ? t('dialogs.commitList.copyTags') : t('dialogs.commitList.copyTag')
-    const windowTagsLabel = commit.tags.length > 1 ? t('dialogs.commitList.copyTags') : t('dialogs.commitList.copyTag')
+    const darwinTagsLabel =
+      commit.tags.length > 1
+        ? t('dialogs.commitList.copyTags')
+        : t('dialogs.commitList.copyTag')
+    const windowTagsLabel =
+      commit.tags.length > 1
+        ? t('dialogs.commitList.copyTags')
+        : t('dialogs.commitList.copyTag')
     items.push(
       {
         label: platformT('dialogs.commitList.cherryPickCommit'),

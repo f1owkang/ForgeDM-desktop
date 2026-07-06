@@ -52,11 +52,11 @@ export class InstallGit extends React.Component<IInstallGitProps, {}> {
       >
         <DialogContent>
           <p>
-            {t('dialogs.installGit.message', { terminal: platformT('dialogs.installGit.terminal') })}
+            {t('dialogs.installGit.message', {
+              terminal: platformT('dialogs.installGit.terminal'),
+            })}
           </p>
-          <p>
-            {t('dialogs.installGit.resources')}
-          </p>
+          <p>{t('dialogs.installGit.resources')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup

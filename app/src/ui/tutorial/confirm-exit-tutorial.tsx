@@ -22,9 +22,7 @@ export class ConfirmExitTutorial extends React.Component<
         type="normal"
       >
         <DialogContent>
-          <p>
-            {t('dialogs.confirmExitTutorial.message')}
-          </p>
+          <p>{t('dialogs.confirmExitTutorial.message')}</p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup

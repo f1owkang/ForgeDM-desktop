@@ -416,13 +416,14 @@ export class NoChanges extends React.Component<
     const numChanges = stashEntry.files.files.length
     const description = (
       <>
-        {t('changes.noChanges.viewStashDescription', { count: numChanges, changes: numChanges === 1 ? 'change' : 'changes' })}
+        {t('changes.noChanges.viewStashDescription', {
+          count: numChanges,
+          changes: numChanges === 1 ? 'change' : 'changes',
+        })}
       </>
     )
     const discoverabilityContent = (
-      <>
-        {t('changes.noChanges.viewStashDiscoverability')}
-      </>
+      <>{t('changes.noChanges.viewStashDiscoverability')}</>
     )
     const itemId: MenuIDs = 'toggle-stashed-changes'
     const menuItem = this.getMenuItemInfo(itemId)
@@ -568,9 +569,15 @@ export class NoChanges extends React.Component<
       </>
     )
 
-    const title = t('changes.noChanges.pullTitle', { numCommits: formatNumber(aheadBehind.behind), commits: aheadBehind.behind === 1 ? 'commit' : 'commits', remote: remote.name })
+    const title = t('changes.noChanges.pullTitle', {
+      numCommits: formatNumber(aheadBehind.behind),
+      commits: aheadBehind.behind === 1 ? 'commit' : 'commits',
+      remote: remote.name,
+    })
 
-    const buttonText = t('changes.noChanges.pullButton', { remote: remote.name })
+    const buttonText = t('changes.noChanges.pullButton', {
+      remote: remote.name,
+    })
 
     return (
       <MenuBackedSuggestedAction
@@ -634,9 +641,14 @@ export class NoChanges extends React.Component<
       </>
     )
 
-    const title = t('changes.noChanges.pushTitle', { items: itemsToPushTypes.join(' and '), remote: remote.name })
+    const title = t('changes.noChanges.pushTitle', {
+      items: itemsToPushTypes.join(' and '),
+      remote: remote.name,
+    })
 
-    const buttonText = t('changes.noChanges.pushButton', { remote: remote.name })
+    const buttonText = t('changes.noChanges.pushButton', {
+      remote: remote.name,
+    })
 
     return (
       <MenuBackedSuggestedAction
@@ -765,9 +777,7 @@ export class NoChanges extends React.Component<
           <div className="interstitial-header">
             <div className="text">
               <h1>{t('changes.noChanges.title')}</h1>
-              <p>
-                {t('changes.noChanges.description')}
-              </p>
+              <p>{t('changes.noChanges.description')}</p>
             </div>
             <img src={PaperStackImage} className="blankslate-image" alt="" />
           </div>

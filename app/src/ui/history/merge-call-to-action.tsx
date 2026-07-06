@@ -39,7 +39,8 @@ export class MergeCallToAction extends React.Component<
           disabled={count <= 0}
           onClick={this.onMergeClicked}
         >
-          {t('history.mergeCallToAction.mergeInto')} <strong>{this.props.currentBranch.name}</strong>
+          {t('history.mergeCallToAction.mergeInto')}{' '}
+          <strong>{this.props.currentBranch.name}</strong>
         </Button>
       </div>
     )
@@ -54,7 +55,10 @@ export class MergeCallToAction extends React.Component<
       return (
         <div className="merge-message merge-message-legacy">
           {t('history.mergeCallToAction.willMerge')}
-          <strong>{` ${t('history.mergeCallToAction.commits', { numCommits: formatNumber(count), commits: pluralized })}`}</strong>
+          <strong>{` ${t('history.mergeCallToAction.commits', {
+            numCommits: formatNumber(count),
+            commits: pluralized,
+          })}`}</strong>
           {` `}
           {t('history.mergeCallToAction.from')}
           {` `}

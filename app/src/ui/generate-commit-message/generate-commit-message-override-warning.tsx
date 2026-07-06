@@ -85,7 +85,10 @@ export class GenerateCommitMessageOverrideWarning extends React.Component<
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('common.override')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('common.override')}
+          />
         </DialogFooter>
       </Dialog>
     )

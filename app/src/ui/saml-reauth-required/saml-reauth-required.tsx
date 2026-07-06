@@ -46,7 +46,9 @@ export class SAMLReauthRequiredDialog extends React.Component<
       >
         <DialogContent>
           <p>
-            {t('dialogs.samlReauth.message', { org: this.props.organizationName })}
+            {t('dialogs.samlReauth.message', {
+              org: this.props.organizationName,
+            })}
           </p>
           <p>
             Would you like to open a browser to grant GitHub Desktop permission

@@ -62,7 +62,9 @@ export class InitializeLFS extends React.Component<IInitializeLFSProps, {}> {
     if (this.props.repositories.length > MaxRepositoriesToList) {
       return (
         <p>
-          {t('dialogs.initializeLfs.manyRepos', { count: this.props.repositories.length })}
+          {t('dialogs.initializeLfs.manyRepos', {
+            count: this.props.repositories.length,
+          })}
         </p>
       )
     } else {
@@ -70,13 +72,15 @@ export class InitializeLFS extends React.Component<IInitializeLFSProps, {}> {
       const pluralizedRepositories = plural
         ? t('dialogs.initializeLfs.reposUse')
         : t('dialogs.initializeLfs.repoUse')
-      const pluralizedUse = plural ? t('dialogs.initializeLfs.toContributeThem') : t('dialogs.initializeLfs.toContributeIt')
+      const pluralizedUse = plural
+        ? t('dialogs.initializeLfs.toContributeThem')
+        : t('dialogs.initializeLfs.toContributeIt')
       return (
         <div>
           <p>
             {pluralizedRepositories}{' '}
-            <LinkButton uri={LFSURL}>Git LFS</LinkButton>. {pluralizedUse}, Git LFS must first be initialized. Would you like
-            to do so now?
+            <LinkButton uri={LFSURL}>Git LFS</LinkButton>. {pluralizedUse}, Git
+            LFS must first be initialized. Would you like to do so now?
           </p>
           <ul>
             {this.props.repositories.map(r => (

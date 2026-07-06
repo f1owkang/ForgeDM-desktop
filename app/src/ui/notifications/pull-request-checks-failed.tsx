@@ -86,7 +86,9 @@ export class PullRequestChecksFailed extends React.Component<
     let okButtonTitle = platformT('dialogs.pullRequestChecksFailed.switchToPR')
 
     if (this.props.shouldChangeRepository) {
-      okButtonTitle = platformT('dialogs.pullRequestChecksFailed.switchToRepoAndPR')
+      okButtonTitle = platformT(
+        'dialogs.pullRequestChecksFailed.switchToRepoAndPR'
+      )
     }
 
     const { pullRequest } = this.props
@@ -101,7 +103,10 @@ export class PullRequestChecksFailed extends React.Component<
         <Octicon symbol={octicons.xCircleFill} />
         <div className="title-container">
           <div className="summary">
-            {t('dialogs.pullRequestChecksFailed.checksFailed', { count: failedChecks.length, checks: pluralChecks })}
+            {t('dialogs.pullRequestChecksFailed.checksFailed', {
+              count: failedChecks.length,
+              checks: pluralChecks,
+            })}
           </div>
           <span className="pr-title">
             {pullRequest.title}{' '}

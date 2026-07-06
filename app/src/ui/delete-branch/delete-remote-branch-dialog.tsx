@@ -45,17 +45,20 @@ export class DeleteRemoteBranch extends React.Component<
         <DialogContent>
           <div id="delete-branch-confirmation-message">
             <p>
-              {t('dialogs.deleteRemoteBranch.confirm', { name: this.props.branch.name })}
+              {t('dialogs.deleteRemoteBranch.confirm', {
+                name: this.props.branch.name,
+              })}
             </p>
             <p>{t('dialogs.deleteRemoteBranch.cannotUndo')}</p>
 
-            <p>
-              {t('dialogs.deleteRemoteBranch.notLocal')}
-            </p>
+            <p>{t('dialogs.deleteRemoteBranch.notLocal')}</p>
           </div>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.deleteRemoteBranch.delete')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('dialogs.deleteRemoteBranch.delete')}
+          />
         </DialogFooter>
       </Dialog>
     )

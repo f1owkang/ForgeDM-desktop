@@ -66,7 +66,11 @@ export class ContinueRebase extends React.Component<IContinueRebaseProps, {}> {
           tooltip={tooltip}
         >
           {loading}
-          <span>{loading !== undefined ? t('changes.rebasing') : t('changes.continueRebase')}</span>
+          <span>
+            {loading !== undefined
+              ? t('changes.rebasing')
+              : t('changes.continueRebase')}
+          </span>
         </Button>
 
         {warnAboutUntrackedFiles}

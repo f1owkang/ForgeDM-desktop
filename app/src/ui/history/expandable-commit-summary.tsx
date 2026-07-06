@@ -221,11 +221,17 @@ export class ExpandableCommitSummary extends React.Component<
       <Button
         onClick={isExpanded ? this.onCollapse : this.onExpand}
         className="expander"
-        tooltip={isExpanded ? t('history.expandableCommitSummary.collapse') : t('history.expandableCommitSummary.expand')}
+        tooltip={
+          isExpanded
+            ? t('history.expandableCommitSummary.collapse')
+            : t('history.expandableCommitSummary.expand')
+        }
         applyTooltipAriaDescribedBy={false}
         ariaExpanded={isExpanded}
         ariaLabel={
-          isExpanded ? t('history.expandableCommitSummary.collapseDetails') : t('history.expandableCommitSummary.expandDetails')
+          isExpanded
+            ? t('history.expandableCommitSummary.collapseDetails')
+            : t('history.expandableCommitSummary.expandDetails')
         }
         ariaControls="expandable-commit-summary"
       >
@@ -370,7 +376,10 @@ export class ExpandableCommitSummary extends React.Component<
           onMouseOver={this.onHighlightShasNotInDiff}
           onMouseOut={this.onRemoveHighlightOfShas}
         >
-          {t('history.expandableCommitSummary.unreachableCommits', { count: excludedCommitsCount, commits: commitsPluralized })}
+          {t('history.expandableCommitSummary.unreachableCommits', {
+            count: excludedCommitsCount,
+            commits: commitsPluralized,
+          })}
         </LinkButton>{' '}
         {t('history.expandableCommitSummary.notIncluded')}
       </div>
@@ -444,7 +453,10 @@ export class ExpandableCommitSummary extends React.Component<
       <div className="ecs-meta-item commit-ref">
         <Octicon symbol={octicons.gitCommit} />
         <div className="ref selectable">{isExpanded ? sha : shortSha}</div>
-        <CopyButton ariaLabel={t('history.expandableCommitSummary.copySha')} copyContent={sha} />
+        <CopyButton
+          ariaLabel={t('history.expandableCommitSummary.copySha')}
+          copyContent={sha}
+        />
       </div>
     )
   }
@@ -481,12 +493,18 @@ export class ExpandableCommitSummary extends React.Component<
             onMouseOut={this.onRemoveHighlightOfShas}
             onClick={this.showReachableCommits}
           >
-            {t('history.expandableCommitSummary.commitCount', { count: numInDiff, commits: commitsPluralized })}
+            {t('history.expandableCommitSummary.commitCount', {
+              count: numInDiff,
+              commits: commitsPluralized,
+            })}
           </LinkButton>
         ) : (
           <>
             {' '}
-            {t('history.expandableCommitSummary.commitCount', { count: numInDiff, commits: commitsPluralized })}
+            {t('history.expandableCommitSummary.commitCount', {
+              count: numInDiff,
+              commits: commitsPluralized,
+            })}
           </>
         )}
       </>
@@ -554,13 +572,25 @@ export class ExpandableCommitSummary extends React.Component<
       <div className="ecs-meta-item lines-added-deleted">
         {isExpanded ? <Octicon symbol={octicons.diff} /> : null}
         <div className="lines-added">
-          {!isExpanded ? <>+{linesAdded}</> : <>{t('history.expandableCommitSummary.addedLines', { count: linesAdded })}</>}
+          {!isExpanded ? (
+            <>+{linesAdded}</>
+          ) : (
+            <>
+              {t('history.expandableCommitSummary.addedLines', {
+                count: linesAdded,
+              })}
+            </>
+          )}
         </div>
         <div className="lines-deleted">
           {!isExpanded ? (
             <>-{linesDeleted}</>
           ) : (
-            <>{t('history.expandableCommitSummary.removedLines', { count: linesDeleted })}</>
+            <>
+              {t('history.expandableCommitSummary.removedLines', {
+                count: linesDeleted,
+              })}
+            </>
           )}
         </div>
       </div>

@@ -408,7 +408,10 @@ export class CommitMessage extends React.Component<
       this.props.mostRecentLocalCommit !== null
     ) {
       this.setState({
-        isCommittingStatusMessage: t('changes.commitMessage.committedJustNow', { summary: this.props.mostRecentLocalCommit.summary, sha: this.props.mostRecentLocalCommit.shortSha }),
+        isCommittingStatusMessage: t('changes.commitMessage.committedJustNow', {
+          summary: this.props.mostRecentLocalCommit.summary,
+          sha: this.props.mostRecentLocalCommit.shortSha,
+        }),
       })
     }
 
@@ -1027,7 +1030,9 @@ export class CommitMessage extends React.Component<
         >
           <AriaLiveContainer
             message={
-              isGeneratingCommitMessage ? t('changes.commitMessage.generating') : ''
+              isGeneratingCommitMessage
+                ? t('changes.commitMessage.generating')
+                : ''
             }
           />
           <Octicon
@@ -1038,7 +1043,9 @@ export class CommitMessage extends React.Component<
             }
           />
           {shouldShowGenerateCommitMessageCallOut && (
-            <span className="call-to-action-bubble">{t('changes.commitMessage.newBadge')}</span>
+            <span className="call-to-action-bubble">
+              {t('changes.commitMessage.newBadge')}
+            </span>
           )}
         </Button>
       </>

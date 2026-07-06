@@ -48,14 +48,20 @@ export class UpstreamAlreadyExists extends React.Component<IUpstreamAlreadyExist
       >
         <DialogContent>
           <p>
-            {t('dialogs.upstreamAlreadyExists.message', { name, parent: parentName, remote: UpstreamRemoteName })}
+            {t('dialogs.upstreamAlreadyExists.message', {
+              name,
+              parent: parentName,
+              remote: UpstreamRemoteName,
+            })}
           </p>
           <ul>
             <li>
-              {t('dialogs.upstreamAlreadyExists.current')} <Ref>{existingURL}</Ref>
+              {t('dialogs.upstreamAlreadyExists.current')}{' '}
+              <Ref>{existingURL}</Ref>
             </li>
             <li>
-              {t('dialogs.upstreamAlreadyExists.expected')} <Ref>{replacementURL}</Ref>
+              {t('dialogs.upstreamAlreadyExists.expected')}{' '}
+              <Ref>{replacementURL}</Ref>
             </li>
           </ul>
           <p>{t('dialogs.upstreamAlreadyExists.updateQuestion')}</p>

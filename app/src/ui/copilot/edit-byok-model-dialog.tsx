@@ -114,7 +114,13 @@ export class EditCopilotBYOKModelDialog extends React.Component<
           </Row>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup okButtonText={isEditing ? t('dialogs.copilotEditModel.save') : t('dialogs.copilotEditModel.add')} />
+          <OkCancelButtonGroup
+            okButtonText={
+              isEditing
+                ? t('dialogs.copilotEditModel.save')
+                : t('dialogs.copilotEditModel.add')
+            }
+          />
         </DialogFooter>
       </Dialog>
     )

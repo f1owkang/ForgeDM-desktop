@@ -38,9 +38,7 @@ export class OversizedFiles extends React.Component<IOversizedFilesProps> {
         <DialogContent>
           <p>
             {t('changes.oversizedFiles.over100MB')}{' '}
-            <strong>
-              {t('changes.oversizedFiles.cannotPush')}
-            </strong>
+            <strong>{t('changes.oversizedFiles.cannotPush')}</strong>
           </p>
           {this.renderFileList()}
           <p className="recommendation">

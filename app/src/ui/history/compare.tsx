@@ -227,11 +227,15 @@ export class CompareSidebar extends React.Component<
       emptyListMessage =
         formState.comparisonMode === ComparisonMode.Ahead ? (
           <p>
-            {t('history.compareAheadUpToDate', { branch: currentlyComparedBranchName })}
+            {t('history.compareAheadUpToDate', {
+              branch: currentlyComparedBranchName,
+            })}
           </p>
         ) : (
           <p>
-            {t('history.compareBehindUpToDate', { branch: currentlyComparedBranchName })}
+            {t('history.compareBehindUpToDate', {
+              branch: currentlyComparedBranchName,
+            })}
           </p>
         )
     }
