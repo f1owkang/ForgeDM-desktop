@@ -51,7 +51,9 @@ export class DeleteBranch extends React.Component<
         <DialogContent>
           <div id="delete-branch-confirmation-message">
             <p>
-              {t('dialogs.deleteBranch.confirm', { name: this.props.branch.name })}
+              {t('dialogs.deleteBranch.confirm', {
+                name: this.props.branch.name,
+              })}
             </p>
             <p>{t('dialogs.deleteBranch.cannotUndo')}</p>
 
@@ -59,7 +61,10 @@ export class DeleteBranch extends React.Component<
           </div>
         </DialogContent>
         <DialogFooter>
-          <OkCancelButtonGroup destructive={true} okButtonText={t('dialogs.deleteBranch.delete')} />
+          <OkCancelButtonGroup
+            destructive={true}
+            okButtonText={t('dialogs.deleteBranch.delete')}
+          />
         </DialogFooter>
       </Dialog>
     )
@@ -71,8 +76,8 @@ export class DeleteBranch extends React.Component<
         <div>
           <p id="delete-branch-confirmation-message-remote">
             <strong>
-              The branch also exists on the remote, do you wish to delete it
-              there as well?
+              {t('dialogs.deleteBranch.existsOnRemote')}
+            </strong>
             </strong>
           </p>
           <Checkbox

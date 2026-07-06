@@ -179,7 +179,8 @@
       "confirm": "删除分支 <1>{{name}}</1>？",
       "cannotUndo": "此操作无法撤销。",
       "delete": "删除",
-      "deleteRemoteToo": "是的，同时删除远程分支"
+      "deleteRemoteToo": "是的，同时删除远程分支",
+      "existsOnRemote": "此分支在远程也存在，是否也要在远程删除？"
     },
     "deleteTag": {
       "title": {
