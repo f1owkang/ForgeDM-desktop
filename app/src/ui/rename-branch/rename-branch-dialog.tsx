@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { renderBranchHasRemoteWarning } from '../lib/branch-name-warnings'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { RefNameTextBox } from '../lib/ref-name-text-box'
+import { t, platformT } from '../../lib/i18n'
 import { IAPIRepoRuleset } from '../../lib/api'
 import { Account } from '../../models/account'
 import {
@@ -66,7 +67,7 @@ export class RenameBranch extends React.Component<
     return (
       <Dialog
         id="rename-branch"
-        title={__DARWIN__ ? 'Rename Branch' : 'Rename branch'}
+        title={platformT('dialogs.renameBranch.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.renameBranch}
         focusCloseButtonOnOpen={true}
@@ -74,7 +75,7 @@ export class RenameBranch extends React.Component<
         <DialogContent>
           {renderBranchHasRemoteWarning(this.props.branch)}
           <RefNameTextBox
-            label="Name"
+            label={t('dialogs.renameBranch.name')}
             ariaDescribedBy={hasError ? this.ERRORS_ID : undefined}
             initialValue={this.props.branch.name}
             onValueChange={this.onNameChange}

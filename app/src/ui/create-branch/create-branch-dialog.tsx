@@ -18,6 +18,7 @@ import {
   IValidBranch,
 } from '../../models/tip'
 import { assertNever } from '../../lib/fatal-error'
+import { platformT } from '../../lib/i18n'
 import { renderBranchNameExistsOnRemoteWarning } from '../lib/branch-name-warnings'
 import { getStartPoint } from '../../lib/create-branch'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -272,7 +273,7 @@ export class CreateBranch extends React.Component<
       return this.props.headerText
     }
 
-    return __DARWIN__ ? 'Create a Branch' : 'Create a branch'
+    return platformT('dialogs.createBranch.title')
   }
 
   private getOkButtonText = (): string => {
@@ -280,7 +281,7 @@ export class CreateBranch extends React.Component<
       return this.props.okButtonText
     }
 
-    return __DARWIN__ ? 'Create Branch' : 'Create branch'
+    return platformT('dialogs.createBranch.okButton')
   }
 
   private onBranchNameChange = (name: string) => {

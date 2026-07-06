@@ -119,6 +119,60 @@
       "whenMerging": "合并时"
     }
   },
+  "dialogs": {
+    "createBranch": {
+      "title": {
+        "darwin": "创建分支",
+        "default": "创建分支"
+      },
+      "okButton": {
+        "darwin": "创建分支",
+        "default": "创建分支"
+      },
+      "alreadyExists": "名为 {{name}} 的分支已存在。",
+      "defaultBranchError": "无法确定默认分支。",
+      "currentBranchHint": "当前检出的分支。如果你需要基于此分支的工作进行构建，请选择此项。"
+    },
+    "createTag": {
+      "title": {
+        "darwin": "创建标签",
+        "default": "创建标签"
+      },
+      "name": "名称",
+      "okButton": {
+        "darwin": "创建标签",
+        "default": "创建标签"
+      },
+      "previousTags": {
+        "darwin": "已有标签",
+        "default": "已有标签"
+      }
+    },
+    "deleteBranch": {
+      "title": {
+        "darwin": "删除分支",
+        "default": "删除分支"
+      },
+      "confirm": "删除分支 <1>{{name}}</1>？",
+      "cannotUndo": "此操作无法撤销。",
+      "delete": "删除"
+    },
+    "deleteTag": {
+      "title": {
+        "darwin": "删除标签",
+        "default": "删除标签"
+      },
+      "confirm": "你确定要删除标签 <1>{{name}}</1> 吗？",
+      "delete": "删除"
+    },
+    "renameBranch": {
+      "title": {
+        "darwin": "重命名分支",
+        "default": "重命名分支"
+      },
+      "name": "名称"
+    }
+  },
   "enterpriseServerEntry": {
     "address": "Enterprise 地址",
     "continue": "继续"
