@@ -837,6 +837,107 @@
         "darwin": "New Worktree",
         "default": "New worktree"
       }
+    },
+    "toolbar": {
+      "currentBranch": {
+        "darwin": "Current Branch",
+        "default": "Current branch"
+      },
+      "currentWorktree": {
+        "darwin": "Current Worktree",
+        "default": "Current worktree"
+      },
+      "newWorktree": {
+        "darwin": "New Worktree\u2026",
+        "default": "New worktree\u2026"
+      }
+    },
+    "openWithExternalEditor": {
+      "title": {
+        "darwin": "Open With\u2026",
+        "default": "Open with\u2026"
+      }
+    },
+    "openPullRequestHeader": {
+      "title": {
+        "darwin": "Open a Pull Request",
+        "default": "Open a pull request"
+      }
+    },
+    "pushBranch": {
+      "title": {
+        "darwin": "Publish Branch?",
+        "default": "Publish branch?"
+      },
+      "publishButton": {
+        "darwin": "Publish Branch",
+        "default": "Publish branch"
+      },
+      "pushCommits": {
+        "darwin": "Push Commits",
+        "default": "Push commits"
+      },
+      "createWithoutPushing": {
+        "darwin": "Create Without Pushing",
+        "default": "Create without pushing"
+      },
+      "pushLocalChanges": {
+        "darwin": "Push Local Changes?",
+        "default": "Push local changes?"
+      }
+    },
+    "branchContextMenu": {
+      "copyBranchName": {
+        "darwin": "Copy Branch Name",
+        "default": "Copy branch name"
+      },
+      "viewBranchOnGitHub": "View Branch on GitHub",
+      "viewPullRequestOnGitHub": "View Pull Request on GitHub",
+      "checkoutInNewWorktree": {
+        "darwin": "Checkout in New Worktree\u2026",
+        "default": "Checkout in new worktree\u2026"
+      },
+      "deleteBranch": {
+        "darwin": "Delete\u2026",
+        "default": "Delete\u2026"
+      }
+    },
+    "sideBySideDiff": {
+      "selectAll": {
+        "darwin": "Select All",
+        "default": "Select all"
+      },
+      "expandWholeFile": {
+        "darwin": "Expand Whole File",
+        "default": "Expand whole file"
+      }
+    },
+    "filterChangesList": {
+      "discardAllChanges": {
+        "darwin": "Discard All Changes\u2026",
+        "default": "Discard all changes\u2026"
+      }
+    },
+    "commitMessageAvatar": {
+      "openGitSettings": {
+        "darwin": "Open Git Settings",
+        "default": "Open git settings"
+      },
+      "updateEmail": {
+        "darwin": "Update Email",
+        "default": "Update email"
+      }
+    },
+    "noChangesSettings": {
+      "settings": {
+        "darwin": "Settings",
+        "default": "Options"
+      }
+    },
+    "banners": {
+      "updateAvailable": {
+        "appleSilicon": "Apple silicon"
+      }
     }
   },
   "enterpriseServerEntry": {

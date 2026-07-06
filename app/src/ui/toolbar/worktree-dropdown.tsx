@@ -8,6 +8,7 @@ import { FoldoutType, IConstrainedValue } from '../../lib/app-state'
 import { WorktreeEntry } from '../../models/worktree'
 import { WorktreeList } from '../worktrees/worktree-list'
 import { showContextualMenu, IMenuItem } from '../../lib/menu-item'
+import { platformT } from '../../lib/i18n'
 import { generateWorktreeContextMenuItems } from '../worktrees/worktree-list-item-context-menu'
 import { PopupType } from '../../models/popup'
 import { Resizable } from '../resizable'
@@ -102,7 +103,7 @@ export class WorktreeDropdown extends React.Component<
     })
 
     const newWorktreeItem: IMenuItem = {
-      label: __DARWIN__ ? 'New Worktree…' : 'New worktree…',
+      label: platformT('dialogs.toolbar.newWorktree'),
       action: this.onCreateNewWorktree,
     }
 
@@ -150,7 +151,7 @@ export class WorktreeDropdown extends React.Component<
     const title = currentWorktree
       ? Path.basename(currentWorktree.path)
       : this.props.repository.name
-    const description = __DARWIN__ ? 'Current Worktree' : 'Current worktree'
+    const description = platformT('dialogs.toolbar.currentWorktree')
 
     const toolbarDropdown = (
       <ToolbarDropdown
