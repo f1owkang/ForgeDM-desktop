@@ -11,9 +11,9 @@ import { MultiCommitOperationKind } from '../../../models/multi-commit-operation
 import { CopyButton } from '../../copy-button'
 import { SandboxedMarkdown } from '../../lib/sandboxed-markdown'
 import { LinkButton } from '../../lib/link-button'
-import { Ref } from '../../lib/ref'
 import { Octicon } from '../../octicons'
 import * as octicons from '../../octicons/octicons.generated'
+import { t } from '../../../lib/i18n'
 
 interface ICopilotConflictsResolutionSummaryProps {
   readonly summary: ICopilotResolutionSummary
@@ -37,31 +37,44 @@ function getOperationPhrase(
     case MultiCommitOperationKind.Merge:
       return (
         <span>
-          Merging <Ref>{theirLabel}</Ref> into <Ref>{ourLabel}</Ref>
+          {t('multiCommitOperation.copilotResolution.merging', {
+            theirLabel,
+            ourLabel,
+          })}
         </span>
       )
     case MultiCommitOperationKind.Rebase:
       return (
         <span>
-          Rebasing <Ref>{ourLabel}</Ref> onto <Ref>{theirLabel}</Ref>
+          {t('multiCommitOperation.copilotResolution.rebasing', {
+            ourLabel,
+            theirLabel,
+          })}
         </span>
       )
     case MultiCommitOperationKind.CherryPick:
       return (
         <span>
-          Cherry-picking from <Ref>{theirLabel}</Ref> into <Ref>{ourLabel}</Ref>
+          {t('multiCommitOperation.copilotResolution.cherryPicking', {
+            theirLabel,
+            ourLabel,
+          })}
         </span>
       )
     case MultiCommitOperationKind.Squash:
       return (
         <span>
-          Squashing into <Ref>{ourLabel}</Ref>
+          {t('multiCommitOperation.copilotResolution.squashing', {
+            ourLabel,
+          })}
         </span>
       )
     case MultiCommitOperationKind.Reorder:
       return (
         <span>
-          Reordering <Ref>{ourLabel}</Ref>
+          {t('multiCommitOperation.copilotResolution.reordering', {
+            ourLabel,
+          })}
         </span>
       )
     default:

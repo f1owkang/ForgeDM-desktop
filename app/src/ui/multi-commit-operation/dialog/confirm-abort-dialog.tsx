@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../../dialog'
 import { OkCancelButtonGroup } from '../../dialog/ok-cancel-button-group'
+import { t, platformT } from '../../../lib/i18n'
 
 interface IConfirmAbortDialogProps {
   /**
@@ -52,11 +53,9 @@ export class ConfirmAbortDialog extends React.Component<
     return (
       <Dialog
         id="abort-warning"
-        title={
-          __DARWIN__
-            ? `Confirm Abort ${operation}`
-            : `Confirm abort ${operation.toLowerCase()}`
-        }
+        title={platformT('multiCommitOperation.confirmAbort.title', {
+          operation: __DARWIN__ ? operation : operation.toLowerCase(),
+        })}
         onDismissed={this.onCancel}
         onSubmit={this.onSubmit}
         disabled={this.state.isAborting}
@@ -67,22 +66,24 @@ export class ConfirmAbortDialog extends React.Component<
         <DialogContent>
           <div className="column-left" id="abort-operation-confirmation">
             <p>
-              Are you sure you want to abort this {operation.toLowerCase()}?
+              {t('multiCommitOperation.confirmAbort.confirmMessage', {
+                operation: operation.toLowerCase(),
+              })}
             </p>
             <p>
-              This will take you back to the original branch state and the
-              conflicts you have already resolved will be discarded.
+              {t('multiCommitOperation.confirmAbort.description')}
             </p>
           </div>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={
-              __DARWIN__
-                ? `Abort ${operation}`
-                : `Abort ${operation.toLowerCase()}`
-            }
+            okButtonText={platformT(
+              'multiCommitOperation.confirmAbort.okButton',
+              {
+                operation: __DARWIN__ ? operation : operation.toLowerCase(),
+              }
+            )}
           />
         </DialogFooter>
       </Dialog>
