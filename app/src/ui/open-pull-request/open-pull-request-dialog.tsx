@@ -5,7 +5,7 @@ import { Branch } from '../../models/branch'
 import { ImageDiffType } from '../../models/diff'
 import { Repository } from '../../models/repository'
 import { DialogFooter, OkCancelButtonGroup, Dialog } from '../dialog'
-import { t } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import { Dispatcher } from '../dispatcher'
 import { Ref } from '../lib/ref'
 import { Octicon } from '../octicons'
@@ -254,19 +254,22 @@ export class OpenPullRequestDialog extends React.Component<IOpenPullRequestDialo
     const isEnterprise =
       gitHubRepository && gitHubRepository.endpoint !== getDotComAPIEndpoint()
 
-    const viewCreate = currentBranchHasPullRequest ? 'View' : ' Create'
-    const buttonTitle = `${viewCreate} pull request on GitHub${
-      isEnterprise ? ' Enterprise' : ''
-    }.`
+    const okButtonText = currentBranchHasPullRequest
+      ? platformT('openPullRequest.view')
+      : platformT('openPullRequest.create')
+    const buttonTitle = t('openPullRequest.buttonTitle', {
+      action: currentBranchHasPullRequest
+        ? t('openPullRequest.view.default').toLowerCase()
+        : t('openPullRequest.create.default').toLowerCase(),
+      enterprise: isEnterprise ? t('openPullRequest.enterpriseSuffix') : '',
+    })
 
     const okButton = (
       <>
         {currentBranchHasPullRequest && (
           <Octicon symbol={octicons.linkExternal} />
         )}
-        {__DARWIN__
-          ? `${viewCreate} Pull Request`
-          : `${viewCreate} pull request`}
+        {okButtonText}
       </>
     )
 

@@ -165,14 +165,14 @@ export class AppError extends React.Component<IAppErrorProps, IAppErrorState> {
 
     switch (getDugiteError(error)) {
       case DugiteError.PushWithFileSizeExceedingLimit:
-        return 'File size limit exceeded'
+        return t('appError.fileSizeLimitExceeded')
     }
 
     switch (getRetryActionType(error)) {
       case RetryActionType.Clone:
-        return 'Clone failed'
+        return t('appError.cloneFailed')
       case RetryActionType.Push:
-        return 'Failed to push'
+        return t('appError.failedToPush')
     }
 
     if (isErrorWithMetaData(error)) {
