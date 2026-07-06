@@ -78,7 +78,6 @@ export class DeleteBranch extends React.Component<
             <strong>
               {t('dialogs.deleteBranch.existsOnRemote')}
             </strong>
-            </strong>
           </p>
           <Checkbox
             label={t('dialogs.deleteBranch.deleteRemoteToo')}
