@@ -14,6 +14,7 @@ import { FoldoutType } from '../../lib/app-state'
 import { assertNever } from '../../lib/fatal-error'
 
 import { TabBar } from '../tab-bar'
+import { t, platformT } from '../../lib/i18n'
 
 import { Row } from '../lib/row'
 import { Octicon } from '../octicons'
@@ -213,9 +214,9 @@ export class BranchesContainer extends React.Component<
         selectedIndex={this.props.selectedTab}
         allowDragOverSwitching={true}
       >
-        <span id="branches-tab">Branches</span>
+        <span id="branches-tab">{t('branches.tabBranches')}</span>
         <span id="pull-requests-tab" className="pull-request-tab">
-          {__DARWIN__ ? 'Pull Requests' : 'Pull requests'}
+          {platformT('branches.tabPullRequests')}
           {this.renderOpenPullRequestsBubble()}
         </span>
       </TabBar>
@@ -314,7 +315,7 @@ export class BranchesContainer extends React.Component<
       return null
     }
 
-    const label = __DARWIN__ ? 'New Branch' : 'New branch'
+    const label = platformT('branches.newBranch')
 
     return (
       /**
