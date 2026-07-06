@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as URL from 'url'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 
 interface IUntrustedCertificateProps {
@@ -37,36 +38,30 @@ export class UntrustedCertificate extends React.Component<
 
     return (
       <Dialog
-        title={__DARWIN__ ? 'Untrusted Server' : 'Untrusted server'}
+        title={platformT('dialogs.untrustedCertificate.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onContinue}
         type={__DARWIN__ ? 'warning' : 'error'}
       >
         <DialogContent>
           <p>
-            GitHub Desktop cannot verify the identity of {host}. The certificate
-            ({this.props.certificate.subjectName}) is invalid or untrusted.{' '}
-            <strong>
-              This may indicate attackers are trying to steal your data.
-            </strong>
+            {t('dialogs.untrustedCertificate.message', { host, cert: this.props.certificate.subjectName })}
           </p>
-          <p>In some cases, this may be expected. For example:</p>
+          <p>{t('dialogs.untrustedCertificate.expectedCases')}</p>
           <ul>
-            <li>If this is a GitHub Enterprise trial.</li>
+            <li>{t('dialogs.untrustedCertificate.githubEnterpriseTrial')}</li>
             <li>
-              If your GitHub Enterprise instance is run on an unusual top-level
-              domain.
+              {t('dialogs.untrustedCertificate.unusualDomain')}
             </li>
           </ul>
           <p>
-            If you are unsure of what to do, cancel and contact your system
-            administrator.
+            {t('dialogs.untrustedCertificate.unsure')}
           </p>
         </DialogContent>
         <DialogFooter>
           <OkCancelButtonGroup
             destructive={true}
-            okButtonText={__DARWIN__ ? 'View Certificate' : 'Add certificate'}
+            okButtonText={platformT('dialogs.untrustedCertificate.viewCertificate')}
           />
         </DialogFooter>
       </Dialog>

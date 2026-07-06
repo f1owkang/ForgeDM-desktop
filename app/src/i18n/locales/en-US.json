@@ -466,6 +466,81 @@
       "cantFind": "Can't find \"{{name}}\"",
       "lastSeen": "It was last seen at",
       "checkAgain": "Check again."
+    },
+    "repositorySettings": {
+      "title": {
+        "darwin": "Repository Settings",
+        "default": "Repository settings"
+      },
+      "remote": "Remote",
+      "ignoredFiles": {
+        "darwin": "Ignored Files",
+        "default": "Ignored files"
+      },
+      "gitConfig": {
+        "darwin": "Git Config",
+        "default": "Git config"
+      },
+      "forkBehavior": {
+        "darwin": "Fork Behavior",
+        "default": "Fork behavior"
+      },
+      "save": "Save"
+    },
+    "editorError": {
+      "title": {
+        "darwin": "Unable to Open External Editor",
+        "default": "Unable to open external editor"
+      },
+      "close": "Close",
+      "openPreferences": {
+        "darwin": "Open Preferences",
+        "default": "Open options"
+      },
+      "download": "Download {{name}}"
+    },
+    "shellError": {
+      "title": {
+        "darwin": "Unable to Open Shell",
+        "default": "Unable to open shell"
+      },
+      "close": "Close",
+      "openPreferences": {
+        "darwin": "Open Preferences",
+        "default": "Open options"
+      }
+    },
+    "installingUpdate": {
+      "title": {
+        "darwin": "Installing Update\u2026",
+        "default": "Installing update\u2026"
+      },
+      "message": "Do not close GitHub Desktop while the update is in progress. Closing now may break your installation.",
+      "quitAnyway": {
+        "darwin": "Quit Anyway",
+        "default": "Quit anyway"
+      }
+    },
+    "upstreamAlreadyExists": {
+      "title": {
+        "darwin": "Upstream Already Exists",
+        "default": "Upstream already exists"
+      }
+    },
+    "untrustedCertificate": {
+      "title": {
+        "darwin": "Untrusted Server",
+        "default": "Untrusted server"
+      },
+      "message": "GitHub Desktop cannot verify the identity of {{host}}. The certificate ({{cert}}) is invalid or untrusted. <strong>This may indicate attackers are trying to steal your data.</strong>",
+      "expectedCases": "In some cases, this may be expected. For example:",
+      "githubEnterpriseTrial": "If this is a GitHub Enterprise trial.",
+      "unusualDomain": "If your GitHub Enterprise instance is run on an unusual top-level domain.",
+      "unsure": "If you are unsure of what to do, cancel and contact your system administrator.",
+      "viewCertificate": {
+        "darwin": "View Certificate",
+        "default": "Add certificate"
+      }
     }
   },
   "enterpriseServerEntry": {

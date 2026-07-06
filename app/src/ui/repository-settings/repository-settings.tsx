@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { TabBar, TabBarType } from '../tab-bar'
+import { t, platformT } from '../../lib/i18n'
 import { Remote } from './remote'
 import { GitIgnore } from './git-ignore'
 import { assertNever } from '../../lib/fatal-error'
@@ -170,7 +171,7 @@ export class RepositorySettings extends React.Component<
     return (
       <Dialog
         id="repository-settings"
-        title={__DARWIN__ ? 'Repository Settings' : 'Repository settings'}
+        title={platformT('dialogs.repositorySettings.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.onSubmit}
         disabled={this.state.disabled}
@@ -185,20 +186,20 @@ export class RepositorySettings extends React.Component<
           >
             <span>
               <Octicon className="icon" symbol={octicons.server} />
-              Remote
+              {t('dialogs.repositorySettings.remote')}
             </span>
             <span>
               <Octicon className="icon" symbol={octicons.file} />
-              {__DARWIN__ ? 'Ignored Files' : 'Ignored files'}
+              {platformT('dialogs.repositorySettings.ignoredFiles')}
             </span>
             <span>
               <Octicon className="icon" symbol={octicons.gitCommit} />
-              {__DARWIN__ ? 'Git Config' : 'Git config'}
+              {platformT('dialogs.repositorySettings.gitConfig')}
             </span>
             {showForkSettings && (
               <span>
                 <Octicon className="icon" symbol={octicons.repoForked} />
-                {__DARWIN__ ? 'Fork Behavior' : 'Fork behavior'}
+                {platformT('dialogs.repositorySettings.forkBehavior')}
               </span>
             )}
           </TabBar>
@@ -207,7 +208,7 @@ export class RepositorySettings extends React.Component<
         </div>
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText="Save"
+            okButtonText={t('dialogs.repositorySettings.save')}
             okButtonDisabled={this.state.saveDisabled}
           />
         </DialogFooter>

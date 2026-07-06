@@ -466,6 +466,81 @@
       "cantFind": "找不到 \"{{name}}\"",
       "lastSeen": "上次在此位置",
       "checkAgain": "再次检查。"
+    },
+    "repositorySettings": {
+      "title": {
+        "darwin": "仓库设置",
+        "default": "仓库设置"
+      },
+      "remote": "远程",
+      "ignoredFiles": {
+        "darwin": "忽略的文件",
+        "default": "忽略的文件"
+      },
+      "gitConfig": {
+        "darwin": "Git 配置",
+        "default": "Git 配置"
+      },
+      "forkBehavior": {
+        "darwin": "Fork 行为",
+        "default": "Fork 行为"
+      },
+      "save": "保存"
+    },
+    "editorError": {
+      "title": {
+        "darwin": "无法打开外部编辑器",
+        "default": "无法打开外部编辑器"
+      },
+      "close": "关闭",
+      "openPreferences": {
+        "darwin": "打开偏好设置",
+        "default": "打开选项"
+      },
+      "download": "下载 {{name}}"
+    },
+    "shellError": {
+      "title": {
+        "darwin": "无法打开 Shell",
+        "default": "无法打开 Shell"
+      },
+      "close": "关闭",
+      "openPreferences": {
+        "darwin": "打开偏好设置",
+        "default": "打开选项"
+      }
+    },
+    "installingUpdate": {
+      "title": {
+        "darwin": "正在安装更新…",
+        "default": "正在安装更新…"
+      },
+      "message": "更新过程中请勿关闭 GitHub Desktop。现在关闭可能会损坏你的安装。",
+      "quitAnyway": {
+        "darwin": "仍然退出",
+        "default": "仍然退出"
+      }
+    },
+    "upstreamAlreadyExists": {
+      "title": {
+        "darwin": "上游远程已存在",
+        "default": "上游远程已存在"
+      }
+    },
+    "untrustedCertificate": {
+      "title": {
+        "darwin": "不受信任的服务器",
+        "default": "不受信任的服务器"
+      },
+      "message": "GitHub Desktop 无法验证 {{host}} 的身份。证书（{{cert}}）无效或不受信任。<strong>这可能表明攻击者正在试图窃取你的数据。</strong>",
+      "expectedCases": "在某些情况下，这可能是预期行为。例如：",
+      "githubEnterpriseTrial": "如果这是 GitHub Enterprise 试用版。",
+      "unusualDomain": "如果你的 GitHub Enterprise 实例运行在非常规顶级域名上。",
+      "unsure": "如果你不确定该怎么做，请取消并联系你的系统管理员。",
+      "viewCertificate": {
+        "darwin": "查看证书",
+        "default": "添加证书"
+      }
     }
   },
   "enterpriseServerEntry": {
