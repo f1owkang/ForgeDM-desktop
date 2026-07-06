@@ -632,6 +632,40 @@
         "darwin": "Exit Tutorial",
         "default": "Exit tutorial"
       }
+    },
+    "pullRequestChecksFailed": {
+      "switchToPR": {
+        "darwin": "Switch to Pull Request",
+        "default": "Switch to pull request"
+      },
+      "switchToRepoAndPR": {
+        "darwin": "Switch to Repository and Pull Request",
+        "default": "Switch to repository and pull request"
+      },
+      "checksFailed": "{{count}} {{checks}} failed in your pull request"
+    },
+    "workflowPushRejected": {
+      "title": {
+        "darwin": "Push Rejected",
+        "default": "Push rejected"
+      },
+      "message": "The push was rejected by the server for containing a modification to the workflow file <1>{{path}}</1>. In order to be able to push to workflow files GitHub Desktop needs to request additional permissions.",
+      "question": "Would you like to open a browser to grant GitHub Desktop permission to update workflow files?",
+      "continueInBrowser": {
+        "darwin": "Continue in Browser",
+        "default": "Continue in browser"
+      }
+    },
+    "createFork": {
+      "title": "Do you want to fork this repository?",
+      "noWriteAccess": "It looks like you don't have write access to",
+      "checkWithAdmin": "If you should, please check with a repository administrator.",
+      "wantToFork": "Do you want to create a fork of this repository at",
+      "toContinue": "to continue?",
+      "forkThisRepository": {
+        "darwin": "Fork This Repository",
+        "default": "Fork this repository"
+      }
     }
   },
   "enterpriseServerEntry": {

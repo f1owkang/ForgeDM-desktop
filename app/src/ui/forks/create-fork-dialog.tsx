@@ -16,6 +16,7 @@ import { Account } from '../../models/account'
 import { API } from '../../lib/api'
 import { LinkButton } from '../lib/link-button'
 import { PopupType } from '../../models/popup'
+import { t, platformT } from '../../lib/i18n'
 
 interface ICreateForkDialogProps {
   readonly dispatcher: Dispatcher
@@ -77,7 +78,7 @@ export class CreateForkDialog extends React.Component<
   public render() {
     return (
       <Dialog
-        title="Do you want to fork this repository?"
+        title={t('dialogs.createFork.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.state.error ? undefined : this.onSubmit}
         dismissDisabled={this.state.loading}
@@ -112,24 +113,22 @@ function renderCreateForkDialogContent(
     <>
       <DialogContent>
         <p>
-          {`It looks like you don’t have write access to `}
+          {t('dialogs.createFork.noWriteAccess')}{' '}
           <strong>{repository.gitHubRepository.fullName}</strong>
-          {`. If you should, please check with a repository administrator.`}
+          {`. ${t('dialogs.createFork.checkWithAdmin')}`}
         </p>
         <p>
-          {` Do you want to create a fork of this repository at `}
+          {t('dialogs.createFork.wantToFork')}{' '}
           <strong>
             {`${account.login}/${repository.gitHubRepository.name}`}
           </strong>
-          {` to continue?`}
+          {` ${t('dialogs.createFork.toContinue')}`}
         </p>
       </DialogContent>
       <DialogFooter>
         <OkCancelButtonGroup
           destructive={true}
-          okButtonText={
-            __DARWIN__ ? 'Fork This Repository' : 'Fork this repository'
-          }
+          okButtonText={platformT('dialogs.createFork.forkThisRepository')}
           okButtonDisabled={loading}
           cancelButtonDisabled={loading}
         />
