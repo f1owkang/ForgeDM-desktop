@@ -745,6 +745,98 @@
         "darwin": "移除仓库",
         "default": "移除仓库"
       }
+    },
+    "app": {
+      "selectRepository": {
+        "darwin": "选择仓库",
+        "default": "选择仓库"
+      },
+      "noRepositories": {
+        "darwin": "无仓库",
+        "default": "无仓库"
+      },
+      "currentRepository": {
+        "darwin": "当前仓库",
+        "default": "当前仓库"
+      }
+    },
+    "repositoriesList": {
+      "cloneRepo": {
+        "darwin": "克隆仓库…",
+        "default": "克隆仓库…"
+      },
+      "createRepo": {
+        "darwin": "创建新仓库…",
+        "default": "创建新仓库…"
+      },
+      "addExistingRepo": {
+        "darwin": "添加已有仓库…",
+        "default": "添加已有仓库…"
+      }
+    },
+    "commitList": {
+      "amendCommit": {
+        "darwin": "修改提交…",
+        "default": "修改提交…"
+      },
+      "undoCommit": {
+        "darwin": "撤销提交…",
+        "default": "撤销提交…"
+      },
+      "resetToCommit": {
+        "darwin": "重置到提交…",
+        "default": "重置到提交…"
+      },
+      "checkoutCommit": {
+        "darwin": "检出提交",
+        "default": "检出提交"
+      },
+      "reorderCommit": {
+        "darwin": "重新排序提交",
+        "default": "重新排序提交"
+      },
+      "revertChanges": {
+        "darwin": "还原提交中的更改",
+        "default": "还原提交中的更改"
+      },
+      "createBranchFromCommit": {
+        "darwin": "从此提交创建分支",
+        "default": "从此提交创建分支"
+      },
+      "createTag": "创建标签…",
+      "copySha": "复制 SHA",
+      "copyTags": {
+        "darwin": "复制标签",
+        "default": "复制标签"
+      },
+      "copyTag": {
+        "darwin": "复制标签",
+        "default": "复制标签"
+      },
+      "cherryPickCommit": {
+        "darwin": "拣选提交…",
+        "default": "拣选提交…"
+      }
+    },
+    "compare": {
+      "noBranchesToCompare": {
+        "darwin": "无可比较的分支",
+        "default": "无可比较的分支"
+      },
+      "noBranchesToCompareUpToDate": {
+        "darwin": "你的分支已与被比较的分支同步",
+        "default": "你的分支已与被比较的分支同步"
+      }
+    },
+    "worktreeList": {
+      "worktree": {
+        "darwin": "工作树",
+        "default": "工作树"
+      },
+      "newWorktree": {
+        "darwin": "新建工作树",
+        "default": "新建工作树"
+      }
     }
   },
   "enterpriseServerEntry": {

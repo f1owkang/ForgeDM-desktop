@@ -9,6 +9,7 @@ import { DragData, DragType } from '../../models/drag-drop'
 import classNames from 'classnames'
 import memoizeOne from 'memoize-one'
 import { IMenuItem, showContextualMenu } from '../../lib/menu-item'
+import { t, platformT } from '../../lib/i18n'
 import { getDotComAPIEndpoint } from '../../lib/api'
 import { clipboard } from 'electron'
 import { RowIndexPath } from '../lib/list/list-row-index-path'
@@ -753,14 +754,14 @@ export class CommitList extends React.Component<
 
     if (canBeAmended) {
       items.push({
-        label: __DARWIN__ ? 'Amend Commit…' : 'Amend commit…',
+        label: platformT('dialogs.commitList.amendCommit'),
         action: () => this.props.onAmendCommit?.(commit, isLocal),
       })
     }
 
     if (canBeUndone) {
       items.push({
-        label: __DARWIN__ ? 'Undo Commit…' : 'Undo commit…',
+        label: platformT('dialogs.commitList.undoCommit'),
         action: () => {
           if (this.props.onUndoCommit) {
             this.props.onUndoCommit(commit)
@@ -771,7 +772,7 @@ export class CommitList extends React.Component<
     }
 
     items.push({
-      label: __DARWIN__ ? 'Reset to Commit…' : 'Reset to commit…',
+      label: platformT('dialogs.commitList.resetToCommit'),
       action: () => {
         if (this.props.onResetToCommit) {
           this.props.onResetToCommit(commit)
@@ -781,7 +782,7 @@ export class CommitList extends React.Component<
     })
 
     items.push({
-      label: __DARWIN__ ? 'Checkout Commit' : 'Checkout commit',
+      label: platformT('dialogs.commitList.checkoutCommit'),
       action: () => {
         this.props.onCheckoutCommit?.(commit)
       },
@@ -789,7 +790,7 @@ export class CommitList extends React.Component<
     })
 
     items.push({
-      label: __DARWIN__ ? 'Reorder Commit' : 'Reorder commit',
+      label: platformT('dialogs.commitList.reorderCommit'),
       action: () => {
         this.props.onKeyboardReorder?.([commit])
       },
@@ -798,9 +799,7 @@ export class CommitList extends React.Component<
 
     items.push(
       {
-        label: __DARWIN__
-          ? 'Revert Changes in Commit'
-          : 'Revert changes in commit',
+        label: platformT('dialogs.commitList.revertChanges'),
         action: () => {
           if (this.props.onRevertCommit) {
             this.props.onRevertCommit(commit)
@@ -810,9 +809,7 @@ export class CommitList extends React.Component<
       },
       { type: 'separator' },
       {
-        label: __DARWIN__
-          ? 'Create Branch from Commit'
-          : 'Create branch from commit',
+        label: platformT('dialogs.commitList.createBranchFromCommit'),
         action: () => {
           if (this.props.onCreateBranch) {
             this.props.onCreateBranch(commit)
@@ -820,7 +817,7 @@ export class CommitList extends React.Component<
         },
       },
       {
-        label: 'Create Tag…',
+        label: t('dialogs.commitList.createTag'),
         action: () => this.props.onCreateTag?.(commit.sha),
         enabled: this.props.onCreateTag !== undefined,
       }
@@ -836,17 +833,17 @@ export class CommitList extends React.Component<
         deleteTagsMenuItem
       )
     }
-    const darwinTagsLabel = commit.tags.length > 1 ? 'Copy Tags' : 'Copy Tag'
-    const windowTagsLabel = commit.tags.length > 1 ? 'Copy tags' : 'Copy tag'
+    const darwinTagsLabel = commit.tags.length > 1 ? t('dialogs.commitList.copyTags') : t('dialogs.commitList.copyTag')
+    const windowTagsLabel = commit.tags.length > 1 ? t('dialogs.commitList.copyTags') : t('dialogs.commitList.copyTag')
     items.push(
       {
-        label: __DARWIN__ ? 'Cherry-pick Commit…' : 'Cherry-pick commit…',
+        label: platformT('dialogs.commitList.cherryPickCommit'),
         action: () => this.props.onCherryPick?.(this.selectedCommits),
         enabled: this.canCherryPick(),
       },
       { type: 'separator' },
       {
-        label: 'Copy SHA',
+        label: t('dialogs.commitList.copySha'),
         action: () => clipboard.writeText(commit.sha),
       },
       {
