@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
+import { t, platformT } from '../../lib/i18n'
 import { Row } from '../lib/row'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
 import { PullRequest, getPullRequestCommitRef } from '../../models/pull-request'
@@ -82,14 +83,10 @@ export class PullRequestChecksFailed extends React.Component<
   }
 
   public render() {
-    let okButtonTitle = __DARWIN__
-      ? 'Switch to Pull Request'
-      : 'Switch to pull request'
+    let okButtonTitle = platformT('dialogs.pullRequestChecksFailed.switchToPR')
 
     if (this.props.shouldChangeRepository) {
-      okButtonTitle = __DARWIN__
-        ? 'Switch to Repository and Pull Request'
-        : 'Switch to repository and pull request'
+      okButtonTitle = platformT('dialogs.pullRequestChecksFailed.switchToRepoAndPR')
     }
 
     const { pullRequest } = this.props
@@ -104,7 +101,7 @@ export class PullRequestChecksFailed extends React.Component<
         <Octicon symbol={octicons.xCircleFill} />
         <div className="title-container">
           <div className="summary">
-            {failedChecks.length} {pluralChecks} failed in your pull request
+            {t('dialogs.pullRequestChecksFailed.checksFailed', { count: failedChecks.length, checks: pluralChecks })}
           </div>
           <span className="pr-title">
             {pullRequest.title}{' '}

@@ -632,6 +632,40 @@
         "darwin": "退出教程",
         "default": "退出教程"
       }
+    },
+    "pullRequestChecksFailed": {
+      "switchToPR": {
+        "darwin": "切换到拉取请求",
+        "default": "切换到拉取请求"
+      },
+      "switchToRepoAndPR": {
+        "darwin": "切换到仓库和拉取请求",
+        "default": "切换到仓库和拉取请求"
+      },
+      "checksFailed": "你的拉取请求中有 {{count}} 个{{checks}}失败"
+    },
+    "workflowPushRejected": {
+      "title": {
+        "darwin": "推送被拒绝",
+        "default": "推送被拒绝"
+      },
+      "message": "推送被服务器拒绝，因为包含了对工作流文件 <1>{{path}}</1> 的修改。要能够推送到工作流文件，GitHub Desktop 需要请求额外的权限。",
+      "question": "你想打开浏览器授予 GitHub Desktop 更新工作流文件的权限吗？",
+      "continueInBrowser": {
+        "darwin": "在浏览器中继续",
+        "default": "在浏览器中继续"
+      }
+    },
+    "createFork": {
+      "title": "你想复刻这个仓库吗？",
+      "noWriteAccess": "看起来你没有写入权限",
+      "checkWithAdmin": "如果你应该有权限，请联系仓库管理员。",
+      "wantToFork": "你想在此处创建此仓库的复刻吗",
+      "toContinue": "以继续？",
+      "forkThisRepository": {
+        "darwin": "复刻此仓库",
+        "default": "复刻此仓库"
+      }
     }
   },
   "enterpriseServerEntry": {
