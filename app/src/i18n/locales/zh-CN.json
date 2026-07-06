@@ -787,6 +787,7 @@
         "darwin": "重命名工作树",
         "default": "重命名工作树"
       },
+      "deleteConfirm": "你确定要删除工作树 <1>{{name}}</1> 吗？",
       "deleteWorktreeFailed": {
         "darwin": "删除工作树失败",
         "default": "删除工作树失败"
@@ -1044,8 +1045,22 @@
     "moveToApplicationsFolder": {
       "title": "将 GitHub Desktop 移动到 Applications 文件夹？"
     },
+    "warnForcePush": {
+      "title": {
+        "darwin": "{{operation}}将需要强制推送",
+        "default": "{{operation}}将需要强制推送"
+      },
+      "confirmMessage": "你确定要进行{{operation}}吗？",
+      "description": "在{{operation}}流程结束时，GitHub Desktop 将允许你强制推送分支以更新上游分支。强制推送将更改远程历史记录，并可能给在此分支上协作的其他人带来问题。",
+      "okButton": {
+        "darwin": "开始{{operation}}",
+        "default": "开始{{operation}}"
+      }
+    },
     "confirmForcePush": {
-      "title": "你确定要强制推送吗？"
+      "title": "你确定要强制推送吗？",
+      "description": "强制推送将重写 <1>{{branch}}</1> 上的历史记录。在此分支上协作的任何人将需要重置其本地分支以匹配远程历史记录。",
+      "okButton": "我确定"
     },
     "revertProgress": {
       "title": "正在还原…"
@@ -1071,7 +1086,8 @@
       "title": "图标预览"
     },
     "signInEnterprise": {
-      "ariaLabel": "登录你的 GitHub Enterprise"
+      "ariaLabel": "登录你的 GitHub Enterprise",
+      "title": "登录你的 GitHub Enterprise"
     }
   },
   "enterpriseServerEntry": {

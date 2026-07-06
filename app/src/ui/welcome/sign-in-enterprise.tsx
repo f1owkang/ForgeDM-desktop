@@ -29,10 +29,10 @@ export class SignInEnterprise extends React.Component<
         id="sign-in-enterprise"
         aria-label={t('dialogs.signInEnterprise.ariaLabel')}
       >
-        <h1 className="welcome-title">Sign in to your GitHub Enterprise</h1>
+        <h1 className="welcome-title">{t('dialogs.signInEnterprise.title')}</h1>
 
         <SignIn signInState={state} dispatcher={this.props.dispatcher}>
-          <Button onClick={this.cancel}>Cancel</Button>
+          <Button onClick={this.cancel}>{t('common.cancel')}</Button>
         </SignIn>
       </section>
     )
