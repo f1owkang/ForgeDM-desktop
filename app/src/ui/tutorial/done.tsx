@@ -8,6 +8,7 @@ import { Octicon } from '../octicons'
 import * as octicons from '../octicons/octicons.generated'
 import { SuggestedAction } from '../suggested-actions'
 import { SuggestedActionGroup } from '../suggested-actions'
+import { t, platformT } from '../../lib/i18n'
 
 const ClappingHandsImage = encodePathAsUrl(
   __dirname,
@@ -74,27 +75,25 @@ export class TutorialDone extends React.Component<ITutorialDoneProps, {}> {
           </div>
           <SuggestedActionGroup>
             <SuggestedAction
-              title="Explore projects on GitHub"
-              description="Contribute to a project that interests you"
-              buttonText={__DARWIN__ ? 'Open in Browser' : 'Open in browser'}
+              title={t('dialogs.tutorialDone.exploreOnGitHub')}
+              description={t('dialogs.tutorialDone.exploreDescription')}
+              buttonText={platformT('dialogs.tutorialDone.openInBrowser')}
               onClick={this.openDotcomExplore}
               type="normal"
               image={TelescopeOcticon}
             />
             <SuggestedAction
-              title="Create a new repository"
-              description="Get started on a brand new project"
-              buttonText={
-                __DARWIN__ ? 'Create Repository' : 'Create repository'
-              }
+              title={t('dialogs.tutorialDone.createNewRepo')}
+              description={t('dialogs.tutorialDone.createRepoDescription')}
+              buttonText={platformT('dialogs.tutorialDone.createRepoButton')}
               onClick={this.onCreateNewRepository}
               type="normal"
               image={PlusOcticon}
             />
             <SuggestedAction
-              title="Add a local repository"
-              description="Work on an existing project in GitHub Desktop"
-              buttonText={__DARWIN__ ? 'Add Repository' : 'Add repository'}
+              title={t('dialogs.tutorialDone.addLocalRepo')}
+              description={t('dialogs.tutorialDone.addLocalRepoDescription')}
+              buttonText={platformT('dialogs.tutorialDone.addRepoButton')}
               onClick={this.onAddExistingRepository}
               type="normal"
               image={FileDirectoryOcticon}

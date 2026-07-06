@@ -2,6 +2,7 @@ import * as React from 'react'
 import { join } from 'path'
 import { LinkButton } from '../lib/link-button'
 import { Button } from '../lib/button'
+import { platformT } from '../../lib/i18n'
 import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Octicon } from '../octicons'
@@ -154,7 +155,7 @@ export class TutorialPanel extends React.Component<
                 <strong>{this.props.resolvedExternalEditor}</strong>. You can
                 change your preferred editor in{' '}
                 <LinkButton onClick={this.onPreferencesClick}>
-                  {__DARWIN__ ? 'Settings' : 'options'}
+                  {platformT('dialogs.tutorialPanel.settings')}
                 </LinkButton>
               </p>
             )}
@@ -170,7 +171,7 @@ export class TutorialPanel extends React.Component<
             <p className="description">
               {`A branch allows you to work on different versions of a repository at one time. Create a
                 branch by going into the branch menu in the top bar and
-              clicking "${__DARWIN__ ? 'New Branch' : 'New branch'}".`}
+              clicking "${platformT('dialogs.tutorialPanel.newBranch')}".`}
             </p>
             <div className="action">
               <KeyboardShortcut
@@ -197,7 +198,7 @@ export class TutorialPanel extends React.Component<
             {this.props.resolvedExternalEditor && (
               <div className="action">
                 <Button onClick={this.openTutorialFileInEditor}>
-                  {__DARWIN__ ? 'Open Editor' : 'Open editor'}
+                  {platformT('dialogs.tutorialPanel.openEditor')}
                 </Button>
                 <KeyboardShortcut
                   darwinKeys={['⌘', '⇧', 'A']}
@@ -255,7 +256,7 @@ export class TutorialPanel extends React.Component<
             </p>
             <div className="action">
               <Button onClick={this.openPullRequest} role="link">
-                {__DARWIN__ ? 'Open Pull Request' : 'Open pull request'}
+                {platformT('dialogs.tutorialPanel.openPullRequest')}
                 <Octicon symbol={octicons.linkExternal} />
               </Button>
               <KeyboardShortcut darwinKeys={['⌘', 'R']} keys={['Ctrl', 'R']} />
@@ -264,7 +265,7 @@ export class TutorialPanel extends React.Component<
         </ol>
         <div className="footer">
           <Button onClick={this.props.onExitTutorial}>
-            {__DARWIN__ ? 'Exit Tutorial' : 'Exit tutorial'}
+            {platformT('dialogs.tutorialPanel.exitTutorial')}
           </Button>
         </div>
       </div>

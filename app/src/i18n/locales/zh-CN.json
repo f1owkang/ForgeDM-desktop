@@ -573,6 +573,65 @@
         "darwin": "是的，提交文件",
         "default": "是的，提交文件"
       }
+    },
+    "unknownAuthors": {
+      "title": {
+        "darwin": "未知共同作者",
+        "default": "未知共同作者"
+      },
+      "commitAnyway": {
+        "darwin": "仍然提交",
+        "default": "仍然提交"
+      }
+    },
+    "confirmExitTutorial": {
+      "title": {
+        "darwin": "退出教程",
+        "default": "退出教程"
+      },
+      "message": "你确定要离开教程吗？这将带你返回主屏幕。"
+    },
+    "tutorialDone": {
+      "exploreOnGitHub": "探索 GitHub 上的项目",
+      "exploreDescription": "参与你感兴趣的项目",
+      "openInBrowser": {
+        "darwin": "在浏览器中打开",
+        "default": "在浏览器中打开"
+      },
+      "createNewRepo": "创建新仓库",
+      "createRepoDescription": "开始一个全新的项目",
+      "createRepoButton": {
+        "darwin": "创建仓库",
+        "default": "创建仓库"
+      },
+      "addLocalRepo": "添加本地仓库",
+      "addLocalRepoDescription": "在 GitHub Desktop 中处理现有项目",
+      "addRepoButton": {
+        "darwin": "添加仓库",
+        "default": "添加仓库"
+      }
+    },
+    "tutorialPanel": {
+      "settings": {
+        "darwin": "设置",
+        "default": "选项"
+      },
+      "newBranch": {
+        "darwin": "新建分支",
+        "default": "新建分支"
+      },
+      "openEditor": {
+        "darwin": "打开编辑器",
+        "default": "打开编辑器"
+      },
+      "openPullRequest": {
+        "darwin": "打开拉取请求",
+        "default": "打开拉取请求"
+      },
+      "exitTutorial": {
+        "darwin": "退出教程",
+        "default": "退出教程"
+      }
     }
   },
   "enterpriseServerEntry": {
