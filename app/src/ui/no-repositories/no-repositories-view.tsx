@@ -3,6 +3,7 @@ import { UiView } from '../ui-view'
 import { Button } from '../lib/button'
 import { Octicon, OcticonSymbol } from '../octicons'
 import * as octicons from '../octicons/octicons.generated'
+import { t } from '../../lib/i18n'
 import {
   WelcomeLeftTopImageUri,
   WelcomeLeftBottomImageUri,
@@ -94,7 +95,7 @@ export class NoRepositoriesView extends React.Component<
   public render() {
     return (
       <UiView id="no-repositories">
-        <section aria-label="Let's get started!">
+        <section aria-label={t('common.letsGetStarted')}>
           <header>
             <h1>Let's get started!</h1>
             <p>Add a repository to GitHub Desktop to start collaborating</p>

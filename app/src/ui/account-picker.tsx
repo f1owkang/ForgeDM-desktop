@@ -8,6 +8,7 @@ import {
   SelectionSource,
 } from './lib/filter-list'
 import { IMatches } from '../lib/fuzzy-find'
+import { t } from '../lib/i18n'
 import { Avatar } from './lib/avatar'
 import { lookupPreferredEmail } from '../lib/email'
 import { IAvatarUser } from '../models/avatar'
@@ -154,7 +155,7 @@ export class AccountPicker extends React.Component<
             </span>
           </div>
         }
-        label="Account"
+        label={t('common.account')}
         ref={this.popoverRef}
         openButtonClassName={this.props.openButtonClassName}
       >

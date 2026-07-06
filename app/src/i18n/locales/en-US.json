@@ -20,7 +20,15 @@
     "moveAndRestart": "Move and Restart",
     "notNow": "Not Now",
     "restore": "Restore",
-    "forcefullyDelete": "Forcefully delete"
+    "forcefullyDelete": "Forcefully delete",
+    "rememberPassword": "Remember password",
+    "rememberPassphrase": "Remember passphrase",
+    "account": "Account",
+    "resizeHandle": "Resize handle",
+    "dismissMessage": "Dismiss this message",
+    "letsGetStarted": "Let's get started!",
+    "applicationMenu": "Application menu",
+    "createCommit": "Create commit"
   },
   "addExistingRepository": {
     "bareRepoError": "This directory appears to be a bare repository. Bare repositories are not currently supported.",
@@ -668,7 +676,8 @@
       "exitTutorial": {
         "darwin": "Exit Tutorial",
         "default": "Exit tutorial"
-      }
+      },
+      "openAtomWebsite": "Open the Atom website"
     },
     "pullRequestChecksFailed": {
       "switchToPR": {
@@ -1007,7 +1016,8 @@
       "updateEmail": {
         "darwin": "Update Email",
         "default": "Update email"
-      }
+      },
+      "accountEmails": "Your Account Emails"
     },
     "noChangesSettings": {
       "settings": {

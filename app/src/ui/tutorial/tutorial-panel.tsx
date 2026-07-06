@@ -2,7 +2,7 @@ import * as React from 'react'
 import { join } from 'path'
 import { LinkButton } from '../lib/link-button'
 import { Button } from '../lib/button'
-import { platformT } from '../../lib/i18n'
+import { t, platformT } from '../../lib/i18n'
 import { Repository } from '../../models/repository'
 import { Dispatcher } from '../dispatcher'
 import { Octicon } from '../octicons'
@@ -137,7 +137,7 @@ export class TutorialPanel extends React.Component<
                   {` or `}
                   <LinkButton
                     uri="https://atom.io"
-                    title="Open the Atom website"
+                    title={t('dialogs.tutorialPanel.openAtomWebsite')}
                   >
                     Atom
                   </LinkButton>
