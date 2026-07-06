@@ -203,6 +203,22 @@
       "hasPR": "This branch may have an open pull request associated with it.",
       "mergedHint": "If <1>#{{number}}</1> has been merged, you can also go to GitHub to delete the remote branch.",
       "delete": "Delete"
+    },
+    "publishRepository": {
+      "title": {
+        "darwin": "Publish Repository",
+        "default": "Publish repository"
+      },
+      "signInTitle": {
+        "darwin": "Sign In",
+        "default": "Sign in"
+      },
+      "signInDotCom": "Sign in to your GitHub.com account to access your repositories.",
+      "signInEnterprise": "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.",
+      "okButton": {
+        "darwin": "Publish Repository",
+        "default": "Publish repository"
+      }
     }
   },
   "enterpriseServerEntry": {

@@ -9,6 +9,7 @@ import {
 import { Repository } from '../../models/repository'
 import { Dialog, DialogFooter, DialogContent, DialogError } from '../dialog'
 import { TabBar } from '../tab-bar'
+import { t, platformT } from '../../lib/i18n'
 import { assertNever, fatalError } from '../../lib/fatal-error'
 import { CallToAction } from '../lib/call-to-action'
 import { getGitDescription } from '../../lib/git'
@@ -143,7 +144,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
     return (
       <Dialog
         id="publish-repository"
-        title={__DARWIN__ ? 'Publish Repository' : 'Publish repository'}
+        title={platformT('dialogs.publishRepository.title')}
         onDismissed={this.props.onDismissed}
         onSubmit={this.publishRepository}
         disabled={this.state.publishing}
@@ -271,13 +272,13 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
   }
 
   private renderSignInTab(tab: PublishTab) {
-    const signInTitle = __DARWIN__ ? 'Sign In' : 'Sign in'
+    const signInTitle = platformT('dialogs.publishRepository.signInTitle')
     switch (tab) {
       case PublishTab.DotCom:
         return (
           <CallToAction actionTitle={signInTitle} onAction={this.signInDotCom}>
             <div>
-              Sign in to your GitHub.com account to access your repositories.
+              {t('dialogs.publishRepository.signInDotCom')}
             </div>
           </CallToAction>
         )
@@ -288,8 +289,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
             onAction={this.signInEnterprise}
           >
             <div>
-              If you are using GitHub Enterprise at work, sign in to it to get
-              access to your repositories.
+              {t('dialogs.publishRepository.signInEnterprise')}
             </div>
           </CallToAction>
         )
@@ -307,9 +307,7 @@ export class Publish extends React.Component<IPublishProps, IPublishState> {
       return (
         <DialogFooter>
           <OkCancelButtonGroup
-            okButtonText={
-              __DARWIN__ ? 'Publish Repository' : 'Publish repository'
-            }
+            okButtonText={platformT('dialogs.publishRepository.okButton')}
             okButtonDisabled={disabled}
           />
         </DialogFooter>
