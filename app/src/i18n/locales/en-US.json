@@ -799,7 +799,10 @@
         "darwin": "Remove Repository",
         "default": "Remove repository"
       },
-      "remove": "Remove"
+      "remove": "Remove",
+      "confirm": "Are you sure you want to remove the repository \"{{name}}\" from GitHub Desktop?",
+      "willBeRemoved": "The repository will be removed from GitHub Desktop:",
+      "alsoMoveTo": "Also move this repository to {{trash}}"
     },
     "app": {
       "selectRepository": {

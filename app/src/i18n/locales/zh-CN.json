@@ -799,7 +799,10 @@
         "darwin": "移除仓库",
         "default": "移除仓库"
       },
-      "remove": "移除"
+      "remove": "移除",
+      "confirm": "你确定要从 GitHub Desktop 中移除仓库 \"{{name}}\" 吗？",
+      "willBeRemoved": "该仓库将从 GitHub Desktop 中移除：",
+      "alsoMoveTo": "同时将此仓库移动到{{trash}}"
     },
     "app": {
       "selectRepository": {

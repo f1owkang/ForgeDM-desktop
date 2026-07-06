@@ -3,7 +3,6 @@ import { Checkbox, CheckboxValue } from '../lib/checkbox'
 import { Dialog, DialogContent, DialogFooter } from '../dialog'
 import { t } from '../../lib/i18n'
 import { platformT } from '../../lib/i18n'
-import { Ref } from '../lib/ref'
 import { Repository } from '../../models/repository'
 import { TrashNameLabel } from '../lib/context-menu'
 import { OkCancelButtonGroup } from '../dialog/ok-cancel-button-group'
@@ -68,19 +67,20 @@ export class ConfirmRemoveRepository extends React.Component<
       >
         <DialogContent>
           <p>
-            Are you sure you want to remove the repository "
-            {this.props.repository.name}" from GitHub Desktop?
+            {t('dialogs.removeRepository.confirm', {
+              name: this.props.repository.name,
+            })}
           </p>
           <div className="description">
-            <p>The repository will be removed from GitHub Desktop:</p>
-            <p>
-              <Ref>{this.props.repository.path}</Ref>
-            </p>
+            <p>{t('dialogs.removeRepository.willBeRemoved')}</p>
+            <p>{this.props.repository.path}</p>
           </div>
 
           <div>
             <Checkbox
-              label={'Also move this repository to ' + TrashNameLabel}
+              label={t('dialogs.removeRepository.alsoMoveTo', {
+                trash: TrashNameLabel,
+              })}
               value={
                 this.state.deleteRepoFromDisk
                   ? CheckboxValue.On
