@@ -2046,5 +2046,22 @@
       "squashing": "Squashing into <1>{{ourLabel}}</1>",
       "reordering": "Reordering <1>{{ourLabel}}</1>"
     }
+  },
+  "appError": {
+    "fileSizeLimitExceeded": "File size limit exceeded",
+    "cloneFailed": "Clone failed",
+    "failedToPush": "Failed to push"
+  },
+  "openPullRequest": {
+    "view": {
+      "darwin": "View Pull Request",
+      "default": "View pull request"
+    },
+    "create": {
+      "darwin": "Create Pull Request",
+      "default": "Create pull request"
+    },
+    "buttonTitle": "{{action}} pull request on GitHub{{enterprise}}.",
+    "enterpriseSuffix": " Enterprise"
   }
 }

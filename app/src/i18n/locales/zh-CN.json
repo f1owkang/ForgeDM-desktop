@@ -2046,5 +2046,22 @@
       "squashing": "压缩到 <1>{{ourLabel}}</1>",
       "reordering": "重新排序 <1>{{ourLabel}}</1>"
     }
+  },
+  "appError": {
+    "fileSizeLimitExceeded": "文件大小超出限制",
+    "cloneFailed": "克隆失败",
+    "failedToPush": "推送失败"
+  },
+  "openPullRequest": {
+    "view": {
+      "darwin": "查看拉取请求",
+      "default": "查看拉取请求"
+    },
+    "create": {
+      "darwin": "创建拉取请求",
+      "default": "创建拉取请求"
+    },
+    "buttonTitle": "在 GitHub{{enterprise}}上{{action}}拉取请求。",
+    "enterpriseSuffix": " Enterprise"
   }
 }
