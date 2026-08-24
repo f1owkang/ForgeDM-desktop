@@ -29,8 +29,9 @@ ForgeDM 是**企业级数据版本托管平台**。
 
 | 项 | 值 |
 |---|---|
-| 上游基线 | `release-3.6.1`（merge-base: `8fa814acec`，2026-06-25），并合入了部分上游 `development` |
-| 自有提交 | ~50 个：中文化（i18n）、语言偏好设置、CI 修复（MSVC 2022、Linux 打包）、自动发布工作流 |
+| 上游基线 | `release-3.6.4`（2026-08-11，当前最新稳定版） |
+| 自有提交 | 58 个：中文化（i18n）、语言偏好设置、CI 修复（MSVC 2022、Linux 打包）、自动发布工作流；`git log --grep ForgeDM-Layer release-3.6.4..HEAD` 可查登记后补丁 |
+| 历史基线 | `release-3.6.1`（备份分支 `backup/development-pre-3.6.4`），2026-08-24 前移至 3.6.4，仅 1 处 i18n 冲突 |
 | 自有 tag | `v0.1.0-test`、`v0.1.1-chinese`、`v0.1.2-i18n` |
 | 基线决议 | ✅ 符合"锚定 release tag"策略。下次升级目标：`release-3.6.2` 或更高稳定 tag |
 
