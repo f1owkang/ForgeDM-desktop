@@ -18,6 +18,8 @@ ForgeDM 是**企业级数据版本托管平台**。
 | `f1owkang/ForgeDM` | `go-gitea/gitea` | 服务端，托管平台本体 |
 | `f1owkang/ForgeDM-desktop`（本仓库） | `desktop/desktop` | 桌面客户端 |
 
+产品路线图的单一事实源在 ForgeDM 仓库的 [`ROADMAP.md`](https://github.com/f1owkang/ForgeDM/blob/main/ROADMAP.md)，本仓库不另维护。
+
 ## 3. 分支与基线策略
 
 - **开发基线永远锚定上游 release tag**（`release-X.Y.Z`），不追上游 `development` 滚动分支。
