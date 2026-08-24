@@ -25,14 +25,14 @@ ForgeDM 是**企业级数据版本托管平台**。
 - **开发基线永远锚定上游 release tag**（`release-X.Y.Z`），不追上游 `development` 滚动分支。
 - 自有发布打 `vX.Y.Z-<suffix>` 标签（现有惯例：`v0.1.2-i18n` 等），后续统一为 `forgedm-vX.Y.Z`。
 - 上游升级流程 = 选定新 release tag → 重放自有补丁 → 解决少量冲突 → 回归测试 → 打新 tag。
-- 目标：一次上游升级的手工冲突解决量控制在**小时级**。
+- 目标：一次上游升级的手工冲突解决量控制在**< 1 人天**（与 ROADMAP 验收度量一致）。
 
 ### 当前基线
 
 | 项 | 值 |
 |---|---|
 | 上游基线 | `release-3.6.4`（2026-08-11，当前最新稳定版） |
-| 自有提交 | 58 个：中文化（i18n）、语言偏好设置、CI 修复（MSVC 2022、Linux 打包）、自动发布工作流；`git log --grep ForgeDM-Layer release-3.6.4..HEAD` 可查登记后补丁 |
+| 自有提交 | 60 个（57 代码 + 3 文档）：中文化（i18n）、语言偏好设置、CI 修复（MSVC 2022、Linux 打包）、自动发布工作流；实时以 `git rev-list --count release-3.6.4..HEAD` 为准，`git log --grep ForgeDM-Layer release-3.6.4..HEAD` 可查登记后补丁 |
 | 历史基线 | `release-3.6.1`（备份分支 `backup/development-pre-3.6.4`），2026-08-24 前移至 3.6.4，仅 1 处 i18n 冲突 |
 | 自有 tag | `v0.1.0-test`、`v0.1.1-chinese`、`v0.1.2-i18n` |
 | 基线决议 | ✅ 符合"锚定 release tag"策略。下次升级目标：`release-3.6.2` 或更高稳定 tag |
@@ -87,7 +87,7 @@ feat(forgedm): add language preference setting
 ForgeDM-Layer: L1
 ```
 
-- 现有 61 个历史自有提交为"登记前时代"，不追溯补标
+- 现有 57 个代码类历史自有提交为"登记前时代"，不追溯补标（带 `ForgeDM-Layer` trailer 的仅登记后 3 个 docs 提交）
 
 ## 7. 补丁登记表（L2 补丁必须登记）
 
