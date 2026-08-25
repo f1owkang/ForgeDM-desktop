@@ -2066,5 +2066,26 @@
     },
     "buttonTitle": "{{action}} pull request on GitHub{{enterprise}}.",
     "enterpriseSuffix": " Enterprise"
+  },
+  "forge": {
+    "onboarding": {
+      "title": "Using a company ForgeDM server?",
+      "body": "Connect to your team's design data repository — no programming needed.",
+      "connect": "Connect to ForgeDM server"
+    },
+    "instanceHistory": {
+      "label": "Recent instances"
+    },
+    "diagnostics": {
+      "notForge": "The server is reachable, but it does not look like a ForgeDM/Gitea server. Double-check the address.",
+      "reachableButDenied": "The ForgeDM server (v{{version}}) is reachable. Please check your account, password or token permissions.",
+      "dns": "Cannot resolve the server name. Check the address for typos and your network connection.",
+      "refused": "The server actively refused the connection. The service may not be running, or the port may be wrong.",
+      "reset": "The connection was reset. Ask your administrator whether a firewall sits in between.",
+      "tls": "Certificate problem detected. Contact your administrator to install a trusted certificate.",
+      "timeout": "Connection timed out. You may need to be on the company network or configure a proxy.",
+      "network": "Network error. Check that you can reach the company server.",
+      "generic": "Unable to reach the server. Please verify the address with your administrator."
+    }
   }
 }

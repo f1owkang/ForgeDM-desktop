@@ -1,0 +1,64 @@
+// FORGEDM brand layer styles (L0) — everything namespaced under .forgedm-*
+
+.forgedm-onboarding-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  margin-top: var(--spacing-double);
+  padding: var(--spacing);
+  border: 1px solid var(--border-color, #d0d7de);
+  border-radius: 6px;
+  background-color: rgba(36, 86, 166, 0.06);
+
+  .octicon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: #2456a6;
+  }
+}
+
+.forgedm-onboarding-copy {
+  flex: 1;
+
+  p {
+    margin: 0;
+  }
+
+  .forgedm-onboarding-title {
+    font-weight: var(--font-weight-semibold, 600);
+  }
+
+  .forgedm-onboarding-body {
+    color: var(--secondary-color, #57606a);
+  }
+}
+
+.forgedm-instance-history {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: -8px 0 var(--spacing);
+
+  &-label {
+    font-size: var(--font-size-sm, 12px);
+    color: var(--secondary-color, #57606a);
+    padding: 2px 4px;
+  }
+
+  &-item {
+    text-align: left;
+    padding: 4px 8px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    color: inherit;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(36, 86, 166, 0.1);
+      outline: none;
+    }
+  }
+}

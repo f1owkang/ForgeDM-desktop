@@ -2066,5 +2066,26 @@
     },
     "buttonTitle": "在 GitHub{{enterprise}}上{{action}}拉取请求。",
     "enterpriseSuffix": " Enterprise"
+  },
+  "forge": {
+    "onboarding": {
+      "title": "公司在用 ForgeDM 服务器？",
+      "body": "直接连接团队的图纸与设计数据仓库——无需任何编程知识。",
+      "connect": "连接公司 ForgeDM 服务器"
+    },
+    "instanceHistory": {
+      "label": "最近使用的实例"
+    },
+    "diagnostics": {
+      "notForge": "服务器可达，但看起来不是 ForgeDM/Gitea 服务。请核对地址是否正确。",
+      "reachableButDenied": "ForgeDM 服务器（v{{version}}）连接正常。请检查账号、密码或令牌权限。",
+      "dns": "无法解析服务器名称。请检查地址是否有误、网络是否畅通。",
+      "refused": "连接被服务器拒绝。服务可能未启动，或端口填写有误。",
+      "reset": "连接被重置。请联系管理员确认中间是否有防火墙拦截。",
+      "tls": "检测到证书问题。请联系管理员安装受信任的证书。",
+      "timeout": "连接超时。可能需要接入公司内网，或配置代理。",
+      "network": "网络异常。请确认能够访问公司服务器。",
+      "generic": "无法连接服务器。请与管理员核对地址。"
+    }
   }
 }

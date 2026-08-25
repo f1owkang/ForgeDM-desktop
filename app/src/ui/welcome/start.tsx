@@ -9,6 +9,9 @@ import { Loading } from '../lib/loading'
 import { BrowserRedirectMessage } from '../lib/authentication-form'
 import { SamplesURL } from '../../lib/stats'
 import { t } from '../../lib/i18n'
+// FORGEDM-BEGIN: forge onboarding card (L1)
+import { ForgeOnboardingCard } from '../forgedm/forge-onboarding-card'
+// FORGEDM-END
 
 /**
  * The URL to the sign-up page on GitHub.com. Used in conjunction
@@ -21,6 +24,9 @@ interface IStartProps {
   readonly advance: (step: WelcomeStep) => void
   readonly dispatcher: Dispatcher
   readonly loadingBrowserAuth: boolean
+  // FORGEDM-BEGIN: forge onboarding wiring (L1)
+  readonly onConnectForgeServer?: () => void
+  // FORGEDM-END
 }
 
 /** The first step of the Welcome flow. */
@@ -70,6 +76,16 @@ export class Start extends React.Component<IStartProps, {}> {
               </Button>
             )}
           </div>
+
+          {/* FORGEDM-BEGIN: forge onboarding card (L1) */}
+          {this.props.onConnectForgeServer ? (
+            <ForgeOnboardingCard
+              dispatcher={this.props.dispatcher}
+              onDismissWelcome={this.props.onConnectForgeServer}
+            />
+          ) : null}
+          {/* FORGEDM-END */}
+
           <div className="skip-action-container">
             <p className="welcome-text">
               {t('welcome.start.newToGitHub')}{' '}

@@ -169,6 +169,9 @@ export class Welcome extends React.Component<IWelcomeProps, IWelcomeState> {
             advance={this.advanceToStep}
             dispatcher={this.props.dispatcher}
             loadingBrowserAuth={loadingBrowserAuth}
+            // FORGEDM-BEGIN: forge onboarding wiring (L1)
+            onConnectForgeServer={this.connectToForgeServer}
+            // FORGEDM-END
           />
         )
 
@@ -222,6 +225,18 @@ export class Welcome extends React.Component<IWelcomeProps, IWelcomeState> {
       }, 250)
     })
   }
+
+  // FORGEDM-BEGIN: forge onboarding connect (L1)
+  // Dismisses the wizard; the card itself raises the clone dialog
+  // (with instance-prefilled URL) once this exit animation completes.
+  private connectToForgeServer = () => {
+    this.setState({ exiting: true }, () => {
+      setTimeout(() => {
+        this.props.dispatcher.endWelcomeFlow()
+      }, 250)
+    })
+  }
+  // FORGEDM-END
 
   public render() {
     const className = classNames({
