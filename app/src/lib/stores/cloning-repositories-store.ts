@@ -6,6 +6,12 @@ import { RetryAction, RetryActionType } from '../../models/retry-actions'
 import { clone as cloneRepo } from '../git'
 import { ErrorWithMetadata } from '../error-with-metadata'
 import { BaseStore } from './base-store'
+// FORGEDM-BEGIN: forge connection diagnostics (L2-minimal, registered)
+import {
+  describeCloneProblem,
+  isSelfHostedUrl,
+} from '../../lib/forgedm/diagnostics'
+// FORGEDM-END
 
 /** The store in charge of repository currently being cloned. */
 export class CloningRepositoriesStore extends BaseStore {
@@ -47,6 +53,22 @@ export class CloningRepositoriesStore extends BaseStore {
         options,
       }
       e = new ErrorWithMetadata(e, { retryAction, repository })
+
+      // FORGEDM-BEGIN: forge connection diagnostics (L2-minimal, registered)
+      if (isSelfHostedUrl(url)) {
+        try {
+          const hint = await describeCloneProblem(url)
+          if (hint !== null) {
+            e = new ErrorWithMetadata(new Error(`${e.message}\n\n${hint}`), {
+              retryAction,
+              repository,
+            })
+          }
+        } catch {
+          // Diagnostics must never mask the original failure.
+        }
+      }
+      // FORGEDM-END
 
       this.emitError(e)
     }

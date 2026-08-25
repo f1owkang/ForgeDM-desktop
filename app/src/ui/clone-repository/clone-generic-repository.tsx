@@ -4,6 +4,12 @@ import { Button } from '../lib/button'
 import { Row } from '../lib/row'
 import { DialogContent } from '../dialog'
 import { t, platformT } from '../../lib/i18n'
+// FORGEDM-BEGIN: instance history (L1)
+import {
+  getInstanceHistory,
+  rememberInstance,
+} from '../../lib/forgedm/instance-history'
+// FORGEDM-END
 
 interface ICloneGenericRepositoryProps {
   /** The URL to clone. */
@@ -27,8 +33,14 @@ interface ICloneGenericRepositoryProps {
 /** The component for cloning a repository. */
 export class CloneGenericRepository extends React.Component<
   ICloneGenericRepositoryProps,
-  {}
+  // FORGEDM-BEGIN: instance history state (L1)
+  { showHistory: boolean }
+  // FORGEDM-END
 > {
+  // FORGEDM-BEGIN: instance history state (L1)
+  public state = { showHistory: false }
+  // FORGEDM-END
+
   public render() {
     return (
       <DialogContent className="clone-generic-repository-content">
@@ -38,6 +50,10 @@ export class CloneGenericRepository extends React.Component<
             value={this.props.url}
             onValueChanged={this.onUrlChanged}
             autoFocus={true}
+            // FORGEDM-BEGIN: instance history dropdown (L1)
+            onFocus={this.onUrlFocused}
+            onBlur={this.onUrlBlurred}
+            // FORGEDM-END
             label={
               <div className="clone-url-textbox-label">
                 <p>{t('cloneGenericRepository.urlLabel')}</p>
@@ -48,6 +64,29 @@ export class CloneGenericRepository extends React.Component<
             }
           />
         </Row>
+
+        {/* FORGEDM-BEGIN: instance history dropdown (L1) */}
+        {this.state.showHistory && this.historyEntries.length > 0 ? (
+          <div className="forgedm-instance-history">
+            <div className="forgedm-instance-history-label">
+              {t('forge.instanceHistory.label')}
+            </div>
+            {this.historyEntries.map(origin => (
+              <button
+                key={origin}
+                type="button"
+                className="forgedm-instance-history-item"
+                onMouseDown={e => {
+                  e.preventDefault()
+                  this.pickInstance(origin)
+                }}
+              >
+                {origin}/
+              </button>
+            ))}
+          </div>
+        ) : null}
+        {/* FORGEDM-END */}
 
         <Row>
           <TextBox
@@ -63,6 +102,27 @@ export class CloneGenericRepository extends React.Component<
       </DialogContent>
     )
   }
+
+  private get historyEntries() {
+    return getInstanceHistory()
+  }
+
+  // FORGEDM-BEGIN: instance history handlers (L1)
+  private onUrlFocused = () => {
+    this.setState({ showHistory: true })
+  }
+
+  private onUrlBlurred = () => {
+    rememberInstance(this.props.url)
+    this.setState({ showHistory: false })
+  }
+
+  private pickInstance = (origin: string) => {
+    rememberInstance(origin)
+    this.setState({ showHistory: false })
+    this.props.onUrlChanged(`${origin}/`)
+  }
+  // FORGEDM-END
 
   private onUrlChanged = (url: string) => {
     this.props.onUrlChanged(url)
