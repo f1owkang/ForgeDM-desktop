@@ -9,8 +9,6 @@ interface IAttributeMismatchProps {
 
   /** Called when the user has chosen to replace the update filters. */
   readonly onUpdateExistingFilters: () => void
-
-  readonly onEditGlobalGitConfig: () => void
 }
 
 export class AttributeMismatch extends React.Component<IAttributeMismatchProps> {

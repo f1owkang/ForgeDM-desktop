@@ -11,7 +11,8 @@ const errors = new Array<string>()
 
 function readLocale(name: string) {
   const file = Path.join(localesDir, `${name}.json`)
-  const contents = Fs.readFileSync(file, 'utf8')
+  // FORGEDM: sync read is intentional here - tiny CLI script, keeps flow simple
+  const contents = Fs.readFileSync(file, 'utf8') // eslint-disable-line no-sync
   const duplicateKeys = findDuplicateKeys(contents)
 
   if (duplicateKeys.length > 0) {

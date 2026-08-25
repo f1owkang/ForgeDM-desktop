@@ -57,9 +57,7 @@ export class CloneGenericRepository extends React.Component<
             label={
               <div className="clone-url-textbox-label">
                 <p>{t('cloneGenericRepository.urlLabel')}</p>
-                <p>
-                  {t('cloneGenericRepository.urlLabelExample')}
-                </p>
+                <p>{t('cloneGenericRepository.urlLabelExample')}</p>
               </div>
             }
           />
@@ -76,10 +74,8 @@ export class CloneGenericRepository extends React.Component<
                 key={origin}
                 type="button"
                 className="forgedm-instance-history-item"
-                onMouseDown={e => {
-                  e.preventDefault()
-                  this.pickInstance(origin)
-                }}
+                data-origin={origin}
+                onMouseDown={this.onHistoryItemMouseDown}
               >
                 {origin}/
               </button>
@@ -115,6 +111,15 @@ export class CloneGenericRepository extends React.Component<
   private onUrlBlurred = () => {
     rememberInstance(this.props.url)
     this.setState({ showHistory: false })
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+  private onHistoryItemMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const origin = e.currentTarget.dataset.origin
+    if (origin) {
+      this.pickInstance(origin)
+    }
   }
 
   private pickInstance = (origin: string) => {
