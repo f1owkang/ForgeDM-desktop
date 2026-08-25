@@ -45,7 +45,9 @@ function normalizeToOrigin(url: string): string | null {
     return null
   }
 
-  const candidate = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`
+  const candidate = /^https?:\/\//i.test(trimmed)
+    ? trimmed
+    : `https://${trimmed}`
   try {
     const parsed = new URL(candidate)
     return isHttpUrl(candidate) ? parsed.origin : null

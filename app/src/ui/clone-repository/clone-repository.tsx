@@ -3,15 +3,15 @@ import * as React from 'react'
 import { Dispatcher } from '../dispatcher'
 import { getDefaultDir, setDefaultDir } from '../lib/default-dir'
 import {
-    Account,
-    isDotComAccount,
-    isEnterpriseAccount,
+  Account,
+  isDotComAccount,
+  isEnterpriseAccount,
 } from '../../models/account'
 import { FoldoutType } from '../../lib/app-state'
 import {
-    IRepositoryIdentifier,
-    parseRepositoryIdentifier,
-    parseRemote,
+  IRepositoryIdentifier,
+  parseRepositoryIdentifier,
+  parseRemote,
 } from '../../lib/remote-parsing'
 import { findAccountForRemoteURL } from '../../lib/find-account'
 import { API, IAPIRepository, IAPIRepositoryCloneInfo } from '../../lib/api'

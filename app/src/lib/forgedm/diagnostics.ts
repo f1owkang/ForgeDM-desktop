@@ -53,7 +53,9 @@ export function isSelfHostedUrl(url: string): boolean {
  * Probes `<base>/api/v1/version` and classifies failures.
  * Never throws: any unexpected error degrades to a generic hint.
  */
-export async function probeInstance(url: string): Promise<IInstanceProbeResult> {
+export async function probeInstance(
+  url: string
+): Promise<IInstanceProbeResult> {
   const baseUrl = instanceBaseUrlFromCloneUrl(url) ?? url.replace(/\/+$/, '')
   try {
     const response = await fetch(`${baseUrl}/api/v1/version`, {
@@ -62,7 +64,11 @@ export async function probeInstance(url: string): Promise<IInstanceProbeResult> 
     })
 
     if (!response.ok) {
-      return { baseUrl, reachable: false, hint: t('forge.diagnostics.notForge') }
+      return {
+        baseUrl,
+        reachable: false,
+        hint: t('forge.diagnostics.notForge'),
+      }
     }
 
     const body = (await response.json()) as { version?: unknown }

@@ -17,11 +17,12 @@ interface IConfigureGitProps {
 export class ConfigureGit extends React.Component<IConfigureGitProps, {}> {
   public render() {
     return (
-      <section id="configure-git" aria-label={t('welcome.configureGit.ariaLabel')}>
+      <section
+        id="configure-git"
+        aria-label={t('welcome.configureGit.ariaLabel')}
+      >
         <h1 className="welcome-title">{t('welcome.configureGit.title')}</h1>
-        <p className="welcome-text">
-          {t('welcome.configureGit.description')}
-        </p>
+        <p className="welcome-text">{t('welcome.configureGit.description')}</p>
 
         <ConfigureGitUser
           accounts={this.props.accounts}

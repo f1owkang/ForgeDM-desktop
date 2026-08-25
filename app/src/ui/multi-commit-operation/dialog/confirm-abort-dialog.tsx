@@ -70,9 +70,7 @@ export class ConfirmAbortDialog extends React.Component<
                 operation: operation.toLowerCase(),
               })}
             </p>
-            <p>
-              {t('multiCommitOperation.confirmAbort.description')}
-            </p>
+            <p>{t('multiCommitOperation.confirmAbort.description')}</p>
           </div>
         </DialogContent>
         <DialogFooter>
