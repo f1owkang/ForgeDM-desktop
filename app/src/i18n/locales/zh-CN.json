@@ -478,7 +478,7 @@
         "darwin": "远程有更新的提交",
         "default": "远程有更新的提交"
       },
-      "message": "GitHub Desktop 无法将提交推送到此分支，因为远程上有你本地分支没有的提交。请在推送前获取这些新提交，以便与你的本地提交协调。",
+      "message": "ForgeDM Desktop 无法将提交推送到此分支，因为远程上有你本地分支没有的提交。请在推送前获取这些新提交，以便与你的本地提交协调。",
       "fetch": "获取"
     },
     "missingRepository": {
@@ -543,7 +543,7 @@
         "darwin": "正在安装更新…",
         "default": "正在安装更新…"
       },
-      "message": "更新过程中请勿关闭 GitHub Desktop。现在关闭可能会损坏你的安装。",
+      "message": "更新过程中请勿关闭 ForgeDM Desktop。现在关闭可能会损坏你的安装。",
       "quitAnyway": {
         "darwin": "仍然退出",
         "default": "仍然退出"
@@ -554,7 +554,7 @@
         "darwin": "不受信任的服务器",
         "default": "不受信任的服务器"
       },
-      "message": "GitHub Desktop 无法验证 {{host}} 的身份。证书（{{cert}}）无效或不受信任。<strong>这可能表明攻击者正在试图窃取你的数据。</strong>",
+      "message": "ForgeDM Desktop 无法验证 {{host}} 的身份。证书（{{cert}}）无效或不受信任。<strong>这可能表明攻击者正在试图窃取你的数据。</strong>",
       "expectedCases": "在某些情况下，这可能是预期行为。例如：",
       "githubEnterpriseTrial": "如果这是 GitHub Enterprise 试用版。",
       "unusualDomain": "如果你的 GitHub Enterprise 实例运行在非常规顶级域名上。",
@@ -651,7 +651,7 @@
         "default": "创建仓库"
       },
       "addLocalRepo": "添加本地仓库",
-      "addLocalRepoDescription": "在 GitHub Desktop 中处理现有项目",
+      "addLocalRepoDescription": "在 ForgeDM Desktop 中处理现有项目",
       "addRepoButton": {
         "darwin": "添加仓库",
         "default": "添加仓库"
@@ -696,8 +696,8 @@
         "darwin": "推送被拒绝",
         "default": "推送被拒绝"
       },
-      "message": "推送被服务器拒绝，因为包含了对工作流文件 <1>{{path}}</1> 的修改。要能够推送到工作流文件，GitHub Desktop 需要请求额外的权限。",
-      "question": "你想打开浏览器授予 GitHub Desktop 更新工作流文件的权限吗？",
+      "message": "推送被服务器拒绝，因为包含了对工作流文件 <1>{{path}}</1> 的修改。要能够推送到工作流文件，ForgeDM Desktop 需要请求额外的权限。",
+      "question": "你想打开浏览器授予 ForgeDM Desktop 更新工作流文件的权限吗？",
       "continueInBrowser": {
         "darwin": "在浏览器中继续",
         "default": "在浏览器中继续"
@@ -734,7 +734,7 @@
         "darwin": "需要重新授权",
         "default": "需要重新授权"
       },
-      "message": "\"{{org}}\" 组织已启用或强制执行 SAML SSO。要访问此仓库，你必须重新登录并授予 GitHub Desktop 访问该组织仓库的权限。",
+      "message": "\"{{org}}\" 组织已启用或强制执行 SAML SSO。要访问此仓库，你必须重新登录并授予 ForgeDM Desktop 访问该组织仓库的权限。",
       "continueInBrowser": {
         "darwin": "在浏览器中继续",
         "default": "在浏览器中继续"
@@ -800,8 +800,8 @@
         "default": "移除仓库"
       },
       "remove": "移除",
-      "confirm": "你确定要从 GitHub Desktop 中移除仓库 \"{{name}}\" 吗？",
-      "willBeRemoved": "该仓库将从 GitHub Desktop 中移除：",
+      "confirm": "你确定要从 ForgeDM Desktop 中移除仓库 \"{{name}}\" 吗？",
+      "willBeRemoved": "该仓库将从 ForgeDM Desktop 中移除：",
       "alsoMoveTo": "同时将此仓库移动到{{trash}}"
     },
     "app": {
@@ -1047,7 +1047,7 @@
       "override": "覆盖"
     },
     "moveToApplicationsFolder": {
-      "title": "将 GitHub Desktop 移动到 Applications 文件夹？"
+      "title": "将 ForgeDM Desktop 移动到 Applications 文件夹？"
     },
     "warnForcePush": {
       "title": {
@@ -1055,7 +1055,7 @@
         "default": "{{operation}}将需要强制推送"
       },
       "confirmMessage": "你确定要进行{{operation}}吗？",
-      "description": "在{{operation}}流程结束时，GitHub Desktop 将允许你强制推送分支以更新上游分支。强制推送将更改远程历史记录，并可能给在此分支上协作的其他人带来问题。",
+      "description": "在{{operation}}流程结束时，ForgeDM Desktop 将允许你强制推送分支以更新上游分支。强制推送将更改远程历史记录，并可能给在此分支上协作的其他人带来问题。",
       "okButton": {
         "darwin": "开始{{operation}}",
         "default": "开始{{operation}}"
@@ -1099,7 +1099,7 @@
         "default": "使用浏览器登录"
       },
       "title": "登录",
-      "browserSignInInfo": "登录后，浏览器会将你重定向回 GitHub Desktop。如果浏览器请求你允许启动 GitHub Desktop，请允许。",
+      "browserSignInInfo": "登录后，浏览器会将你重定向回 ForgeDM Desktop。如果浏览器请求你允许启动 ForgeDM Desktop，请允许。",
       "continueWithBrowser": {
         "darwin": "使用浏览器继续",
         "default": "使用浏览器继续"
@@ -1417,9 +1417,9 @@
   },
   "menu": {
     "app": {
-      "about": "关于 GitHub Desktop",
+      "about": "关于 ForgeDM Desktop",
       "installCli": "安装命令行工具...",
-      "label": "GitHub Desktop",
+      "label": "ForgeDM Desktop",
       "settings": "设置..."
     },
     "branch": {
@@ -1567,7 +1567,7 @@
       "options": "选项(&O)..."
     },
     "help": {
-      "about": "关于 GitHub Desktop(&A)",
+      "about": "关于 ForgeDM Desktop(&A)",
       "contactSupport": {
         "darwin": "联系 GitHub 支持...",
         "default": "联系 GitHub 支持(&C)..."
@@ -1731,7 +1731,7 @@
       },
       "heading": "辅助功能",
       "underlineLinks": {
-        "description": "启用后，GitHub Desktop 会为提交消息、评论和其它文本字段中的链接添加下划线。这有助于更容易地区分链接。",
+        "description": "启用后，ForgeDM Desktop 会为提交消息、评论和其它文本字段中的链接添加下划线。这有助于更容易地区分链接。",
         "example": "这是一个示例链接",
         "label": "为链接添加下划线"
       }
@@ -1761,7 +1761,7 @@
       },
       "usage": {
         "heading": "使用情况",
-        "reportStats": "通过提交<stats>使用统计信息</stats>帮助 GitHub Desktop 改进"
+        "reportStats": "通过提交<stats>使用统计信息</stats>帮助 ForgeDM Desktop 改进"
       }
     },
     "appearance": {
@@ -1800,11 +1800,11 @@
         "checking": "正在检查 Copilot 访问权限…",
         "desktopDisabled": {
           "action": "打开 Copilot 功能设置",
-          "message": "你的账户已有 Copilot 许可证，但 Copilot 功能设置中已禁用“GitHub Desktop 中的 Copilot”。"
+          "message": "你的账户已有 Copilot 许可证，但 Copilot 功能设置中已禁用“ForgeDM Desktop 中的 Copilot”。"
         },
         "noLicense": {
           "action": "查看 Copilot 方案",
-          "message": "GitHub Desktop 中的 Copilot 功能需要 GitHub Copilot 许可证。"
+          "message": "ForgeDM Desktop 中的 Copilot 功能需要 GitHub Copilot 许可证。"
         },
         "signedOut": {
           "action": "登录",
@@ -1884,7 +1884,7 @@
         "cacheEnvironment": "缓存 Git hook 环境变量",
         "cacheEnvironmentDescription": "缓存 hook 环境变量以提升性能。如果你的 hook 依赖频繁变化的环境变量，请禁用此项。",
         "loadEnvironment": "从 Shell 加载 Git hook 环境变量",
-        "loadEnvironmentDescription": "启用后，GitHub Desktop 会在执行 Git hook 时尝试从你的 Shell 加载环境变量。如果你的 Git hook 依赖 Shell 配置文件中设置的环境变量，这会很有用；这也是 nvm、rbenv、asdf 等版本管理器的常见做法。",
+        "loadEnvironmentDescription": "启用后，ForgeDM Desktop 会在执行 Git hook 时尝试从你的 Shell 加载环境变量。如果你的 Git hook 依赖 Shell 配置文件中设置的环境变量，这会很有用；这也是 nvm、rbenv、asdf 等版本管理器的常见做法。",
         "shell": "加载环境时使用的 Shell"
       },
       "tabs": {
@@ -1902,9 +1902,9 @@
       "enable": "启用通知",
       "heading": "通知",
       "hints": {
-        "configure": "请确保 GitHub Desktop 的通知已在<settings>通知设置</settings>中{{state}}。",
-        "denied": "GitHub Desktop 没有显示通知的权限。请在<settings>通知设置</settings>中启用通知。",
-        "grantPermission": "你需要<permission>授予权限</permission>，才能显示来自 GitHub Desktop 的这些通知。"
+        "configure": "请确保 ForgeDM Desktop 的通知已在<settings>通知设置</settings>中{{state}}。",
+        "denied": "ForgeDM Desktop 没有显示通知的权限。请在<settings>通知设置</settings>中启用通知。",
+        "grantPermission": "你需要<permission>授予权限</permission>，才能显示来自 ForgeDM Desktop 的这些通知。"
       }
     },
     "prompts": {
@@ -1970,8 +1970,8 @@
       "darwin": "打开仓库",
       "default": "打开仓库"
     },
-    "openDescription": "你可以在 GitHub Desktop 中将此子模块作为普通仓库打开，以管理和提交其中的任何更改。",
-    "openTitle": "在 GitHub Desktop 中打开此子模块",
+    "openDescription": "你可以在 ForgeDM Desktop 中将此子模块作为普通仓库打开，以管理和提交其中的任何更改。",
+    "openTitle": "在 ForgeDM Desktop 中打开此子模块",
     "previousLabel": "旧",
     "removed": "此子模块{{verb}}移除，此前指向提交",
     "submoduleHasChanges": "此子模块有 {{changes}} 个更改。这些更改必须在子模块内部提交后才能成为父仓库的一部分。",
@@ -1986,10 +1986,10 @@
       "finish": "完成"
     },
     "start": {
-      "ariaLabel": "欢迎使用 GitHub Desktop",
+      "ariaLabel": "欢迎使用 ForgeDM Desktop",
       "createAccount": "创建免费账户。",
-      "description": "GitHub Desktop 是参与 GitHub 和 GitHub Enterprise 项目的顺畅方式。请在下方登录，开始使用你已有的项目。",
-      "metrics": "GitHub Desktop 会发送使用指标，用于改进产品并辅助功能决策。",
+      "description": "ForgeDM Desktop 是参与 GitHub 和 GitHub Enterprise 项目的顺畅方式。请在下方登录，开始使用你已有的项目。",
+      "metrics": "ForgeDM Desktop 会发送使用指标，用于改进产品并辅助功能决策。",
       "metricsLink": "了解有关用户指标的更多信息。",
       "newToGitHub": "刚接触 GitHub？",
       "privacy": "GitHub 隐私声明。",
@@ -2000,7 +2000,7 @@
       "terms": "服务条款",
       "termsPrefix": "创建账户即表示你同意",
       "titlePrefix": "欢迎使用",
-      "titleProduct": "GitHub Desktop"
+      "titleProduct": "ForgeDM Desktop"
     }
   },
   "accountPicker": {

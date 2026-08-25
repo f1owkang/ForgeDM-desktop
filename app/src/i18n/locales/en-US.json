@@ -478,7 +478,7 @@
         "darwin": "Newer Commits on Remote",
         "default": "Newer commits on remote"
       },
-      "message": "GitHub Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.",
+      "message": "ForgeDM Desktop is unable to push commits to this branch because there are commits on the remote that are not present on your local branch. Fetch these new commits before pushing in order to reconcile them with your local commits.",
       "fetch": "Fetch"
     },
     "missingRepository": {
@@ -543,7 +543,7 @@
         "darwin": "Installing Update…",
         "default": "Installing update…"
       },
-      "message": "Do not close GitHub Desktop while the update is in progress. Closing now may break your installation.",
+      "message": "Do not close ForgeDM Desktop while the update is in progress. Closing now may break your installation.",
       "quitAnyway": {
         "darwin": "Quit Anyway",
         "default": "Quit anyway"
@@ -554,7 +554,7 @@
         "darwin": "Untrusted Server",
         "default": "Untrusted server"
       },
-      "message": "GitHub Desktop cannot verify the identity of {{host}}. The certificate ({{cert}}) is invalid or untrusted. <strong>This may indicate attackers are trying to steal your data.</strong>",
+      "message": "ForgeDM Desktop cannot verify the identity of {{host}}. The certificate ({{cert}}) is invalid or untrusted. <strong>This may indicate attackers are trying to steal your data.</strong>",
       "expectedCases": "In some cases, this may be expected. For example:",
       "githubEnterpriseTrial": "If this is a GitHub Enterprise trial.",
       "unusualDomain": "If your GitHub Enterprise instance is run on an unusual top-level domain.",
@@ -651,7 +651,7 @@
         "default": "Create repository"
       },
       "addLocalRepo": "Add a local repository",
-      "addLocalRepoDescription": "Work on an existing project in GitHub Desktop",
+      "addLocalRepoDescription": "Work on an existing project in ForgeDM Desktop",
       "addRepoButton": {
         "darwin": "Add Repository",
         "default": "Add repository"
@@ -696,8 +696,8 @@
         "darwin": "Push Rejected",
         "default": "Push rejected"
       },
-      "message": "The push was rejected by the server for containing a modification to the workflow file <1>{{path}}</1>. In order to be able to push to workflow files GitHub Desktop needs to request additional permissions.",
-      "question": "Would you like to open a browser to grant GitHub Desktop permission to update workflow files?",
+      "message": "The push was rejected by the server for containing a modification to the workflow file <1>{{path}}</1>. In order to be able to push to workflow files ForgeDM Desktop needs to request additional permissions.",
+      "question": "Would you like to open a browser to grant ForgeDM Desktop permission to update workflow files?",
       "continueInBrowser": {
         "darwin": "Continue in Browser",
         "default": "Continue in browser"
@@ -734,7 +734,7 @@
         "darwin": "Re-authorization Required",
         "default": "Re-authorization required"
       },
-      "message": "The \"{{org}}\" organization has enabled or enforced SAML SSO. To access this repository, you must sign in again and grant GitHub Desktop permission to access the organization's repositories.",
+      "message": "The \"{{org}}\" organization has enabled or enforced SAML SSO. To access this repository, you must sign in again and grant ForgeDM Desktop permission to access the organization's repositories.",
       "continueInBrowser": {
         "darwin": "Continue in Browser",
         "default": "Continue in browser"
@@ -800,8 +800,8 @@
         "default": "Remove repository"
       },
       "remove": "Remove",
-      "confirm": "Are you sure you want to remove the repository \"{{name}}\" from GitHub Desktop?",
-      "willBeRemoved": "The repository will be removed from GitHub Desktop:",
+      "confirm": "Are you sure you want to remove the repository \"{{name}}\" from ForgeDM Desktop?",
+      "willBeRemoved": "The repository will be removed from ForgeDM Desktop:",
       "alsoMoveTo": "Also move this repository to {{trash}}"
     },
     "app": {
@@ -1047,7 +1047,7 @@
       "override": "Override"
     },
     "moveToApplicationsFolder": {
-      "title": "Move GitHub Desktop to the Applications folder?"
+      "title": "Move ForgeDM Desktop to the Applications folder?"
     },
     "warnForcePush": {
       "title": {
@@ -1055,7 +1055,7 @@
         "default": "{{operation}} will require force push"
       },
       "confirmMessage": "Are you sure you want to {{operation}}?",
-      "description": "At the end of the {{operation}} flow, GitHub Desktop will enable you to force push the branch to update the upstream branch. Force pushing will alter the history on the remote and potentially cause problems for others collaborating on this branch.",
+      "description": "At the end of the {{operation}} flow, ForgeDM Desktop will enable you to force push the branch to update the upstream branch. Force pushing will alter the history on the remote and potentially cause problems for others collaborating on this branch.",
       "okButton": {
         "darwin": "Begin {{operation}}",
         "default": "Begin {{operation}}"
@@ -1099,7 +1099,7 @@
         "default": "Sign in using your browser"
       },
       "title": "Sign in",
-      "browserSignInInfo": "Your browser will redirect you back to GitHub Desktop once you've signed in. If your browser asks for your permission to launch GitHub Desktop, please allow it.",
+      "browserSignInInfo": "Your browser will redirect you back to ForgeDM Desktop once you've signed in. If your browser asks for your permission to launch ForgeDM Desktop, please allow it.",
       "continueWithBrowser": {
         "darwin": "Continue With Browser",
         "default": "Continue with browser"
@@ -1417,9 +1417,9 @@
   },
   "menu": {
     "app": {
-      "about": "About GitHub Desktop",
+      "about": "About ForgeDM Desktop",
       "installCli": "Install Command Line Tool...",
-      "label": "GitHub Desktop",
+      "label": "ForgeDM Desktop",
       "settings": "Settings..."
     },
     "branch": {
@@ -1567,7 +1567,7 @@
       "options": "&Options..."
     },
     "help": {
-      "about": "&About GitHub Desktop",
+      "about": "&About ForgeDM Desktop",
       "contactSupport": {
         "darwin": "Contact GitHub Support...",
         "default": "&Contact GitHub support..."
@@ -1731,7 +1731,7 @@
       },
       "heading": "Accessibility",
       "underlineLinks": {
-        "description": "When enabled, GitHub Desktop will underline links in commit messages, comments, and other text fields. This can help make links easier to distinguish.",
+        "description": "When enabled, ForgeDM Desktop will underline links in commit messages, comments, and other text fields. This can help make links easier to distinguish.",
         "example": "This is an example link",
         "label": "Underline links"
       }
@@ -1761,7 +1761,7 @@
       },
       "usage": {
         "heading": "Usage",
-        "reportStats": "Help GitHub Desktop improve by submitting <stats>usage stats</stats>"
+        "reportStats": "Help ForgeDM Desktop improve by submitting <stats>usage stats</stats>"
       }
     },
     "appearance": {
@@ -1800,11 +1800,11 @@
         "checking": "Checking Copilot access…",
         "desktopDisabled": {
           "action": "Open Copilot feature settings",
-          "message": "A Copilot license is available for your account, but \"Copilot in GitHub Desktop\" is disabled in your Copilot feature settings."
+          "message": "A Copilot license is available for your account, but \"Copilot in ForgeDM Desktop\" is disabled in your Copilot feature settings."
         },
         "noLicense": {
           "action": "View Copilot plans",
-          "message": "Copilot features in GitHub Desktop require a GitHub Copilot license."
+          "message": "Copilot features in ForgeDM Desktop require a GitHub Copilot license."
         },
         "signedOut": {
           "action": "Sign In",
@@ -1884,7 +1884,7 @@
         "cacheEnvironment": "Cache Git hook environment variables",
         "cacheEnvironmentDescription": "Cache hook environment variables to improve performance. Disable if your hooks rely on frequently changing environment variables.",
         "loadEnvironment": "Load Git hook environment variables from shell",
-        "loadEnvironmentDescription": "When enabled, GitHub Desktop will attempt to load environment variables from your shell when executing Git hooks. This is useful if your Git hooks depend on environment variables set in your shell configuration files, a common practice for version managers such as nvm, rbenv, asdf, etc.",
+        "loadEnvironmentDescription": "When enabled, ForgeDM Desktop will attempt to load environment variables from your shell when executing Git hooks. This is useful if your Git hooks depend on environment variables set in your shell configuration files, a common practice for version managers such as nvm, rbenv, asdf, etc.",
         "shell": "Shell to use when loading environment"
       },
       "tabs": {
@@ -1902,9 +1902,9 @@
       "enable": "Enable notifications",
       "heading": "Notifications",
       "hints": {
-        "configure": " Make sure notifications are {{state}} for GitHub Desktop in the <settings>Notifications Settings</settings>.",
-        "denied": "GitHub Desktop has no permission to display notifications. Please, enable them in the <settings>Notifications Settings</settings>.",
-        "grantPermission": " You need to <permission>grant permission</permission> to display these notifications from GitHub Desktop."
+        "configure": " Make sure notifications are {{state}} for ForgeDM Desktop in the <settings>Notifications Settings</settings>.",
+        "denied": "ForgeDM Desktop has no permission to display notifications. Please, enable them in the <settings>Notifications Settings</settings>.",
+        "grantPermission": " You need to <permission>grant permission</permission> to display these notifications from ForgeDM Desktop."
       }
     },
     "prompts": {
@@ -1970,8 +1970,8 @@
       "darwin": "Open Repository",
       "default": "Open repository"
     },
-    "openDescription": "You can open this submodule on GitHub Desktop as a normal repository to manage and commit any changes in it.",
-    "openTitle": "Open this submodule on GitHub Desktop",
+    "openDescription": "You can open this submodule on ForgeDM Desktop as a normal repository to manage and commit any changes in it.",
+    "openTitle": "Open this submodule on ForgeDM Desktop",
     "previousLabel": "previous",
     "removed": "This submodule {{verb}} removed while it was pointing at commit",
     "submoduleHasChanges": "This submodule has {{changes}} changes. Those changes must be committed inside of the submodule before they can be part of the parent repository.",
@@ -1986,10 +1986,10 @@
       "finish": "Finish"
     },
     "start": {
-      "ariaLabel": "Welcome to GitHub Desktop",
+      "ariaLabel": "Welcome to ForgeDM Desktop",
       "createAccount": "Create your free account.",
-      "description": "GitHub Desktop is a seamless way to contribute to projects on GitHub and GitHub Enterprise. Sign in below to get started with your existing projects.",
-      "metrics": "GitHub Desktop sends usage metrics to improve the product and inform feature decisions.",
+      "description": "ForgeDM Desktop is a seamless way to contribute to projects on GitHub and GitHub Enterprise. Sign in below to get started with your existing projects.",
+      "metrics": "ForgeDM Desktop sends usage metrics to improve the product and inform feature decisions.",
       "metricsLink": "Learn more about user metrics.",
       "newToGitHub": "New to GitHub?",
       "privacy": "GitHub Privacy Statement.",
@@ -2000,7 +2000,7 @@
       "terms": "Terms of Service",
       "termsPrefix": "By creating an account, you agree to the",
       "titlePrefix": "Welcome to",
-      "titleProduct": "GitHub Desktop"
+      "titleProduct": "ForgeDM Desktop"
     }
   },
   "accountPicker": {
