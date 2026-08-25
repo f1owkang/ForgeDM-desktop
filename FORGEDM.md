@@ -95,6 +95,7 @@ ForgeDM-Layer: L1
 |---|---|---|---|
 | （数百个 UI 源码文件） | 中文化 i18n 补丁（历史提交，未逐个标记） | 无（历史） | i18n 脚本化改造完成后整体重生 |
 | CI 工作流（MSVC 2022 pin、Linux 打包） | 构建我们的发行版 | 提交 `049daad2fb` 等 | 上游支持 Linux 打包 |
+| `app/src/lib/stores/cloning-repositories-store.ts`（catch 块） | 克隆私有实例失败时追加连接诊断提示（WP-C Task 3） | `FORGEDM-BEGIN/END` + import 标记 | 上游在克隆错误路径提供诊断扩展点 |
 
 ---
 
