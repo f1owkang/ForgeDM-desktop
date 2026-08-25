@@ -95,6 +95,7 @@ ForgeDM-Layer: L1
 |---|---|---|---|
 | （数百个 UI 源码文件） | 中文化 i18n 补丁（历史提交，未逐个标记） | 无（历史） | i18n 脚本化改造完成后整体重生 |
 | CI 工作流（MSVC 2022 pin、Linux 打包） | 构建我们的发行版 | 提交 `049daad2fb` 等 | 上游支持 Linux 打包 |
+| `app/package.json`（productName 一行） | 产品名切为 ForgeDM Desktop，可执行名/安装包名经 dist-info 自动派生（WP-D Task 2） | 无（单行，diff 即标记） | 每次上游升级人工核对该行 |
 
 ---
 
