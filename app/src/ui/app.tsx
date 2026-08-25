@@ -1982,7 +1982,6 @@ export class App extends React.Component<IAppProps, IAppState> {
             key="lsf-attribute-mismatch"
             onDismissed={onPopupDismissedFn}
             onUpdateExistingFilters={this.updateExistingLFSFilters}
-            onEditGlobalGitConfig={this.editGlobalGitConfig}
           />
         )
       case PopupType.UpstreamAlreadyExists:
