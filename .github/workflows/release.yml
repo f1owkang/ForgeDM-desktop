@@ -71,12 +71,9 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Setup MSVC (Windows only)
-        if: runner.os == 'Windows'
-        uses: ilammy/msvc-dev-cmd@v1.13.0
-        with:
-          arch: ${{ matrix.arch }}
-          vsversion: '2022'
+      # FORGEDM: MSVC setup removed - windows-2022 image no longer ships VS and
+      # the build/package chain (node-gyp + zip only) does not require vcvars,
+      # matching ci.yml which builds successfully without it.
 
       - uses: ./.github/actions/setup-ci-environment
         env:
@@ -119,7 +116,9 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           cd dist
-          ditto -ck --keepParent "GitHub Desktop-darwin-${{ matrix.arch }}/GitHub Desktop.app" "${{ matrix.asset_name }}"
+          # FORGEDM: dist dir/app follow productName (ForgeDM Desktop) — resolve dynamically
+          APP_DIR=$(ls -d *"-${{ matrix.arch }}" | head -1)
+          ditto -ck --keepParent "$APP_DIR/$(basename "$APP_DIR").app" "${{ matrix.asset_name }}"
 
       # Linux: Create tar.gz
       - name: Create Linux archive
