@@ -6,9 +6,21 @@ import packager, { OfficialArch, Options } from '@electron/packager'
 import frontMatter from 'front-matter'
 import * as os from 'os'
 import * as path from 'path'
-import { getPrintenvzPath } from 'printenvz'
+import { createRequire } from 'node:module'
 import { getProxyCommandPath } from 'process-proxy'
 import { externals } from '../app/webpack.common'
+
+// FORGEDM: printenvz is an optional dependency - when its native build is
+// skipped (e.g. no MSVC on the CI image) we simply ship without the binary;
+// get-shell-env falls back to spawning a login shell at runtime.
+function tryGetPrintenvzPath(): string | null {
+  const nodeRequire = createRequire(__filename)
+  try {
+    return nodeRequire('printenvz').getPrintenvzPath() as string
+  } catch {
+    return null
+  }
+}
 
 interface IChooseALicense {
   readonly title: string
@@ -420,8 +432,13 @@ function copyDependencies() {
   )
 
   console.log('  Copying printenvz binary')
+  const printenvzPath = tryGetPrintenvzPath()
+  if (printenvzPath === null) {
+    console.log('  printenvz not built - skipping (shell-env fallback active)')
+    return
+  }
   cpSync(
-    getPrintenvzPath(),
+    printenvzPath,
     path.resolve(
       outRoot,
       process.platform === 'win32' ? 'printenvz.exe' : 'printenvz'
